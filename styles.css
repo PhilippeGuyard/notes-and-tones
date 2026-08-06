@@ -1162,6 +1162,75 @@ circle.ci-miss { fill: var(--a); }
 }
 
 /* ============================================================
+   BULGE PAGE — The Pull of the Equator
+   gravity = periwinkle (--A); centrifugal = marigold (--b);
+   unbalanced pull = rose (--a); effective gravity = teal (--B)
+   ============================================================ */
+
+/* hero motif: a globe squashing into its bulge */
+.bulge-hero {
+  position: relative;
+  width: 120px; height: 120px;
+  margin: 2.6rem auto 1.2rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, #8fd0e4, #3aa7c9 62%, #2c86a6);
+  box-shadow: var(--shadow), inset 0 0 0 4px rgba(255,255,255,.35);
+  animation: rise .9s .2s cubic-bezier(.2,.7,.2,1) both, squash 3.4s ease-in-out 1.4s infinite;
+}
+.bh-axis {
+  position: absolute; left: 50%; top: -14px; bottom: -14px;
+  border-left: 1.5px dashed rgba(44,27,61,.45);
+}
+.bh-eq {
+  position: absolute; top: 50%; left: -8px; right: -8px;
+  border-top: 1.5px dashed rgba(255,255,255,.75);
+}
+@keyframes squash {
+  0%, 100% { transform: scale(1, 1); }
+  50%      { transform: scale(1.09, .88); }
+}
+
+/* the force-diagram widgets */
+.force-canvas {
+  width: 100%; height: auto; display: block;
+  margin: .4rem 0 1rem;
+  background: rgba(255,255,255,.35);
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  cursor: crosshair;
+}
+.force-head {
+  display: flex; flex-wrap: wrap; gap: .3rem 1.2rem;
+  align-items: baseline; justify-content: space-between;
+  margin-bottom: .6rem;
+}
+.force-hint {
+  font-family: var(--mono); font-size: .78rem;
+  text-transform: uppercase; letter-spacing: .12em;
+  color: var(--ink-soft); margin: 0;
+}
+.force-readout {
+  font-family: var(--mono); font-size: .82rem; font-weight: 700;
+  color: var(--ink); margin: 0; white-space: nowrap;
+}
+.force-controls {
+  display: flex; flex-wrap: wrap; gap: .7rem 1.2rem; align-items: center;
+}
+.force-legend {
+  display: inline-flex; flex-wrap: wrap; gap: .4rem 1rem;
+  margin-left: auto;
+}
+.sw-grav  { background: var(--A); }
+.sw-spin  { background: var(--b); }
+.sw-resid { background: var(--a); }
+.sw-eff   { background: var(--B); }
+
+@media (max-width: 560px) {
+  .force-legend { margin-left: 0; }
+  .force-readout { white-space: normal; }
+}
+
+/* ============================================================
    SCREENING PAGE — base rates, Bayes, the icon grid
    ============================================================ */
 
