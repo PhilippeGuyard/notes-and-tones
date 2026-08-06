@@ -40,10 +40,26 @@
   </section>
 
   <section class="prose" id="measures">
-    <h2><span class="sec-no">01</span> What the number actually measures</h2>
-    <p>Your genome isn't stamped with country labels. There is no stretch of DNA that says "Italy." So how does a company decide you're 34% Italian?</p>
-    <p>It compares your DNA to a <strong>reference panel</strong>: a few thousand living people who each reported that all four of their grandparents came from the same place. Your genome is chopped into chunks, and each chunk is matched to whichever reference group it most resembles. The "34% Italian" means, roughly: <em>34% of my sampled DNA looks most like the DNA of that company's present-day Italian reference volunteers.</em></p>
-    <p>Notice that three quiet substitutions have already happened:</p>
+    <h2><span class="sec-no">01</span> What the number actually means</h2>
+    <p>Your genome isn't stamped with country labels. There is no stretch of DNA that says "Italy", and no gene is "an Italian gene". So what is a company doing when it decides you're 34% Italian?</p>
+    <p>Start with what your DNA is: a very long sequence of letters, and at scattered positions along it people differ. Those positions are the raw material. Almost no single variant belongs to one country. The letter that is common in Naples is usually just as common in Athens and Marseille. What separates one population from another is not <em>which</em> variants exist, but how often each one turns up, and which variants tend to sit together along a chromosome.</p>
+    <p>So a company lines your DNA up against a <strong>reference panel</strong>: a few thousand living volunteers who each said all four grandparents came from the same place. It slides along your genome in small windows and, for every window, asks one comparative question: of the reference groups I hold, whose members carry this combination of variants most often? Each window is handed to its best-matching group. Count the windows that landed on the Italian pile, divide by the total, and there is your 34%.</p>
+
+    <figure class="paint" aria-label="A stretch of chromosome 'painted' by best-match region">
+      <div class="chr">
+        <span class="chr-seg" style="width:16%;background:#f0a63a">S. European</span>
+        <span class="chr-seg" style="width:15%;background:#e8629b">Italian</span>
+        <span class="chr-seg amb" style="width:13%">unsure</span>
+        <span class="chr-seg" style="width:14%;background:#34b79a">Greek</span>
+        <span class="chr-seg" style="width:12%;background:#6f7be6">French</span>
+        <span class="chr-seg amb" style="width:12%">unsure</span>
+        <span class="chr-seg" style="width:18%;background:#a86ce0">Iberian</span>
+      </div>
+      <figcaption class="widget-cap">One chromosome, painted window by window. Each colour is only the nearest match among the groups on offer, and the hatched stripes are windows the model could not place with confidence. The headline percentages are just these stripes added up by colour.</figcaption>
+    </figure>
+
+    <p>Read literally, then, "34% Italian" says something quite narrow: <em>34% of the small windows of my genome looked more like that company's present-day Italian volunteers than like any other group on their list.</em> It is a statement about resemblance to a group of living strangers. It is not a count of genes that "came from" Italy, and it is not the share of your ancestors who lived there. Many of those windows would sit just as happily in Greece, Iberia or the Balkans; they were filed under "Italian" only because it was the closest label on offer, and every window has to be filed somewhere.</p>
+    <p>Notice that three quiet substitutions have already slipped in:</p>
     <ul class="ledger">
       <li><span>"Italian"</span><b>= a modern nation-state</b></li>
       <li><span>the yardstick</span><b>= today's volunteers, not ancestors</b></li>

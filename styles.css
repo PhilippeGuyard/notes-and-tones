@@ -530,6 +530,27 @@ input[type="range"]::-moz-range-thumb {
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* -- chromosome-painting illustration -- */
+.paint { margin: 2.2rem 0; }
+.chr {
+  display: flex; height: 48px;
+  border-radius: 10px; overflow: hidden;
+  border: 1.5px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.chr-seg {
+  display: grid; place-items: center;
+  font-family: var(--mono); font-size: .68rem; font-weight: 700;
+  color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.35);
+  white-space: nowrap; overflow: hidden; min-width: 0;
+  padding: 0 .2rem;
+}
+.chr-seg.amb {
+  color: var(--ink-soft); text-shadow: none;
+  background:
+    repeating-linear-gradient(45deg, rgba(44,27,61,.12), rgba(44,27,61,.12) 6px, rgba(44,27,61,.02) 6px, rgba(44,27,61,.02) 12px);
+}
+
 /* -- widget 1: same-DNA verdict switcher -- */
 .verdict-spotlight {
   display: flex; align-items: center; justify-content: center;
