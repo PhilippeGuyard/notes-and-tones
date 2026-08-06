@@ -10,7 +10,7 @@ export function resettlementChart(el, resettlement) {
   svg.append("text").attr("class", "chart-title").attr("x", 8).attr("y", 24)
     .text("The safe route, closing");
   svg.append("text").attr("class", "anno").attr("x", 8).attr("y", 42)
-    .text("Refugees resettled worldwide per year — UNHCR");
+    .text("Refugees resettled worldwide per year (UNHCR)");
 
   const x = d3.scaleLinear().domain(d3.extent(s, d => d.year)).range([M.l, W - M.r]);
   const y = d3.scaleLinear().domain([0, d3.max(s, d => d.value)]).nice()

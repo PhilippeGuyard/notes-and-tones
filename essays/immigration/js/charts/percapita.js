@@ -1,4 +1,4 @@
-/* Myth 4: asylum applications — absolute vs per-capita, animated reorder. */
+/* Myth 4: asylum applications, absolute vs per-capita, animated reorder. */
 import { C, svgIn, fmt, tooltip } from "../lib.js";
 
 export function perCapitaChart(el, percap) {
@@ -11,7 +11,7 @@ export function perCapitaChart(el, percap) {
   const tip = tooltip();
 
   svg.append("text").attr("class", "chart-title").attr("x", 8).attr("y", 26)
-    .text("Asylum applications, 2025 — who takes the most?");
+    .text("Asylum applications, 2025: who takes the most?");
   svg.append("text").attr("class", "anno").attr("x", 8).attr("y", 46)
     .attr("fill", C.inkSoft)
     .text("Eurostat (EU-27) + Home Office (UK, individuals). UK highlighted.");

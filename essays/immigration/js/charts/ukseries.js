@@ -51,7 +51,7 @@ export function ukSeriesChart(el, netmig) {
 
   const annos = [
     { p: "YE Mar 23", label: "peak 944k", dy: -14 },
-    { p: "YE Dec 25 P", label: "171k — lowest of the era", dy: -16 },
+    { p: "YE Dec 25 P", label: "171k, lowest of the era", dy: -16 },
   ].map(a => {
     const pt = s.find(d => d.period === a.p);
     if (!pt) return null;

@@ -8,13 +8,13 @@ export function warsChart(el, euAsylum, facts) {
   const tip = tooltip();
 
   svg.append("text").attr("class", "chart-title").attr("x", 8).attr("y", 26)
-    .text("Asylum applications in the EU-27 — a story of two wars");
+    .text("Asylum applications in the EU-27: a story of two wars");
   svg.append("text").attr("class", "anno").attr("x", 8).attr("y", 46)
     .attr("fill", C.inkSoft)
     .text("Eurostat, total applicants per year.");
   svg.append("text").attr("class", "anno").attr("x", 8).attr("y", 62)
     .attr("fill", C.inkSoft)
-    .text("Ukraine's 4.37M arrived via legal temporary protection — not asylum.");
+    .text("Ukraine's 4.37M arrived via legal temporary protection, not asylum.");
 
   const x = d3.scaleBand().domain(s.map(d => d.year)).range([M.l, W - M.r]).padding(0.25);
   const y = d3.scaleLinear().domain([0, d3.max(s, d => d.value)]).nice()

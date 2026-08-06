@@ -23,7 +23,7 @@ export function perceptionChart(el, perceptions) {
   const g = svg.selectAll(".row").data(rows).join("g")
     .attr("class", "row")
     .on("mousemove", (ev, d) => tip.show(
-      [d.place, `guessed ${d.perceived}% — actual ${d.actual}%`, `${d.source}, ${d.year}`], ev))
+      [d.place, `guessed ${d.perceived}%, actual ${d.actual}%`, `${d.source}, ${d.year}`], ev))
     .on("mouseleave", () => tip.hide());
 
   g.append("text")

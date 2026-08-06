@@ -55,10 +55,10 @@ resettlementChart($("chart-resettlement"), D.resettlement);
     const diff = g - actual;
     result.textContent =
       diff > 2
-        ? `You guessed ${g}%. The measured share is about ${actual}% (2021 census) — you overshot by ${diff} points. You're in good company: the average British guess is 24%.`
+        ? `You guessed ${g}%. The measured share is about ${actual}% (2021 census), so you overshot by ${diff} points. You're in good company: the average British guess is 24%.`
         : diff < -2
-          ? `You guessed ${g}%. The measured share is about ${actual}% (2021 census) — you undershot by ${-diff} points, which makes you rare: the average British guess is 24%.`
-          : `You guessed ${g}% — almost exactly right (about ${actual}%, 2021 census). The average British guess is 24%.`;
+          ? `You guessed ${g}%. The measured share is about ${actual}% (2021 census), so you undershot by ${-diff} points, which makes you rare: the average British guess is 24%.`
+          : `You guessed ${g}%, almost exactly right (about ${actual}%, 2021 census). The average British guess is 24%.`;
     w.classList.add("revealed");
   });
   row.append(slider, val, btn);
@@ -69,11 +69,11 @@ resettlementChart($("chart-resettlement"), D.resettlement);
 {
   const F = D.facts.data;
   const cards = [
-    ["myth", "2:1", "Britons believe — by two to one — that immigrants take more in benefits than they pay in tax.", "NIESR attitudes review"],
-    ["fact", "NRPF", "Most UK visas carry “No Recourse to Public Funds”: no Universal Credit, no housing benefit, no child benefit — until permanent settlement.", F.nrpf.source],
+    ["myth", "2:1", "Britons believe, by two to one, that immigrants take more in benefits than they pay in tax.", "NIESR attitudes review"],
+    ["fact", "NRPF", "Most UK visas carry “No Recourse to Public Funds”: no Universal Credit, no housing benefit, no child benefit until permanent settlement.", F.nrpf.source],
     ["fact", "6% vs 11%", "Out-of-work benefit claim rates: non-UK nationals 6%, UK nationals 11% (last robust DWP comparison).", "DWP 2014"],
     ["fact", "OBR", "An average-wage migrant arriving at 25 contributes more over a lifetime than a UK-born worker on the same wage.", F.obr_fiscal.source],
-    ["myth", "39%", "of Britons now believe immigrants increase crime — up from 30% just two years earlier.", F.crime_belief.source],
+    ["myth", "39%", "of Britons now believe immigrants increase crime, up from 30% just two years earlier.", F.crime_belief.source],
     ["fact", "No link", "Studies of England & Wales and 23 European countries find no causal effect of immigration on crime. Property crime fell for 20 years while the foreign-born population rose.", "LSE; Migration Observatory"],
   ];
   const wrap = $("beliefs-cards");

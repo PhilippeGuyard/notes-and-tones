@@ -1,4 +1,4 @@
-/* Myth 2: waffle — how the UK's (then EU's) immigrants actually arrive. */
+/* Myth 2: waffle, how the UK's (then EU's) immigrants actually arrive. */
 import { C, svgIn, tooltip } from "../lib.js";
 
 const COLORS = {
@@ -52,7 +52,7 @@ export function compositionChart(el, composition) {
       g.append("rect").attr("width", 14).attr("height", 14).attr("rx", 3)
         .attr("fill", COLORS[cat.key]);
       g.append("text").attr("x", 20).attr("y", 12).attr("font-size", ".7rem")
-        .text(`${cat.label} — ${cat.value}%`);
+        .text(`${cat.label}: ${cat.value}%`);
     });
   }
 

@@ -39,7 +39,7 @@ export function frontexChart(el, frontex) {
   svg.append("text").attr("class", "chart-title").attr("x", 24).attr("y", 28)
     .text("Irregular crossings into the EU, by route");
   svg.append("text").attr("class", "anno").attr("x", 24).attr("y", 46)
-    .attr("fill", C.inkSoft).text("Frontex monthly detections — detections, not unique people");
+    .attr("fill", C.inkSoft).text("Frontex monthly detections: detections, not unique people");
 
   const gx = svg.append("g").attr("class", "axis")
     .attr("transform", `translate(0,${H - M.b})`);
