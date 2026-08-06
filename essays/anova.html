@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Signal or Noise? The Analysis of Variance, made visual</title>
+<meta name="description" content="Three groups, three different averages. Real effect or just noise? How ANOVA answers it by splitting variation into between-group signal and within-group noise, why you can't just t-test every pair, and what the F-statistic really is. With widgets you can drag." />
+<meta property="og:title" content="Signal or Noise?" />
+<meta property="og:description" content="The analysis of variance, made visual: between-group signal against within-group noise, and the F-statistic that weighs them." />
+<meta property="og:type" content="article" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%96%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="sparkles" aria-hidden="true"></div>
+
+<nav class="topnav">
+  <a href="../index.html" class="topnav-home">← Notes &amp; Tones</a>
+  <a href="confidence.html">Also: Ninety-Five Per Cent Confident? →</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Notes &amp; Tones · An interactive essay</p>
+    <h1 class="title">Signal<br /><span class="of">or</span><br />Noise?</h1>
+    <p class="dek">Three groups, three different averages. A real effect, or just the wobble you would see anyway? The analysis of variance answers by weighing one kind of variation against another.</p>
+    <div class="anova-hero" aria-hidden="true">
+      <span class="ah-col"><i></i><i></i><i></i><i></i></span>
+      <span class="ah-col"><i></i><i></i><i></i><i></i></span>
+      <span class="ah-col"><i></i><i></i><i></i><i></i></span>
+    </div>
+    <p class="scroll-cue">Scroll to begin ↓</p>
+  </div>
+</header>
+
+<main>
+  <section class="prose" id="intro">
+    <p class="lead"><span class="dropcap">T</span>hree classrooms sit the same exam after a term taught three different ways. Method A averages 71, method B lands on 68, method C on 74. So method C wins, and the curriculum gets rewritten?</p>
+    <p>Not so fast. One question has to come first: is that spread of averages a real effect of the teaching, or just the ordinary noise you would see even if all three methods were identical? Pupils vary, exams vary, luck varies. Line up any three groups and their averages will almost never match exactly. Telling a genuine difference from that background shimmer is the whole job, and the tool built for it is the <strong>analysis of variance</strong>, or ANOVA. Its move is to stop staring at the averages and look instead at two different kinds of variation.</p>
+  </section>
+
+  <section class="prose" id="pairs">
+    <h2><span class="sec-no">01</span> Why not just test every pair?</h2>
+    <p>With two groups you would reach for a t-test, which asks how likely it is that two samples came from the same underlying population. With three or more, the obvious move is to run a t-test on every pair and see which come out "significant". That quietly breaks.</p>
+    <p>Every test carries its own risk of crying wolf. At the usual 5% threshold, a single test on two identical groups will falsely flag a difference one time in twenty. Run many such tests and those small risks pile up fast. Below, every group is secretly drawn from the very same population, so there are no real differences at all. Watch how often the pairwise tests find one anyway.</p>
+
+    <figure class="widget" id="mc-widget" aria-label="Interactive: false positives from many pairwise tests">
+      <div class="slider-block">
+        <label for="mc-k">Number of groups (all secretly identical)</label>
+        <input type="range" id="mc-k" min="2" max="12" step="1" value="6" />
+        <div class="slider-vals">
+          <span><output id="mc-k-val">6</output> groups</span>
+          <span><output id="mc-pairs">15</output> pairwise tests</span>
+        </div>
+      </div>
+      <svg id="mc-svg" class="stat-svg" viewBox="0 0 680 240" role="img" aria-label="A grid of pairwise comparisons; red cells are false positives found among groups that are truly identical"></svg>
+      <div class="stat-readouts">
+        <div class="stat-box box-miss">
+          <span class="stat-lab">Experiments flagging a false difference</span>
+          <div class="stat-big"><output id="mc-fwe">–</output></div>
+          <span class="stat-sub" id="mc-fwe-frac">0 / 0</span>
+        </div>
+        <div class="stat-box box-target">
+          <span class="stat-lab">If a single test were all you ran</span>
+          <div class="stat-big">5%</div>
+          <span class="stat-sub">the honest false-alarm rate</span>
+        </div>
+      </div>
+      <div class="stat-controls">
+        <button class="btn-run" id="mc-run">Run 100 experiments</button>
+        <button class="preset" id="mc-reset">↺ Clear</button>
+      </div>
+      <figcaption class="widget-cap" id="mc-cap">Each experiment draws fresh groups from one shared population and tests every pair. Red marks a pair called "significantly different" when it is not.</figcaption>
+    </figure>
+
+    <p>With six groups there are fifteen pairs, and the chance that at least one comes out falsely "significant" is close to forty per cent, roughly eight times the 5% you signed up for. Push on to a dozen groups and it climbs past seventy, so a spurious difference becomes more likely than not. Testing every pair does not compare the groups fairly; it just manufactures differences. What we need is a <em>single</em> test that judges all the groups at once.</p>
+  </section>
+
+  <section class="prose" id="decompose">
+    <h2><span class="sec-no">02</span> One fair test: split the variation</h2>
+    <p>Here is ANOVA's idea. Take all the measurements together and ask where their spread comes from. Some of it is <strong>between the groups</strong>: the group averages sit at different heights, and that scatter is the possible signal. The rest is <strong>within the groups</strong>: even inside a single group the individuals differ, and that scatter is the noise. ANOVA measures both as variances and puts one over the other. That ratio is the <strong>F-statistic</strong>.</p>
+    <p>The point is that the gap between the group means never speaks for itself. It only means something <em>relative to the noise around it</em>. Drag the two sliders. The first pulls the groups apart; the second turns up the scatter inside each one. Watch the same gap go from obvious to invisible.</p>
+
+    <figure class="widget" id="anova-widget" aria-label="Interactive: between-group signal against within-group noise">
+      <div class="slider-block">
+        <label for="av-sep">Gap between the groups &nbsp;(the signal)</label>
+        <input type="range" id="av-sep" min="0" max="18" step="0.5" value="8" />
+      </div>
+      <div class="slider-block">
+        <label for="av-noise">Spread within each group &nbsp;(the noise)</label>
+        <input type="range" id="av-noise" min="1.5" max="13" step="0.5" value="5" />
+      </div>
+      <svg id="av-svg" class="stat-svg" viewBox="0 0 680 260" role="img" aria-label="Three groups of points; group means against the grand mean, and how clearly they separate"></svg>
+      <div class="ms-bars">
+        <div class="ms-row">
+          <div class="ms-head"><span>Between-group variance <em>(signal)</em></span><b id="av-msb">—</b></div>
+          <div class="ms-track"><div class="ms-fill fill-signal" id="bar-msb"></div></div>
+        </div>
+        <div class="ms-row">
+          <div class="ms-head"><span>Within-group variance <em>(noise)</em></span><b id="av-msw">—</b></div>
+          <div class="ms-track"><div class="ms-fill fill-noise" id="bar-msw"></div></div>
+        </div>
+      </div>
+      <div class="f-readout">
+        <div class="f-spot"><span class="f-lab">F = signal / noise</span><output id="av-f" class="f-num">—</output></div>
+        <div class="f-verdict" id="av-verdict">—</div>
+      </div>
+      <figcaption class="widget-cap" id="av-cap">F near 1 means the groups differ no more than the noise alone would predict. F well above 1 means the gaps are too big to be noise.</figcaption>
+    </figure>
+
+    <p>When F sits near 1, the group averages are no further apart than random scatter would throw them anyway, so there is nothing to report. When F climbs well above 1, the gaps between groups have grown too large to be explained by the wobble inside them, and a real difference becomes the believable story. Same averages, different verdict, decided entirely by the noise.</p>
+  </section>
+
+  <section class="prose" id="fdist">
+    <h2><span class="sec-no">03</span> How big is big enough?</h2>
+    <p>So a large F is the tell. But how large is large enough to call it? That depends on how many groups you compared and how much data you gathered. Two tiny samples can throw up a big F by luck alone; twenty large ones cannot.</p>
+    <p>If every group really shared one mean, F would still not be exactly 1 each time. It would bounce around, following a known curve called the <strong>F-distribution</strong>, whose shape is set by the degrees of freedom, which come from the number of groups and the sample sizes. We keep the top 5% of that curve as the "too big to be luck" zone. Change the study below and watch the bar for what counts as surprising move with it.</p>
+
+    <figure class="widget" id="fd-widget" aria-label="Interactive: the F-distribution and its 5% critical value">
+      <div class="slider-block">
+        <label for="fd-k">Number of groups</label>
+        <input type="range" id="fd-k" min="2" max="8" step="1" value="3" />
+        <div class="slider-vals"><span><output id="fd-k-val">3</output> groups</span></div>
+      </div>
+      <div class="slider-block">
+        <label for="fd-n">Measurements per group</label>
+        <input type="range" id="fd-n" min="3" max="40" step="1" value="12" />
+        <div class="slider-vals">
+          <span><output id="fd-n-val">12</output> each</span>
+          <span>df = <output id="fd-df">2, 33</output></span>
+          <span>needs F &gt; <output id="fd-crit">3.28</output></span>
+        </div>
+      </div>
+      <svg id="fd-svg" class="stat-svg" viewBox="0 0 680 250" role="img" aria-label="The F-distribution with its upper 5% tail shaded, the region large enough to count as a real difference"></svg>
+      <figcaption class="widget-cap" id="fd-cap">The shaded tail is the top 5%. Any F landing there is one that random noise would produce less than one time in twenty.</figcaption>
+    </figure>
+
+    <p>Fewer groups and smaller samples push the critical value up: with little data you demand a bigger F before you believe a difference, because thin evidence is easily faked by chance. Gather more, and the bar comes down. This is the honest bookkeeping that a fistful of separate t-tests threw away.</p>
+  </section>
+
+  <section class="prose" id="close">
+    <h2><span class="sec-no">04</span> So what?</h2>
+    <p>ANOVA answers one narrow question cleanly: is at least one group genuinely different from the rest, or could this all be noise? It does not tell you <em>which</em> group, and it does not tell you by <em>how much</em>. Those are separate follow-ups, and the honest ones carry corrections for exactly the pile-up of tests we started with.</p>
+    <p>Two cautions travel with every F. A significant result is not a big result; it only means the pattern is unlikely to be pure chance, and with enough data even a trivial gap will clear the bar. And a non-significant result is not proof that the groups are the same; it may just mean your noise drowned out a real but modest signal. The statistic weighs signal against noise. Deciding whether the signal <em>matters</em> is still your job.</p>
+    <p>If you would like to see the sums behind the sliders worked through in Python, from the variance decomposition to the F-test, I kept a companion notebook: <a href="https://colab.research.google.com/drive/1kcXFeqVOgSmgRGgMs-gCgDTszSvMNghs" rel="noopener">ANOVA basics, on Google Colab</a>.</p>
+    <p class="kicker">A difference in averages is a rumour. The analysis of variance asks the only question that settles it: loud enough to hear over the noise, or not?</p>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p>An essay from Notes &amp; Tones.</p>
+  <p class="foot-meta">Weigh the signal against the noise. <span aria-hidden="true">⚖️</span></p>
+  <p class="foot-meta"><a href="confidence.html">🎯 Read: Ninety-Five Per Cent Confident?</a> &nbsp;·&nbsp; <a href="../index.html">← All essays</a></p>
+</footer>
+
+<script src="anova.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Drawn by Circles — how a Fourier transform draws any shape with spinning vectors</title>
+<meta name="description" content="Any shape, however wonky, can be drawn by a stack of spinning circles. That is the Fourier transform: it breaks a signal into simple waves, and the same trick behind JPEG, MP3 and MRI can trace a heart or a star. Drag the sliders and watch it draw." />
+<meta property="og:title" content="Drawn by Circles" />
+<meta property="og:description" content="The Fourier transform, made visual: build a square wave from sines, then watch a stack of spinning circles draw any outline you like." />
+<meta property="og:type" content="article" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%80%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="sparkles" aria-hidden="true"></div>
+
+<nav class="topnav">
+  <a href="../index.html" class="topnav-home">← Notes &amp; Tones</a>
+  <a href="rudolph.html">Also: Drawing Rudolph with Maths →</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Notes &amp; Tones · An interactive essay</p>
+    <h1 class="title">Drawn<br /><span class="of">by</span><br />Circles</h1>
+    <p class="dek">Give me a stack of spinning circles, each turning at its own steady speed, and I can draw your signature, a heart, or the outline of a cello. That is a Fourier transform.</p>
+    <div class="fourier-hero" aria-hidden="true">
+      <span class="fh-ring fh-r1"></span>
+      <span class="fh-ring fh-r2"></span>
+      <span class="fh-ring fh-r3"></span>
+      <span class="fh-pen"></span>
+    </div>
+    <p class="scroll-cue">Scroll to begin ↓</p>
+  </div>
+</header>
+
+<main>
+  <section class="prose" id="intro">
+    <p class="lead"><span class="dropcap">A</span> single circle, turning at a constant rate, draws the most boring thing in the world: a circle. Mount a smaller circle on the rim of the first and let it spin faster, and the pen at its edge already traces something stranger, a looping, petalled curve. Keep stacking circles, each smaller and quicker than the last, and there is no shape you cannot draw. A square wave. A treble clef. The coastline of Britain.</p>
+    <p>That is not a party trick; it is one of the deepest ideas in all of applied mathematics. Any signal, any wiggling line, any outline you can draw without lifting the pen, can be rebuilt as a sum of simple round motions. The recipe that tells you exactly which circles to use, how big and how fast, is the <strong>Fourier transform</strong>. It is the reason your photos compress, your music streams, and a hospital scanner can turn radio echoes into a picture of your knee. Let us build it from the ground up, starting with the simplest wiggle there is.</p>
+  </section>
+
+  <section class="prose" id="waves">
+    <h2><span class="sec-no">01</span> A wave made of waves</h2>
+    <p>Begin with sound, because that is where Fourier's idea feels most natural. A pure tone is a sine wave: one frequency, endlessly smooth. Real sounds are not pure, but here is the claim that started everything, made by Joseph Fourier in 1807 and disbelieved by half of Paris: <strong>any repeating wave, however jagged, is just a stack of pure sine waves added together</strong>, each with its own frequency and loudness.</p>
+    <p>Take the hardest case, a square wave, all flat runs and vertical cliffs, seemingly the opposite of a smooth sine. Fourier says even this is only sines in disguise: the fundamental, plus a third as much of a wave three times as fast, a fifth as much at five times, and so on through the odd numbers. Add the first few and you get a lumpy approximation. Add more and the cliffs sharpen. Drag the slider and watch a curve built from nothing but sines lurch towards a square.</p>
+
+    <figure class="widget" id="sq-widget" aria-label="Interactive: building a square wave by adding sine harmonics">
+      <div class="slider-block">
+        <label for="sq-h">How many sine waves are you adding up?</label>
+        <input type="range" id="sq-h" min="1" max="24" step="1" value="3" />
+        <div class="slider-vals">
+          <span><output id="sq-h-val">3</output> harmonics</span>
+          <span>highest frequency ×<output id="sq-top">5</output></span>
+        </div>
+      </div>
+      <svg id="sq-svg" class="stat-svg" viewBox="0 0 680 260" role="img" aria-label="A wavy line built from sine waves, growing closer to a square wave as more are added"></svg>
+      <figcaption class="widget-cap" id="sq-cap">Faint grey: the square wave we are aiming for. Coloured: the sum of sine waves so far. Watch the little overshoot at each cliff.</figcaption>
+    </figure>
+
+    <p>Two things to notice. The approximation gets better everywhere the wave is flat, but a stubborn little spike refuses to leave the corners; it only gets thinner, never shorter, hovering at about nine per cent above the true height however many waves you add. That overshoot has a name, the Gibbs phenomenon, and it is a permanent tax on describing a sharp edge with smooth curves. The recipe of amplitudes, "one of the fundamental, a third of the third harmonic, a fifth of the fifth", is exactly what a Fourier transform hands you.</p>
+
+    <pre class="codeblock" aria-label="Python: building a square wave from sine harmonics"><span class="code-tag">Python</span><code>import numpy as np
+
+x = np.linspace(0, 1, 1000)
+wave = np.zeros_like(x)
+for k in range(1, 2*H, 2):          # odd harmonics: 1, 3, 5, ...
+    wave += (4/np.pi) * np.sin(2*np.pi*k*x) / k</code></pre>
+  </section>
+
+  <section class="prose" id="draw">
+    <h2><span class="sec-no">02</span> A drawing is a signal too</h2>
+    <p>Sound is a one-dimensional signal: loudness changing over time. A drawing seems different, but there is a lovely sleight of hand that makes it the same problem. Walk a pen around the outline of a shape and record its position at every step. Now write each position not as two numbers but as one <em>complex</em> number, the horizontal part as the real bit and the vertical part as the imaginary bit. Suddenly the outline is just a signal again, a single stream of numbers marching in time, and the very same Fourier transform applies.</p>
+
+    <pre class="codeblock" aria-label="Python: turning an outline into a signal and transforming it"><span class="code-tag">Python</span><code># each point on the outline becomes one complex number
+coords = x + 1j * y
+
+# decompose the whole outline into rotating circles
+fft   = np.fft.fft(coords)
+freqs = np.fft.fftfreq(len(coords), d=1/len(coords))
+
+radius = np.abs(fft)  / len(fft)    # how big each circle is
+phase  = np.angle(fft)              # where it starts out
+speed  = freqs                      # how fast it spins</code></pre>
+
+    <p>What comes back is a list of circles. Each number the transform returns describes one circle: how big it is, how fast it turns, and where it starts. Stack them tip to tail, biggest and slowest at the base, and set them spinning. The pen at the very end traces your original shape, exactly. Below, pick a shape and press play. Then drag the slider to add or remove circles, biggest first, and watch how few it takes before the outline is recognisable.</p>
+
+    <figure class="widget" id="ep-widget" aria-label="Interactive: drawing a shape with a stack of rotating circles">
+      <div class="preset-row" role="group" aria-label="Shape to draw">
+        <span class="preset-lab">Shape:</span>
+        <button class="preset shape" data-shape="heart" aria-pressed="true">Heart</button>
+        <button class="preset shape" data-shape="star" aria-pressed="false">Star</button>
+        <button class="preset shape" data-shape="infinity" aria-pressed="false">Infinity</button>
+        <button class="preset shape" data-shape="wave" aria-pressed="false">Sound wave</button>
+      </div>
+      <div class="slider-block">
+        <label for="ep-n">How many circles are doing the drawing?</label>
+        <input type="range" id="ep-n" min="1" max="120" step="1" value="24" />
+        <div class="slider-vals">
+          <span><output id="ep-n-val">24</output> circles</span>
+          <span>out of <output id="ep-max">256</output> available</span>
+        </div>
+      </div>
+      <canvas id="ep-canvas" class="epi-canvas" width="680" height="440" role="img" aria-label="A stack of spinning circles with a pen at the end tracing the chosen outline"></canvas>
+      <div class="stat-controls">
+        <button class="btn-run" id="ep-play">❚❚ Pause</button>
+        <button class="preset" id="ep-restart">↺ Restart the trace</button>
+      </div>
+      <figcaption class="widget-cap" id="ep-cap">The rainbow line is the pen's path. Nested circles are the rotating vectors; the biggest carries the slowest, largest motion.</figcaption>
+    </figure>
+
+    <p>A handful of circles gives you the rough gist, the big lobes and the overall sweep. The fine detail, the sharp point of the star, the crisp notch at the top of the heart, is carried by the small, fast circles at the tip of the stack. This is the whole personality of the Fourier transform in one picture: it sorts a shape into coarse structure and fine structure, slow circles and fast ones, and lets you dial in exactly how much detail you want.</p>
+  </section>
+
+  <section class="prose" id="compress">
+    <h2><span class="sec-no">03</span> Throw away the small circles</h2>
+    <p>That dial is worth more than it looks. Notice what the slider actually does: it keeps the biggest circles and discards the smallest. When you draw a passable heart with twenty circles instead of two hundred and fifty-six, you have just described the same shape with a tenth of the numbers. You have <strong>compressed</strong> it, and the only thing you lost was detail so fine you could barely see it.</p>
+
+    <pre class="codeblock" aria-label="Python: reconstructing a shape from only its biggest components"><span class="code-tag">Python</span><code>def reconstruct(fft, n):
+    keep = np.zeros_like(fft)
+    idx  = np.argsort(-np.abs(fft))[:n]   # the n biggest circles
+    keep[idx] = fft[idx]
+    return np.fft.ifft(keep)              # back to an outline</code></pre>
+
+    <p>This is not a toy analogy; it is very nearly how real compression works. A JPEG chops your photo into little tiles and keeps only the strongest few frequencies of each, throwing away the subtle ones your eye would never miss. MP3 and its cousins do the same to sound, discarding frequencies you cannot hear. Both lean on close relatives of the transform you have been dragging. "Keep the big circles, bin the small ones" is, more or less, the entire idea of lossy compression.</p>
+    <p>The same move cleans up noisy data. Random noise tends to live in the small, fast components; strip those away and rebuild from the big slow ones, and the signal underneath comes back smoother. Turn the slider on the drawing above down low and you can watch it happen: the jitter goes first, the shape survives.</p>
+  </section>
+
+  <section class="prose" id="close">
+    <h2><span class="sec-no">04</span> So what?</h2>
+    <p>The Fourier transform is one of those rare ideas that stops being a topic and becomes a lens. Once you have it, you start seeing everything as a recipe of frequencies. A chord is a short list of loud circles. An image is a two-dimensional field of them. An earthquake, a stock chart, the brightness of a distant star, all yield their secrets to the same question: what simple, steady rhythms, added together, would produce this mess?</p>
+    <p>And it earns its keep everywhere. The fast algorithm that computes it, the FFT, runs in a whisker over linear time and quietly powers your wifi, your noise-cancelling headphones, and the radio in your pocket. A hospital MRI does not photograph you at all; it collects raw measurements in frequency space and runs an inverse transform to conjure the image. The engineer analysing a bridge's vibrations, the astronomer hunting a planet's tug on its sun, the app tuning your guitar, are all, underneath, asking for the list of circles.</p>
+    <p>If you would like to see this run on a real photograph rather than tidy parametric shapes, its companion code-along, <a href="rudolph.html">Drawing Rudolph with Maths</a>, works the whole pipeline in Python: a festive project that turns a reindeer into a signal and draws it back.</p>
+    <p class="kicker">Every shape is a chord you can see, and every sound is a drawing you can hear. The Fourier transform is only the dictionary between them.</p>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p>An essay from Notes &amp; Tones.</p>
+  <p class="foot-meta">Stack the circles. Set them spinning. Watch the shape appear. <span aria-hidden="true">🌀</span></p>
+  <p class="foot-meta"><a href="rudolph.html">🎄 Read: Drawing Rudolph with Maths</a> &nbsp;·&nbsp; <a href="../index.html">← All essays</a></p>
+</footer>
+
+<script src="fourier.js"></script>
+</body>
+</html>

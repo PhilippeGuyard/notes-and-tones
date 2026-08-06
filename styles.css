@@ -994,3 +994,113 @@ circle.ci-miss { fill: var(--a); }
 @media (max-width: 560px) {
   .stat-readouts { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   ANOVA PAGE — "Signal or Noise?"
+   signal / between = teal (--B); noise / within = grey;
+   groups = rose / teal / periwinkle
+   ============================================================ */
+
+/* -- hero motif: three little scattered columns -- */
+.anova-hero { display: flex; gap: 1.4rem; justify-content: center; align-items: flex-end; height: 96px; margin: 2.6rem auto 1.2rem; animation: rise .9s .2s cubic-bezier(.2,.7,.2,1) both; }
+.ah-col { position: relative; width: 30px; height: 100%; }
+.ah-col i { position: absolute; left: 50%; width: 9px; height: 9px; border-radius: 50%; transform: translateX(-50%); }
+.ah-col:nth-child(1) i { background: var(--a); }
+.ah-col:nth-child(2) i { background: var(--B); }
+.ah-col:nth-child(3) i { background: var(--A); }
+.ah-col:nth-child(1) i:nth-child(1){top:52%}.ah-col:nth-child(1) i:nth-child(2){top:66%}.ah-col:nth-child(1) i:nth-child(3){top:78%}.ah-col:nth-child(1) i:nth-child(4){top:60%}
+.ah-col:nth-child(2) i:nth-child(1){top:30%}.ah-col:nth-child(2) i:nth-child(2){top:44%}.ah-col:nth-child(2) i:nth-child(3){top:38%}.ah-col:nth-child(2) i:nth-child(4){top:52%}
+.ah-col:nth-child(3) i:nth-child(1){top:8%}.ah-col:nth-child(3) i:nth-child(2){top:22%}.ah-col:nth-child(3) i:nth-child(3){top:16%}.ah-col:nth-child(3) i:nth-child(4){top:30%}
+
+/* -- widget 1: pairwise-test grid -- */
+.mc-cell { transition: fill .15s; }
+.mc-ok { fill: rgba(44,27,61,.09); }
+.mc-fp { fill: var(--a); }
+.box-miss { border-color: rgba(232,98,155,.4); }
+.box-miss .stat-big { color: var(--a); }
+
+/* -- widget 2: signal vs noise sandbox -- */
+.grand-line { stroke: var(--ink-soft); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.av-dot { opacity: .8; }
+.av-mean { stroke-width: 3.5; stroke-linecap: round; }
+
+.ms-bars { margin: 1.6rem 0 .6rem; display: grid; gap: 1rem; }
+.ms-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: .4rem; }
+.ms-head span { font-size: .96rem; color: var(--ink-soft); }
+.ms-head em { font-style: italic; color: var(--ink); }
+.ms-head b { font-family: var(--mono); font-weight: 700; font-size: 1rem; }
+.ms-track { height: 22px; background: rgba(44,27,61,.07); border-radius: 999px; overflow: hidden; }
+.ms-fill { height: 100%; width: 0; border-radius: 999px; transition: width .25s cubic-bezier(.3,.8,.3,1); }
+.fill-signal { background: var(--B); }
+.fill-noise { background: #b9ac97; }
+
+.f-readout { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1.5px solid var(--line); }
+.f-spot { display: flex; align-items: baseline; gap: .7rem; }
+.f-lab { font-family: var(--mono); font-size: .78rem; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-soft); }
+.f-num { font-family: var(--display); font-weight: 900; font-size: clamp(2.4rem, 8vw, 3.4rem); line-height: 1;
+  background: var(--rainbow); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.f-verdict { font-family: var(--mono); font-size: .86rem; padding: .4rem .9rem; border-radius: 999px; }
+.verdict-signal { background: rgba(52,183,154,.16); color: #1f7a68; }
+.verdict-noise { background: rgba(44,27,61,.06); color: var(--ink-soft); }
+
+/* -- widget 3: F-distribution -- */
+.fd-curve { fill: none; stroke: var(--ink); stroke-width: 2.4; stroke-linejoin: round; }
+.fd-tail { fill: rgba(232,98,155,.28); stroke: none; }
+.fd-crit { stroke: var(--a); stroke-width: 1.8; stroke-dasharray: 3 3; }
+.fd-crit-lab { font-family: var(--mono); font-size: 12px; font-weight: 700; fill: var(--a); }
+
+@media (max-width: 560px) {
+  .anova-hero { gap: 1rem; }
+}
+
+/* ============================================================
+   DRAWN BY CIRCLES (FOURIER) PAGE
+   epicycles + code blocks; rose pen, periwinkle vectors,
+   mint-teal leading trace
+   ============================================================ */
+
+/* -- hero motif: nested spinning rings with a pen -- */
+.fourier-hero { position: relative; width: 150px; height: 150px; margin: 2.6rem auto 1.2rem; animation: rise .9s .2s cubic-bezier(.2,.7,.2,1) both; }
+.fh-ring { position: absolute; border-radius: 50%; border: 1.5px dashed; top: 50%; left: 50%; }
+.fh-r1 { width: 150px; height: 150px; margin: -75px 0 0 -75px; border-color: rgba(111,123,230,.5); animation: fh-spin 9s linear infinite; }
+.fh-r2 { width: 84px; height: 84px; margin: -42px 0 0 -8px; border-color: rgba(232,98,155,.55); animation: fh-spin 4s linear infinite; }
+.fh-r3 { width: 40px; height: 40px; margin: -20px 0 0 20px; border-color: rgba(52,183,154,.6); animation: fh-spin 1.6s linear infinite; }
+.fh-pen { position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--a); top: 50%; left: 50%; margin: -4.5px 0 0 34px; box-shadow: 0 0 0 4px rgba(232,98,155,.18); animation: fh-spin 1.6s linear infinite; transform-origin: -14px 4.5px; }
+@keyframes fh-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .fh-r1, .fh-r2, .fh-r3, .fh-pen { animation: none; }
+}
+
+/* -- widget 1: square wave from harmonics -- */
+.sq-target { fill: none; stroke: var(--ink-soft); stroke-width: 1.4; stroke-dasharray: 4 4; opacity: .35; stroke-linejoin: round; }
+.sq-sum { fill: none; stroke: var(--A); stroke-width: 2.6; stroke-linejoin: round; stroke-linecap: round; }
+
+/* -- widget 2: epicycle canvas -- */
+.epi-canvas { width: 100%; height: auto; display: block; margin: .4rem 0 1rem;
+  background: rgba(255,255,255,.35); border: 1.5px solid var(--line); border-radius: 12px; }
+
+/* -- shared: Python code blocks -- */
+.codeblock { position: relative; font-family: var(--mono); font-size: .82rem; line-height: 1.65;
+  background: rgba(44,27,61,.045); border-left: 3px solid transparent; border-image: var(--rainbow) 1;
+  border-radius: 0 10px 10px 0; padding: 1.9rem 1.2rem 1.15rem; margin: 1.6rem 0; overflow-x: auto;
+  color: var(--ink); }
+.codeblock code { font-family: var(--mono); white-space: pre; display: block; }
+.code-tag { position: absolute; top: .5rem; left: 1.2rem; font-family: var(--mono); font-size: .64rem;
+  font-weight: 700; text-transform: uppercase; letter-spacing: .16em; color: var(--ink-soft); }
+
+/* -- project write-up: figures + links (rudolph page) -- */
+.figure-card { margin: 1.9rem 0; }
+.proj-img { width: 100%; height: auto; display: block; border-radius: 12px;
+  border: 1.5px solid var(--line); background: var(--paper); }
+.proj-links { display: flex; flex-wrap: wrap; gap: .7rem 1.8rem; margin-top: 1.8rem;
+  font-family: var(--mono); font-size: .9rem; }
+.proj-links a { color: var(--A); text-decoration: none; border-bottom: 1.5px solid transparent; }
+.proj-links a:hover { border-bottom-color: var(--A); }
+.prose code { font-family: var(--mono); font-size: .86em; background: rgba(44,27,61,.06);
+  padding: .08em .35em; border-radius: 4px; }
+.codeblock code { background: none; padding: 0; }
+
+@media (max-width: 560px) {
+  .fourier-hero { width: 120px; height: 120px; }
+  .codeblock { font-size: .74rem; }
+}

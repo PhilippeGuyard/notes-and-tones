@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Drawing Rudolph with Maths — a festive FFT project for codebar</title>
+<meta name="description" content="A Christmas coding project written for codebar: turn a photo into a line drawing with OpenCV edge detection, then decompose and rebuild it with the Fast Fourier Transform in Python. Full code, real output, and a link to the notebook." />
+<meta property="og:title" content="Drawing Rudolph with Maths" />
+<meta property="og:description" content="A festive codebar project: edge detection plus the Fast Fourier Transform, in Python, turning a reindeer into a signal and back again." />
+<meta property="og:type" content="article" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%84%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="sparkles" aria-hidden="true"></div>
+
+<nav class="topnav">
+  <a href="../index.html" class="topnav-home">← Notes &amp; Tones</a>
+  <a href="fourier.html">Also: Drawn by Circles →</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Notes &amp; Tones · A festive code-along</p>
+    <h1 class="title">Drawing<br /><span class="of">Rudolph</span><br />with Maths</h1>
+    <p class="dek">A little Christmas project, first written for a codebar workshop: hand a computer a photo of a reindeer, and let edge detection and the Fourier transform turn it into a line drawing that rebuilds itself.</p>
+    <p class="scroll-cue">Scroll to begin ↓</p>
+  </div>
+</header>
+
+<main>
+  <section class="prose" id="intro">
+    <p class="lead"><span class="dropcap">I</span>n the spirit of the season, here is a project that sits happily between art and science. We will take an ordinary festive picture, reduce it to a clean line drawing, and then pull that drawing apart into its ingredients with the <strong>Fast Fourier Transform</strong> before putting it back together again. It began life as a workshop for <a href="https://codebar.io/" rel="noopener">codebar</a>, whose sessions help people from underrepresented groups into coding, so it is written to be followed along, not just admired.</p>
+    <p>Two techniques do the heavy lifting: <strong>edge detection</strong> with OpenCV, to turn a photo into a line, and the <strong>FFT</strong> with NumPy, to take that line apart and rebuild it from a chosen number of pieces. If you would like the intuition for why any drawing can be built from spinning circles first, its companion piece, <a href="fourier.html">Drawn by Circles</a>, is the place to start. This page is the hands-on version, with the actual code.</p>
+    <p>Everything here lives in a small repository, <a href="https://github.com/PhilippeGuyard/rudolph" rel="noopener">github.com/PhilippeGuyard/rudolph</a>, with a fuller walkthrough in an accompanying <a href="https://colab.research.google.com/drive/1J0PDOwg7EVWOZkXc7qUab7fnZijvnO7i?usp=sharing" rel="noopener">Google Colab notebook</a>.</p>
+  </section>
+
+  <section class="prose" id="fft">
+    <h2><span class="sec-no">01</span> What the Fourier transform actually does</h2>
+    <p>The Fast Fourier Transform is a kind of mathematical magician. It takes a complicated signal and breaks it into simpler building blocks. Imagine listening to an orchestra and being able to isolate each instrument from the whole symphony; that is essentially what the FFT does, but with signals instead of music. It takes a complex waveform and separates it into its basic frequencies, telling you how much of each frequency is present in the original.</p>
+    <p>In everyday terms, it reveals the "ingredients" that make up a complex "dish" of data. Whether the data is a sound wave, an image, or anything else, the transform lets you see the individual components that are usually blended together. Each one comes back as a complex number: the size of that number is the amplitude of a wave, its angle is the wave's phase, and its position in the result tells you the frequency. Combine those waves in the right amounts, phases and frequencies, and you rebuild the original signal exactly. Better still, the algorithm does all this in O(n log n) time, which is what makes it practical on real data.</p>
+    <p>The plan for the rest of this page: turn a picture into a line, treat that line as a signal, transform it, and then rebuild it from a growing handful of components to watch the drawing reappear.</p>
+  </section>
+
+  <section class="prose" id="edges">
+    <h2><span class="sec-no">02</span> From photo to line drawing</h2>
+    <p>First we need a line. A photograph is a dense grid of coloured pixels, far too much to treat as a single tidy signal, so we reduce it to just its outlines using OpenCV's Canny edge detector. We download an image, convert it to a NumPy array, decode it, and detect edges.</p>
+
+    <pre class="codeblock" aria-label="Python: load an image and detect its edges"><span class="code-tag">Python · main.py</span><code>import cv2
+import numpy as np
+import urllib.request
+
+def load_and_process_image(url):
+    arr = np.asarray(
+        bytearray(urllib.request.urlopen(url).read()), dtype=np.uint8
+    )
+    image = cv2.imdecode(arr, -1)
+    edges = cv2.Canny(image, 100, 200)
+    return edges</code></pre>
+
+    <p>Our festive test subject is a cheerful cartoon reindeer. After edge detection, the fills and shading fall away and only the outlines remain: antlers, ears, that unmistakable nose, the loop of a stethoscope.</p>
+
+    <figure class="figure-card">
+      <img src="rudolph/assets/original.png" alt="The original cartoon reindeer photograph, in colour" class="proj-img" loading="lazy" />
+      <figcaption class="widget-cap">The starting image, a cartoon reindeer. ("Doctor reindeer" by Snowflakes, released under CC0, via Wikimedia Commons.)</figcaption>
+    </figure>
+  </section>
+
+  <section class="prose" id="transform">
+    <h2><span class="sec-no">03</span> Turn the line into a signal, and back</h2>
+    <p>Here is the clever step. Every lit edge pixel has an x and a y coordinate. We fold those two numbers into one <em>complex</em> number, x as the real part and y as the imaginary part, so the whole drawing becomes a single stream of complex numbers: a signal the FFT can chew on.</p>
+    <p>To rebuild the drawing from only part of that signal, we transform it, keep just the first and last <code>n_components</code> coefficients, zero out the rest, and run the inverse transform. Keeping few coefficients gives a rough sketch; keeping many restores the detail.</p>
+
+    <pre class="codeblock" aria-label="Python: FFT reconstruction from a chosen number of components"><span class="code-tag">Python · main.py</span><code>def perform_fft_transformation(coords, n_components, total_length):
+    fft_result = np.fft.fft(coords)
+    fft_reconstruct = np.zeros_like(fft_result)
+    fft_reconstruct[:n_components]  = fft_result[:n_components]
+    fft_reconstruct[-n_components:] = fft_result[-n_components:]
+    reconstructed_coords = np.fft.ifft(fft_reconstruct)
+    return reconstructed_coords
+
+# fold each edge point into one complex number: x + iy
+y, x  = np.where(edges == 255)
+coords = x + 1j * y</code></pre>
+
+    <p>Now reconstruct the reindeer with a growing number of components and watch it reappear. There is a wrinkle worth knowing: the edge pixels come out in the order NumPy scans the image, row by row, not in the order you would trace them with a pen. So a small number of components does not give a neat, simplified reindeer; it gives an abstract vertical squiggle, the transform's best coarse guess at that scan-ordered signal. Only as the components pile up does the familiar shape resolve out of the noise.</p>
+
+    <figure class="figure-card">
+      <img src="rudolph/assets/reconstructions.png" alt="Six panels: the edge drawing, then reconstructions using 64, 1000, 3000, 6400 and all 12865 FFT components, with the reindeer gradually reappearing" class="proj-img" loading="lazy" />
+      <figcaption class="widget-cap">Top left: the edges we are rebuilding (this drawing has 12,865 lit pixels). The rest use more and more of the transform, from a coarse 64-component sweep up to the full set, where the reindeer is perfectly restored.</figcaption>
+    </figure>
+  </section>
+
+  <section class="prose" id="gif">
+    <h2><span class="sec-no">04</span> Watch it draw itself</h2>
+    <p>Strung together as an animation, one frame per step, the whole process becomes a little machine drawing Rudolph in front of you: from a single wandering line, through a scribbled ghost, to the finished reindeer. Each frame simply adds a few more Fourier components than the last.</p>
+
+    <figure class="figure-card">
+      <img src="rudolph/assets/animated_from_fft.gif" alt="Animation: the reindeer drawing builds up from a simple line to the full outline as more Fourier components are added" class="proj-img" loading="lazy" />
+      <figcaption class="widget-cap">The reconstruction, frame by frame, as the number of Fourier components climbs from a handful to the full set. (Animated; give it a moment to loop.)</figcaption>
+    </figure>
+
+    <pre class="codeblock" aria-label="Python: assembling the frames into a GIF"><span class="code-tag">Python · main.py</span><code>import imageio
+
+def generate_gif_images(n_steps, fft_length, coords, dimensions):
+    gif_images = []
+    for i in range(1, n_steps + 1):
+        n_components = i * (fft_length // n_steps)
+        reconstructed = perform_fft_transformation(
+            coords, n_components, fft_length
+        )
+        x_r = np.real(reconstructed).astype(int)
+        y_r = np.imag(reconstructed).astype(int)
+        x_r, y_r = filter_valid_coords(x_r, y_r, dimensions)
+        frame = np.zeros(dimensions, dtype=np.uint8)
+        frame[y_r, x_r] = 255
+        gif_images.append(frame)
+    return gif_images
+
+imageio.mimsave("animated_from_fft.gif", gif_images, duration=0.5)</code></pre>
+  </section>
+
+  <section class="prose" id="close">
+    <h2><span class="sec-no">05</span> Have a go</h2>
+    <p>That is the whole idea: a photo becomes a line, the line becomes a signal, the signal becomes a list of frequencies, and any slice of that list rebuilds a version of the drawing. Swap in your own picture, change the number of components, and see what falls out. The repository also throws in a couple of bonus tracks, the same trick done with Principal Component Analysis instead of the FFT, and the gif-making helper used above.</p>
+    <p class="kicker">Merry Christmas, and happy transforming. The maths that streams your films and scans your bones will just as cheerfully draw you a reindeer.</p>
+    <p class="proj-links">
+      <a href="https://github.com/PhilippeGuyard/rudolph" rel="noopener">→ The code on GitHub</a>
+      <a href="https://colab.research.google.com/drive/1J0PDOwg7EVWOZkXc7qUab7fnZijvnO7i?usp=sharing" rel="noopener">→ The full Colab notebook</a>
+      <a href="https://codebar.io/" rel="noopener">→ About codebar</a>
+    </p>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p>An essay from Notes &amp; Tones.</p>
+  <p class="foot-meta">A photo, a signal, a reindeer, and back again. <span aria-hidden="true">🎄</span></p>
+  <p class="foot-meta"><a href="fourier.html">🌀 Read: Drawn by Circles</a> &nbsp;·&nbsp; <a href="../index.html">← All essays</a></p>
+</footer>
+
+</body>
+</html>
