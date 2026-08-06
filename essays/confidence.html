@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>What "95% Confident" Really Means — confidence intervals, and the thing everyone gets wrong</title>
+<meta name="description" content="A poll is '95% confident' the answer sits in a range. Almost everyone reads that wrong. What confidence intervals actually promise, built from sampling, the central limit theorem, and the t-distribution, with widgets you can run." />
+<meta property="og:title" content="What 95% Confident Really Means" />
+<meta property="og:description" content="Confidence intervals, the central limit theorem, and the interpretation nearly everyone gets wrong. Run the simulations yourself." />
+<meta property="og:type" content="article" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AF%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="sparkles" aria-hidden="true"></div>
+
+<nav class="topnav">
+  <a href="../index.html" class="topnav-home">← Notes &amp; Tones</a>
+  <a href="monty-hall.html">Also: To Switch, or Not to Switch? →</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Notes &amp; Tones · An interactive essay</p>
+    <h1 class="title">Ninety-Five<br /><span class="of">per cent</span><br />confident?</h1>
+    <p class="dek">A poll says the answer is 52%, give or take three, nineteen times out of twenty. You think you know what that promises. You almost certainly don't.</p>
+    <div class="ci-hero" aria-hidden="true"></div>
+    <p class="scroll-cue">Scroll to begin ↓</p>
+  </div>
+</header>
+
+<main>
+  <section class="prose" id="intro">
+    <p class="lead"><span class="dropcap">A</span> poll reports that 52% back the policy, give or take three points, nineteen times out of twenty. A trial finds a drug lowers blood pressure by 8 units, and is "95% confident" the true effect lies between 5 and 11. We nod along. Then, quietly, nearly everyone draws the same conclusion: that there is a 95% chance the real answer sits inside that range.</p>
+    <p>That is not what the number says. The gap between what we hear and what was actually promised is the whole subject of this essay. To close it, we have to start one step back, with an awkward fact: we almost never get to measure the thing we actually care about.</p>
+  </section>
+
+  <section class="prose" id="sampling">
+    <h2><span class="sec-no">01</span> One sample, many possible samples</h2>
+    <p>Say you want the average height of everyone in a country, or the true support for a policy across millions of voters. That true figure is the <strong>population mean</strong>, and you will essentially never see it. Measuring everyone is too slow, too dear, or simply impossible. So you take a <strong>sample</strong>, a manageable handful, and use its mean as a stand-in.</p>
+    <p>The catch is that your sample is one of countless samples you might have drawn, and each one gives a slightly different answer. That wobble is called <strong>sampling error</strong>, and at first it sounds like it should sink the whole enterprise. It doesn't, because the wobble is not chaos. It has a shape.</p>
+    <p>Below, draw samples of size <em>n</em> from a population and watch where their means land. Each draw drops one dot onto the pile. Change the population's shape, change the sample size, and keep drawing.</p>
+
+    <figure class="widget" id="clt-widget" aria-label="Interactive: the sampling distribution of the mean">
+      <div class="preset-row" role="group" aria-label="Population shape">
+        <span class="preset-lab">Population:</span>
+        <button class="preset pop" data-pop="normal" aria-pressed="true">Normal</button>
+        <button class="preset pop" data-pop="skewed" aria-pressed="false">Skewed</button>
+        <button class="preset pop" data-pop="bimodal" aria-pressed="false">Two humps</button>
+      </div>
+      <div class="slider-block">
+        <label for="clt-n">Sample size <em>n</em></label>
+        <input type="range" id="clt-n" min="2" max="40" step="1" value="5" />
+        <div class="slider-vals">
+          <span><output id="clt-n-val">5</output> per sample</span>
+          <span>standard error = σ/√n = <output id="clt-se">4.47</output></span>
+          <span><output id="clt-count">0</output> samples drawn</span>
+        </div>
+      </div>
+      <svg id="clt-svg" class="stat-svg" viewBox="0 0 680 240" role="img" aria-label="Histogram of sample means piling into a bell curve centred on the true population mean"></svg>
+      <div class="stat-controls">
+        <button class="btn-run" id="clt-draw1">Draw a sample</button>
+        <button class="btn-run" id="clt-draw1k">Draw 1,000</button>
+        <button class="preset" id="clt-reset">↺ Clear</button>
+      </div>
+      <figcaption class="widget-cap" id="clt-cap">The pale curve is the population you are sampling from. The bars are where your sample means land.</figcaption>
+    </figure>
+
+    <p>Two things happen every time, whatever population you pick. The sample means pile up into a <strong>bell</strong>, centred on the true population mean, even when the population itself is lopsided or has two humps. And the bell is <strong>narrower for larger samples</strong>. This is the central limit theorem, and the width of that bell has a name and a formula: the <strong>standard error</strong>, equal to the population's standard deviation divided by the square root of the sample size. Bigger samples, tighter estimates, but only as the square root, so to halve your error you must quadruple your sample.</p>
+  </section>
+
+  <section class="prose" id="confidence">
+    <h2><span class="sec-no">02</span> What "95% confident" really means</h2>
+    <p>That predictable bell is what lets us turn a single sample into an interval. The recipe is simple: take your sample mean and reach out a fixed number of standard errors on each side, about 1.96 of them for 95%. The interval you get is built so that, across all the samples you might have drawn, <strong>95% of the intervals it produces will contain the true mean</strong>.</p>
+    <p>Read that carefully, because it is the crux. The 95% is a property of the <em>procedure</em>, of the long run of intervals, not of any single interval you happen to hold. Watch the difference below. The gold line is the true mean, fixed and unmoving. Each vertical bar is one experiment's 95% interval. The blue ones catch the line; the red ones miss.</p>
+
+    <figure class="widget" id="ci-widget" aria-label="Interactive: many confidence intervals and how often they cover the true mean">
+      <div class="preset-row" role="group" aria-label="Confidence level">
+        <span class="preset-lab">Confidence:</span>
+        <button class="preset cl" data-cl="90" aria-pressed="false">90%</button>
+        <button class="preset cl" data-cl="95" aria-pressed="true">95%</button>
+        <button class="preset cl" data-cl="99" aria-pressed="false">99%</button>
+      </div>
+      <div class="slider-block">
+        <label for="ci-n">Sample size <em>n</em></label>
+        <input type="range" id="ci-n" min="5" max="60" step="1" value="30" />
+        <div class="slider-vals"><span><output id="ci-n-val">30</output> per sample</span></div>
+      </div>
+      <svg id="ci-svg" class="stat-svg" viewBox="0 0 680 300" role="img" aria-label="Vertical confidence intervals, most crossing the true mean line in blue, a few missing in red"></svg>
+      <div class="stat-readouts">
+        <div class="stat-box box-cover">
+          <span class="stat-lab">Intervals covering the true mean</span>
+          <div class="stat-big"><output id="ci-cover-pct">–</output></div>
+          <span class="stat-sub" id="ci-cover-frac">0 / 0</span>
+        </div>
+        <div class="stat-box box-target">
+          <span class="stat-lab">What the recipe promises</span>
+          <div class="stat-big"><output id="ci-target">95%</output></div>
+          <span class="stat-sub">over the long run</span>
+        </div>
+      </div>
+      <div class="stat-controls">
+        <button class="btn-run" id="ci-run">Run 24 experiments</button>
+        <button class="preset" id="ci-reset">↺ Clear</button>
+      </div>
+      <figcaption class="widget-cap" id="ci-cap">Keep running. The share of blue intervals should hover around the confidence level you chose.</figcaption>
+    </figure>
+
+    <p>So for the one interval you actually calculated from your one real sample, the true mean is either inside it or it is not. There is no "95% chance" about that single interval; the coin has already been flipped, you just can't see the result. What you can say is that it came from a method that lands on the truth 95% of the time. Push the confidence up to 99% and the intervals grow wider to keep their promise; drop it to 90% and they tighten, but let the truth slip more often.</p>
+  </section>
+
+  <section class="prose" id="tdist">
+    <h2><span class="sec-no">03</span> The catch: you never know σ</h2>
+    <p>There is a quiet cheat in all of this. The standard error is the population's standard deviation over the square root of <em>n</em>, but the population's standard deviation is one more thing you almost never know. So you estimate it too, from the very same sample. Estimating your yardstick with the same data you are measuring adds a second layer of uncertainty, and for small samples that layer is not negligible.</p>
+    <p>The fix, worked out by William Gosset writing under the pen name "Student", is to stop using the normal curve and use a slightly heavier-tailed one: the <strong>t-distribution</strong>, with <em>n</em> minus one degrees of freedom. Shrink the sample below and watch the reference curve fatten at the tails, dragging the 95% cut-off above the familiar 1.96 and widening your interval to pay for what you don't know.</p>
+
+    <figure class="widget" id="t-widget" aria-label="Interactive: the t-distribution against the normal">
+      <div class="slider-block">
+        <label for="t-n">Sample size <em>n</em></label>
+        <input type="range" id="t-n" min="2" max="40" step="1" value="4" />
+        <div class="slider-vals">
+          <span><output id="t-n-val">4</output> per sample</span>
+          <span>degrees of freedom = <output id="t-df">3</output></span>
+          <span>95% needs ±<output id="t-crit">3.18</output> SE</span>
+        </div>
+      </div>
+      <svg id="t-svg" class="stat-svg" viewBox="0 0 680 260" role="img" aria-label="The t-distribution, with heavier tails than the normal curve for small samples"></svg>
+      <figcaption class="widget-cap" id="t-cap">Dashed: the normal curve you would use if you knew σ. Solid: the t-curve you must use because you don't.</figcaption>
+    </figure>
+
+    <p>For a small study the penalty is steep: with five observations the 95% interval reaches out not 1.96 but about 2.78 standard errors, roughly 40% wider. As the sample grows the extra uncertainty fades, the t-curve settles back onto the normal, and past about thirty observations the two are practically the same. This is why so much introductory statistics quietly gets away with 1.96: most textbook samples are large enough that the difference stops mattering.</p>
+  </section>
+
+  <section class="prose" id="close">
+    <h2><span class="sec-no">04</span> So what?</h2>
+    <p>Hold on to one sentence and you will read intervals correctly for the rest of your life: a confidence interval describes the reliability of the <em>method</em>, not the probability of your particular guess. The 95% lives in the long run of hypothetical repeats, not in the single range printed on the page.</p>
+    <p>From that, three habits follow. Treat "give or take three points" as the real headline, not the fine print, because it is the part that says how much to trust the rest. Don't be scandalised when a 95% interval misses; one in twenty is supposed to, and a run of studies where none ever missed would be the genuinely suspicious thing. And when an estimate looks too vague to be useful, remember the square root: the honest way to a tighter answer is almost always a bigger sample, four times the data for half the width.</p>
+    <p class="kicker">A confidence interval is a promise about the net, not the fish. It tells you how often you catch the truth, never whether this cast was the one that did.</p>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p>An essay from Notes &amp; Tones.</p>
+  <p class="foot-meta">Draw the samples. Run the intervals. Watch the net. <span aria-hidden="true">🎯</span></p>
+  <p class="foot-meta"><a href="monty-hall.html">🚪 Read: To Switch, or Not to Switch?</a> &nbsp;·&nbsp; <a href="../index.html">← All essays</a></p>
+</footer>
+
+<script src="confidence.js"></script>
+</body>
+</html>

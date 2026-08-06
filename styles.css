@@ -921,3 +921,76 @@ input[type="range"]::-moz-range-thumb {
   .scoreboard, .sim-readouts, .nd-readout, .sim-controls { }
   .world { flex-direction: column; align-items: flex-start; }
 }
+
+/* ============================================================
+   CONFIDENCE INTERVALS PAGE — shared palette, page pieces
+   cover / normal = periwinkle (--A); miss = rose (--a);
+   bars = mint-teal (--B); true mean = marigold (--b)
+   ============================================================ */
+
+/* -- hero motif: a little interval catching a mark -- */
+.ci-hero {
+  position: relative;
+  width: 220px; height: 60px;
+  margin: 2.6rem auto 1.2rem;
+  animation: rise .9s .2s cubic-bezier(.2,.7,.2,1) both;
+}
+.ci-hero::before {
+  content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 3px;
+  transform: translateY(-50%);
+  background: var(--A);
+  border-radius: 2px;
+}
+.ci-hero::after {
+  content: ""; position: absolute; top: 50%; left: 50%;
+  width: 16px; height: 16px; border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--b);
+  box-shadow: 0 0 0 5px rgba(240,166,58,.25), var(--shadow);
+}
+
+/* -- shared chart canvas -- */
+.stat-svg { width: 100%; height: auto; display: block; overflow: visible; margin: .4rem 0 1rem; }
+.stat-axis { stroke: var(--line); stroke-width: 1.5; }
+.stat-tick { font-family: var(--mono); font-size: 11px; fill: var(--ink-soft); }
+.mu-line { stroke: var(--b); stroke-width: 2; stroke-dasharray: 4 4; }
+
+/* -- widget 1: sampling distribution -- */
+.pop-curve { fill: none; stroke: rgba(44,27,61,.28); stroke-width: 1.6; stroke-dasharray: 3 3; }
+.hbar { fill: var(--B); opacity: .72; }
+.theory-curve { fill: none; stroke: var(--ink); stroke-width: 2.2; stroke-linejoin: round; }
+
+.stat-controls { display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; margin-top: .4rem; }
+
+/* -- widget 2: the CI dance -- */
+.ci-mu { stroke: var(--b); stroke-width: 2; }
+.ci { stroke-width: 2.2; stroke-linecap: round; }
+.ci-cover { stroke: var(--A); }
+.ci-miss { stroke: var(--a); }
+.ci-dot { stroke: none; }
+circle.ci-cover { fill: var(--A); }
+circle.ci-miss { fill: var(--a); }
+
+.stat-readouts { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.4rem 0; }
+.stat-box {
+  text-align: center; padding: 1.1rem;
+  border-radius: 14px; border: 1.5px solid var(--line);
+  background: rgba(255,255,255,.5);
+}
+.stat-lab { display: block; font-family: var(--mono); font-size: .74rem; text-transform: uppercase; letter-spacing: .09em; color: var(--ink-soft); line-height: 1.3; }
+.stat-big { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 7vw, 3rem); line-height: 1.05; margin: .3rem 0 .1rem; }
+.stat-sub { font-family: var(--mono); font-size: .74rem; color: var(--ink-soft); }
+.box-cover { border-color: rgba(111,123,230,.4); }
+.box-cover .stat-big { color: var(--A); }
+.box-target { border-color: rgba(240,166,58,.45); }
+.box-target .stat-big { color: var(--b); }
+
+/* -- widget 3: t vs normal -- */
+.t-normal { fill: none; stroke: var(--ink-soft); stroke-width: 2; stroke-dasharray: 5 4; }
+.t-curve { fill: none; stroke: var(--A); stroke-width: 2.6; stroke-linejoin: round; }
+.t-crit-line { stroke: var(--A); stroke-width: 1.4; stroke-dasharray: 2 3; }
+.t-ref-line { stroke: var(--ink-soft); stroke-width: 1; stroke-dasharray: 2 3; opacity: .5; }
+
+@media (max-width: 560px) {
+  .stat-readouts { grid-template-columns: 1fr; }
+}
