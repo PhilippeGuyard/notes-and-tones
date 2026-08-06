@@ -1,0 +1,13 @@
+# python tooling (tools/immigration)
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# regenerable download cache for the immigration data pipeline
+tools/immigration/data/raw/
+
+# os / editor
+.DS_Store
+
+# secrets
+.env

@@ -13,7 +13,10 @@ styles.css          Shared, site-wide styles (all pages link to this)
 essays/
   unicorns.html     The Genetics of Unicorns   + unicorns.js
   ancestry.html     How Much Italian Are You?   + ancestry.js
+  immigration/      Perception vs Reality — d3 scrollytelling data essay
   template.html     Skeleton to copy when adding a new essay
+tools/
+  immigration/      Data pipeline + research for the immigration essay (not served)
 ```
 
 Each essay is a self-contained page in `essays/` that links back to
