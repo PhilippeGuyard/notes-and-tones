@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How Much Italian Are You? What ancestry tests actually measure</title>
+<meta name="description" content="A playful but rigorous look at why '34% Italian' doesn't mean what people think: reference panels, pedigree collapse, and the common ancestor every European shares from just 1,000 years ago." />
+<meta property="og:title" content="How Much Italian Are You?" />
+<meta property="og:description" content="Why consumer-ancestry percentages aren't the identity readout they look like, and why we're all cousins, recently." />
+<meta property="og:type" content="article" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AC%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="sparkles" aria-hidden="true"></div>
+
+<nav class="topnav">
+  <a href="index.html">🦄 The Genetics of Unicorns</a>
+  <span class="topnav-here">🧬 How Much Italian Are You?</span>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Notes &amp; Tones · An interactive essay</p>
+    <h1 class="title">How Much<br /><span class="of">Italian</span><br />Are You?</h1>
+    <p class="dek">A spit-in-a-tube kit says you're 34% Italian, 12% Scandinavian, 4% "Broadly European." It feels like a readout of who you are. It isn't, and the reason is more interesting than the number.</p>
+    <div class="pie" aria-hidden="true"></div>
+    <p class="scroll-cue">Scroll to begin ↓</p>
+  </div>
+</header>
+
+<main>
+  <section class="prose" id="intro">
+    <p class="lead"><span class="dropcap">Y</span>ou send off a tube of saliva. A few weeks later a website greets you with a pie chart and a confident sentence: <em>you are 34% Italian.</em> Maybe there's a little animation, a map with glowing regions, a suggestion that some part of you belongs to a place you've never been.</p>
+    <p>These tests are a real feat of engineering, and they are useful for some things: finding relatives, tracing broad migrations, satisfying plain curiosity. But that headline percentage carries more meaning than it can actually bear. Let's take it apart.</p>
+  </section>
+
+  <section class="prose" id="measures">
+    <h2><span class="sec-no">01</span> What the number actually measures</h2>
+    <p>Your genome isn't stamped with country labels. There is no stretch of DNA that says "Italy." So how does a company decide you're 34% Italian?</p>
+    <p>It compares your DNA to a <strong>reference panel</strong>: a few thousand living people who each reported that all four of their grandparents came from the same place. Your genome is chopped into chunks, and each chunk is matched to whichever reference group it most resembles. The "34% Italian" means, roughly: <em>34% of my sampled DNA looks most like the DNA of that company's present-day Italian reference volunteers.</em></p>
+    <p>Notice that three quiet substitutions have already happened:</p>
+    <ul class="ledger">
+      <li><span>"Italian"</span><b>= a modern nation-state</b></li>
+      <li><span>the yardstick</span><b>= today's volunteers, not ancestors</b></li>
+      <li><span>"you are"</span><b>= a sample of your genome</b></li>
+    </ul>
+    <p>Italy has only existed as a country since 1861. The reference "Italians" are alive now; they are your contemporaries, not your forebears. And the panels are built and rebuilt by each company from whoever they can recruit. Change the volunteers and you change everyone's answer, which is what you can watch happen next.</p>
+  </section>
+
+  <section class="prose" id="verdict">
+    <h2><span class="sec-no">02</span> Same spit, different verdict</h2>
+    <p>Here is one imaginary person, call her Alex, with one fixed genome. Nothing about her DNA changes. All that changes below is <em>which company reads it, and which version of their panel they use.</em> Flip between them.</p>
+
+    <figure class="widget" id="verdict-widget" aria-label="Interactive: the same DNA scored by different reference panels">
+      <div class="preset-row" role="group" aria-label="Choose a lab / panel version">
+        <span class="preset-lab">Reader:</span>
+        <button class="preset lab" data-lab="a" aria-pressed="true">Company X · 2013 panel</button>
+        <button class="preset lab" data-lab="b" aria-pressed="false">Company X · 2019 panel</button>
+        <button class="preset lab" data-lab="c" aria-pressed="false">Company Y · today</button>
+      </div>
+
+      <div class="verdict-spotlight">
+        <div class="spot-num"><output id="italian-pct">12</output><span class="pct-sign">%</span></div>
+        <div class="spot-lab">of Alex is "Italian" <span aria-hidden="true">🇮🇹</span><br /><span class="spot-sub" id="italian-sub">according to this reader</span></div>
+      </div>
+
+      <div class="verdict-list" id="verdict-list"><!-- rows injected by JS --></div>
+
+      <figcaption class="widget-cap" id="verdict-cap">Same saliva, same genome, three readers, three stories.</figcaption>
+    </figure>
+
+    <p>Alex's "Italian-ness" lurches from <strong>12%</strong> to <strong>34%</strong> to <strong>21%</strong> without a single base of her DNA changing. Categories appear and vanish ("Broadly Southern European", "Anatolian", "Aegean") because they are administrative bins the company invented, not natural kinds written into her cells. Companies really do <a href="https://www.nytimes.com/2018/08/24/style/dna-test-results.html" target="_blank" rel="noopener">revise customers' results</a> when they update their panels. So the number is not really about Alex. It is about how she compares to a reference set that someone chose.</p>
+    <p>None of this is fraud. Each percentage is a defensible statistical estimate, with error bars that the pie chart quietly hides. The problem is only that it looks like a fact about Alex when it is really a fact about a comparison.</p>
+  </section>
+
+  <section class="prose" id="explosion">
+    <h2><span class="sec-no">03</span> Your family tree explodes</h2>
+    <p>Now for the deeper reason these labels can't mean what we want. Go up your family tree: 2 parents, 4 grandparents, 8 great-grandparents. Each step <em>doubles</em> the number of slots to fill, and that doubling outruns the entire human race almost immediately.</p>
+    <p>Drag the slider. It counts the <strong>ancestor slots</strong> your tree demands at each generation back, against the number of people who were actually <strong>alive</strong> on the whole planet at the time.</p>
+
+    <figure class="widget" id="pedigree-widget" aria-label="Interactive: ancestor slots versus population through time">
+      <div class="slider-block">
+        <label for="genslider">Generations back &nbsp;(≈ 28 years each)</label>
+        <input type="range" id="genslider" min="1" max="50" step="1" value="40" />
+        <div class="slider-vals">
+          <span><output id="gen-count">40</output> generations</span>
+          <span>≈ <output id="gen-years">1,120</output> years ago</span>
+          <span>≈ year <output id="gen-year">906</output></span>
+        </div>
+      </div>
+
+      <div class="ped-bars">
+        <div class="ped-row">
+          <div class="ped-head"><span>Ancestor <em>slots</em> your tree needs</span><b id="slots-num">1.1 trillion</b></div>
+          <div class="ped-track"><div class="ped-fill fill-slots" id="bar-slots"></div></div>
+        </div>
+        <div class="ped-row">
+          <div class="ped-head"><span>People <em>alive</em> on Earth back then</span><b id="pop-num">280 million</b></div>
+          <div class="ped-track"><div class="ped-fill fill-pop" id="bar-pop"></div></div>
+        </div>
+        <p class="ped-scale">bars are on a logarithmic scale; each mark is ×10</p>
+      </div>
+
+      <figcaption class="widget-cap" id="ped-msg">
+        Your tree already demands thousands of times more ancestors than there were people. The branches must fold back on themselves.
+      </figcaption>
+    </figure>
+
+    <p>By around 40 generations your tree calls for over a <strong>trillion</strong> slots, but there were only a few hundred million humans alive, most of them nowhere near your ancestors' villages. The arithmetic is impossible unless the same people sit in your tree <em>thousands of times over</em>, reachable by many different paths. Genealogists call this <a href="https://en.wikipedia.org/wiki/Pedigree_collapse" target="_blank" rel="noopener">pedigree collapse</a>. Your family tree stops being a tree and becomes a densely woven net, one that knots together with everyone else's.</p>
+  </section>
+
+  <section class="prose" id="cousins">
+    <h2><span class="sec-no">04</span> We are all recent cousins</h2>
+    <p>Follow that net far enough and a striking result appears, backed by real numbers from real studies.</p>
+    <p>In 2013 Peter Ralph and Graham Coop scanned the genomes of over 2,000 Europeans and found that <strong>everyone of broadly European descent shares essentially the same set of ancestors from about 1,000 years ago.</strong> A person in Portugal and a person in Poland, seemingly unrelated, carry shared segments of DNA tracing to common forebears in the Middle Ages. In their words, nearly everyone alive in Europe a millennium ago who left any descendants at all is an ancestor of <em>every</em> European living today.</p>
+    <div class="fact-cards">
+      <div class="fact-card fc-a">
+        <div class="fact-big">~1,000 <span>yrs</span></div>
+        <p>All Europeans share a common set of ancestors<br /><span class="fact-cite">Ralph &amp; Coop, <em>PLOS Biology</em>, 2013</span></p>
+      </div>
+      <div class="fact-card fc-b">
+        <div class="fact-big">~2,000-3,500 <span>yrs</span></div>
+        <p>The most recent common ancestor of <em>all</em> living humans<br /><span class="fact-cite">Rohde, Olson &amp; Chang, <em>Nature</em>, 2004</span></p>
+      </div>
+      <div class="fact-card fc-c">
+        <div class="fact-big">~5,000-7,000 <span>yrs</span></div>
+        <p>Point where <em>everyone</em> then is ancestor to everyone now (or no one)<br /><span class="fact-cite">the "identical ancestors" point</span></p>
+      </div>
+    </div>
+    <p>Push back a little further, a few thousand years, and Rohde, Olson and Chang showed that the whole of humanity converges on a single most-recent common ancestor: one individual who is a direct forebear of every person alive today, from Patagonia to Siberia. Keep going to roughly 5,000 to 7,000 years ago and you reach the "identical ancestors point", where every human then living is either an ancestor of all of us or of none of us.</p>
+    <p>So a boundary like "Italian versus Greek versus Slav" is not a wall between separate lineages. On the timescale your ancestor-slots demand, those populations mix together many times over. You don't have a sliver of "Italian" tucked in beside a sliver of "Greek". You descend from medieval Italy <em>and</em> medieval Greece <em>and</em> almost everywhere else in the neighbourhood, by countless overlapping routes.</p>
+  </section>
+
+  <section class="prose" id="genetic-vs">
+    <h2><span class="sec-no">05</span> The gene you got, not the tree you have</h2>
+    <p>One last point undercuts the number completely. You have far more <em>genealogical</em> ancestors than <em>genetic</em> ones. DNA is passed down in chunks, and each generation you inherit a random half. Go back just ten generations or so and you carry <strong>no DNA at all</strong> from a large fraction of your actual ancestors. They sit on your family tree, but not in your genome.</p>
+    <p>So when a test reports "34% Italian", it isn't even reading 34% of your family tree. It is reading the fraction of the particular genetic chunks you happened to inherit that best match today's Italian volunteers. Change which half you had inherited (a different sibling, a coin-flip in meiosis) and the number would move again, before any panel was even chosen.</p>
+    <aside class="note">
+      <p>The unicorns next door make the same point from the other side: even in a fairy-tale world with one gene and two alleles, an allele's measured "effect" depends entirely on how common it is. Measurements of ancestry and heredity are real. They are just <em>local</em>, stapled to a particular population, panel and moment. <a href="index.html">Read the companion essay →</a></p>
+    </aside>
+  </section>
+
+  <section class="prose" id="close">
+    <h2><span class="sec-no">06</span> So what?</h2>
+    <p>Enjoy the pie chart, and message the fourth cousin it finds you. That a tube of saliva can trace the broad sweep of human migration at all is real science, and worth appreciating.</p>
+    <p>Just don't read the percentages as a passport. "34% Italian" is a statement about a comparison to a chosen reference set, with hidden error bars, sampling one random half of a family tree so vast that it folded in on itself long ago. That tree is one you share, more recently than seems possible, with almost everyone.</p>
+    <p class="kicker">The tests are right about one thing they never print on the box: reach back far enough and there is no "them", only a very large and very recent "us".</p>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p>An interactive companion to <em>The Genetics of Unicorns</em>, from Notes &amp; Tones.</p>
+  <p class="foot-meta">Flip the panels. Drag the years. The maths holds up. <span aria-hidden="true">🧬</span></p>
+  <p class="foot-meta"><a href="index.html">🦄 Read: The Genetics of Unicorns</a></p>
+</footer>
+
+<script src="ancestry.js"></script>
+</body>
+</html>

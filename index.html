@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Genetics of Unicorns — why nature vs. nurture rarely has a clean answer</title>
+<title>The Genetics of Unicorns: why nature vs. nurture rarely has a clean answer</title>
 <meta name="description" content="A whimsical but rigorous walk through allele frequencies and the analysis of variance, using unicorns to show why 'nature vs. nurture' answers almost never generalise." />
 <meta property="og:title" content="The Genetics of Unicorns" />
-<meta property="og:description" content="Why even the simplest genetics can't cleanly separate nature from nurture — an interactive essay." />
+<meta property="og:description" content="Why even the simplest genetics can't cleanly separate nature from nurture. An interactive essay." />
 <meta property="og:type" content="article" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%84%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,11 +18,16 @@
 <div class="grain" aria-hidden="true"></div>
 <div class="sparkles" aria-hidden="true"></div>
 
+<nav class="topnav">
+  <span class="topnav-here">🦄 The Genetics of Unicorns</span>
+  <a href="ancestry.html">🧬 How Much Italian Are You?</a>
+</nav>
+
 <header class="hero">
   <div class="hero-inner">
     <p class="eyebrow">Notes &amp; Tones · An interactive essay</p>
     <h1 class="title">The Genetics<br /><span class="of">of</span> Unicorns</h1>
-    <p class="dek">Nature or nurture? Even in a fairy-tale world with the simplest possible genetics, the answer keeps slipping through our fingers. Here's why — with sliders you can drag and numbers you can break.</p>
+    <p class="dek">Nature or nurture? Even in a fairy-tale world with the simplest possible genetics, the answer keeps slipping through our fingers. Here's why, with sliders you can drag and numbers you can break.</p>
     <div class="horn" aria-hidden="true"></div>
     <p class="scroll-cue">Scroll to begin ↓</p>
   </div>
@@ -30,19 +35,19 @@
 
 <main>
   <section class="prose" id="intro">
-    <p class="lead"><span class="dropcap">"</span>Was I born this way, or did I become who I am because of what happened to me?" "Can anyone get good at maths, or should we save our effort for those with natural talent?" "Are these people more likely to end up in prison because they're inclined to it — or because of how we've arranged society?"</p>
-    <p>We tend to frame these as <em>nature versus nurture</em>, and we tend to assume the questions have answers — if only we had sharper tools, or a big enough dataset.</p>
-    <p>This essay makes an uncomfortable case: that even in the most unrealistically simple worlds we can invent, these questions only have answers that hold for one specific time and place. The results don't generalise, and at the very least they need to be read with great care. To show it, we'll breed some unicorns.</p>
+    <p class="lead"><span class="dropcap">"</span>Was I born this way, or did I become who I am because of what happened to me?" "Can anyone get good at maths, or should we save our effort for those with natural talent?" "Are these people more likely to end up in prison because they're inclined to it, or because of how we've arranged society?"</p>
+    <p>We tend to frame these as <em>nature versus nurture</em>, and we tend to assume the questions have answers, if only we had sharper tools or a big enough dataset.</p>
+    <p>This essay makes an awkward case: that even in the most unrealistically simple worlds we can invent, these questions only have answers that hold for one specific time and place. The results don't generalise, and at the very least they need to be read with care. To show it, we'll breed some unicorns.</p>
   </section>
 
   <section class="prose" id="primer">
     <h2><span class="sec-no">01</span> It's in our genes</h2>
-    <p>You wouldn't guess it from some newspapers, but genetics is a technical subject. Here's the whistle-stop version — and there are lovely primers online if you want more, like <a href="https://www.bbc.co.uk/bitesize/topics/z9xq7yc" target="_blank" rel="noopener">this one</a>.</p>
-    <p>We're built from cells, and what a cell does is encoded in long molecules called <strong>DNA</strong>. Inside the cell, DNA is packed into bundles called <strong>chromosomes</strong> — humans carry 23 pairs. Along those molecules sit <strong>genes</strong>, units of code each with a job to do. We inherit two copies of every gene: one from each parent. That's why chromosomes come in pairs — and it's a handy backup system, because if one copy is faulty the other can often cover for it.</p>
-    <p>As the generations roll on, genes <strong>mutate</strong> at random. Viable mutations get passed down, and over time a single gene can accumulate several variants that do subtly — or dramatically — different things. These variants are called <strong>alleles</strong>. A gene for eye colour might have one allele for brown, another for blue, and so on. As a rule of thumb, the more critical a gene's job, the fewer alleles a species can afford to carry.</p>
-    <p>Crucially, genes <em>interact</em>. How an allele is expressed depends on the allele it's paired with, on the other genes nearby, and on the environment the organism grows up in. The simplest kind of interaction: an allele that only shows itself when paired with a copy of <em>itself</em>. We call that <strong>recessive</strong>; an allele that shows up whether paired with itself or a different variant is <strong>dominant</strong>.</p>
+    <p>You wouldn't guess it from some newspapers, but genetics is a technical subject. Here's the whistle-stop version. There are good primers online if you want more, like <a href="https://www.bbc.co.uk/bitesize/topics/z9xq7yc" target="_blank" rel="noopener">this one</a>.</p>
+    <p>We're built from cells, and what a cell does is encoded in long molecules called <strong>DNA</strong>. Inside the cell, DNA is packed into bundles called <strong>chromosomes</strong>; humans carry 23 pairs. Along those molecules sit <strong>genes</strong>, units of code each with a job to do. We inherit two copies of every gene, one from each parent. That is why chromosomes come in pairs, and it doubles as a handy backup, because if one copy is faulty the other can often cover for it.</p>
+    <p>As the generations roll on, genes <strong>mutate</strong> at random. Viable mutations get passed down, and over time a single gene can accumulate several variants that do subtly, or dramatically, different things. These variants are called <strong>alleles</strong>. A gene for eye colour might have one allele for brown, another for blue, and so on. As a rule of thumb, the more critical a gene's job, the fewer alleles a species can afford to carry.</p>
+    <p>Genes also <em>interact</em>. How an allele is expressed depends on the allele it's paired with, on the other genes nearby, and on the environment the organism grows up in. The simplest kind of interaction is an allele that only shows itself when paired with a copy of <em>itself</em>. We call that <strong>recessive</strong>. An allele that shows up whether paired with itself or a different variant is <strong>dominant</strong>.</p>
     <aside class="note">
-      <p>To teach these ideas we lean on toy models — a trait set by one or two genes, only two or three alleles, and an environment that barely matters. Reality almost never obliges. That's exactly the point of what follows: <em>even the toys misbehave.</em></p>
+      <p>To teach these ideas we lean on toy models: a trait set by one or two genes, only two or three alleles, and an environment that barely matters. Reality almost never obliges. That is the point of what follows. <em>Even the toys misbehave.</em></p>
     </aside>
     <p>We'll run two experiments. First we'll try to <strong>apportion the effect of two competing alleles</strong> in a population. Then we'll try to <strong>split a trait's variation between genes and environment</strong>. Both look like the sort of clean measurement science should be able to deliver. Both turn out to be tied to a particular place and time.</p>
   </section>
@@ -50,8 +55,8 @@
   <section class="prose" id="alleles">
     <h2><span class="sec-no">02</span> The relative effects of alleles</h2>
     <p>Take the simplest possible trait: one that's either present or absent. Unicorns are perfect. As is well known, a horn in the middle of the forehead requires two copies of the recessive <em class="allele-a">a</em> allele. The dominant variant, <em class="allele-A">A</em>, suppresses horn growth. So an <em class="allele-a">a</em><em class="allele-a">a</em> individual is a unicorn; <em class="allele-a">a</em><em class="allele-A">A</em> and <em class="allele-A">A</em><em class="allele-A">A</em> are just ponies.</p>
-    <p>Now ask: <strong>how much does each allele contribute to unicorn-ness across the population?</strong> It's a fair question — but the answer isn't fixed. It rides entirely on how common each allele is. With a couple of standard assumptions and the <a href="https://www.nature.com/scitable/definition/hardy-weinberg-equation-299/" target="_blank" rel="noopener">Hardy–Weinberg equation</a>, if <em class="allele-a">a</em> and <em class="allele-A">A</em> are equally common the population settles into 25% unicorns and 75% ponies.</p>
-    <p>Drag the slider below. Let <span class="chip chip-q">q</span> be the frequency of the recessive <em class="allele-a">a</em>, so the frequency of <em class="allele-A">A</em> is <span class="chip chip-p">p</span> = 1 − <span class="chip chip-q">q</span>. Watch what happens to the proportion of unicorns — and to how much "credit" each allele gets for the trait.</p>
+    <p>Now ask: <strong>how much does each allele contribute to unicorn-ness across the population?</strong> It's a fair question, but the answer isn't fixed. It depends entirely on how common each allele is. With a couple of standard assumptions and the <a href="https://www.nature.com/scitable/definition/hardy-weinberg-equation-299/" target="_blank" rel="noopener">Hardy–Weinberg equation</a>, if <em class="allele-a">a</em> and <em class="allele-A">A</em> are equally common the population settles into 25% unicorns and 75% ponies.</p>
+    <p>Drag the slider below. Let <span class="chip chip-q">q</span> be the frequency of the recessive <em class="allele-a">a</em>, so the frequency of <em class="allele-A">A</em> is <span class="chip chip-p">p</span> = 1 − <span class="chip chip-q">q</span>. Watch what happens to the proportion of unicorns, and to how much "credit" each allele gets for the trait.</p>
 
     <figure class="widget" id="allele-widget" aria-label="Interactive: allele frequency and its effects">
       <div class="widget-head">
@@ -90,19 +95,19 @@
           <div class="effect-num" id="effB">−25%</div>
         </div>
       </div>
-      <figcaption class="widget-cap" id="allele-caption">At <span class="chip chip-q">q</span> = 0.50 the two alleles look equally powerful. Slide toward the extremes and that symmetry collapses.</figcaption>
+      <figcaption class="widget-cap" id="allele-caption">At <span class="chip chip-q">q</span> = 0.50 the two alleles look equally powerful. Slide towards the extremes and that symmetry collapses.</figcaption>
     </figure>
 
     <p>At <span class="chip chip-q">q</span> = 0.5 the two alleles look evenly matched: <em class="allele-a">a</em> gets <strong>+25%</strong>, <em class="allele-A">A</em> gets <strong>−25%</strong>. We might be tempted to conclude that <em class="allele-a">a</em> is "the horn allele" and leave it there.</p>
-    <p>But nudge the frequencies. Set <span class="chip chip-p">p</span> = 90% and <span class="chip chip-q">q</span> = 10% and the same arithmetic hands back <strong>−9%</strong> for <em class="allele-A">A</em> and just <strong>+1%</strong> for <em class="allele-a">a</em> — a completely different story about the same two alleles.</p>
-    <p>So although each allele's effect on an <em>individual</em> is crisp — you either have a horn or you don't — its effect on the <em>population</em> is a fingerprint of its frequency. Measure an allele's "importance" in one population and you'll get a different number in a population where it's rarer or more common. The measurement is legitimate; it just isn't portable. Worth remembering the next time someone talks about the "inherent" qualities of one group versus another.</p>
+    <p>But nudge the frequencies. Set <span class="chip chip-p">p</span> = 90% and <span class="chip chip-q">q</span> = 10% and the same arithmetic hands back <strong>−9%</strong> for <em class="allele-A">A</em> and just <strong>+1%</strong> for <em class="allele-a">a</em>. That is a completely different story about the same two alleles.</p>
+    <p>So although each allele's effect on an <em>individual</em> is crisp (you either have a horn or you don't), its effect on the <em>population</em> is a fingerprint of its frequency. Measure an allele's "importance" in one population and you'll get a different number in a population where it's rarer or more common. The measurement is legitimate; it just isn't portable. Worth remembering the next time someone talks about the "inherent" qualities of one group versus another.</p>
   </section>
 
   <section class="prose" id="environment">
     <h2><span class="sec-no">03</span> Genes versus environment</h2>
     <p>The same trap is waiting when we try to divide a trait between genes and environment.</p>
     <p>Use an equally cartoonish model. One gene, two alleles, <em class="allele-b">b</em> and <em class="allele-B">B</em>, this time setting a <em>measurable</em> trait: the length of a unicorn's horn. Keep them equally frequent (<span class="chip chip-p">p</span> = <span class="chip chip-q">q</span> = ½), so by Hardy–Weinberg the herd is 25% <em class="allele-b">b</em><em class="allele-b">b</em>, 50% <em class="allele-b">b</em><em class="allele-B">B</em>, and 25% <em class="allele-B">B</em><em class="allele-B">B</em>.</p>
-    <p>Now let our unicorns live in two habitats — <a href="https://en.wikipedia.org/wiki/Cloud_forest" target="_blank" rel="noopener">woodland and cloud forest</a> — split evenly between them. We measure horn length, in centimetres, for every genotype in every habitat. The table below is <strong>live</strong>: edit any number and the whole analysis recomputes. It starts on a real, awkward dataset.</p>
+    <p>Now let our unicorns live in two habitats, <a href="https://en.wikipedia.org/wiki/Cloud_forest" target="_blank" rel="noopener">woodland and cloud forest</a>, split evenly between them. We measure horn length, in centimetres, for every genotype in every habitat. The table below is <strong>live</strong>: edit any number and the whole analysis recomputes. It starts on a real, awkward dataset.</p>
 
     <figure class="widget" id="anova-widget" aria-label="Interactive: analysis of variance for horn length">
       <div class="preset-row">
@@ -165,34 +170,35 @@
       </div>
       <figcaption class="widget-cap" id="anova-caption">
         Total variance <b id="var-total">750</b> cm² &nbsp;·&nbsp; genes <b id="var-geno">225</b> &nbsp;·&nbsp; habitat <b id="var-env">100</b> &nbsp;·&nbsp; interaction <b id="var-int">425</b>.
-        <span id="interaction-warn" class="warn">The interaction term is large — genes and habitat can't be cleanly separated here.</span>
+        <span id="interaction-warn" class="warn">The interaction term is large, so genes and habitat can't be cleanly separated here.</span>
       </figcaption>
     </figure>
 
-    <p>Look at the starting numbers. In woodland the longest horns belong to the heterozygous <em class="allele-b">b</em><em class="allele-B">B</em> unicorns; in cloud forest, horn length just climbs with every <em class="allele-B">B</em>. That flip is not exotic — it mirrors how certain haemoglobin variants help or hurt depending on whether malaria is around.</p>
-    <p>Here's the seductive mistake. Since every woodland unicorn shares one habitat, any spread <em>within</em> woodland must be down to genes — and likewise within cloud forest. Average those two within-habitat variances and you get 650 cm², a full <strong>87%</strong> of the total. Conclusion: <em>genes dominate.</em></p>
-    <p>But now compute the variance <em>between</em> the three genotype averages instead. It comes to just 225 cm² — <strong>30%</strong> of the total. Conclusion: <em>habitat dominates.</em> We've derived the exact opposite result from the same table.</p>
-    <p>The flaw is that <strong>you can't simply add variances like this</strong>, because genes and habitat <em>interact</em>. Switch to the "clean, additive world" preset above: there, woodland adds a flat +20 cm to every genotype and the heterozygote sits a fixed distance from the others. The interaction bar drops to zero — and <em>only then</em> do the genetic and environmental shares add up to the whole. In our original, messy table the honest decomposition is:</p>
+    <p>Look at the starting numbers. In woodland the longest horns belong to the heterozygous <em class="allele-b">b</em><em class="allele-B">B</em> unicorns; in cloud forest, horn length just climbs with every <em class="allele-B">B</em>. That flip is not exotic. It mirrors how certain haemoglobin variants help or hurt depending on whether malaria is around.</p>
+    <p>Now the tempting mistake. Since every woodland unicorn shares one habitat, any spread <em>within</em> woodland must be down to genes, and likewise within cloud forest. Average those two within-habitat variances and you get 650 cm², a full <strong>87%</strong> of the total. Conclusion: <em>genes dominate.</em></p>
+    <p>But now compute the variance <em>between</em> the three genotype averages instead. It comes to just 225 cm², or <strong>30%</strong> of the total. Conclusion: <em>habitat dominates.</em> We've derived the exact opposite result from the same table.</p>
+    <p>The flaw is that <strong>you can't simply add variances like this</strong>, because genes and habitat <em>interact</em>. Switch to the "clean, additive world" preset above: there, woodland adds a flat +20 cm to every genotype and the heterozygote sits a fixed distance from the others. The interaction bar drops to zero, and <em>only then</em> do the genetic and environmental shares add up to the whole. In our original, messy table the honest decomposition is:</p>
     <ul class="ledger">
       <li><span>Variance from genotype</span><b>225 cm²</b></li>
       <li><span>Variance from habitat</span><b>100 cm²</b></li>
       <li><span>Variance from their interaction</span><b>425 cm²</b></li>
       <li class="ledger-total"><span>Total</span><b>750 cm²</b></li>
     </ul>
-    <p>That fat interaction term is the whole story. It's what forbids us from carrying these percentages anywhere else. Change how common <em class="allele-b">b</em> and <em class="allele-B">B</em> are, or shift the balance of woodland to cloud forest, and the interactions rearrange themselves and every number moves. We <em>can</em> apportion genes and environment — but the answer is always stapled to a particular place and a particular moment, and it dissolves the instant the situation changes.</p>
+    <p>That fat interaction term does the real damage. It is what stops us carrying these percentages anywhere else. Change how common <em class="allele-b">b</em> and <em class="allele-B">B</em> are, or shift the balance of woodland to cloud forest, and the interactions rearrange themselves and every number moves. We <em>can</em> apportion genes and environment, but the answer is always stapled to a particular place and a particular moment, and it dissolves the instant the situation changes.</p>
   </section>
 
   <section class="prose" id="close">
     <h2><span class="sec-no">04</span> So what?</h2>
     <p>Both experiments used the friendliest genetics imaginable: one or two genes, two alleles, a tidy environment, no measurement error. And both still refused to give us a portable answer. The effect of an allele depended on how common it was; the split between genes and environment depended on an interaction term we're not allowed to ignore.</p>
-    <p>Real traits — intelligence, temperament, health, whatever we actually argue about — are built from thousands of genes, tangled with each other and with environments we can't hold still. If the toys already resist a clean nature-versus-nurture verdict, the real thing resists it far more.</p>
-    <p class="kicker">The lesson isn't that these questions are unanswerable. It's that the answers are local. Ask them somewhere else, of someone else, and expect a different reply.</p>
+    <p>Real traits, things like intelligence, temperament and health, whatever we actually argue about, are built from thousands of genes, tangled with each other and with environments we can't hold still. If the toys already resist a clean nature-versus-nurture verdict, the real thing resists it far more.</p>
+    <p class="kicker">The point is not that these questions are unanswerable. Their answers are simply local. Ask them somewhere else, of someone else, and expect a different reply.</p>
   </section>
 </main>
 
 <footer class="site-foot">
   <p>An interactive re-working of <em>The Genetics of Unicorns</em>, from Notes &amp; Tones.</p>
   <p class="foot-meta">Drag the sliders. Break the tables. The maths holds up. <span aria-hidden="true">🦄</span></p>
+  <p class="foot-meta"><a href="ancestry.html">🧬 Read: How Much Italian Are You?</a></p>
 </footer>
 
 <script src="script.js"></script>

@@ -55,9 +55,9 @@
 
     const cap = $("allele-caption");
     if (Math.abs(q - 0.5) < 0.02) {
-      cap.textContent = "At q = 0.50 the two alleles look equally powerful. Slide toward the extremes and that symmetry collapses.";
+      cap.textContent = "At q = 0.50 the two alleles look equally powerful. Slide towards the extremes and that symmetry collapses.";
     } else if (q < 0.5) {
-      cap.textContent = `Recessive a is now rarer than A. Unicorns are scarce (${pct(aa)}), and a's apparent "effect" has shrunk — same allele, different story.`;
+      cap.textContent = `Recessive a is now rarer than A. Unicorns are scarce (${pct(aa)}), and a's apparent "effect" has shrunk. Same allele, different story.`;
     } else {
       cap.textContent = `Recessive a is now common. Unicorns dominate the herd (${pct(aa)}), and it's the A allele whose apparent effect has faded.`;
     }
