@@ -61,12 +61,12 @@ a { color: var(--reality); text-decoration-thickness: 1px; text-underline-offset
 
 .masthead h1 {
   font-family: var(--display);
-  font-variation-settings: "SOFT" 0, "WONK" 1;
-  font-weight: 850;
-  font-size: clamp(3rem, 9.5vw, 7.2rem);
-  line-height: .98;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 7.5vw, 5.2rem);
+  line-height: 1.02;
   margin: 0 0 2rem;
-  letter-spacing: -.015em;
+  letter-spacing: -.01em;
 }
 
 .masthead h1 em { font-style: italic; color: var(--perception); }
