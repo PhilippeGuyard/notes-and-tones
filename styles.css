@@ -137,6 +137,80 @@ body {
 @keyframes sway  { 50% { transform: rotate(-4deg); } }
 @keyframes pulse { 50% { opacity: .35; } }
 
+/* ============================== HOME / ESSAY INDEX ============================== */
+.home-hero {
+  position: relative; z-index: 2;
+  text-align: center;
+  padding: 6rem 1.5rem 2rem;
+}
+.home-title {
+  font-family: var(--display);
+  font-weight: 800;
+  font-optical-sizing: auto;
+  font-size: clamp(3rem, 11vw, 6.4rem);
+  line-height: .95;
+  letter-spacing: -.02em;
+  margin: .4rem 0 0;
+  background: var(--rainbow);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: rise .9s cubic-bezier(.2,.7,.2,1) both;
+}
+.home-dek {
+  max-width: 44ch;
+  margin: 1.6rem auto 0;
+  color: var(--ink-soft);
+  font-size: clamp(1.05rem, 2.1vw, 1.32rem);
+  animation: rise .9s .12s cubic-bezier(.2,.7,.2,1) both;
+}
+
+.home-main {
+  position: relative; z-index: 2;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 2.4rem 1.5rem 4rem;
+}
+.essay-list {
+  list-style: none; padding: 0; margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.6rem;
+}
+.essay-card a {
+  display: block; height: 100%;
+  text-decoration: none; color: inherit;
+  background: rgba(255,255,255,.62);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.9rem;
+  position: relative; overflow: hidden;
+  transition: transform .18s, box-shadow .18s, border-color .18s;
+  backdrop-filter: blur(3px);
+}
+.essay-card a::before {
+  content: ""; position: absolute; left: 0; top: 0;
+  height: 5px; width: 100%;
+  background: var(--rainbow);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .28s cubic-bezier(.2,.7,.2,1);
+}
+.essay-card a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 52px -22px rgba(44,27,61,.5);
+  border-color: transparent;
+}
+.essay-card a:hover::before { transform: scaleX(1); }
+.essay-emoji { font-size: 2.5rem; display: block; line-height: 1; }
+.essay-title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.62rem;
+  line-height: 1.1;
+  margin: .85rem 0 .5rem;
+}
+.essay-dek { color: var(--ink-soft); font-size: 1rem; line-height: 1.55; margin: 0 0 1.3rem; }
+.essay-go { font-family: var(--mono); font-size: .82rem; font-weight: 700; color: var(--A); }
+
 /* ============================== PROSE ============================== */
 main { position: relative; z-index: 2; }
 
@@ -499,8 +573,8 @@ input[type="range"]::-moz-range-thumb {
 .topnav {
   position: relative; z-index: 3;
   display: flex; flex-wrap: wrap; gap: .4rem 1.4rem;
-  align-items: center; justify-content: center;
-  padding: 1rem 1.5rem;
+  align-items: center; justify-content: space-between;
+  padding: 1rem clamp(1.5rem, 5vw, 3rem);
   font-family: var(--mono); font-size: .78rem;
   letter-spacing: .04em;
   border-bottom: 1.5px solid var(--line);
@@ -509,6 +583,7 @@ input[type="range"]::-moz-range-thumb {
 }
 .topnav a { color: var(--A); text-decoration: none; }
 .topnav a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.topnav-home { color: var(--ink-soft); }
 .topnav-here { color: var(--ink-soft); }
 
 /* -- hero "ancestry pie" motif -- */

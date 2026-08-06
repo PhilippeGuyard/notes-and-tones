@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+  ESSAY TEMPLATE — copy this file to essays/<slug>.html and fill it in.
+  Checklist when adding a new essay:
+    1. Copy essays/template.html → essays/<slug>.html
+    2. Fill in <title>, meta, the hero, and the <section class="prose"> blocks
+    3. Pick a favicon emoji (replace the %F0%9F%93%9D below with your own)
+    4. If the essay has interactive widgets, add essays/<slug>.js and
+       uncomment the <script> tag at the bottom
+    5. Add a card for it on the home page (index.html, inside .essay-list)
+  Shared styles live in ../styles.css — no per-essay CSS file needed unless
+  a widget wants its own bespoke pieces (add them to styles.css).
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Essay title — Notes &amp; Tones</title>
+<meta name="description" content="One-line summary of the essay." />
+<meta property="og:title" content="Essay title" />
+<meta property="og:description" content="One-line summary of the essay." />
+<meta property="og:type" content="article" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9D%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="sparkles" aria-hidden="true"></div>
+
+<nav class="topnav">
+  <a href="../index.html" class="topnav-home">← Notes &amp; Tones</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Notes &amp; Tones · An interactive essay</p>
+    <h1 class="title">Essay<br /><span class="of">title</span> here</h1>
+    <p class="dek">A one- or two-sentence hook that says why this is worth reading.</p>
+    <p class="scroll-cue">Scroll to begin ↓</p>
+  </div>
+</header>
+
+<main>
+  <section class="prose" id="intro">
+    <p class="lead"><span class="dropcap">O</span>pening paragraph. The drop-cap uses the first character in this span.</p>
+    <p>Body text. Link things with <a href="#">anchors</a>; emphasise with <em>em</em> and <strong>strong</strong>.</p>
+  </section>
+
+  <section class="prose" id="section-one">
+    <h2><span class="sec-no">01</span> A section heading</h2>
+    <p>More prose. Drop interactive widgets in with a <code>&lt;figure class="widget"&gt;</code> and wire them up in the essay's JS file.</p>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p>An essay from Notes &amp; Tones.</p>
+  <p class="foot-meta"><a href="../index.html">← All essays</a></p>
+</footer>
+
+<!-- If this essay has widgets, create essays/<slug>.js and uncomment: -->
+<!-- <script src="<slug>.js"></script> -->
+</body>
+</html>
