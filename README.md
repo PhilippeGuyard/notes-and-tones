@@ -1,6 +1,6 @@
 # Notes & Tones
 
-Short, interactive essays on how science actually works — with sliders you can
+Short, interactive essays on ideas worth poking at — with sliders you can
 drag, tables you can break, and numbers you can poke.
 
 Static site: hand-written HTML/CSS/JS, no build step. Deployed via GitHub Pages.
