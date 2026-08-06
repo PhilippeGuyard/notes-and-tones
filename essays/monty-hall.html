@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>To Switch, or Not to Switch? The Monty Hall Problem</title>
+<meta name="description" content="Three doors, one car, two goats. Why switching doubles your odds in the Monty Hall problem, with a game you can play and a simulator you can run." />
+<meta property="og:title" content="To Switch, or Not to Switch?" />
+<meta property="og:description" content="The Monty Hall problem: play it, simulate it, and see why your gut is wrong." />
+<meta property="og:type" content="article" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%AA%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="sparkles" aria-hidden="true"></div>
+
+<nav class="topnav">
+  <a href="../index.html" class="topnav-home">← Notes &amp; Tones</a>
+  <a href="ancestry.html">Also: How Much Italian Are You? →</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Notes &amp; Tones · An interactive essay</p>
+    <h1 class="title">To Switch,<br /><span class="of">or not</span><br />to Switch?</h1>
+    <p class="dek">Three doors, one car, two goats, and a decision that feels like a coin flip but pays out two to one. The Monty Hall problem, and why your gut is wrong.</p>
+    <div class="hero-doors" aria-hidden="true">
+      <span class="mini-door"></span>
+      <span class="mini-door ajar"></span>
+      <span class="mini-door"></span>
+    </div>
+    <p class="scroll-cue">Scroll to begin ↓</p>
+  </div>
+</header>
+
+<main>
+  <section class="prose" id="intro">
+    <p class="lead"><span class="dropcap">P</span>icture a game show. Three doors face you. Behind one sits a car; behind each of the other two, a goat. You pick a door, say Door 1, and put your hand on the prize you hope is waiting.</p>
+    <p>The host, who knows exactly what is behind every door, does not open yours. Instead he opens one of the others, Door 3, to reveal a goat. Then he makes you an offer: stick with Door 1, or switch to Door 2. Most people shrug. Two doors left, one car, surely it is now fifty-fifty and switching makes no difference.</p>
+    <p>That answer is wrong. Switching wins twice as often as staying. The reason it is wrong is one of the most satisfying little jolts in probability, and the best way to believe it is to see it happen, so let's start there.</p>
+  </section>
+
+  <section class="prose" id="play">
+    <h2><span class="sec-no">01</span> Play it yourself</h2>
+    <p>No theory yet. Play a dozen rounds or so, sometimes staying, sometimes switching, and watch the two tallies at the bottom. Let your own results do the arguing first.</p>
+
+    <figure class="widget" id="game-widget" aria-label="Interactive Monty Hall game">
+      <p class="game-prompt" id="game-prompt">Pick a door.</p>
+      <div class="doors" id="doors" role="group" aria-label="Three doors"></div>
+      <div class="game-actions" id="game-actions"></div>
+      <div class="scoreboard" id="scoreboard">
+        <div class="score sc-switch">
+          <span class="score-strat">When you switched</span>
+          <span class="score-frac" id="sw-frac">0 / 0</span>
+          <span class="score-pct" id="sw-pct">–</span>
+        </div>
+        <div class="score sc-stay">
+          <span class="score-strat">When you stayed</span>
+          <span class="score-frac" id="st-frac">0 / 0</span>
+          <span class="score-pct" id="st-pct">–</span>
+        </div>
+      </div>
+      <figcaption class="widget-cap">Keep going until the two percentages pull apart. Switching should settle near two thirds, staying near one third.</figcaption>
+    </figure>
+  </section>
+
+  <section class="prose" id="why">
+    <h2><span class="sec-no">02</span> Why switching wins</h2>
+    <p>Here is the whole trick in one sentence: <strong>your first guess is right one time in three, and wrong two times in three.</strong> Everything follows from that.</p>
+    <p>When your first pick already hides the car (one third of the time), the host opens a goat, and switching hands the car away. You lose. But when your first pick hides a goat (two thirds of the time), something quiet and decisive happens. The host cannot open your door, and he will never open the car. Among the two doors you did not choose, one has the car and one has the last goat, so he is <em>forced</em> to clear away that goat. The only door left to switch to is the car.</p>
+    <p>So switching loses exactly when your first guess was right, and wins exactly when it was wrong. Since you are wrong two thirds of the time, switching wins two thirds of the time. You always pick Door 1 below; these are the three equally likely worlds.</p>
+
+    <figure class="worlds" aria-label="The three equally likely cases when you always pick Door 1">
+      <div class="worlds-head">You always pick <b>Door 1</b>. The host clears a goat. Three equally likely worlds:</div>
+      <div class="world">
+        <span class="world-lab">Car behind <b>Door 1</b></span>
+        <span class="world-outcomes">
+          <span class="wout lose">Switch → <span aria-hidden="true">🐐</span> lose</span>
+          <span class="wout win">Stay → <span aria-hidden="true">🚗</span> win</span>
+        </span>
+      </div>
+      <div class="world">
+        <span class="world-lab">Car behind <b>Door 2</b></span>
+        <span class="world-outcomes">
+          <span class="wout win">Switch → <span aria-hidden="true">🚗</span> win</span>
+          <span class="wout lose">Stay → <span aria-hidden="true">🐐</span> lose</span>
+        </span>
+      </div>
+      <div class="world">
+        <span class="world-lab">Car behind <b>Door 3</b></span>
+        <span class="world-outcomes">
+          <span class="wout win">Switch → <span aria-hidden="true">🚗</span> win</span>
+          <span class="wout lose">Stay → <span aria-hidden="true">🐐</span> lose</span>
+        </span>
+      </div>
+      <div class="worlds-tally"><b>Switch</b> wins 2 worlds in 3. <b>Stay</b> wins 1 in 3.</div>
+    </figure>
+
+    <p>Notice what the host really gave you. Your original door is stuck at its starting odds of one in three, because nothing that happened afterwards could touch it. All the remaining probability, the other two thirds, gets squeezed onto the single door he pointedly left shut.</p>
+  </section>
+
+  <section class="prose" id="simulate">
+    <h2><span class="sec-no">03</span> Run it a thousand times</h2>
+    <p>A dozen games is enough to feel the effect but too few to pin it down. So let a computer play instead, thousands of times, once always switching and once always staying. Press the button a few times and watch both lines home in on their true values.</p>
+
+    <figure class="widget" id="sim-widget" aria-label="Monty Hall simulator">
+      <div class="sim-controls">
+        <button id="sim-run" class="btn-run">Run 1,000 games</button>
+        <button id="sim-reset" class="preset">↺ Reset</button>
+      </div>
+      <div class="sim-readouts">
+        <div class="sim-col col-switch">
+          <span class="sim-lab">Always switch</span>
+          <div class="sim-big"><output id="sim-sw-pct">0.0</output><span class="pct-sign">%</span></div>
+          <span class="sim-sub" id="sim-sw-sub">0 wins / 0</span>
+        </div>
+        <div class="sim-col col-stay">
+          <span class="sim-lab">Always stay</span>
+          <div class="sim-big"><output id="sim-st-pct">0.0</output><span class="pct-sign">%</span></div>
+          <span class="sim-sub" id="sim-st-sub">0 wins / 0</span>
+        </div>
+      </div>
+      <svg id="sim-chart" viewBox="0 0 680 260" role="img" aria-label="Win rate of switching and staying converging toward two thirds and one third as more games are played"></svg>
+      <figcaption class="widget-cap">Each press adds another thousand games. The dashed lines mark 66.7% and 33.3%. The more you play, the tighter both strategies hug them.</figcaption>
+    </figure>
+  </section>
+
+  <section class="prose" id="doors">
+    <h2><span class="sec-no">04</span> Where the extra odds come from</h2>
+    <p>The part that trips everyone up is treating the host as furniture. He is not. He knows where the car is, and he never opens it. That knowledge quietly leaks into the door he chooses to leave shut, and knowledge is exactly what odds are made of.</p>
+    <p>If you still feel the tug of "surely it's fifty-fifty", turn up the number of doors and the illusion falls apart.</p>
+
+    <figure class="widget" id="doors-widget" aria-label="Interactive: switching odds as the number of doors grows">
+      <div class="slider-block">
+        <label for="ndoors">Number of doors</label>
+        <input type="range" id="ndoors" min="3" max="100" step="1" value="3" />
+        <div class="slider-vals">
+          <span><output id="nd-count">3</output> doors</span>
+          <span>host opens <output id="nd-open">1</output> goat</span>
+        </div>
+      </div>
+      <div class="nd-readout">
+        <div class="nd-strat nd-stay">
+          <span class="nd-strat-lab">Stay wins</span>
+          <b id="nd-stay">33.3%</b>
+        </div>
+        <div class="nd-strat nd-switch">
+          <span class="nd-strat-lab">Switch wins</span>
+          <b id="nd-switch">66.7%</b>
+        </div>
+      </div>
+      <figcaption class="widget-cap" id="nd-cap"></figcaption>
+    </figure>
+
+    <p>With a hundred doors you pick one, a one-in-a-hundred shot, and the host flings open ninety-eight goats, skipping your door and skipping the car. He leaves a single other door shut. Would you still call it a coin flip? That lonely closed door is carrying the whole ninety-nine percent your first guess left behind. Switch.</p>
+    <p>One caveat makes the mechanism plain. All of this rests on the host <em>knowing</em> and deliberately avoiding the car. If he opened a door at random and simply happened to miss it, the maths would be different, and switching really would gain you nothing. The advantage is not in the doors. It is in what the host knows.</p>
+  </section>
+
+  <section class="prose" id="close">
+    <h2><span class="sec-no">05</span> So what?</h2>
+    <p>When Marilyn vos Savant laid out the answer in a magazine column in 1990, thousands of readers wrote in to tell her she was wrong, a good few of them mathematicians with letters after their names. The story goes that the great Paul Erdős stayed unconvinced until someone sat him down in front of a computer playing it out. The obvious answer felt obvious to almost everyone, and it was still wrong.</p>
+    <p>That is the real lesson, and it reaches well past game shows. "Two doors left" quietly threw away the history of how you got there, and that history was the whole story. When an answer seems so plain it needs no working, that is often the moment to reach for a pencil, or a thousand simulated games.</p>
+    <p class="kicker">Beware the answer that feels obvious. Sometimes the goat is your own certainty.</p>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p>An essay from Notes &amp; Tones.</p>
+  <p class="foot-meta">Play the doors. Run the numbers. Then switch. <span aria-hidden="true">🚪</span></p>
+  <p class="foot-meta"><a href="ancestry.html">🧬 Read: How Much Italian Are You?</a> &nbsp;·&nbsp; <a href="../index.html">← All essays</a></p>
+</footer>
+
+<script src="monty-hall.js"></script>
+</body>
+</html>
