@@ -579,6 +579,22 @@ input[type="range"]::-moz-range-thumb {
 .vrow.is-italian .vtrack { box-shadow: 0 0 0 2px rgba(232,98,155,.35); }
 .vrow.is-italian .vval { color: var(--a); }
 
+/* -- widget 3: lineage graph -- */
+.lineage-controls { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-bottom: 1.1rem; }
+.lineage-svg { width: 100%; height: auto; display: block; overflow: visible; }
+.ln { fill: none; stroke-width: 1.4; transition: stroke .2s; }
+.ln-live { stroke: rgba(44,27,61,.30); }
+.ln-dead { stroke: rgba(44,27,61,.08); }
+.ln-cone { stroke: var(--a); stroke-width: 2.6; }
+.lineage-svg.focused .ln-live { stroke: rgba(44,27,61,.12); }
+.nd { transition: fill .2s; }
+.nd-live { fill: #9384a3; }
+.nd-dead { fill: #dccfbe; }
+.lineage-svg.focused .nd-live { fill: #c6bacd; }
+.nd-cone { fill: var(--a); }
+.nd-anc { fill: #ffd84d; stroke: var(--ink); stroke-width: 2; }
+.axis-lab { font-family: var(--mono); font-size: 11px; fill: var(--ink-soft); letter-spacing: .04em; }
+
 /* -- widget 2: pedigree explosion -- */
 .ped-bars { margin: 1.8rem 0 .4rem; display: grid; gap: 1.3rem; }
 .ped-head {

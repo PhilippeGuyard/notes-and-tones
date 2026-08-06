@@ -222,6 +222,180 @@
   renderPedigree();
 
   /* ---------------------------------------------------------
+     WIDGET 3 — lineages: dying off vs surviving to a shared ancestor
+     A small population is followed down the generations. Each child
+     has two parents in the row above. Lineages with no living
+     descendants fade out; a "universal" founder (an ancestor of the
+     whole bottom row) is drawn in gold with its full descent traced.
+     Seeded PRNG keeps each village deterministic and reproducible.
+     --------------------------------------------------------- */
+  const SVGNS = "http://www.w3.org/2000/svg";
+  const svgEl = (tag, attrs) => {
+    const n = document.createElementNS(SVGNS, tag);
+    for (const k in attrs) n.setAttribute(k, attrs[k]);
+    return n;
+  };
+  const mulberry32 = (a) => () => {
+    a |= 0; a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+
+  const GENS = 7;   // rows: 0 = founders (long ago) … GENS-1 = today
+  const POP = 8;    // individuals per generation
+
+  function buildPop(seed) {
+    const rng = mulberry32(seed);
+    const parents = [];
+    for (let g = 0; g < GENS; g++) {
+      parents[g] = [];
+      for (let i = 0; i < POP; i++) {
+        if (g === 0) { parents[g][i] = null; continue; }
+        let a = Math.floor(rng() * POP);
+        let b = Math.floor(rng() * POP);
+        if (b === a) b = (b + 1) % POP;
+        parents[g][i] = [a, b];
+      }
+    }
+    const children = [];
+    for (let g = 0; g < GENS; g++) children[g] = Array.from({ length: POP }, () => []);
+    for (let g = 1; g < GENS; g++) {
+      for (let i = 0; i < POP; i++) {
+        const [a, b] = parents[g][i];
+        children[g - 1][a].push(i);
+        children[g - 1][b].push(i);
+      }
+    }
+    // reach[g][i] = set of present-day indices this node is an ancestor of
+    const reach = [];
+    for (let g = 0; g < GENS; g++) reach[g] = Array.from({ length: POP }, () => new Set());
+    for (let i = 0; i < POP; i++) reach[GENS - 1][i].add(i);
+    for (let g = GENS - 2; g >= 0; g--) {
+      for (let i = 0; i < POP; i++) {
+        for (const c of children[g][i]) for (const p of reach[g + 1][c]) reach[g][i].add(p);
+      }
+    }
+    const alive = reach.map((row) => row.map((s) => s.size > 0));
+    const universal0 = [];
+    const extinct0 = [];
+    for (let i = 0; i < POP; i++) {
+      if (reach[0][i].size === POP) universal0.push(i);
+      if (reach[0][i].size === 0) extinct0.push(i);
+    }
+    return { parents, children, alive, universal0, extinct0 };
+  }
+
+  // find a seed that shows the point clearly: at least one universal
+  // founder and at least two dead-end founders
+  function findGoodSeed(start) {
+    for (let s = start; s < start + 3000; s++) {
+      const p = buildPop(s);
+      if (p.universal0.length >= 1 && p.extinct0.length >= 2) return { seed: s, pop: p };
+    }
+    return { seed: start, pop: buildPop(start) };
+  }
+
+  // all descendant nodes ("g:i") of a founder — its full descent cone
+  function descendantsOf(pop, anc) {
+    const cone = new Set(["0:" + anc]);
+    const stack = [[0, anc]];
+    while (stack.length) {
+      const [g, i] = stack.pop();
+      if (g >= GENS - 1) continue;
+      for (const c of pop.children[g][i]) {
+        const key = (g + 1) + ":" + c;
+        if (!cone.has(key)) { cone.add(key); stack.push([g + 1, c]); }
+      }
+    }
+    return cone;
+  }
+
+  const lnSvg = $("lineage-svg");
+  const lnCap = $("lineage-cap");
+  let lnState = null;   // { seed, pop }
+  let lnFocal = 0;      // index into pop.universal0
+  let lnShow = true;
+
+  const LN = { W: 680, H: 460, mx: 46, top: 62, bot: 52 };
+  const lnX = (i) => LN.mx + (i * (LN.W - 2 * LN.mx)) / (POP - 1);
+  const lnY = (g) => LN.top + (g * (LN.H - LN.top - LN.bot)) / (GENS - 1);
+
+  function renderLineage() {
+    const pop = lnState.pop;
+    lnSvg.replaceChildren();
+    const focalIdx = pop.universal0.length ? pop.universal0[lnFocal % pop.universal0.length] : null;
+    const cone = lnShow && focalIdx != null ? descendantsOf(pop, focalIdx) : null;
+    lnSvg.classList.toggle("focused", !!cone);
+
+    lnSvg.append(svgEl("text", { x: LN.mx, y: 30, class: "axis-lab" }));
+    lnSvg.lastChild.textContent = "founders · long ago";
+    lnSvg.append(svgEl("text", { x: LN.mx, y: LN.H - 18, class: "axis-lab" }));
+    lnSvg.lastChild.textContent = "today";
+
+    // edges (drawn first, under the nodes)
+    for (let g = 1; g < GENS; g++) {
+      for (let i = 0; i < POP; i++) {
+        const [a, b] = pop.parents[g][i];
+        for (const par of [a, b]) {
+          const inCone = cone && cone.has(g + ":" + i) && cone.has((g - 1) + ":" + par);
+          const live = pop.alive[g][i] && pop.alive[g - 1][par];
+          const cls = "ln " + (inCone ? "ln-cone" : live ? "ln-live" : "ln-dead");
+          lnSvg.append(svgEl("line", { x1: lnX(par), y1: lnY(g - 1), x2: lnX(i), y2: lnY(g), class: cls }));
+        }
+      }
+    }
+    // nodes
+    for (let g = 0; g < GENS; g++) {
+      for (let i = 0; i < POP; i++) {
+        let cls = pop.alive[g][i] ? "nd nd-live" : "nd nd-dead";
+        if (cone && cone.has(g + ":" + i)) cls = "nd nd-cone";
+        if (cone && g === 0 && i === focalIdx) cls = "nd nd-anc";
+        const r = g === 0 || g === GENS - 1 ? 8 : 6;
+        lnSvg.append(svgEl("circle", { cx: lnX(i), cy: lnY(g), r, class: cls }));
+      }
+    }
+    renderLineageCap();
+  }
+
+  function renderLineageCap() {
+    const pop = lnState.pop;
+    const e = pop.extinct0.length;
+    const u = pop.universal0.length;
+    const parts = [
+      "Follow a village of ", ["b", String(POP)], " founding lines down ",
+      ["b", String(GENS)], " generations. ",
+      ["b", String(e)], e === 1 ? " line dies out entirely" : " lines die out entirely",
+      " with no living descendants, while ",
+      ["b", String(u)], u === 1 ? " founder turns out to be an ancestor" : " founders turn out to be ancestors",
+      " of everyone in the bottom row.",
+    ];
+    if (lnShow && u) parts.push(" The gold one is a single ancestor shared by every person alive at the bottom.");
+    else parts.push(" Press the button to pick one out.");
+    fill(lnCap, parts);
+  }
+
+  if (lnSvg) {
+    lnState = findGoodSeed(9);
+
+    const traceBtn = $("ln-trace");
+    traceBtn.addEventListener("click", () => {
+      lnFocal += 1;   // cycle to another shared (universal) ancestor
+      lnShow = true;
+      traceBtn.setAttribute("aria-pressed", "true");
+      traceBtn.textContent = "Show another";
+      renderLineage();
+    });
+    $("ln-reseed").addEventListener("click", () => {
+      lnState = findGoodSeed(lnState.seed + 1);
+      lnFocal = 0;
+      renderLineage();
+    });
+
+    renderLineage();
+  }
+
+  /* ---------------------------------------------------------
      Scroll reveal (shared behaviour with the sibling essay)
      --------------------------------------------------------- */
   if ("IntersectionObserver" in window) {
