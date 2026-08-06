@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Twenty-Three People, One Birthday — the birthday problem, and why your IDs collide</title>
+<meta name="description" content="It takes just twenty-three people in a room for two to almost certainly share a birthday. The same maths — counting pairs, not people — decides whether the random UUIDs in your database will ever collide." />
+<meta property="og:title" content="Twenty-Three People, One Birthday" />
+<meta property="og:description" content="Why twenty-three strangers are enough to share a birthday, why your intuition is off by a factor of ten, and why the same trick governs UUID collisions. With widgets you can run." />
+<meta property="og:type" content="article" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="sparkles" aria-hidden="true"></div>
+
+<nav class="topnav">
+  <a href="../index.html" class="topnav-home">← Notes &amp; Tones</a>
+  <a href="screening.html">Also: You Tested Positive. Now What? →</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Notes &amp; Tones · An interactive essay</p>
+    <h1 class="title">Twenty-three<br /><span class="of">people,</span><br />one birthday</h1>
+    <p class="dek">It takes just twenty-three strangers in a room for two to almost certainly share a birthday. The same maths decides whether the random IDs in your database will ever collide.</p>
+    <p class="scroll-cue">Scroll to begin ↓</p>
+  </div>
+</header>
+
+<main>
+  <section class="prose" id="intro">
+    <p class="lead"><span class="dropcap">H</span>ere is a bet you should take. Get twenty-three people into a room — a small seminar, a football squad, a decent dinner party — and wager that two of them share a birthday. Not <em>your</em> birthday; any two of them, matching each other. It feels like a mug's bet. There are 365 days and only twenty-three people; surely the odds are slim. In fact you'll win this bet more often than you lose it, and the reason you doubt it is the same reason the maths matters far beyond parties.</p>
+    <p>The trap is a quiet swap. You picture yourself standing in the room, scanning for someone who matches <em>you</em> — and for that, twenty-three is indeed hopeless; you'd need over 250 people for even odds. But the bet was never about you. It's about <em>any</em> pair. And pairs, as we'll see, are far more plentiful than people.</p>
+  </section>
+
+  <section class="prose" id="party">
+    <h2><span class="sec-no">01</span> Fill the room, one guest at a time</h2>
+    <p>Start with an empty room and let people file in. Each new arrival brings a fresh chance to match someone already there. Drag the slider and watch the probability that <em>some</em> two guests share a birthday.</p>
+
+    <figure class="widget" id="party-widget" aria-label="Interactive: the chance two people share a birthday as a room fills">
+      <svg id="party-svg" class="stat-svg" viewBox="0 0 680 300" role="img" aria-label="A rising curve: the probability of a shared birthday against the number of people in the room"></svg>
+      <div class="slider-block">
+        <label for="party-n">People in the room</label>
+        <input type="range" id="party-n" min="2" max="75" step="1" value="23" />
+        <div class="slider-vals"><span><output id="party-n-val">23</output> people</span></div>
+      </div>
+      <div class="stat-readouts">
+        <div class="stat-box box-cover">
+          <span class="stat-lab">Chance two of them match</span>
+          <div class="stat-big"><output id="party-p">50.7%</output></div>
+          <span class="stat-sub" id="party-p-sub">just over even odds</span>
+        </div>
+        <div class="stat-box box-target">
+          <span class="stat-lab">Pairs of people in the room</span>
+          <div class="stat-big"><output id="party-pairs">253</output></div>
+          <span class="stat-sub">each a fresh chance to match</span>
+        </div>
+      </div>
+      <figcaption class="widget-cap" id="party-cap">At twenty-three people the curve crosses one-half. By fifty it's a near-certainty; by seventy you'd be astonished <em>not</em> to find a match.</figcaption>
+    </figure>
+
+    <p>The curve climbs shockingly fast. Twenty-three people give you just over even odds; fifty push it to ninety-seven per cent; seventy and you're at 99.9%. Long before the room is anywhere near full, a shared birthday goes from "unlikely" to "practically guaranteed".</p>
+  </section>
+
+  <section class="prose" id="why">
+    <h2><span class="sec-no">02</span> Why it feels wrong: count pairs, not people</h2>
+    <p>Your intuition tracks the wrong quantity. It counts <em>people</em> — twenty-three of them against 365 days — and concludes the room is nearly empty. But a match doesn't happen to a person; it happens to a <strong>pair</strong>. And the number of pairs grows much faster than the number of guests. Add the twenty-third person and you don't add one chance to match, you add twenty-two of them, one against each guest already seated.</p>
+    <p>Do the sum and twenty-three people make <strong>253 distinct pairs</strong> — already more than half the 365 days in a year. That quadratic explosion is the whole secret: double the guests and you roughly <em>quadruple</em> the pairs. The room fills with opportunities far faster than it fills with people, and every one of those 253 pairs is quietly rolling the dice.</p>
+  </section>
+
+  <section class="prose" id="maths">
+    <h2><span class="sec-no">03</span> The maths, and the shortcut</h2>
+    <p>The exact calculation runs through the "no match" side, because that's the easy one. The second person must dodge the first (364 days out of 365 are safe), the third must dodge both, and so on:</p>
+    <div class="note">
+      <p style="font-family: var(--mono); font-size: 1rem;">P(match) &nbsp;=&nbsp; 1 − ( 364/365 × 363/365 × 362/365 × … )</p>
+      <p>There's a cleaner way to see it, though. With <em>k</em> people there are <em>k</em>(<em>k</em>−1)/2 pairs, and each pair matches with probability 1/365. Multiply those out and the chance of <em>no</em> match is close to <span style="font-family: var(--mono);">e</span><sup>−pairs/365</sup>. At twenty-three people that exponent is 253/365 ≈ 0.69, and <span style="font-family: var(--mono);">e</span><sup>−0.69</sup> ≈ 0.50. Half. There's your fifty-fifty.</p>
+    </div>
+    <p>Written that way, one thing jumps out: 365 was never special. Replace it with <strong>N</strong>, the number of possible values — days, lockers, hash outputs, anything — and the chance of a collision is about <span style="font-family: var(--mono);">1 − e<sup>−k²/2N</sup></span>. Even odds arrive when <em>k</em> reaches roughly <strong>1.2 × √N</strong>. The square root is the punchline. To get a collision you don't need anywhere near N draws; you need about the <em>square root</em> of N. For birthdays that's √365 ≈ 19, nudged up to 23. For everything else, it's a warning.</p>
+  </section>
+
+  <section class="prose" id="collision">
+    <h2><span class="sec-no">04</span> The same trick, in a much bigger room</h2>
+    <p>A birthday is just a random draw from 365 boxes. Nothing about the argument cared that the boxes were days. So point it at something a programmer actually ships: random identifiers. Below is the very same curve, but now you choose how many boxes there are — from a year of birthdays, to a single byte, to the full space of a version-4 <span style="font-family: var(--mono);">UUID</span>. Watch how far you must drag before a collision becomes likely.</p>
+
+    <figure class="widget" id="engine-widget" aria-label="Interactive: collision probability for spaces of different sizes">
+      <div class="preset-row" role="group" aria-label="Size of the space">
+        <span class="preset-lab">Space:</span>
+        <button class="preset space" data-n="365" aria-pressed="true">Birthdays · 365</button>
+        <button class="preset space" data-n="256" aria-pressed="false">One byte · 256</button>
+        <button class="preset space" data-n="4294967296" aria-pressed="false">32 bits · 4.3bn</button>
+        <button class="preset space" data-n="uuid" aria-pressed="false">UUIDv4 · 2¹²²</button>
+      </div>
+      <svg id="engine-svg" class="stat-svg" viewBox="0 0 680 300" role="img" aria-label="A collision-probability curve on a logarithmic axis of the number of draws, shifting right as the space grows"></svg>
+      <div class="slider-block">
+        <label for="engine-k">How many drawn (log scale)</label>
+        <input type="range" id="engine-k" min="0" max="75" step="0.5" value="4.5" />
+        <div class="slider-vals">
+          <span><output id="engine-k-val">22</output> drawn</span>
+          <span>space = <output id="engine-n-val">365</output> values</span>
+        </div>
+      </div>
+      <div class="stat-readouts">
+        <div class="stat-box box-cover">
+          <span class="stat-lab">Chance of a collision</span>
+          <div class="stat-big"><output id="engine-p">50%</output></div>
+          <span class="stat-sub">among the draws so far</span>
+        </div>
+        <div class="stat-box box-target">
+          <span class="stat-lab">Even odds at about</span>
+          <div class="stat-big" style="font-size: clamp(1.35rem, 5vw, 2.2rem);"><output id="engine-even">23</output></div>
+          <span class="stat-sub">draws (≈ 1.2 × √N)</span>
+        </div>
+      </div>
+      <figcaption class="widget-cap" id="engine-cap">The identical maths. Grow the space and the whole curve marches right — but only by a square root, which is the point: a UUID needs about 2.7 quintillion draws before the odds reach even.</figcaption>
+    </figure>
+
+    <p>The threshold moves, but slowly. A byte collides within a handful of draws; 32 bits — the width people reach for when they want "surely enough" — hits even odds at only about 77,000 draws, which is why 32-bit identifiers collide in real systems all the time. A full UUID, with its 122 random bits, holds out until roughly 2.7 quintillion draws. That gulf between "sounds huge" and "actually safe" is exactly the square root at work.</p>
+  </section>
+
+  <section class="prose" id="uuid">
+    <h2><span class="sec-no">05</span> So should you lose sleep over UUIDs?</h2>
+    <p>Almost certainly not — and now you can say why with numbers rather than faith. A version-4 UUID hands you 122 random bits, and the square-root rule sets the danger line not at "all of them" but at its square root. Here's the ledger:</p>
+    <ul class="ledger">
+      <li><span>Random bits in a UUIDv4</span><b>122</b></li>
+      <li><span>Distinct possible values</span><b>2¹²² ≈ 5.3 × 10³⁶</b></li>
+      <li><span>UUIDs for even odds of one collision</span><b>≈ 2.7 quintillion</b></li>
+      <li><span>…generating a billion every second</span><b>≈ 86 years</b></li>
+      <li class="ledger-total"><span>UUIDs for a one-in-a-billion risk</span><b>≈ 100 trillion</b></li>
+    </ul>
+    <p>Put plainly: you could mint a billion UUIDs every second for a human lifetime and still be at coin-flip odds of a <em>single</em> clash. Generate a hundred trillion of them and your chance of any collision is about one in a billion. For any normal application the honest answer is that a UUID collision will never happen to you — not because collisions are impossible, but because the square root of 2¹²² is still an astronomically large number. The birthday problem giveth surprises to small rooms and taketh them away from large ones.</p>
+  </section>
+
+  <section class="prose" id="close">
+    <h2><span class="sec-no">06</span> So what?</h2>
+    <p>The lesson is a habit of mind: when you want to know how likely a coincidence is, count the pairs, not the things. It's why a room of twenty-three feels empty but isn't, why "random enough" 32-bit IDs quietly collide, and why 122 bits of randomness is genuinely, provably plenty. Any time something is drawn at random from a fixed set of possibilities, trouble starts not at N but at √N — sooner than intuition for the small room, and far, far later for the large one.</p>
+    <p class="kicker">Coincidences live in the pairs, not the people. Count them properly and the impossible party trick and the safe database ID turn out to be the very same sum.</p>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p>An essay from Notes &amp; Tones.</p>
+  <p class="foot-meta">Fill the room. Count the pairs. Mind the square root. <span aria-hidden="true">🎂</span></p>
+  <p class="foot-meta"><a href="screening.html">🩺 Read: You Tested Positive. Now What?</a> &nbsp;·&nbsp; <a href="confidence.html">🎯 Read: Ninety-Five per cent confident?</a> &nbsp;·&nbsp; <a href="../index.html">← All essays</a></p>
+</footer>
+
+<script src="birthday.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>You Tested Positive. Now What? — base rates, Bayes, and the cost of screening</title>
+<meta name="description" content="A screening test is 90% accurate and you test positive. The chance you're actually ill is about nine per cent, not ninety. Why base rates rule medical tests, how Bayes' theorem does the bookkeeping, and what that means for who should be screened." />
+<meta property="og:title" content="You Tested Positive. Now What?" />
+<meta property="og:description" content="A 90%-accurate test comes back positive. Why the chance you're ill is nearer nine per cent than ninety — base rates, Bayes' theorem, and the cost of screening, with widgets you can run." />
+<meta property="og:type" content="article" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A9%BA%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="sparkles" aria-hidden="true"></div>
+
+<nav class="topnav">
+  <a href="../index.html" class="topnav-home">← Notes &amp; Tones</a>
+  <a href="confidence.html">Also: Ninety-Five per cent confident? →</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Notes &amp; Tones · An interactive essay</p>
+    <h1 class="title">You tested<br /><span class="of">positive.</span><br />Now what?</h1>
+    <p class="dek">The test is ninety per cent accurate and it came back positive. Most people — most doctors — would say you're almost certainly ill. They'd be wrong by a factor of ten.</p>
+    <p class="scroll-cue">Scroll to begin ↓</p>
+  </div>
+</header>
+
+<main>
+  <section class="prose" id="intro">
+    <p class="lead"><span class="dropcap">H</span>ere is a question that has been put to thousands of doctors, and most of them get it wrong. A woman with no symptoms has a routine mammogram. The test is good: it catches ninety per cent of real cancers, and it correctly clears ninety-one per cent of healthy women. In her age group, about one woman in a hundred has breast cancer. Her result comes back <em>positive</em>. What is the chance she actually has cancer?</p>
+    <p>Before you read another line, commit to an answer. Not a calculation — a gut feeling. Then we'll count it out.</p>
+
+    <figure class="widget" id="quiz-widget" aria-label="Interactive: guess the chance before we calculate it">
+      <p class="quiz-q">Test catches <b>90%</b> of cancers · clears <b>91%</b> of healthy women · <b>1%</b> of women her age are ill · she tests <b>positive</b>. Chance she has cancer?</p>
+      <div class="game-actions" role="group" aria-label="Your guess">
+        <button class="act act-stay" id="quiz-90" aria-pressed="false">About 90%</button>
+        <button class="act act-stay" id="quiz-50" aria-pressed="false">About 50%</button>
+        <button class="act act-stay" id="quiz-10" aria-pressed="false">About 10%</button>
+      </div>
+      <div class="note quiz-reveal" id="quiz-reveal" hidden>
+        <p id="quiz-reveal-text"></p>
+      </div>
+      <figcaption class="widget-cap">When Gigerenzer put a version of this to practising gynaecologists, roughly half plumped for "nine in ten". Only about one in five landed anywhere near the truth.</figcaption>
+    </figure>
+  </section>
+
+  <section class="prose" id="thousand">
+    <h2><span class="sec-no">01</span> Count the women, not the percentages</h2>
+    <p>Percentages are slippery. The cleaner way to think about a test is to line up a thousand real people and follow what happens to each of them. So here are a thousand women from her age group. Watch where they land.</p>
+    <p>Of the thousand, about ten actually have cancer — that's the one-per-cent base rate. The test catches ninety per cent of them, so <span class="k-tp">nine</span> test positive and <span class="k-fn">one</span> slips through. The other 990 are healthy — but the test wrongly flags nine per cent of them, which is <span class="k-fp">89 women</span> who get a frightening positive result despite being perfectly well. Drag the sliders and watch the four groups move.</p>
+
+    <figure class="widget" id="grid-widget" aria-label="Interactive: a thousand women sorted by test outcome">
+      <svg id="grid-svg" class="stat-svg" viewBox="0 0 680 440" role="img" aria-label="One thousand dots, coloured by whether each woman is ill and how her test came out"></svg>
+      <div class="grid-legend" aria-hidden="true">
+        <span class="leg-item"><span class="leg-swatch sw-tp"></span>Ill, tests positive</span>
+        <span class="leg-item"><span class="leg-swatch sw-fn"></span>Ill, test misses</span>
+        <span class="leg-item"><span class="leg-swatch sw-fp"></span>Healthy, false alarm</span>
+        <span class="leg-item"><span class="leg-swatch sw-tn"></span>Healthy, all clear</span>
+      </div>
+      <div class="slider-block">
+        <label for="grid-prev">How common the disease is</label>
+        <input type="range" id="grid-prev" min="1" max="100" step="1" value="10" />
+        <div class="slider-vals"><span><output id="grid-prev-val">10</output> ill per 1,000 (<output id="grid-prev-pct">1.0</output>%)</span></div>
+      </div>
+      <div class="slider-block">
+        <label for="grid-sens">Sensitivity — catches real cancers</label>
+        <input type="range" id="grid-sens" min="50" max="100" step="1" value="90" />
+        <div class="slider-vals"><span><output id="grid-sens-val">90</output>%</span></div>
+      </div>
+      <div class="slider-block">
+        <label for="grid-spec">Specificity — clears healthy women</label>
+        <input type="range" id="grid-spec" min="50" max="100" step="1" value="91" />
+        <div class="slider-vals"><span><output id="grid-spec-val">91</output>%</span></div>
+      </div>
+      <div class="stat-readouts">
+        <div class="stat-box box-cover">
+          <span class="stat-lab">Positive results that are real cancer</span>
+          <div class="stat-big"><output id="grid-ppv">9%</output></div>
+          <span class="stat-sub" id="grid-ppv-frac">9 true / 98 positives</span>
+        </div>
+        <div class="stat-box box-target">
+          <span class="stat-lab">Positive results in all</span>
+          <div class="stat-big"><output id="grid-pos">98</output></div>
+          <span class="stat-sub">per 1,000 women screened</span>
+        </div>
+      </div>
+      <figcaption class="widget-cap" id="grid-cap">Of everyone who tests positive, only the teal dots are truly ill. At the default settings that's nine women out of ninety-eight.</figcaption>
+    </figure>
+  </section>
+
+  <section class="prose" id="why">
+    <h2><span class="sec-no">02</span> Why the intuition fails</h2>
+    <p>Look at what just happened. Nine genuinely ill women test positive. But eighty-nine <em>healthy</em> women also test positive, because nine per cent of a large number is itself a large number. The false alarms come from the huge healthy majority, and they swamp the handful of true positives. So a positive result is dominated not by the sick, but by the well who happened to trip the test.</p>
+    <p>That is the whole trap. We hear "ninety per cent accurate" and quietly assume a positive result is ninety per cent likely to be real. But the test's accuracy and the chance you're ill given a positive are two different numbers, and when the disease is rare they can be worlds apart. The rarer the condition, the more the false alarms dominate — which is exactly why a very good test can still be mostly wrong when it fires.</p>
+  </section>
+
+  <section class="prose" id="bayes">
+    <h2><span class="sec-no">03</span> Bayes' theorem is just the bookkeeping</h2>
+    <p>You didn't need a formula to get the right answer — you just counted dots. Bayes' theorem is nothing more than that counting, written down. The chance you're ill <em>given</em> a positive result is the ill-and-positive group divided by everyone who tests positive:</p>
+    <div class="note">
+      <p style="font-family: var(--mono); font-size: 1rem;">P(ill | positive) &nbsp;=&nbsp; <span class="k-tp">the truly-ill positives</span> &nbsp;÷&nbsp; ( <span class="k-tp">truly-ill positives</span> &nbsp;+&nbsp; <span class="k-fp">false alarms</span> )</p>
+      <p style="font-family: var(--mono); font-size: 1rem;">= (0.90 × 0.01) ÷ ( 0.90 × 0.01 &nbsp;+&nbsp; 0.09 × 0.99 ) &nbsp;=&nbsp; 0.009 ÷ 0.098 &nbsp;≈&nbsp; <b>9%</b></p>
+    </div>
+    <p>Every piece maps onto a block of dots. The top is the teal group; the bottom adds in the marigold false alarms. The <strong>base rate</strong> — that <span class="k-tp">0.01</span> — is doing the heavy lifting: shrink it and the teal block shrinks with it, while the false alarms barely budge. That's the base rate fallacy in one line: ignore the prior probability and the maths quietly falls apart.</p>
+  </section>
+
+  <section class="prose" id="twice">
+    <h2><span class="sec-no">04</span> Testing twice: your answer becomes the next question</h2>
+    <p>If a single positive only gets us to nine per cent, what should the woman do? Not panic — but not ignore it either. She should <em>test again</em>. And here's the elegant part: today's answer becomes tomorrow's starting point. Her nine per cent is no longer a wild one-per-cent prior; it's a considered belief, and a second independent test updates it further. Statisticians call this <strong>Bayesian updating</strong>: the posterior from one test is the prior for the next.</p>
+
+    <figure class="widget" id="chain-widget" aria-label="Interactive: how repeated tests update the probability">
+      <div class="chain-track" aria-hidden="true"><div class="chain-fill" id="chain-fill"></div></div>
+      <div class="stat-readouts">
+        <div class="stat-box box-cover">
+          <span class="stat-lab">Chance she's ill now</span>
+          <div class="stat-big"><output id="chain-p">1.0%</output></div>
+          <span class="stat-sub" id="chain-steps">start</span>
+        </div>
+        <div class="stat-box box-target">
+          <span class="stat-lab">Last update</span>
+          <div class="stat-big" style="font-size: clamp(1.1rem, 4vw, 1.5rem);"><output id="chain-detail">the prior, before any test</output></div>
+          <span class="stat-sub">prior → posterior</span>
+        </div>
+      </div>
+      <div class="stat-controls">
+        <button class="btn-run" id="chain-pos">Test again: positive</button>
+        <button class="preset" id="chain-neg">Test again: negative</button>
+        <button class="preset" id="chain-reset">↺ Reset</button>
+      </div>
+      <figcaption class="widget-cap">The same test as above, at its published settings, assuming each retest is independent. One positive takes her to 9%; a second to about 50%; a third past 90%. A negative pulls her sharply back down.</figcaption>
+    </figure>
+
+    <p>Two positives in a row and she's near a coin-flip; three and it's serious. This is why screening programmes rarely act on a single positive — they recall you for a second look. Each test is not a verdict but an update, nudging a probability up or down. Notice too that the same machinery runs in reverse: a negative after a positive drags her belief back toward healthy, because most positives were false alarms to begin with. It's the same trick behind <a href="monty-hall.html">the Monty Hall problem</a>: the host opening a door is new information, and the honest move is to let it rewrite your odds rather than cling to your first guess.</p>
+  </section>
+
+  <section class="prose" id="costs">
+    <h2><span class="sec-no">05</span> What screening actually costs</h2>
+    <p>So far this looks like a maths puzzle. It isn't. Those eighty-nine false alarms are real women who spend a week believing they may have cancer, then face a recall, and often a biopsy — a needle, a wait, a scar — only to be told they were fine all along. Screening also finds some cancers that would never have caused harm in a person's lifetime, and treats them anyway: surgery and radiotherapy for a disease that was never going to bite. That's the quiet cost economists call <em>overdiagnosis</em>.</p>
+    <p>Against that sits the obvious benefit: real cancers caught early, when they're most treatable. Screening genuinely saves lives. The hard question is never "does it work" but "for whom does the good outweigh the harm" — and the answer turns entirely on the base rate. Breast cancer is rare at forty and steadily less rare at seventy. Feed a rarer disease into the same test and the false alarms swell relative to the real finds. That single fact is why guidelines argue over the starting age, and why the same test can be sound policy at sixty and a closer call at forty.</p>
+
+    <figure class="widget" id="policy-widget" aria-label="Interactive: the screening trade-off by age">
+      <div class="slider-block">
+        <label for="policy-age">Screen women from age</label>
+        <input type="range" id="policy-age" min="40" max="70" step="5" value="50" />
+        <div class="slider-vals"><span>from age <output id="policy-age-val">50</output> · about <output id="policy-present-inline">8</output> in 1,000 are ill</span></div>
+      </div>
+      <ul class="ledger">
+        <li><span>Cancers present</span><b><output id="policy-present">8</output></b></li>
+        <li class="pol-good"><span>Caught by screening</span><b><output id="policy-caught">7</output></b></li>
+        <li class="pol-bad"><span>Missed — falsely reassured</span><b><output id="policy-missed">1</output></b></li>
+        <li class="pol-bad"><span>False alarms — recalled, cancer-free</span><b><output id="policy-fp">89</output></b></li>
+        <li><span>…of whom sent for biopsy</span><b><output id="policy-biopsy">22</output></b></li>
+        <li class="ledger-total"><span>Chance a positive means cancer</span><b><output id="policy-ppv">7%</output></b></li>
+      </ul>
+      <figcaption class="widget-cap" id="policy-cap">Per 1,000 women screened. These are stylised, order-of-magnitude figures — the shape of the trade-off is real, the third decimal is not. Roughly one in five screen-detected cancers may be overdiagnosed.</figcaption>
+    </figure>
+  </section>
+
+  <section class="prose" id="close">
+    <h2><span class="sec-no">06</span> So what?</h2>
+    <p>The lesson reaches far past mammograms. Any test for a rare thing — a spam filter, an airport scanner, a sniffer dog, a fraud alert, a rare-disease screen — lives under the same arithmetic. When the thing you're hunting is scarce, even a very accurate test throws off more false alarms than true finds, and a single positive is the start of an inquiry, not the end of one. Ask not just "how accurate is the test" but "how rare is the thing", and always, always ask what happens next to the people who test positive.</p>
+    <p class="kicker">A positive result is not a diagnosis. It's a nudge — and how big a nudge depends entirely on how rare the thing was to begin with.</p>
+    <div class="note">
+      <p>This is an essay about arithmetic, not medical advice. The figures are rounded for teaching; real screening decisions belong with you and your doctor, who can weigh your actual risk.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p>An essay from Notes &amp; Tones.</p>
+  <p class="foot-meta">Count the dots. Test twice. Mind the base rate. <span aria-hidden="true">🩺</span></p>
+  <p class="foot-meta">Sources: Gigerenzer, <em>Calculated Risks</em>, and Gigerenzer et&nbsp;al. (2007) on helping doctors read health statistics; Hoffrage &amp; Gigerenzer (1998); the NHS Breast Screening Programme statistics; Lehman et&nbsp;al. (2017) on digital-mammography accuracy; the USPSTF 2024 recommendation; and the Marmot review (2012) on overdiagnosis. Teaching figures rounded from these; not clinical values.</p>
+  <p class="foot-meta"><a href="confidence.html">🎯 Read: Ninety-Five per cent confident?</a> &nbsp;·&nbsp; <a href="monty-hall.html">🚪 Read: To Switch, or Not to Switch?</a> &nbsp;·&nbsp; <a href="../index.html">← All essays</a></p>
+</footer>
+
+<script src="screening.js"></script>
+</body>
+</html>
