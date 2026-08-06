@@ -1,0 +1,3450 @@
+{
+ "source": "YouGov 'Most important issues facing the country' tracker",
+ "retrieved": "2026-08-06",
+ "data": [
+  {
+   "date": "2011-02-15",
+   "immigration": 47.0,
+   "economy": 78.0,
+   "health": 31.0
+  },
+  {
+   "date": "2011-03-01",
+   "immigration": 46.0,
+   "economy": 78.0,
+   "health": 29.0
+  },
+  {
+   "date": "2011-03-15",
+   "immigration": 46.0,
+   "economy": 77.0,
+   "health": 29.0
+  },
+  {
+   "date": "2011-03-29",
+   "immigration": 42.0,
+   "economy": 79.0,
+   "health": 27.0
+  },
+  {
+   "date": "2011-04-12",
+   "immigration": 43.0,
+   "economy": 75.0,
+   "health": 37.0
+  },
+  {
+   "date": "2011-04-26",
+   "immigration": 51.0,
+   "economy": 75.0,
+   "health": 32.0
+  },
+  {
+   "date": "2011-05-10",
+   "immigration": 48.0,
+   "economy": 75.0,
+   "health": 37.0
+  },
+  {
+   "date": "2011-05-24",
+   "immigration": 48.0,
+   "economy": 76.0,
+   "health": 33.0
+  },
+  {
+   "date": "2011-06-07",
+   "immigration": 51.0,
+   "economy": 76.0,
+   "health": 35.0
+  },
+  {
+   "date": "2011-06-14",
+   "immigration": 49.0,
+   "economy": 73.0,
+   "health": 43.0
+  },
+  {
+   "date": "2011-06-21",
+   "immigration": 46.0,
+   "economy": 74.0,
+   "health": 36.0
+  },
+  {
+   "date": "2011-06-28",
+   "immigration": 46.0,
+   "economy": 76.0,
+   "health": 31.0
+  },
+  {
+   "date": "2011-07-05",
+   "immigration": 48.0,
+   "economy": 73.0,
+   "health": 29.0
+  },
+  {
+   "date": "2011-07-12",
+   "immigration": 49.0,
+   "economy": 75.0,
+   "health": 29.0
+  },
+  {
+   "date": "2011-07-19",
+   "immigration": 48.0,
+   "economy": 77.0,
+   "health": 28.0
+  },
+  {
+   "date": "2011-07-26",
+   "immigration": 49.0,
+   "economy": 76.0,
+   "health": 28.0
+  },
+  {
+   "date": "2011-08-09",
+   "immigration": 46.0,
+   "economy": 74.0,
+   "health": 20.0
+  },
+  {
+   "date": "2011-08-23",
+   "immigration": 47.0,
+   "economy": 76.0,
+   "health": 17.0
+  },
+  {
+   "date": "2011-09-06",
+   "immigration": 49.0,
+   "economy": 75.0,
+   "health": 27.0
+  },
+  {
+   "date": "2011-09-20",
+   "immigration": 44.0,
+   "economy": 77.0,
+   "health": 21.0
+  },
+  {
+   "date": "2011-10-04",
+   "immigration": 49.0,
+   "economy": 79.0,
+   "health": 26.0
+  },
+  {
+   "date": "2011-10-18",
+   "immigration": 45.0,
+   "economy": 84.0,
+   "health": 28.0
+  },
+  {
+   "date": "2011-11-01",
+   "immigration": 48.0,
+   "economy": 80.0,
+   "health": 23.0
+  },
+  {
+   "date": "2011-11-15",
+   "immigration": 51.0,
+   "economy": 80.0,
+   "health": 22.0
+  },
+  {
+   "date": "2011-11-29",
+   "immigration": 49.0,
+   "economy": 81.0,
+   "health": 22.0
+  },
+  {
+   "date": "2011-12-13",
+   "immigration": 41.0,
+   "economy": 81.0,
+   "health": 20.0
+  },
+  {
+   "date": "2012-01-03",
+   "immigration": 41.0,
+   "economy": 81.0,
+   "health": 22.0
+  },
+  {
+   "date": "2012-01-17",
+   "immigration": 45.0,
+   "economy": 82.0,
+   "health": 22.0
+  },
+  {
+   "date": "2012-01-31",
+   "immigration": 47.0,
+   "economy": 82.0,
+   "health": 25.0
+  },
+  {
+   "date": "2012-02-14",
+   "immigration": 49.0,
+   "economy": 80.0,
+   "health": 32.0
+  },
+  {
+   "date": "2012-02-20",
+   "immigration": 42.0,
+   "economy": 75.0,
+   "health": 29.0
+  },
+  {
+   "date": "2012-02-28",
+   "immigration": 45.0,
+   "economy": 78.0,
+   "health": 37.0
+  },
+  {
+   "date": "2012-03-13",
+   "immigration": 45.0,
+   "economy": 77.0,
+   "health": 33.0
+  },
+  {
+   "date": "2012-03-27",
+   "immigration": 44.0,
+   "economy": 74.0,
+   "health": 33.0
+  },
+  {
+   "date": "2012-04-10",
+   "immigration": 47.0,
+   "economy": 77.0,
+   "health": 26.0
+  },
+  {
+   "date": "2012-04-24",
+   "immigration": 47.0,
+   "economy": 78.0,
+   "health": 25.0
+  },
+  {
+   "date": "2012-05-08",
+   "immigration": 46.0,
+   "economy": 81.0,
+   "health": 28.0
+  },
+  {
+   "date": "2012-05-22",
+   "immigration": 43.0,
+   "economy": 78.0,
+   "health": 24.0
+  },
+  {
+   "date": "2012-06-07",
+   "immigration": 43.0,
+   "economy": 76.0,
+   "health": 28.0
+  },
+  {
+   "date": "2012-06-19",
+   "immigration": 44.0,
+   "economy": 80.0,
+   "health": 24.0
+  },
+  {
+   "date": "2012-07-03",
+   "immigration": 44.0,
+   "economy": 79.0,
+   "health": 27.0
+  },
+  {
+   "date": "2012-07-17",
+   "immigration": 50.0,
+   "economy": 79.0,
+   "health": 28.0
+  },
+  {
+   "date": "2012-07-31",
+   "immigration": 46.0,
+   "economy": 79.0,
+   "health": 28.0
+  },
+  {
+   "date": "2012-08-14",
+   "immigration": 46.0,
+   "economy": 80.0,
+   "health": 27.0
+  },
+  {
+   "date": "2012-08-28",
+   "immigration": 47.0,
+   "economy": 79.0,
+   "health": 24.0
+  },
+  {
+   "date": "2012-09-11",
+   "immigration": 44.0,
+   "economy": 79.0,
+   "health": 27.0
+  },
+  {
+   "date": "2012-09-25",
+   "immigration": 46.0,
+   "economy": 75.0,
+   "health": 28.0
+  },
+  {
+   "date": "2012-10-09",
+   "immigration": 46.0,
+   "economy": 76.0,
+   "health": 30.0
+  },
+  {
+   "date": "2012-10-23",
+   "immigration": 49.0,
+   "economy": 75.0,
+   "health": 26.0
+  },
+  {
+   "date": "2012-11-06",
+   "immigration": 46.0,
+   "economy": 74.0,
+   "health": 27.0
+  },
+  {
+   "date": "2012-11-20",
+   "immigration": 48.0,
+   "economy": 77.0,
+   "health": 26.0
+  },
+  {
+   "date": "2012-12-04",
+   "immigration": 46.0,
+   "economy": 77.0,
+   "health": 30.0
+  },
+  {
+   "date": "2013-01-15",
+   "immigration": 47.0,
+   "economy": 77.0,
+   "health": 28.0
+  },
+  {
+   "date": "2013-01-29",
+   "immigration": 49.0,
+   "economy": 79.0,
+   "health": 26.0
+  },
+  {
+   "date": "2013-02-12",
+   "immigration": 52.0,
+   "economy": 74.0,
+   "health": 36.0
+  },
+  {
+   "date": "2013-02-26",
+   "immigration": 53.0,
+   "economy": 81.0,
+   "health": 32.0
+  },
+  {
+   "date": "2013-03-05",
+   "immigration": 54.0,
+   "economy": 77.0,
+   "health": 32.0
+  },
+  {
+   "date": "2013-03-12",
+   "immigration": 52.0,
+   "economy": 77.0,
+   "health": 31.0
+  },
+  {
+   "date": "2013-03-19",
+   "immigration": 53.0,
+   "economy": 78.0,
+   "health": 29.0
+  },
+  {
+   "date": "2013-03-26",
+   "immigration": 55.0,
+   "economy": 77.0,
+   "health": 31.0
+  },
+  {
+   "date": "2013-04-02",
+   "immigration": 51.0,
+   "economy": 77.0,
+   "health": 34.0
+  },
+  {
+   "date": "2013-04-09",
+   "immigration": 55.0,
+   "economy": 77.0,
+   "health": 31.0
+  },
+  {
+   "date": "2013-04-16",
+   "immigration": 55.0,
+   "economy": 78.0,
+   "health": 30.0
+  },
+  {
+   "date": "2013-04-23",
+   "immigration": 51.0,
+   "economy": 76.0,
+   "health": 34.0
+  },
+  {
+   "date": "2013-04-30",
+   "immigration": 55.0,
+   "economy": 77.0,
+   "health": 30.0
+  },
+  {
+   "date": "2013-05-07",
+   "immigration": 55.0,
+   "economy": 75.0,
+   "health": 28.0
+  },
+  {
+   "date": "2013-05-21",
+   "immigration": 56.0,
+   "economy": 72.0,
+   "health": 31.0
+  },
+  {
+   "date": "2013-06-04",
+   "immigration": 56.0,
+   "economy": 73.0,
+   "health": 32.0
+  },
+  {
+   "date": "2013-06-18",
+   "immigration": 52.0,
+   "economy": 66.0,
+   "health": 30.0
+  },
+  {
+   "date": "2013-07-16",
+   "immigration": 51.0,
+   "economy": 64.0,
+   "health": 37.0
+  },
+  {
+   "date": "2013-07-30",
+   "immigration": 50.0,
+   "economy": 66.0,
+   "health": 41.0
+  },
+  {
+   "date": "2013-08-13",
+   "immigration": 54.0,
+   "economy": 67.0,
+   "health": 32.0
+  },
+  {
+   "date": "2013-08-27",
+   "immigration": 53.0,
+   "economy": 67.0,
+   "health": 30.0
+  },
+  {
+   "date": "2013-09-10",
+   "immigration": 51.0,
+   "economy": 62.0,
+   "health": 32.0
+  },
+  {
+   "date": "2013-10-08",
+   "immigration": 48.0,
+   "economy": 63.0,
+   "health": 33.0
+  },
+  {
+   "date": "2013-10-22",
+   "immigration": 54.0,
+   "economy": 66.0,
+   "health": 30.0
+  },
+  {
+   "date": "2013-11-05",
+   "immigration": 55.0,
+   "economy": 63.0,
+   "health": 26.0
+  },
+  {
+   "date": "2013-11-19",
+   "immigration": 53.0,
+   "economy": 62.0,
+   "health": 33.0
+  },
+  {
+   "date": "2013-12-03",
+   "immigration": 55.0,
+   "economy": 60.0,
+   "health": 28.0
+  },
+  {
+   "date": "2013-12-17",
+   "immigration": 56.0,
+   "economy": 58.0,
+   "health": 32.0
+  },
+  {
+   "date": "2014-01-14",
+   "immigration": 61.0,
+   "economy": 61.0,
+   "health": 31.0
+  },
+  {
+   "date": "2014-01-22",
+   "immigration": 56.0,
+   "economy": 58.0,
+   "health": 32.0
+  },
+  {
+   "date": "2014-01-28",
+   "immigration": 53.0,
+   "economy": 58.0,
+   "health": 31.0
+  },
+  {
+   "date": "2014-02-11",
+   "immigration": 51.0,
+   "economy": 54.0,
+   "health": 26.0
+  },
+  {
+   "date": "2014-02-25",
+   "immigration": 51.0,
+   "economy": 61.0,
+   "health": 31.0
+  },
+  {
+   "date": "2014-03-11",
+   "immigration": 53.0,
+   "economy": 60.0,
+   "health": 31.0
+  },
+  {
+   "date": "2014-03-25",
+   "immigration": 48.0,
+   "economy": 60.0,
+   "health": 36.0
+  },
+  {
+   "date": "2014-04-08",
+   "immigration": 51.0,
+   "economy": 57.0,
+   "health": 35.0
+  },
+  {
+   "date": "2014-05-13",
+   "immigration": 52.0,
+   "economy": 52.0,
+   "health": 34.0
+  },
+  {
+   "date": "2014-05-28",
+   "immigration": 56.0,
+   "economy": 53.0,
+   "health": 32.0
+  },
+  {
+   "date": "2014-06-10",
+   "immigration": 53.0,
+   "economy": 52.0,
+   "health": 36.0
+  },
+  {
+   "date": "2014-06-24",
+   "immigration": 56.0,
+   "economy": 51.0,
+   "health": 35.0
+  },
+  {
+   "date": "2014-07-08",
+   "immigration": 54.0,
+   "economy": 48.0,
+   "health": 40.0
+  },
+  {
+   "date": "2014-07-22",
+   "immigration": 57.0,
+   "economy": 49.0,
+   "health": 36.0
+  },
+  {
+   "date": "2014-08-05",
+   "immigration": 54.0,
+   "economy": 46.0,
+   "health": 41.0
+  },
+  {
+   "date": "2014-08-19",
+   "immigration": 56.0,
+   "economy": 50.0,
+   "health": 38.0
+  },
+  {
+   "date": "2014-09-02",
+   "immigration": 58.0,
+   "economy": 48.0,
+   "health": 34.0
+  },
+  {
+   "date": "2014-09-16",
+   "immigration": 54.0,
+   "economy": 50.0,
+   "health": 37.0
+  },
+  {
+   "date": "2014-10-14",
+   "immigration": 55.0,
+   "economy": 54.0,
+   "health": 45.0
+  },
+  {
+   "date": "2014-10-28",
+   "immigration": 57.0,
+   "economy": 50.0,
+   "health": 43.0
+  },
+  {
+   "date": "2014-11-11",
+   "immigration": 55.0,
+   "economy": 52.0,
+   "health": 39.0
+  },
+  {
+   "date": "2014-11-25",
+   "immigration": 53.0,
+   "economy": 50.0,
+   "health": 34.0
+  },
+  {
+   "date": "2014-12-09",
+   "immigration": 49.0,
+   "economy": 50.0,
+   "health": 33.0
+  },
+  {
+   "date": "2015-01-06",
+   "immigration": 52.0,
+   "economy": 52.0,
+   "health": 46.0
+  },
+  {
+   "date": "2015-01-20",
+   "immigration": 54.0,
+   "economy": 48.0,
+   "health": 46.0
+  },
+  {
+   "date": "2015-02-03",
+   "immigration": 49.0,
+   "economy": 50.0,
+   "health": 46.0
+  },
+  {
+   "date": "2015-02-17",
+   "immigration": 50.0,
+   "economy": 47.0,
+   "health": 43.0
+  },
+  {
+   "date": "2015-03-03",
+   "immigration": 50.0,
+   "economy": 46.0,
+   "health": 42.0
+  },
+  {
+   "date": "2015-03-17",
+   "immigration": 51.0,
+   "economy": 45.0,
+   "health": 45.0
+  },
+  {
+   "date": "2015-03-31",
+   "immigration": 48.0,
+   "economy": 53.0,
+   "health": 45.0
+  },
+  {
+   "date": "2015-04-14",
+   "immigration": 47.0,
+   "economy": 54.0,
+   "health": 51.0
+  },
+  {
+   "date": "2015-04-28",
+   "immigration": 50.0,
+   "economy": 52.0,
+   "health": 44.0
+  },
+  {
+   "date": "2015-05-12",
+   "immigration": 47.0,
+   "economy": 51.0,
+   "health": 45.0
+  },
+  {
+   "date": "2015-05-19",
+   "immigration": 51.0,
+   "economy": 48.0,
+   "health": 44.0
+  },
+  {
+   "date": "2015-05-26",
+   "immigration": 52.0,
+   "economy": 47.0,
+   "health": 43.0
+  },
+  {
+   "date": "2015-06-02",
+   "immigration": 52.0,
+   "economy": 46.0,
+   "health": 39.0
+  },
+  {
+   "date": "2015-06-09",
+   "immigration": 52.0,
+   "economy": 46.0,
+   "health": 38.0
+  },
+  {
+   "date": "2015-09-04",
+   "immigration": 71.0,
+   "economy": 35.0,
+   "health": 28.0
+  },
+  {
+   "date": "2015-12-18",
+   "immigration": 63.0,
+   "economy": 33.0,
+   "health": 39.0
+  },
+  {
+   "date": "2016-06-08",
+   "immigration": 56.0,
+   "economy": 34.0,
+   "health": 35.0
+  },
+  {
+   "date": "2016-07-06",
+   "immigration": 46.0,
+   "economy": 47.0,
+   "health": 30.0
+  },
+  {
+   "date": "2016-07-26",
+   "immigration": 47.0,
+   "economy": 43.0,
+   "health": 29.0
+  },
+  {
+   "date": "2016-08-02",
+   "immigration": 49.0,
+   "economy": 42.0,
+   "health": 28.0
+  },
+  {
+   "date": "2016-08-09",
+   "immigration": 48.0,
+   "economy": 45.0,
+   "health": 29.0
+  },
+  {
+   "date": "2016-08-17",
+   "immigration": 44.0,
+   "economy": 41.0,
+   "health": 30.0
+  },
+  {
+   "date": "2016-08-23",
+   "immigration": 45.0,
+   "economy": 41.0,
+   "health": 32.0
+  },
+  {
+   "date": "2016-08-31",
+   "immigration": 49.0,
+   "economy": 37.0,
+   "health": 37.0
+  },
+  {
+   "date": "2016-09-14",
+   "immigration": 48.0,
+   "economy": 35.0,
+   "health": 38.0
+  },
+  {
+   "date": "2016-10-12",
+   "immigration": 45.0,
+   "economy": 36.0,
+   "health": 32.0
+  },
+  {
+   "date": "2016-10-25",
+   "immigration": 49.0,
+   "economy": 39.0,
+   "health": 33.0
+  },
+  {
+   "date": "2016-11-01",
+   "immigration": 47.0,
+   "economy": 37.0,
+   "health": 33.0
+  },
+  {
+   "date": "2016-11-15",
+   "immigration": 44.0,
+   "economy": 39.0,
+   "health": 35.0
+  },
+  {
+   "date": "2016-11-29",
+   "immigration": 40.0,
+   "economy": 40.0,
+   "health": 35.0
+  },
+  {
+   "date": "2016-12-17",
+   "immigration": 45.0,
+   "economy": 33.0,
+   "health": 34.0
+  },
+  {
+   "date": "2017-01-10",
+   "immigration": 42.0,
+   "economy": 34.0,
+   "health": 45.0
+  },
+  {
+   "date": "2017-01-17",
+   "immigration": 42.0,
+   "economy": 31.0,
+   "health": 52.0
+  },
+  {
+   "date": "2017-01-24",
+   "immigration": 42.0,
+   "economy": 35.0,
+   "health": 45.0
+  },
+  {
+   "date": "2017-01-31",
+   "immigration": 46.0,
+   "economy": 34.0,
+   "health": 44.0
+  },
+  {
+   "date": "2017-02-13",
+   "immigration": 41.0,
+   "economy": 30.0,
+   "health": 50.0
+  },
+  {
+   "date": "2017-02-22",
+   "immigration": 38.0,
+   "economy": 31.0,
+   "health": 51.0
+  },
+  {
+   "date": "2017-02-28",
+   "immigration": 38.0,
+   "economy": 31.0,
+   "health": 46.0
+  },
+  {
+   "date": "2017-03-14",
+   "immigration": 41.0,
+   "economy": 32.0,
+   "health": 43.0
+  },
+  {
+   "date": "2017-03-21",
+   "immigration": 38.0,
+   "economy": 33.0,
+   "health": 44.0
+  },
+  {
+   "date": "2017-03-27",
+   "immigration": 39.0,
+   "economy": 33.0,
+   "health": 41.0
+  },
+  {
+   "date": "2017-04-06",
+   "immigration": 38.0,
+   "economy": 32.0,
+   "health": 42.0
+  },
+  {
+   "date": "2017-04-19",
+   "immigration": 36.0,
+   "economy": 36.0,
+   "health": 42.0
+  },
+  {
+   "date": "2017-04-26",
+   "immigration": 36.0,
+   "economy": 35.0,
+   "health": 47.0
+  },
+  {
+   "date": "2017-05-03",
+   "immigration": 35.0,
+   "economy": 34.0,
+   "health": 45.0
+  },
+  {
+   "date": "2017-05-10",
+   "immigration": 34.0,
+   "economy": 35.0,
+   "health": 48.0
+  },
+  {
+   "date": "2017-05-17",
+   "immigration": 37.0,
+   "economy": 35.0,
+   "health": 47.0
+  },
+  {
+   "date": "2017-05-31",
+   "immigration": 35.0,
+   "economy": 29.0,
+   "health": 42.0
+  },
+  {
+   "date": "2017-06-07",
+   "immigration": 37.0,
+   "economy": 28.0,
+   "health": 41.0
+  },
+  {
+   "date": "2017-06-22",
+   "immigration": 34.0,
+   "economy": 30.0,
+   "health": 37.0
+  },
+  {
+   "date": "2017-07-11",
+   "immigration": 38.0,
+   "economy": 35.0,
+   "health": 38.0
+  },
+  {
+   "date": "2017-08-01",
+   "immigration": 36.0,
+   "economy": 35.0,
+   "health": 39.0
+  },
+  {
+   "date": "2017-08-31",
+   "immigration": 36.0,
+   "economy": 33.0,
+   "health": 34.0
+  },
+  {
+   "date": "2017-09-12",
+   "immigration": 37.0,
+   "economy": 30.0,
+   "health": 38.0
+  },
+  {
+   "date": "2017-10-11",
+   "immigration": 33.0,
+   "economy": 32.0,
+   "health": 37.0
+  },
+  {
+   "date": "2017-11-28",
+   "immigration": 32.0,
+   "economy": 35.0,
+   "health": 42.0
+  },
+  {
+   "date": "2017-12-12",
+   "immigration": 31.0,
+   "economy": 31.0,
+   "health": 39.0
+  },
+  {
+   "date": "2017-12-20",
+   "immigration": 30.0,
+   "economy": 31.0,
+   "health": 39.0
+  },
+  {
+   "date": "2017-12-21",
+   "immigration": 31.0,
+   "economy": 30.0,
+   "health": 43.0
+  },
+  {
+   "date": "2018-01-03",
+   "immigration": 31.0,
+   "economy": 32.0,
+   "health": 41.0
+  },
+  {
+   "date": "2018-01-08",
+   "immigration": 28.0,
+   "economy": 30.0,
+   "health": 52.0
+  },
+  {
+   "date": "2018-01-16",
+   "immigration": 30.0,
+   "economy": 28.0,
+   "health": 54.0
+  },
+  {
+   "date": "2018-01-30",
+   "immigration": 30.0,
+   "economy": 26.0,
+   "health": 53.0
+  },
+  {
+   "date": "2018-02-06",
+   "immigration": 29.0,
+   "economy": 27.0,
+   "health": 53.0
+  },
+  {
+   "date": "2018-02-13",
+   "immigration": 31.0,
+   "economy": 28.0,
+   "health": 52.0
+  },
+  {
+   "date": "2018-02-20",
+   "immigration": 30.0,
+   "economy": 28.0,
+   "health": 49.0
+  },
+  {
+   "date": "2018-02-27",
+   "immigration": 33.0,
+   "economy": 28.0,
+   "health": 45.0
+  },
+  {
+   "date": "2018-03-06",
+   "immigration": 31.0,
+   "economy": 29.0,
+   "health": 42.0
+  },
+  {
+   "date": "2018-03-27",
+   "immigration": 31.0,
+   "economy": 27.0,
+   "health": 44.0
+  },
+  {
+   "date": "2018-04-10",
+   "immigration": 30.0,
+   "economy": 26.0,
+   "health": 44.0
+  },
+  {
+   "date": "2018-04-17",
+   "immigration": 29.0,
+   "economy": 24.0,
+   "health": 43.0
+  },
+  {
+   "date": "2018-04-25",
+   "immigration": 30.0,
+   "economy": 26.0,
+   "health": 39.0
+  },
+  {
+   "date": "2018-05-01",
+   "immigration": 35.0,
+   "economy": 26.0,
+   "health": 40.0
+  },
+  {
+   "date": "2018-05-09",
+   "immigration": 30.0,
+   "economy": 28.0,
+   "health": 41.0
+  },
+  {
+   "date": "2018-05-14",
+   "immigration": 31.0,
+   "economy": 28.0,
+   "health": 44.0
+  },
+  {
+   "date": "2018-05-21",
+   "immigration": 29.0,
+   "economy": 27.0,
+   "health": 42.0
+  },
+  {
+   "date": "2018-05-29",
+   "immigration": 29.0,
+   "economy": 27.0,
+   "health": 46.0
+  },
+  {
+   "date": "2018-06-05",
+   "immigration": 31.0,
+   "economy": 25.0,
+   "health": 43.0
+  },
+  {
+   "date": "2018-06-12",
+   "immigration": 31.0,
+   "economy": 27.0,
+   "health": 42.0
+  },
+  {
+   "date": "2018-06-19",
+   "immigration": 31.0,
+   "economy": 26.0,
+   "health": 46.0
+  },
+  {
+   "date": "2018-06-26",
+   "immigration": 35.0,
+   "economy": 25.0,
+   "health": 44.0
+  },
+  {
+   "date": "2018-07-04",
+   "immigration": 31.0,
+   "economy": 25.0,
+   "health": 45.0
+  },
+  {
+   "date": "2018-07-09",
+   "immigration": 31.0,
+   "economy": 28.0,
+   "health": 43.0
+  },
+  {
+   "date": "2018-07-17",
+   "immigration": 30.0,
+   "economy": 29.0,
+   "health": 42.0
+  },
+  {
+   "date": "2018-07-23",
+   "immigration": 31.0,
+   "economy": 27.0,
+   "health": 39.0
+  },
+  {
+   "date": "2018-07-31",
+   "immigration": 29.0,
+   "economy": 26.0,
+   "health": 38.0
+  },
+  {
+   "date": "2018-08-14",
+   "immigration": 32.0,
+   "economy": 29.0,
+   "health": 37.0
+  },
+  {
+   "date": "2018-08-21",
+   "immigration": 33.0,
+   "economy": 27.0,
+   "health": 36.0
+  },
+  {
+   "date": "2018-08-29",
+   "immigration": 28.0,
+   "economy": 30.0,
+   "health": 35.0
+  },
+  {
+   "date": "2018-09-04",
+   "immigration": 30.0,
+   "economy": 30.0,
+   "health": 37.0
+  },
+  {
+   "date": "2018-09-20",
+   "immigration": 29.0,
+   "economy": 30.0,
+   "health": 34.0
+  },
+  {
+   "date": "2018-10-01",
+   "immigration": 30.0,
+   "economy": 29.0,
+   "health": 37.0
+  },
+  {
+   "date": "2018-10-09",
+   "immigration": 27.0,
+   "economy": 28.0,
+   "health": 38.0
+  },
+  {
+   "date": "2018-10-15",
+   "immigration": 28.0,
+   "economy": 26.0,
+   "health": 37.0
+  },
+  {
+   "date": "2018-10-23",
+   "immigration": 27.0,
+   "economy": 27.0,
+   "health": 38.0
+  },
+  {
+   "date": "2018-11-05",
+   "immigration": 27.0,
+   "economy": 22.0,
+   "health": 37.0
+  },
+  {
+   "date": "2018-11-19",
+   "immigration": 29.0,
+   "economy": 26.0,
+   "health": 34.0
+  },
+  {
+   "date": "2018-11-27",
+   "immigration": 26.0,
+   "economy": 28.0,
+   "health": 36.0
+  },
+  {
+   "date": "2018-12-04",
+   "immigration": 24.0,
+   "economy": 29.0,
+   "health": 32.0
+  },
+  {
+   "date": "2019-01-07",
+   "immigration": 31.0,
+   "economy": 29.0,
+   "health": 34.0
+  },
+  {
+   "date": "2019-01-14",
+   "immigration": 30.0,
+   "economy": 28.0,
+   "health": 34.0
+  },
+  {
+   "date": "2019-01-21",
+   "immigration": 31.0,
+   "economy": 27.0,
+   "health": 34.0
+  },
+  {
+   "date": "2019-02-04",
+   "immigration": 27.0,
+   "economy": 29.0,
+   "health": 34.0
+  },
+  {
+   "date": "2019-03-07",
+   "immigration": 27.0,
+   "economy": 28.0,
+   "health": 28.0
+  },
+  {
+   "date": "2019-03-25",
+   "immigration": 22.0,
+   "economy": 24.0,
+   "health": 30.0
+  },
+  {
+   "date": "2019-04-03",
+   "immigration": 22.0,
+   "economy": 27.0,
+   "health": 32.0
+  },
+  {
+   "date": "2019-04-11",
+   "immigration": 25.0,
+   "economy": 29.0,
+   "health": 31.0
+  },
+  {
+   "date": "2019-04-30",
+   "immigration": 23.0,
+   "economy": 24.0,
+   "health": 29.0
+  },
+  {
+   "date": "2019-05-29",
+   "immigration": 22.0,
+   "economy": 25.0,
+   "health": 32.0
+  },
+  {
+   "date": "2019-06-06",
+   "immigration": 23.0,
+   "economy": 26.0,
+   "health": 36.0
+  },
+  {
+   "date": "2019-06-24",
+   "immigration": 24.0,
+   "economy": 26.0,
+   "health": 34.0
+  },
+  {
+   "date": "2019-07-01",
+   "immigration": 24.0,
+   "economy": 24.0,
+   "health": 35.0
+  },
+  {
+   "date": "2019-07-08",
+   "immigration": 26.0,
+   "economy": 23.0,
+   "health": 32.0
+  },
+  {
+   "date": "2019-07-14",
+   "immigration": 28.0,
+   "economy": 24.0,
+   "health": 31.0
+  },
+  {
+   "date": "2019-07-22",
+   "immigration": 24.0,
+   "economy": 25.0,
+   "health": 31.0
+  },
+  {
+   "date": "2019-07-29",
+   "immigration": 21.0,
+   "economy": 24.0,
+   "health": 30.0
+  },
+  {
+   "date": "2019-08-05",
+   "immigration": 22.0,
+   "economy": 26.0,
+   "health": 32.0
+  },
+  {
+   "date": "2019-08-11",
+   "immigration": 22.0,
+   "economy": 28.0,
+   "health": 33.0
+  },
+  {
+   "date": "2019-08-19",
+   "immigration": 24.0,
+   "economy": 27.0,
+   "health": 33.0
+  },
+  {
+   "date": "2019-08-26",
+   "immigration": 25.0,
+   "economy": 25.0,
+   "health": 35.0
+  },
+  {
+   "date": "2019-09-02",
+   "immigration": 24.0,
+   "economy": 25.0,
+   "health": 31.0
+  },
+  {
+   "date": "2019-09-09",
+   "immigration": 20.0,
+   "economy": 28.0,
+   "health": 31.0
+  },
+  {
+   "date": "2019-09-16",
+   "immigration": 22.0,
+   "economy": 25.0,
+   "health": 31.0
+  },
+  {
+   "date": "2019-09-23",
+   "immigration": 22.0,
+   "economy": 25.0,
+   "health": 35.0
+  },
+  {
+   "date": "2019-09-30",
+   "immigration": 21.0,
+   "economy": 27.0,
+   "health": 31.0
+  },
+  {
+   "date": "2019-10-06",
+   "immigration": 23.0,
+   "economy": 26.0,
+   "health": 35.0
+  },
+  {
+   "date": "2019-10-14",
+   "immigration": 21.0,
+   "economy": 26.0,
+   "health": 32.0
+  },
+  {
+   "date": "2019-10-21",
+   "immigration": 21.0,
+   "economy": 26.0,
+   "health": 35.0
+  },
+  {
+   "date": "2019-10-28",
+   "immigration": 23.0,
+   "economy": 27.0,
+   "health": 35.0
+  },
+  {
+   "date": "2019-11-04",
+   "immigration": 23.0,
+   "economy": 27.0,
+   "health": 38.0
+  },
+  {
+   "date": "2019-11-11",
+   "immigration": 23.0,
+   "economy": 27.0,
+   "health": 42.0
+  },
+  {
+   "date": "2019-11-18",
+   "immigration": 21.0,
+   "economy": 27.0,
+   "health": 45.0
+  },
+  {
+   "date": "2019-11-25",
+   "immigration": 22.0,
+   "economy": 26.0,
+   "health": 47.0
+  },
+  {
+   "date": "2019-12-01",
+   "immigration": 22.0,
+   "economy": 24.0,
+   "health": 47.0
+  },
+  {
+   "date": "2019-12-16",
+   "immigration": 20.0,
+   "economy": 24.0,
+   "health": 52.0
+  },
+  {
+   "date": "2019-12-23",
+   "immigration": 22.0,
+   "economy": 25.0,
+   "health": 53.0
+  },
+  {
+   "date": "2019-12-30",
+   "immigration": 23.0,
+   "economy": 26.0,
+   "health": 46.0
+  },
+  {
+   "date": "2020-01-06",
+   "immigration": 21.0,
+   "economy": 26.0,
+   "health": 46.0
+  },
+  {
+   "date": "2020-01-13",
+   "immigration": 22.0,
+   "economy": 25.0,
+   "health": 44.0
+  },
+  {
+   "date": "2020-01-20",
+   "immigration": 19.0,
+   "economy": 26.0,
+   "health": 43.0
+  },
+  {
+   "date": "2020-01-27",
+   "immigration": 22.0,
+   "economy": 25.0,
+   "health": 43.0
+  },
+  {
+   "date": "2020-02-03",
+   "immigration": 22.0,
+   "economy": 29.0,
+   "health": 44.0
+  },
+  {
+   "date": "2020-02-09",
+   "immigration": 23.0,
+   "economy": 27.0,
+   "health": 41.0
+  },
+  {
+   "date": "2020-02-17",
+   "immigration": 23.0,
+   "economy": 28.0,
+   "health": 44.0
+  },
+  {
+   "date": "2020-02-24",
+   "immigration": 25.0,
+   "economy": 28.0,
+   "health": 41.0
+  },
+  {
+   "date": "2020-03-02",
+   "immigration": 20.0,
+   "economy": 26.0,
+   "health": 51.0
+  },
+  {
+   "date": "2020-03-09",
+   "immigration": 23.0,
+   "economy": 26.0,
+   "health": 54.0
+  },
+  {
+   "date": "2020-03-16",
+   "immigration": 17.0,
+   "economy": 32.0,
+   "health": 68.0
+  },
+  {
+   "date": "2020-03-23",
+   "immigration": 13.0,
+   "economy": 45.0,
+   "health": 75.0
+  },
+  {
+   "date": "2020-03-30",
+   "immigration": 11.0,
+   "economy": 45.0,
+   "health": 74.0
+  },
+  {
+   "date": "2020-04-06",
+   "immigration": 13.0,
+   "economy": 50.0,
+   "health": 74.0
+  },
+  {
+   "date": "2020-04-13",
+   "immigration": 13.0,
+   "economy": 52.0,
+   "health": 74.0
+  },
+  {
+   "date": "2020-04-20",
+   "immigration": 11.0,
+   "economy": 56.0,
+   "health": 75.0
+  },
+  {
+   "date": "2020-04-27",
+   "immigration": 14.0,
+   "economy": 58.0,
+   "health": 72.0
+  },
+  {
+   "date": "2020-05-03",
+   "immigration": 13.0,
+   "economy": 57.0,
+   "health": 71.0
+  },
+  {
+   "date": "2020-05-10",
+   "immigration": 16.0,
+   "economy": 57.0,
+   "health": 66.0
+  },
+  {
+   "date": "2020-05-18",
+   "immigration": 16.0,
+   "economy": 57.0,
+   "health": 68.0
+  },
+  {
+   "date": "2020-05-25",
+   "immigration": 19.0,
+   "economy": 61.0,
+   "health": 66.0
+  },
+  {
+   "date": "2020-06-02",
+   "immigration": 17.0,
+   "economy": 52.0,
+   "health": 62.0
+  },
+  {
+   "date": "2020-06-08",
+   "immigration": 17.0,
+   "economy": 56.0,
+   "health": 62.0
+  },
+  {
+   "date": "2020-06-15",
+   "immigration": 16.0,
+   "economy": 61.0,
+   "health": 60.0
+  },
+  {
+   "date": "2020-06-22",
+   "immigration": 16.0,
+   "economy": 58.0,
+   "health": 59.0
+  },
+  {
+   "date": "2020-06-29",
+   "immigration": 19.0,
+   "economy": 54.0,
+   "health": 55.0
+  },
+  {
+   "date": "2020-07-06",
+   "immigration": 19.0,
+   "economy": 57.0,
+   "health": 57.0
+  },
+  {
+   "date": "2020-07-13",
+   "immigration": 18.0,
+   "economy": 60.0,
+   "health": 56.0
+  },
+  {
+   "date": "2020-07-20",
+   "immigration": 20.0,
+   "economy": 56.0,
+   "health": 55.0
+  },
+  {
+   "date": "2020-07-27",
+   "immigration": 20.0,
+   "economy": 55.0,
+   "health": 57.0
+  },
+  {
+   "date": "2020-08-03",
+   "immigration": 19.0,
+   "economy": 57.0,
+   "health": 60.0
+  },
+  {
+   "date": "2020-08-10",
+   "immigration": 29.0,
+   "economy": 54.0,
+   "health": 52.0
+  },
+  {
+   "date": "2020-08-17",
+   "immigration": 30.0,
+   "economy": 56.0,
+   "health": 52.0
+  },
+  {
+   "date": "2020-08-24",
+   "immigration": 30.0,
+   "economy": 54.0,
+   "health": 51.0
+  },
+  {
+   "date": "2020-08-31",
+   "immigration": 26.0,
+   "economy": 56.0,
+   "health": 53.0
+  },
+  {
+   "date": "2020-09-07",
+   "immigration": 30.0,
+   "economy": 55.0,
+   "health": 52.0
+  },
+  {
+   "date": "2020-09-14",
+   "immigration": 26.0,
+   "economy": 53.0,
+   "health": 53.0
+  },
+  {
+   "date": "2020-09-21",
+   "immigration": 26.0,
+   "economy": 53.0,
+   "health": 55.0
+  },
+  {
+   "date": "2020-09-28",
+   "immigration": 25.0,
+   "economy": 56.0,
+   "health": 58.0
+  },
+  {
+   "date": "2020-10-05",
+   "immigration": 26.0,
+   "economy": 54.0,
+   "health": 58.0
+  },
+  {
+   "date": "2020-10-12",
+   "immigration": 24.0,
+   "economy": 56.0,
+   "health": 57.0
+  },
+  {
+   "date": "2020-10-18",
+   "immigration": 21.0,
+   "economy": 55.0,
+   "health": 61.0
+  },
+  {
+   "date": "2020-10-26",
+   "immigration": 20.0,
+   "economy": 57.0,
+   "health": 58.0
+  },
+  {
+   "date": "2020-11-02",
+   "immigration": 22.0,
+   "economy": 55.0,
+   "health": 61.0
+  },
+  {
+   "date": "2020-11-09",
+   "immigration": 21.0,
+   "economy": 55.0,
+   "health": 58.0
+  },
+  {
+   "date": "2020-11-15",
+   "immigration": 21.0,
+   "economy": 57.0,
+   "health": 60.0
+  },
+  {
+   "date": "2020-11-23",
+   "immigration": 19.0,
+   "economy": 55.0,
+   "health": 56.0
+  },
+  {
+   "date": "2020-11-30",
+   "immigration": 21.0,
+   "economy": 59.0,
+   "health": 59.0
+  },
+  {
+   "date": "2020-12-07",
+   "immigration": 21.0,
+   "economy": 54.0,
+   "health": 55.0
+  },
+  {
+   "date": "2020-12-14",
+   "immigration": 20.0,
+   "economy": 54.0,
+   "health": 56.0
+  },
+  {
+   "date": "2020-12-20",
+   "immigration": 17.0,
+   "economy": 53.0,
+   "health": 58.0
+  },
+  {
+   "date": "2020-12-28",
+   "immigration": 21.0,
+   "economy": 55.0,
+   "health": 57.0
+  },
+  {
+   "date": "2021-01-04",
+   "immigration": 17.0,
+   "economy": 55.0,
+   "health": 64.0
+  },
+  {
+   "date": "2021-01-11",
+   "immigration": 17.0,
+   "economy": 55.0,
+   "health": 69.0
+  },
+  {
+   "date": "2021-01-18",
+   "immigration": 18.0,
+   "economy": 56.0,
+   "health": 64.0
+  },
+  {
+   "date": "2021-01-25",
+   "immigration": 18.0,
+   "economy": 52.0,
+   "health": 63.0
+  },
+  {
+   "date": "2021-02-01",
+   "immigration": 17.0,
+   "economy": 55.0,
+   "health": 66.0
+  },
+  {
+   "date": "2021-02-08",
+   "immigration": 19.0,
+   "economy": 55.0,
+   "health": 61.0
+  },
+  {
+   "date": "2021-02-15",
+   "immigration": 19.0,
+   "economy": 58.0,
+   "health": 62.0
+  },
+  {
+   "date": "2021-02-22",
+   "immigration": 18.0,
+   "economy": 57.0,
+   "health": 60.0
+  },
+  {
+   "date": "2021-03-01",
+   "immigration": 21.0,
+   "economy": 58.0,
+   "health": 54.0
+  },
+  {
+   "date": "2021-03-08",
+   "immigration": 19.0,
+   "economy": 60.0,
+   "health": 58.0
+  },
+  {
+   "date": "2021-03-15",
+   "immigration": 18.0,
+   "economy": 58.0,
+   "health": 56.0
+  },
+  {
+   "date": "2021-03-22",
+   "immigration": 21.0,
+   "economy": 57.0,
+   "health": 55.0
+  },
+  {
+   "date": "2021-03-29",
+   "immigration": 26.0,
+   "economy": 56.0,
+   "health": 54.0
+  },
+  {
+   "date": "2021-04-05",
+   "immigration": 24.0,
+   "economy": 53.0,
+   "health": 53.0
+  },
+  {
+   "date": "2021-04-12",
+   "immigration": 22.0,
+   "economy": 54.0,
+   "health": 52.0
+  },
+  {
+   "date": "2021-04-19",
+   "immigration": 22.0,
+   "economy": 53.0,
+   "health": 52.0
+  },
+  {
+   "date": "2021-04-26",
+   "immigration": 23.0,
+   "economy": 53.0,
+   "health": 52.0
+  },
+  {
+   "date": "2021-05-03",
+   "immigration": 20.0,
+   "economy": 49.0,
+   "health": 52.0
+  },
+  {
+   "date": "2021-05-10",
+   "immigration": 22.0,
+   "economy": 51.0,
+   "health": 50.0
+  },
+  {
+   "date": "2021-05-17",
+   "immigration": 24.0,
+   "economy": 50.0,
+   "health": 57.0
+  },
+  {
+   "date": "2021-05-24",
+   "immigration": 26.0,
+   "economy": 48.0,
+   "health": 52.0
+  },
+  {
+   "date": "2021-05-31",
+   "immigration": 24.0,
+   "economy": 46.0,
+   "health": 54.0
+  },
+  {
+   "date": "2021-06-07",
+   "immigration": 28.0,
+   "economy": 47.0,
+   "health": 50.0
+  },
+  {
+   "date": "2021-06-14",
+   "immigration": 28.0,
+   "economy": 49.0,
+   "health": 50.0
+  },
+  {
+   "date": "2021-06-21",
+   "immigration": 26.0,
+   "economy": 45.0,
+   "health": 53.0
+  },
+  {
+   "date": "2021-06-28",
+   "immigration": 24.0,
+   "economy": 47.0,
+   "health": 53.0
+  },
+  {
+   "date": "2021-07-05",
+   "immigration": 23.0,
+   "economy": 48.0,
+   "health": 53.0
+  },
+  {
+   "date": "2021-07-12",
+   "immigration": 26.0,
+   "economy": 46.0,
+   "health": 54.0
+  },
+  {
+   "date": "2021-07-19",
+   "immigration": 24.0,
+   "economy": 46.0,
+   "health": 56.0
+  },
+  {
+   "date": "2021-07-26",
+   "immigration": 27.0,
+   "economy": 46.0,
+   "health": 57.0
+  },
+  {
+   "date": "2021-08-02",
+   "immigration": 27.0,
+   "economy": 44.0,
+   "health": 50.0
+  },
+  {
+   "date": "2021-08-09",
+   "immigration": 31.0,
+   "economy": 44.0,
+   "health": 50.0
+  },
+  {
+   "date": "2021-08-16",
+   "immigration": 29.0,
+   "economy": 40.0,
+   "health": 48.0
+  },
+  {
+   "date": "2021-08-23",
+   "immigration": 36.0,
+   "economy": 36.0,
+   "health": 45.0
+  },
+  {
+   "date": "2021-08-29",
+   "immigration": 35.0,
+   "economy": 38.0,
+   "health": 45.0
+  },
+  {
+   "date": "2021-09-06",
+   "immigration": 32.0,
+   "economy": 37.0,
+   "health": 50.0
+  },
+  {
+   "date": "2021-09-12",
+   "immigration": 35.0,
+   "economy": 38.0,
+   "health": 50.0
+  },
+  {
+   "date": "2021-09-19",
+   "immigration": 32.0,
+   "economy": 38.0,
+   "health": 50.0
+  },
+  {
+   "date": "2021-09-26",
+   "immigration": 28.0,
+   "economy": 43.0,
+   "health": 48.0
+  },
+  {
+   "date": "2021-10-04",
+   "immigration": 26.0,
+   "economy": 44.0,
+   "health": 48.0
+  },
+  {
+   "date": "2021-10-11",
+   "immigration": 26.0,
+   "economy": 49.0,
+   "health": 45.0
+  },
+  {
+   "date": "2021-10-18",
+   "immigration": 25.0,
+   "economy": 44.0,
+   "health": 47.0
+  },
+  {
+   "date": "2021-10-25",
+   "immigration": 23.0,
+   "economy": 44.0,
+   "health": 54.0
+  },
+  {
+   "date": "2021-11-01",
+   "immigration": 23.0,
+   "economy": 45.0,
+   "health": 47.0
+  },
+  {
+   "date": "2021-11-07",
+   "immigration": 27.0,
+   "economy": 43.0,
+   "health": 48.0
+  },
+  {
+   "date": "2021-11-15",
+   "immigration": 29.0,
+   "economy": 41.0,
+   "health": 50.0
+  },
+  {
+   "date": "2021-11-22",
+   "immigration": 34.0,
+   "economy": 40.0,
+   "health": 49.0
+  },
+  {
+   "date": "2021-11-29",
+   "immigration": 38.0,
+   "economy": 38.0,
+   "health": 54.0
+  },
+  {
+   "date": "2021-12-05",
+   "immigration": 36.0,
+   "economy": 38.0,
+   "health": 52.0
+  },
+  {
+   "date": "2021-12-13",
+   "immigration": 35.0,
+   "economy": 41.0,
+   "health": 53.0
+  },
+  {
+   "date": "2021-12-20",
+   "immigration": 31.0,
+   "economy": 45.0,
+   "health": 57.0
+  },
+  {
+   "date": "2021-12-27",
+   "immigration": 30.0,
+   "economy": 42.0,
+   "health": 50.0
+  },
+  {
+   "date": "2022-01-02",
+   "immigration": 29.0,
+   "economy": 45.0,
+   "health": 51.0
+  },
+  {
+   "date": "2022-01-10",
+   "immigration": 27.0,
+   "economy": 46.0,
+   "health": 55.0
+  },
+  {
+   "date": "2022-01-17",
+   "immigration": 28.0,
+   "economy": 42.0,
+   "health": 53.0
+  },
+  {
+   "date": "2022-01-24",
+   "immigration": 26.0,
+   "economy": 46.0,
+   "health": 52.0
+  },
+  {
+   "date": "2022-01-31",
+   "immigration": 26.0,
+   "economy": 45.0,
+   "health": 46.0
+  },
+  {
+   "date": "2022-02-06",
+   "immigration": 22.0,
+   "economy": 57.0,
+   "health": 42.0
+  },
+  {
+   "date": "2022-02-13",
+   "immigration": 23.0,
+   "economy": 48.0,
+   "health": 47.0
+  },
+  {
+   "date": "2022-02-21",
+   "immigration": 20.0,
+   "economy": 49.0,
+   "health": 44.0
+  },
+  {
+   "date": "2022-02-28",
+   "immigration": 22.0,
+   "economy": 51.0,
+   "health": 39.0
+  },
+  {
+   "date": "2022-03-07",
+   "immigration": 27.0,
+   "economy": 50.0,
+   "health": 35.0
+  },
+  {
+   "date": "2022-03-14",
+   "immigration": 26.0,
+   "economy": 54.0,
+   "health": 35.0
+  },
+  {
+   "date": "2022-03-20",
+   "immigration": 26.0,
+   "economy": 54.0,
+   "health": 39.0
+  },
+  {
+   "date": "2022-03-28",
+   "immigration": 24.0,
+   "economy": 56.0,
+   "health": 39.0
+  },
+  {
+   "date": "2022-04-04",
+   "immigration": 20.0,
+   "economy": 57.0,
+   "health": 39.0
+  },
+  {
+   "date": "2022-04-11",
+   "immigration": 21.0,
+   "economy": 57.0,
+   "health": 42.0
+  },
+  {
+   "date": "2022-04-18",
+   "immigration": 31.0,
+   "economy": 55.0,
+   "health": 39.0
+  },
+  {
+   "date": "2022-04-24",
+   "immigration": 28.0,
+   "economy": 56.0,
+   "health": 37.0
+  },
+  {
+   "date": "2022-05-02",
+   "immigration": 25.0,
+   "economy": 56.0,
+   "health": 37.0
+  },
+  {
+   "date": "2022-05-08",
+   "immigration": 25.0,
+   "economy": 62.0,
+   "health": 37.0
+  },
+  {
+   "date": "2022-05-16",
+   "immigration": 25.0,
+   "economy": 61.0,
+   "health": 36.0
+  },
+  {
+   "date": "2022-05-22",
+   "immigration": 24.0,
+   "economy": 63.0,
+   "health": 34.0
+  },
+  {
+   "date": "2022-05-29",
+   "immigration": 22.0,
+   "economy": 62.0,
+   "health": 35.0
+  },
+  {
+   "date": "2022-06-06",
+   "immigration": 23.0,
+   "economy": 62.0,
+   "health": 36.0
+  },
+  {
+   "date": "2022-06-13",
+   "immigration": 25.0,
+   "economy": 65.0,
+   "health": 36.0
+  },
+  {
+   "date": "2022-06-19",
+   "immigration": 31.0,
+   "economy": 64.0,
+   "health": 37.0
+  },
+  {
+   "date": "2022-06-27",
+   "immigration": 28.0,
+   "economy": 65.0,
+   "health": 35.0
+  },
+  {
+   "date": "2022-07-03",
+   "immigration": 25.0,
+   "economy": 64.0,
+   "health": 39.0
+  },
+  {
+   "date": "2022-07-11",
+   "immigration": 22.0,
+   "economy": 69.0,
+   "health": 38.0
+  },
+  {
+   "date": "2022-07-17",
+   "immigration": 22.0,
+   "economy": 66.0,
+   "health": 42.0
+  },
+  {
+   "date": "2022-07-25",
+   "immigration": 24.0,
+   "economy": 64.0,
+   "health": 38.0
+  },
+  {
+   "date": "2022-07-31",
+   "immigration": 22.0,
+   "economy": 68.0,
+   "health": 39.0
+  },
+  {
+   "date": "2022-08-08",
+   "immigration": 23.0,
+   "economy": 69.0,
+   "health": 38.0
+  },
+  {
+   "date": "2022-08-15",
+   "immigration": 24.0,
+   "economy": 68.0,
+   "health": 38.0
+  },
+  {
+   "date": "2022-08-22",
+   "immigration": 21.0,
+   "economy": 71.0,
+   "health": 41.0
+  },
+  {
+   "date": "2022-08-29",
+   "immigration": 25.0,
+   "economy": 70.0,
+   "health": 35.0
+  },
+  {
+   "date": "2022-09-05",
+   "immigration": 24.0,
+   "economy": 71.0,
+   "health": 37.0
+  },
+  {
+   "date": "2022-09-12",
+   "immigration": 26.0,
+   "economy": 68.0,
+   "health": 39.0
+  },
+  {
+   "date": "2022-09-25",
+   "immigration": 24.0,
+   "economy": 66.0,
+   "health": 40.0
+  },
+  {
+   "date": "2022-10-02",
+   "immigration": 21.0,
+   "economy": 73.0,
+   "health": 38.0
+  },
+  {
+   "date": "2022-10-09",
+   "immigration": 22.0,
+   "economy": 67.0,
+   "health": 42.0
+  },
+  {
+   "date": "2022-10-17",
+   "immigration": 24.0,
+   "economy": 72.0,
+   "health": 38.0
+  },
+  {
+   "date": "2022-10-23",
+   "immigration": 21.0,
+   "economy": 74.0,
+   "health": 42.0
+  },
+  {
+   "date": "2022-10-31",
+   "immigration": 22.0,
+   "economy": 70.0,
+   "health": 43.0
+  },
+  {
+   "date": "2022-11-07",
+   "immigration": 37.0,
+   "economy": 68.0,
+   "health": 39.0
+  },
+  {
+   "date": "2022-11-14",
+   "immigration": 31.0,
+   "economy": 70.0,
+   "health": 41.0
+  },
+  {
+   "date": "2022-11-21",
+   "immigration": 33.0,
+   "economy": 69.0,
+   "health": 41.0
+  },
+  {
+   "date": "2022-11-28",
+   "immigration": 33.0,
+   "economy": 66.0,
+   "health": 43.0
+  },
+  {
+   "date": "2022-12-05",
+   "immigration": 33.0,
+   "economy": 65.0,
+   "health": 44.0
+  },
+  {
+   "date": "2022-12-12",
+   "immigration": 32.0,
+   "economy": 67.0,
+   "health": 49.0
+  },
+  {
+   "date": "2022-12-19",
+   "immigration": 33.0,
+   "economy": 66.0,
+   "health": 47.0
+  },
+  {
+   "date": "2022-12-26",
+   "immigration": 33.0,
+   "economy": 67.0,
+   "health": 49.0
+  },
+  {
+   "date": "2023-01-01",
+   "immigration": 32.0,
+   "economy": 62.0,
+   "health": 50.0
+  },
+  {
+   "date": "2023-01-09",
+   "immigration": 31.0,
+   "economy": 66.0,
+   "health": 60.0
+  },
+  {
+   "date": "2023-01-15",
+   "immigration": 29.0,
+   "economy": 64.0,
+   "health": 59.0
+  },
+  {
+   "date": "2023-01-23",
+   "immigration": 28.0,
+   "economy": 65.0,
+   "health": 55.0
+  },
+  {
+   "date": "2023-01-30",
+   "immigration": 30.0,
+   "economy": 63.0,
+   "health": 56.0
+  },
+  {
+   "date": "2023-02-06",
+   "immigration": 28.0,
+   "economy": 67.0,
+   "health": 50.0
+  },
+  {
+   "date": "2023-02-13",
+   "immigration": 27.0,
+   "economy": 64.0,
+   "health": 49.0
+  },
+  {
+   "date": "2023-02-20",
+   "immigration": 28.0,
+   "economy": 63.0,
+   "health": 49.0
+  },
+  {
+   "date": "2023-02-26",
+   "immigration": 31.0,
+   "economy": 64.0,
+   "health": 47.0
+  },
+  {
+   "date": "2023-03-06",
+   "immigration": 30.0,
+   "economy": 59.0,
+   "health": 45.0
+  },
+  {
+   "date": "2023-03-20",
+   "immigration": 32.0,
+   "economy": 59.0,
+   "health": 43.0
+  },
+  {
+   "date": "2023-03-27",
+   "immigration": 35.0,
+   "economy": 63.0,
+   "health": 44.0
+  },
+  {
+   "date": "2023-04-03",
+   "immigration": 35.0,
+   "economy": 58.0,
+   "health": 45.0
+  },
+  {
+   "date": "2023-04-10",
+   "immigration": 37.0,
+   "economy": 59.0,
+   "health": 42.0
+  },
+  {
+   "date": "2023-04-17",
+   "immigration": 33.0,
+   "economy": 59.0,
+   "health": 47.0
+  },
+  {
+   "date": "2023-04-24",
+   "immigration": 32.0,
+   "economy": 59.0,
+   "health": 46.0
+  },
+  {
+   "date": "2023-05-01",
+   "immigration": 34.0,
+   "economy": 57.0,
+   "health": 46.0
+  },
+  {
+   "date": "2023-05-08",
+   "immigration": 33.0,
+   "economy": 60.0,
+   "health": 45.0
+  },
+  {
+   "date": "2023-05-15",
+   "immigration": 33.0,
+   "economy": 59.0,
+   "health": 45.0
+  },
+  {
+   "date": "2023-05-21",
+   "immigration": 31.0,
+   "economy": 60.0,
+   "health": 43.0
+  },
+  {
+   "date": "2023-05-28",
+   "immigration": 35.0,
+   "economy": 56.0,
+   "health": 45.0
+  },
+  {
+   "date": "2023-06-05",
+   "immigration": 34.0,
+   "economy": 56.0,
+   "health": 42.0
+  },
+  {
+   "date": "2023-06-12",
+   "immigration": 33.0,
+   "economy": 55.0,
+   "health": 42.0
+  },
+  {
+   "date": "2023-06-19",
+   "immigration": 34.0,
+   "economy": 59.0,
+   "health": 42.0
+  },
+  {
+   "date": "2023-06-26",
+   "immigration": 35.0,
+   "economy": 66.0,
+   "health": 41.0
+  },
+  {
+   "date": "2023-07-03",
+   "immigration": 37.0,
+   "economy": 63.0,
+   "health": 44.0
+  },
+  {
+   "date": "2023-07-10",
+   "immigration": 34.0,
+   "economy": 64.0,
+   "health": 46.0
+  },
+  {
+   "date": "2023-07-17",
+   "immigration": 34.0,
+   "economy": 61.0,
+   "health": 47.0
+  },
+  {
+   "date": "2023-07-24",
+   "immigration": 36.0,
+   "economy": 64.0,
+   "health": 46.0
+  },
+  {
+   "date": "2023-07-31",
+   "immigration": 35.0,
+   "economy": 60.0,
+   "health": 41.0
+  },
+  {
+   "date": "2023-08-07",
+   "immigration": 36.0,
+   "economy": 65.0,
+   "health": 40.0
+  },
+  {
+   "date": "2023-08-14",
+   "immigration": 40.0,
+   "economy": 60.0,
+   "health": 45.0
+  },
+  {
+   "date": "2023-08-21",
+   "immigration": 41.0,
+   "economy": 61.0,
+   "health": 43.0
+  },
+  {
+   "date": "2023-08-28",
+   "immigration": 40.0,
+   "economy": 61.0,
+   "health": 43.0
+  },
+  {
+   "date": "2023-09-04",
+   "immigration": 39.0,
+   "economy": 61.0,
+   "health": 43.0
+  },
+  {
+   "date": "2023-09-11",
+   "immigration": 38.0,
+   "economy": 60.0,
+   "health": 43.0
+  },
+  {
+   "date": "2023-09-18",
+   "immigration": 38.0,
+   "economy": 58.0,
+   "health": 44.0
+  },
+  {
+   "date": "2023-09-25",
+   "immigration": 35.0,
+   "economy": 60.0,
+   "health": 48.0
+  },
+  {
+   "date": "2023-10-02",
+   "immigration": 39.0,
+   "economy": 54.0,
+   "health": 44.0
+  },
+  {
+   "date": "2023-10-09",
+   "immigration": 36.0,
+   "economy": 57.0,
+   "health": 47.0
+  },
+  {
+   "date": "2023-10-16",
+   "immigration": 36.0,
+   "economy": 56.0,
+   "health": 45.0
+  },
+  {
+   "date": "2023-10-23",
+   "immigration": 38.0,
+   "economy": 56.0,
+   "health": 44.0
+  },
+  {
+   "date": "2023-10-30",
+   "immigration": 39.0,
+   "economy": 57.0,
+   "health": 42.0
+  },
+  {
+   "date": "2023-11-06",
+   "immigration": 37.0,
+   "economy": 55.0,
+   "health": 44.0
+  },
+  {
+   "date": "2023-11-13",
+   "immigration": 36.0,
+   "economy": 56.0,
+   "health": 44.0
+  },
+  {
+   "date": "2023-11-20",
+   "immigration": 39.0,
+   "economy": 53.0,
+   "health": 44.0
+  },
+  {
+   "date": "2023-11-27",
+   "immigration": 41.0,
+   "economy": 55.0,
+   "health": 43.0
+  },
+  {
+   "date": "2023-12-04",
+   "immigration": 40.0,
+   "economy": 55.0,
+   "health": 44.0
+  },
+  {
+   "date": "2023-12-11",
+   "immigration": 39.0,
+   "economy": 56.0,
+   "health": 45.0
+  },
+  {
+   "date": "2023-12-18",
+   "immigration": 38.0,
+   "economy": 53.0,
+   "health": 46.0
+  },
+  {
+   "date": "2023-12-24",
+   "immigration": 39.0,
+   "economy": 54.0,
+   "health": 48.0
+  },
+  {
+   "date": "2024-01-01",
+   "immigration": 39.0,
+   "economy": 53.0,
+   "health": 45.0
+  },
+  {
+   "date": "2024-01-07",
+   "immigration": 40.0,
+   "economy": 55.0,
+   "health": 46.0
+  },
+  {
+   "date": "2024-01-15",
+   "immigration": 37.0,
+   "economy": 56.0,
+   "health": 45.0
+  },
+  {
+   "date": "2024-01-22",
+   "immigration": 39.0,
+   "economy": 53.0,
+   "health": 46.0
+  },
+  {
+   "date": "2024-01-29",
+   "immigration": 37.0,
+   "economy": 52.0,
+   "health": 45.0
+  },
+  {
+   "date": "2024-02-05",
+   "immigration": 39.0,
+   "economy": 50.0,
+   "health": 44.0
+  },
+  {
+   "date": "2024-02-11",
+   "immigration": 38.0,
+   "economy": 52.0,
+   "health": 47.0
+  },
+  {
+   "date": "2024-02-19",
+   "immigration": 38.0,
+   "economy": 56.0,
+   "health": 46.0
+  },
+  {
+   "date": "2024-02-26",
+   "immigration": 38.0,
+   "economy": 53.0,
+   "health": 48.0
+  },
+  {
+   "date": "2024-03-04",
+   "immigration": 37.0,
+   "economy": 55.0,
+   "health": 46.0
+  },
+  {
+   "date": "2024-03-11",
+   "immigration": 37.0,
+   "economy": 54.0,
+   "health": 46.0
+  },
+  {
+   "date": "2024-03-18",
+   "immigration": 37.0,
+   "economy": 53.0,
+   "health": 44.0
+  },
+  {
+   "date": "2024-03-25",
+   "immigration": 37.0,
+   "economy": 52.0,
+   "health": 47.0
+  },
+  {
+   "date": "2024-04-01",
+   "immigration": 36.0,
+   "economy": 51.0,
+   "health": 45.0
+  },
+  {
+   "date": "2024-04-08",
+   "immigration": 37.0,
+   "economy": 51.0,
+   "health": 46.0
+  },
+  {
+   "date": "2024-04-16",
+   "immigration": 37.0,
+   "economy": 51.0,
+   "health": 45.0
+  },
+  {
+   "date": "2024-04-22",
+   "immigration": 38.0,
+   "economy": 53.0,
+   "health": 47.0
+  },
+  {
+   "date": "2024-04-28",
+   "immigration": 40.0,
+   "economy": 49.0,
+   "health": 45.0
+  },
+  {
+   "date": "2024-05-06",
+   "immigration": 38.0,
+   "economy": 49.0,
+   "health": 46.0
+  },
+  {
+   "date": "2024-05-13",
+   "immigration": 42.0,
+   "economy": 49.0,
+   "health": 44.0
+  },
+  {
+   "date": "2024-05-20",
+   "immigration": 41.0,
+   "economy": 50.0,
+   "health": 44.0
+  },
+  {
+   "date": "2024-05-27",
+   "immigration": 39.0,
+   "economy": 52.0,
+   "health": 47.0
+  },
+  {
+   "date": "2024-06-02",
+   "immigration": 36.0,
+   "economy": 51.0,
+   "health": 49.0
+  },
+  {
+   "date": "2024-06-10",
+   "immigration": 40.0,
+   "economy": 51.0,
+   "health": 49.0
+  },
+  {
+   "date": "2024-06-17",
+   "immigration": 41.0,
+   "economy": 51.0,
+   "health": 49.0
+  },
+  {
+   "date": "2024-06-24",
+   "immigration": 40.0,
+   "economy": 54.0,
+   "health": 50.0
+  },
+  {
+   "date": "2024-07-01",
+   "immigration": 41.0,
+   "economy": 51.0,
+   "health": 52.0
+  },
+  {
+   "date": "2024-07-22",
+   "immigration": 40.0,
+   "economy": 48.0,
+   "health": 50.0
+  },
+  {
+   "date": "2024-07-29",
+   "immigration": 42.0,
+   "economy": 49.0,
+   "health": 47.0
+  },
+  {
+   "date": "2024-08-19",
+   "immigration": 46.0,
+   "economy": 46.0,
+   "health": 39.0
+  },
+  {
+   "date": "2024-08-26",
+   "immigration": 48.0,
+   "economy": 49.0,
+   "health": 40.0
+  },
+  {
+   "date": "2024-09-02",
+   "immigration": 47.0,
+   "economy": 47.0,
+   "health": 41.0
+  },
+  {
+   "date": "2024-09-09",
+   "immigration": 44.0,
+   "economy": 46.0,
+   "health": 40.0
+  },
+  {
+   "date": "2024-09-16",
+   "immigration": 45.0,
+   "economy": 47.0,
+   "health": 46.0
+  },
+  {
+   "date": "2024-09-22",
+   "immigration": 46.0,
+   "economy": 48.0,
+   "health": 45.0
+  },
+  {
+   "date": "2024-09-30",
+   "immigration": 43.0,
+   "economy": 46.0,
+   "health": 43.0
+  },
+  {
+   "date": "2024-10-07",
+   "immigration": 44.0,
+   "economy": 48.0,
+   "health": 45.0
+  },
+  {
+   "date": "2024-10-14",
+   "immigration": 45.0,
+   "economy": 49.0,
+   "health": 42.0
+  },
+  {
+   "date": "2024-10-21",
+   "immigration": 44.0,
+   "economy": 48.0,
+   "health": 43.0
+  },
+  {
+   "date": "2024-10-28",
+   "immigration": 44.0,
+   "economy": 47.0,
+   "health": 45.0
+  },
+  {
+   "date": "2024-11-04",
+   "immigration": 44.0,
+   "economy": 50.0,
+   "health": 43.0
+  },
+  {
+   "date": "2024-11-11",
+   "immigration": 44.0,
+   "economy": 51.0,
+   "health": 43.0
+  },
+  {
+   "date": "2024-11-18",
+   "immigration": 44.0,
+   "economy": 51.0,
+   "health": 42.0
+  },
+  {
+   "date": "2024-11-25",
+   "immigration": 42.0,
+   "economy": 49.0,
+   "health": 38.0
+  },
+  {
+   "date": "2024-12-02",
+   "immigration": 44.0,
+   "economy": 48.0,
+   "health": 42.0
+  },
+  {
+   "date": "2024-12-09",
+   "immigration": 45.0,
+   "economy": 47.0,
+   "health": 45.0
+  },
+  {
+   "date": "2024-12-16",
+   "immigration": 42.0,
+   "economy": 52.0,
+   "health": 45.0
+  },
+  {
+   "date": "2024-12-23",
+   "immigration": 44.0,
+   "economy": 50.0,
+   "health": 41.0
+  },
+  {
+   "date": "2024-12-30",
+   "immigration": 46.0,
+   "economy": 52.0,
+   "health": 40.0
+  },
+  {
+   "date": "2025-01-06",
+   "immigration": 45.0,
+   "economy": 51.0,
+   "health": 45.0
+  },
+  {
+   "date": "2025-01-13",
+   "immigration": 44.0,
+   "economy": 57.0,
+   "health": 45.0
+  },
+  {
+   "date": "2025-01-20",
+   "immigration": 44.0,
+   "economy": 54.0,
+   "health": 44.0
+  },
+  {
+   "date": "2025-01-27",
+   "immigration": 42.0,
+   "economy": 55.0,
+   "health": 42.0
+  },
+  {
+   "date": "2025-02-09",
+   "immigration": 45.0,
+   "economy": 55.0,
+   "health": 39.0
+  },
+  {
+   "date": "2025-02-16",
+   "immigration": 48.0,
+   "economy": 52.0,
+   "health": 42.0
+  },
+  {
+   "date": "2025-02-23",
+   "immigration": 45.0,
+   "economy": 54.0,
+   "health": 37.0
+  },
+  {
+   "date": "2025-03-03",
+   "immigration": 46.0,
+   "economy": 51.0,
+   "health": 38.0
+  },
+  {
+   "date": "2025-03-10",
+   "immigration": 44.0,
+   "economy": 52.0,
+   "health": 36.0
+  },
+  {
+   "date": "2025-03-17",
+   "immigration": 42.0,
+   "economy": 53.0,
+   "health": 36.0
+  },
+  {
+   "date": "2025-03-24",
+   "immigration": 43.0,
+   "economy": 51.0,
+   "health": 36.0
+  },
+  {
+   "date": "2025-03-31",
+   "immigration": 44.0,
+   "economy": 52.0,
+   "health": 35.0
+  },
+  {
+   "date": "2025-04-07",
+   "immigration": 44.0,
+   "economy": 56.0,
+   "health": 34.0
+  },
+  {
+   "date": "2025-04-14",
+   "immigration": 44.0,
+   "economy": 58.0,
+   "health": 34.0
+  },
+  {
+   "date": "2025-04-21",
+   "immigration": 46.0,
+   "economy": 54.0,
+   "health": 35.0
+  },
+  {
+   "date": "2025-04-28",
+   "immigration": 44.0,
+   "economy": 54.0,
+   "health": 37.0
+  },
+  {
+   "date": "2025-05-05",
+   "immigration": 48.0,
+   "economy": 52.0,
+   "health": 36.0
+  },
+  {
+   "date": "2025-05-12",
+   "immigration": 50.0,
+   "economy": 49.0,
+   "health": 36.0
+  },
+  {
+   "date": "2025-05-19",
+   "immigration": 51.0,
+   "economy": 51.0,
+   "health": 35.0
+  },
+  {
+   "date": "2025-05-26",
+   "immigration": 50.0,
+   "economy": 52.0,
+   "health": 33.0
+  },
+  {
+   "date": "2025-06-01",
+   "immigration": 47.0,
+   "economy": 49.0,
+   "health": 35.0
+  },
+  {
+   "date": "2025-06-09",
+   "immigration": 47.0,
+   "economy": 50.0,
+   "health": 35.0
+  },
+  {
+   "date": "2025-06-16",
+   "immigration": 48.0,
+   "economy": 51.0,
+   "health": 36.0
+  },
+  {
+   "date": "2025-06-23",
+   "immigration": 51.0,
+   "economy": 48.0,
+   "health": 32.0
+  },
+  {
+   "date": "2025-06-30",
+   "immigration": 49.0,
+   "economy": 48.0,
+   "health": 35.0
+  },
+  {
+   "date": "2025-07-07",
+   "immigration": 51.0,
+   "economy": 52.0,
+   "health": 34.0
+  },
+  {
+   "date": "2025-07-14",
+   "immigration": 53.0,
+   "economy": 48.0,
+   "health": 33.0
+  },
+  {
+   "date": "2025-07-21",
+   "immigration": 52.0,
+   "economy": 51.0,
+   "health": 32.0
+  },
+  {
+   "date": "2025-08-04",
+   "immigration": 56.0,
+   "economy": 46.0,
+   "health": 34.0
+  },
+  {
+   "date": "2025-08-11",
+   "immigration": 54.0,
+   "economy": 50.0,
+   "health": 33.0
+  },
+  {
+   "date": "2025-08-18",
+   "immigration": 54.0,
+   "economy": 53.0,
+   "health": 31.0
+  },
+  {
+   "date": "2025-08-24",
+   "immigration": 57.0,
+   "economy": 51.0,
+   "health": 30.0
+  },
+  {
+   "date": "2025-09-01",
+   "immigration": 56.0,
+   "economy": 52.0,
+   "health": 31.0
+  },
+  {
+   "date": "2025-09-08",
+   "immigration": 58.0,
+   "economy": 51.0,
+   "health": 29.0
+  },
+  {
+   "date": "2025-09-15",
+   "immigration": 56.0,
+   "economy": 53.0,
+   "health": 28.0
+  },
+  {
+   "date": "2025-09-22",
+   "immigration": 55.0,
+   "economy": 54.0,
+   "health": 30.0
+  },
+  {
+   "date": "2025-09-29",
+   "immigration": 57.0,
+   "economy": 55.0,
+   "health": 30.0
+  },
+  {
+   "date": "2025-10-06",
+   "immigration": 57.0,
+   "economy": 52.0,
+   "health": 30.0
+  },
+  {
+   "date": "2025-10-13",
+   "immigration": 56.0,
+   "economy": 53.0,
+   "health": 32.0
+  },
+  {
+   "date": "2025-10-20",
+   "immigration": 54.0,
+   "economy": 52.0,
+   "health": 31.0
+  },
+  {
+   "date": "2025-10-27",
+   "immigration": 53.0,
+   "economy": 55.0,
+   "health": 30.0
+  },
+  {
+   "date": "2025-11-03",
+   "immigration": 55.0,
+   "economy": 53.0,
+   "health": 31.0
+  },
+  {
+   "date": "2025-11-10",
+   "immigration": 53.0,
+   "economy": 53.0,
+   "health": 33.0
+  },
+  {
+   "date": "2025-11-17",
+   "immigration": 53.0,
+   "economy": 55.0,
+   "health": 33.0
+  },
+  {
+   "date": "2025-11-24",
+   "immigration": 55.0,
+   "economy": 55.0,
+   "health": 29.0
+  },
+  {
+   "date": "2025-12-01",
+   "immigration": 54.0,
+   "economy": 54.0,
+   "health": 28.0
+  },
+  {
+   "date": "2025-12-08",
+   "immigration": 50.0,
+   "economy": 50.0,
+   "health": 31.0
+  },
+  {
+   "date": "2025-12-15",
+   "immigration": 51.0,
+   "economy": 54.0,
+   "health": 35.0
+  },
+  {
+   "date": "2025-12-22",
+   "immigration": 51.0,
+   "economy": 53.0,
+   "health": 32.0
+  },
+  {
+   "date": "2025-12-29",
+   "immigration": 51.0,
+   "economy": 55.0,
+   "health": 34.0
+  },
+  {
+   "date": "2026-01-05",
+   "immigration": 50.0,
+   "economy": 54.0,
+   "health": 34.0
+  },
+  {
+   "date": "2026-01-12",
+   "immigration": 50.0,
+   "economy": 53.0,
+   "health": 34.0
+  },
+  {
+   "date": "2026-01-19",
+   "immigration": 50.0,
+   "economy": 53.0,
+   "health": 33.0
+  },
+  {
+   "date": "2026-01-26",
+   "immigration": 52.0,
+   "economy": 54.0,
+   "health": 31.0
+  },
+  {
+   "date": "2026-02-02",
+   "immigration": 50.0,
+   "economy": 54.0,
+   "health": 32.0
+  },
+  {
+   "date": "2026-02-09",
+   "immigration": 48.0,
+   "economy": 53.0,
+   "health": 33.0
+  },
+  {
+   "date": "2026-02-16",
+   "immigration": 50.0,
+   "economy": 51.0,
+   "health": 32.0
+  },
+  {
+   "date": "2026-02-23",
+   "immigration": 48.0,
+   "economy": 52.0,
+   "health": 32.0
+  },
+  {
+   "date": "2026-03-02",
+   "immigration": 49.0,
+   "economy": 50.0,
+   "health": 32.0
+  },
+  {
+   "date": "2026-03-09",
+   "immigration": 51.0,
+   "economy": 50.0,
+   "health": 29.0
+  },
+  {
+   "date": "2026-03-16",
+   "immigration": 49.0,
+   "economy": 55.0,
+   "health": 26.0
+  },
+  {
+   "date": "2026-03-23",
+   "immigration": 48.0,
+   "economy": 55.0,
+   "health": 30.0
+  },
+  {
+   "date": "2026-03-30",
+   "immigration": 47.0,
+   "economy": 56.0,
+   "health": 28.0
+  },
+  {
+   "date": "2026-04-06",
+   "immigration": 48.0,
+   "economy": 53.0,
+   "health": 29.0
+  },
+  {
+   "date": "2026-04-13",
+   "immigration": 47.0,
+   "economy": 55.0,
+   "health": 27.0
+  },
+  {
+   "date": "2026-04-20",
+   "immigration": 47.0,
+   "economy": 53.0,
+   "health": 28.0
+  },
+  {
+   "date": "2026-04-27",
+   "immigration": 51.0,
+   "economy": 54.0,
+   "health": 28.0
+  },
+  {
+   "date": "2026-05-04",
+   "immigration": 49.0,
+   "economy": 53.0,
+   "health": 27.0
+  },
+  {
+   "date": "2026-05-11",
+   "immigration": 48.0,
+   "economy": 56.0,
+   "health": 30.0
+  },
+  {
+   "date": "2026-05-18",
+   "immigration": 49.0,
+   "economy": 56.0,
+   "health": 30.0
+  },
+  {
+   "date": "2026-05-25",
+   "immigration": 45.0,
+   "economy": 54.0,
+   "health": 29.0
+  },
+  {
+   "date": "2026-06-01",
+   "immigration": 47.0,
+   "economy": 54.0,
+   "health": 25.0
+  },
+  {
+   "date": "2026-06-08",
+   "immigration": 46.0,
+   "economy": 51.0,
+   "health": 26.0
+  },
+  {
+   "date": "2026-06-15",
+   "immigration": 49.0,
+   "economy": 50.0,
+   "health": 26.0
+  },
+  {
+   "date": "2026-06-21",
+   "immigration": 49.0,
+   "economy": 51.0,
+   "health": 26.0
+  },
+  {
+   "date": "2026-06-29",
+   "immigration": 50.0,
+   "economy": 50.0,
+   "health": 25.0
+  },
+  {
+   "date": "2026-07-20",
+   "immigration": 46.0,
+   "economy": 50.0,
+   "health": 27.0
+  },
+  {
+   "date": "2026-07-27",
+   "immigration": 47.0,
+   "economy": 51.0,
+   "health": 25.0
+  },
+  {
+   "date": "2026-08-03",
+   "immigration": 48.0,
+   "economy": 48.0,
+   "health": 28.0
+  }
+ ]
+}

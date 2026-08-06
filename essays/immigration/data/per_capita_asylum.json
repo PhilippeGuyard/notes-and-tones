@@ -1,0 +1,203 @@
+{
+ "source": "Eurostat migr_asyappctza + demo_pjan (2025); UK: Home Office",
+ "retrieved": "2026-08-06",
+ "data": [
+  {
+   "geo": "EL",
+   "country": "Greece",
+   "applications": 61630,
+   "population": 10372335,
+   "per_million": 5942
+  },
+  {
+   "geo": "CY",
+   "country": "Cyprus",
+   "applications": 4610,
+   "population": 982966,
+   "per_million": 4690
+  },
+  {
+   "geo": "ES",
+   "country": "Spain",
+   "applications": 143715,
+   "population": 49128297,
+   "per_million": 2925
+  },
+  {
+   "geo": "BE",
+   "country": "Belgium",
+   "applications": 34405,
+   "population": 11883495,
+   "per_million": 2895
+  },
+  {
+   "geo": "LU",
+   "country": "Luxembourg",
+   "applications": 1840,
+   "population": 681973,
+   "per_million": 2698
+  },
+  {
+   "geo": "IE",
+   "country": "Ireland",
+   "applications": 13160,
+   "population": 5440278,
+   "per_million": 2419
+  },
+  {
+   "geo": "IT",
+   "country": "Italy",
+   "applications": 135485,
+   "population": 58943464,
+   "per_million": 2299
+  },
+  {
+   "geo": "FR",
+   "country": "France",
+   "applications": 151665,
+   "population": 68882600,
+   "per_million": 2202
+  },
+  {
+   "geo": "DE",
+   "country": "Germany",
+   "applications": 168450,
+   "population": 83577140,
+   "per_million": 2016
+  },
+  {
+   "geo": "SI",
+   "country": "Slovenia",
+   "applications": 4170,
+   "population": 2130850,
+   "per_million": 1957
+  },
+  {
+   "geo": "AT",
+   "country": "Austria",
+   "applications": 16670,
+   "population": 9197213,
+   "per_million": 1813
+  },
+  {
+   "geo": "UK",
+   "country": "United Kingdom",
+   "applications": 100600,
+   "population": 68300000,
+   "per_million": 1473,
+   "note": "Home Office 2025 (individuals); population ONS mid-year estimate"
+  },
+  {
+   "geo": "NL",
+   "country": "Netherlands",
+   "applications": 25860,
+   "population": 18044027,
+   "per_million": 1433
+  },
+  {
+   "geo": "MT",
+   "country": "Malta",
+   "applications": 545,
+   "population": 574250,
+   "per_million": 949
+  },
+  {
+   "geo": "SE",
+   "country": "Sweden",
+   "applications": 8505,
+   "population": 10587710,
+   "per_million": 803
+  },
+  {
+   "geo": "LV",
+   "country": "Latvia",
+   "applications": 1475,
+   "population": 1860565,
+   "per_million": 793
+  },
+  {
+   "geo": "EE",
+   "country": "Estonia",
+   "applications": 1015,
+   "population": 1369995,
+   "per_million": 741
+  },
+  {
+   "geo": "BG",
+   "country": "Bulgaria",
+   "applications": 3895,
+   "population": 6437360,
+   "per_million": 605
+  },
+  {
+   "geo": "FI",
+   "country": "Finland",
+   "applications": 2535,
+   "population": 5635971,
+   "per_million": 450
+  },
+  {
+   "geo": "PL",
+   "country": "Poland",
+   "applications": 13230,
+   "population": 36497495,
+   "per_million": 362
+  },
+  {
+   "geo": "DK",
+   "country": "Denmark",
+   "applications": 1950,
+   "population": 5992734,
+   "per_million": 325
+  },
+  {
+   "geo": "HR",
+   "country": "Croatia",
+   "applications": 1180,
+   "population": 3874350,
+   "per_million": 305
+  },
+  {
+   "geo": "PT",
+   "country": "Portugal",
+   "applications": 1765,
+   "population": 10749635,
+   "per_million": 164
+  },
+  {
+   "geo": "LT",
+   "country": "Lithuania",
+   "applications": 380,
+   "population": 2890664,
+   "per_million": 131
+  },
+  {
+   "geo": "CZ",
+   "country": "Czechia",
+   "applications": 1195,
+   "population": 10909500,
+   "per_million": 110
+  },
+  {
+   "geo": "RO",
+   "country": "Romania",
+   "applications": 1190,
+   "population": 19043151,
+   "per_million": 62
+  },
+  {
+   "geo": "SK",
+   "country": "Slovakia",
+   "applications": 165,
+   "population": 5419451,
+   "per_million": 30
+  },
+  {
+   "geo": "HU",
+   "country": "Hungary",
+   "applications": 115,
+   "population": 9539502,
+   "per_million": 12
+  }
+ ]
+}

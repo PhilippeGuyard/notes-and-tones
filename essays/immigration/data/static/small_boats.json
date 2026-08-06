@@ -1,0 +1,15 @@
+{
+  "source": "Home Office irregular migration statistics; 2025 provisional; 2026 to end May",
+  "note": "Detected small boat arrivals, calendar years",
+  "data": [
+    {"year": 2018, "value": 299},
+    {"year": 2019, "value": 1843},
+    {"year": 2020, "value": 8466},
+    {"year": 2021, "value": 28526},
+    {"year": 2022, "value": 45774},
+    {"year": 2023, "value": 29437},
+    {"year": 2024, "value": 36816},
+    {"year": 2025, "value": 41472, "provisional": true},
+    {"year": 2026, "value": 9000, "partial": "to end May"}
+  ]
+}

@@ -1,0 +1,156 @@
+{
+ "source": "UNHCR Refugee Data Finder, population endpoint, year 2024 (CC BY 4.0)",
+ "retrieved": "2026-08-06",
+ "data": [
+  {
+   "country": "Iran (Islamic Rep. of)",
+   "iso": "IRN",
+   "refugees": 3489257,
+   "oip": 0
+  },
+  {
+   "country": "T\u00fcrkiye",
+   "iso": "TUR",
+   "refugees": 2940735,
+   "oip": 0
+  },
+  {
+   "country": "Colombia",
+   "iso": "COL",
+   "refugees": 1306,
+   "oip": 2779604
+  },
+  {
+   "country": "Germany",
+   "iso": "DEU",
+   "refugees": 2749266,
+   "oip": 0
+  },
+  {
+   "country": "Uganda",
+   "iso": "UGA",
+   "refugees": 1759492,
+   "oip": 0
+  },
+  {
+   "country": "Pakistan",
+   "iso": "PAK",
+   "refugees": 1560480,
+   "oip": 0
+  },
+  {
+   "country": "Chad",
+   "iso": "TCD",
+   "refugees": 1278866,
+   "oip": 0
+  },
+  {
+   "country": "Peru",
+   "iso": "PER",
+   "refugees": 6742,
+   "oip": 1135215
+  },
+  {
+   "country": "Poland",
+   "iso": "POL",
+   "refugees": 1008871,
+   "oip": 0
+  },
+  {
+   "country": "Ethiopia",
+   "iso": "ETH",
+   "refugees": 1008826,
+   "oip": 0
+  },
+  {
+   "country": "Bangladesh",
+   "iso": "BGD",
+   "refugees": 1005602,
+   "oip": 0
+  },
+  {
+   "country": "Sudan",
+   "iso": "SDN",
+   "refugees": 793395,
+   "oip": 0
+  },
+  {
+   "country": "Lebanon",
+   "iso": "LBN",
+   "refugees": 758642,
+   "oip": 0
+  },
+  {
+   "country": "France",
+   "iso": "FRA",
+   "refugees": 721771,
+   "oip": 0
+  },
+  {
+   "country": "Brazil",
+   "iso": "BRA",
+   "refugees": 257079,
+   "oip": 464395
+  },
+  {
+   "country": "Jordan",
+   "iso": "JOR",
+   "refugees": 643641,
+   "oip": 0
+  },
+  {
+   "country": "Kenya",
+   "iso": "KEN",
+   "refugees": 604257,
+   "oip": 0
+  },
+  {
+   "country": "Chile",
+   "iso": "CHL",
+   "refugees": 2443,
+   "oip": 523727
+  },
+  {
+   "country": "Dem. Rep. of the Congo",
+   "iso": "COD",
+   "refugees": 517404,
+   "oip": 0
+  },
+  {
+   "country": "United Kingdom of Great Britain and Northern Ireland",
+   "iso": "GBR",
+   "refugees": 515677,
+   "oip": 0
+  },
+  {
+   "country": "South Sudan",
+   "iso": "SSD",
+   "refugees": 514794,
+   "oip": 0
+  },
+  {
+   "country": "Ecuador",
+   "iso": "ECU",
+   "refugees": 23218,
+   "oip": 439097
+  },
+  {
+   "country": "United States of America",
+   "iso": "USA",
+   "refugees": 435333,
+   "oip": 0
+  },
+  {
+   "country": "Spain",
+   "iso": "ESP",
+   "refugees": 429333,
+   "oip": 0
+  },
+  {
+   "country": "Cameroon",
+   "iso": "CMR",
+   "refugees": 427706,
+   "oip": 0
+  }
+ ]
+}

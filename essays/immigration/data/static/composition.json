@@ -1,0 +1,28 @@
+{
+  "uk": {
+    "source": "ONS YE Dec 2025 (gross immigration 813,000); Home Office 2025 small boats 41,472; asylum share ~14% YE Jun 2025",
+    "year": 2025,
+    "total": 813000,
+    "per_100": [
+      {"key": "work_study_family", "label": "Visas: work, study, family & other legal routes", "value": 86},
+      {"key": "asylum_other", "label": "Asylum: other routes (air, lorry, in-country)", "value": 9},
+      {"key": "small_boats", "label": "Small boat arrivals", "value": 5}
+    ]
+  },
+  "eu": {
+    "source": "Eurostat: 3.5M first residence permits 2024; Frontex: 239,000 irregular detections 2024",
+    "year": 2024,
+    "legal_permits": 3500000,
+    "irregular_detections": 239000,
+    "permit_breakdown": [
+      {"key": "employment", "label": "Employment", "pct": 31.9},
+      {"key": "family", "label": "Family", "pct": 27.1},
+      {"key": "other", "label": "Other (incl. protection)", "pct": 25.3},
+      {"key": "education", "label": "Education", "pct": 15.7}
+    ],
+    "per_100": [
+      {"key": "legal", "label": "Legal residence permits", "value": 94},
+      {"key": "irregular", "label": "Irregular border detections", "value": 6}
+    ]
+  }
+}

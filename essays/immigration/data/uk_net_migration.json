@@ -1,0 +1,391 @@
+{
+ "source": "ONS Long-term international migration, YE Dec 2025 (May 2026)",
+ "retrieved": "2026-08-06",
+ "data": [
+  {
+   "date": "2012-06-30",
+   "period": "YE Jun 12",
+   "immigration": 639000,
+   "emigration": 477000,
+   "net_migration": 162000
+  },
+  {
+   "date": "2012-09-30",
+   "period": "YE Sep 12",
+   "immigration": 630000,
+   "emigration": 473000,
+   "net_migration": 157000
+  },
+  {
+   "date": "2012-12-31",
+   "period": "YE Dec 12",
+   "immigration": 643000,
+   "emigration": 448000,
+   "net_migration": 195000
+  },
+  {
+   "date": "2013-03-31",
+   "period": "YE Mar 13",
+   "immigration": 649000,
+   "emigration": 446000,
+   "net_migration": 204000
+  },
+  {
+   "date": "2013-06-30",
+   "period": "YE Jun 13",
+   "immigration": 669000,
+   "emigration": 454000,
+   "net_migration": 215000
+  },
+  {
+   "date": "2013-09-30",
+   "period": "YE Sep 13",
+   "immigration": 720000,
+   "emigration": 461000,
+   "net_migration": 259000
+  },
+  {
+   "date": "2013-12-31",
+   "period": "YE Dec 13",
+   "immigration": 713000,
+   "emigration": 469000,
+   "net_migration": 244000
+  },
+  {
+   "date": "2014-03-31",
+   "period": "YE Mar 14",
+   "immigration": 731000,
+   "emigration": 475000,
+   "net_migration": 256000
+  },
+  {
+   "date": "2014-06-30",
+   "period": "YE Jun 14",
+   "immigration": 737000,
+   "emigration": 489000,
+   "net_migration": 248000
+  },
+  {
+   "date": "2014-09-30",
+   "period": "YE Sep 14",
+   "immigration": 761000,
+   "emigration": 497000,
+   "net_migration": 264000
+  },
+  {
+   "date": "2014-12-31",
+   "period": "YE Dec 14",
+   "immigration": 778000,
+   "emigration": 494000,
+   "net_migration": 284000
+  },
+  {
+   "date": "2015-03-31",
+   "period": "YE Mar 15",
+   "immigration": 780000,
+   "emigration": 484000,
+   "net_migration": 296000
+  },
+  {
+   "date": "2015-06-30",
+   "period": "YE Jun 15",
+   "immigration": 778000,
+   "emigration": 482000,
+   "net_migration": 296000
+  },
+  {
+   "date": "2015-09-30",
+   "period": "YE Sep 15",
+   "immigration": 774000,
+   "emigration": 481000,
+   "net_migration": 293000
+  },
+  {
+   "date": "2015-12-31",
+   "period": "YE Dec 15",
+   "immigration": 797000,
+   "emigration": 494000,
+   "net_migration": 303000
+  },
+  {
+   "date": "2016-03-31",
+   "period": "YE Mar 16",
+   "immigration": 803000,
+   "emigration": 506000,
+   "net_migration": 298000
+  },
+  {
+   "date": "2016-06-30",
+   "period": "YE Jun 16",
+   "immigration": 832000,
+   "emigration": 511000,
+   "net_migration": 321000
+  },
+  {
+   "date": "2016-09-30",
+   "period": "YE Sep 16",
+   "immigration": 804000,
+   "emigration": 514000,
+   "net_migration": 290000
+  },
+  {
+   "date": "2016-12-31",
+   "period": "YE Dec 16",
+   "immigration": 772000,
+   "emigration": 523000,
+   "net_migration": 249000
+  },
+  {
+   "date": "2017-03-31",
+   "period": "YE Mar 17",
+   "immigration": 759000,
+   "emigration": 519000,
+   "net_migration": 240000
+  },
+  {
+   "date": "2017-06-30",
+   "period": "YE Jun 17",
+   "immigration": 718000,
+   "emigration": 518000,
+   "net_migration": 200000
+  },
+  {
+   "date": "2017-09-30",
+   "period": "YE Sep 17",
+   "immigration": 754000,
+   "emigration": 549000,
+   "net_migration": 205000
+  },
+  {
+   "date": "2017-12-31",
+   "period": "YE Dec 17",
+   "immigration": 752000,
+   "emigration": 544000,
+   "net_migration": 208000
+  },
+  {
+   "date": "2018-03-31",
+   "period": "YE Mar 18",
+   "immigration": 736000,
+   "emigration": 543000,
+   "net_migration": 193000
+  },
+  {
+   "date": "2018-06-30",
+   "period": "YE Jun 18",
+   "immigration": 757000,
+   "emigration": 541000,
+   "net_migration": 216000
+  },
+  {
+   "date": "2018-09-30",
+   "period": "YE Sep 18",
+   "immigration": 766000,
+   "emigration": 539000,
+   "net_migration": 226000
+  },
+  {
+   "date": "2018-12-31",
+   "period": "YE Dec 18",
+   "immigration": 825000,
+   "emigration": 549000,
+   "net_migration": 276000
+  },
+  {
+   "date": "2019-03-31",
+   "period": "YE Mar 19",
+   "immigration": 849000,
+   "emigration": 575000,
+   "net_migration": 274000
+  },
+  {
+   "date": "2019-06-30",
+   "period": "YE Jun 19",
+   "immigration": 821000,
+   "emigration": 597000,
+   "net_migration": 224000
+  },
+  {
+   "date": "2019-09-30",
+   "period": "YE Sep 19",
+   "immigration": 793000,
+   "emigration": 591000,
+   "net_migration": 202000
+  },
+  {
+   "date": "2019-12-31",
+   "period": "YE Dec 19",
+   "immigration": 788000,
+   "emigration": 605000,
+   "net_migration": 184000
+  },
+  {
+   "date": "2020-03-31",
+   "period": "YE Mar 20",
+   "immigration": 815000,
+   "emigration": 645000,
+   "net_migration": 170000
+  },
+  {
+   "date": "2020-06-30",
+   "period": "YE Jun 20",
+   "immigration": 736000,
+   "emigration": 625000,
+   "net_migration": 111000
+  },
+  {
+   "date": "2020-09-30",
+   "period": "YE Sep 20",
+   "immigration": 606000,
+   "emigration": 571000,
+   "net_migration": 35000
+  },
+  {
+   "date": "2020-12-31",
+   "period": "YE Dec 20",
+   "immigration": 662000,
+   "emigration": 569000,
+   "net_migration": 93000
+  },
+  {
+   "date": "2021-03-31",
+   "period": "YE Mar 21",
+   "immigration": 629000,
+   "emigration": 496000,
+   "net_migration": 132000
+  },
+  {
+   "date": "2021-06-30",
+   "period": "YE Jun 21",
+   "immigration": 818000,
+   "emigration": 567000,
+   "net_migration": 251000
+  },
+  {
+   "date": "2021-09-30",
+   "period": "YE Sep 21",
+   "immigration": 937000,
+   "emigration": 552000,
+   "net_migration": 384000
+  },
+  {
+   "date": "2021-12-31",
+   "period": "YE Dec 21",
+   "immigration": 947000,
+   "emigration": 480000,
+   "net_migration": 467000
+  },
+  {
+   "date": "2022-03-31",
+   "period": "YE Mar 22",
+   "immigration": 1069000,
+   "emigration": 495000,
+   "net_migration": 575000
+  },
+  {
+   "date": "2022-06-30",
+   "period": "YE Jun 22",
+   "immigration": 1167000,
+   "emigration": 486000,
+   "net_migration": 681000
+  },
+  {
+   "date": "2022-09-30",
+   "period": "YE Sep 22",
+   "immigration": 1317000,
+   "emigration": 496000,
+   "net_migration": 822000
+  },
+  {
+   "date": "2022-12-31",
+   "period": "YE Dec 22",
+   "immigration": 1398000,
+   "emigration": 508000,
+   "net_migration": 891000
+  },
+  {
+   "date": "2023-03-31",
+   "period": "YE Mar 23",
+   "immigration": 1469000,
+   "emigration": 525000,
+   "net_migration": 944000
+  },
+  {
+   "date": "2023-06-30",
+   "period": "YE Jun 23",
+   "immigration": 1466000,
+   "emigration": 543000,
+   "net_migration": 924000
+  },
+  {
+   "date": "2023-09-30",
+   "period": "YE Sep 23",
+   "immigration": 1461000,
+   "emigration": 570000,
+   "net_migration": 891000
+  },
+  {
+   "date": "2023-12-31",
+   "period": "YE Dec 23",
+   "immigration": 1441000,
+   "emigration": 593000,
+   "net_migration": 848000
+  },
+  {
+   "date": "2024-03-31",
+   "period": "YE Mar 24",
+   "immigration": 1359000,
+   "emigration": 625000,
+   "net_migration": 734000
+  },
+  {
+   "date": "2024-06-30",
+   "period": "YE Jun 24",
+   "immigration": 1299000,
+   "emigration": 650000,
+   "net_migration": 649000
+  },
+  {
+   "date": "2024-09-30",
+   "period": "YE Sep 24 R",
+   "immigration": 1159000,
+   "emigration": 662000,
+   "net_migration": 497000
+  },
+  {
+   "date": "2024-12-31",
+   "period": "YE Dec 24 R",
+   "immigration": 1012000,
+   "emigration": 680000,
+   "net_migration": 331000
+  },
+  {
+   "date": "2025-03-31",
+   "period": "YE Mar 25 P R",
+   "immigration": 945000,
+   "emigration": 685000,
+   "net_migration": 260000
+  },
+  {
+   "date": "2025-06-30",
+   "period": "YE Jun 25 P R",
+   "immigration": 888000,
+   "emigration": 669000,
+   "net_migration": 219000
+  },
+  {
+   "date": "2025-09-30",
+   "period": "YE Sep 25 P",
+   "immigration": 862000,
+   "emigration": 661000,
+   "net_migration": 202000
+  },
+  {
+   "date": "2025-12-31",
+   "period": "YE Dec 25 P",
+   "immigration": 813000,
+   "emigration": 642000,
+   "net_migration": 171000
+  }
+ ]
+}

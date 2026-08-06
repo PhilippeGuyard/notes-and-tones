@@ -1,0 +1,16 @@
+{
+  "note": "Annotations for the salience and time-series charts",
+  "data": [
+    {"date": "2015-09-02", "label": "Alan Kurdi photograph", "detail": "Image of drowned Syrian boy briefly swings sympathy; ~1M cross to Greece in 2015"},
+    {"date": "2016-03-18", "label": "EU-Turkey statement", "detail": "Crossings from Turkey collapse within weeks"},
+    {"date": "2016-06-16", "label": "'Breaking Point' poster", "detail": "Farage unveils poster of Syrian refugees days before Brexit vote"},
+    {"date": "2018-11-01", "label": "Small boats era begins", "detail": "First sustained Channel crossings (299 in 2018)"},
+    {"date": "2021-05-17", "label": "Ceuta crisis I", "detail": "~10,000 cross as Morocco pressures Spain over Western Sahara"},
+    {"date": "2021-11-01", "label": "Belarus weaponises migration", "detail": "Migrants flown in and pushed to Polish border"},
+    {"date": "2022-03-04", "label": "Ukraine Temporary Protection", "detail": "EU activates TPD; 4M+ absorbed via legal route"},
+    {"date": "2023-03-07", "label": "'Stop the boats'", "detail": "Illegal Migration Bill; small boats dominate UK politics"},
+    {"date": "2024-12-08", "label": "Fall of Assad", "detail": "Syrian asylum applications drop 72% in 2025"},
+    {"date": "2025-09-15", "label": "UK concern hits decade high", "detail": "51% name immigration a top issue (Ipsos) as net migration collapses"},
+    {"date": "2026-08-01", "label": "Ceuta crisis II", "detail": "~50,000 cross in a day; 80+ dead; all returned within 24h; none reached mainland EU"}
+  ]
+}

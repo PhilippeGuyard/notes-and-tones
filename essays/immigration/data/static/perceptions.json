@@ -1,0 +1,17 @@
+{
+  "source": "Ipsos Perils of Perception (2014-2024 waves); Special Eurobarometer 2022; Our World in Data 2023",
+  "note": "Only pairs verified in cited publications; perceived = mean public guess of immigrant share of population",
+  "immigrant_share": [
+    {"place": "United Kingdom", "perceived": 24, "actual": 14, "year": 2016, "source": "Ipsos Perils of Perception"},
+    {"place": "United States", "perceived": 33, "actual": 15, "year": 2023, "source": "Ipsos via Our World in Data"},
+    {"place": "Japan", "perceived": 10, "actual": 2, "year": 2023, "source": "Ipsos via Our World in Data"},
+    {"place": "14-country average", "perceived": 24, "actual": 11, "year": 2024, "source": "Ipsos Perils of Perception 2024"},
+    {"place": "EU avg, non-EU share", "perceived": 16, "actual": 7, "year": 2022, "source": "Special Eurobarometer, via EC Home Affairs"}
+  ],
+  "other": [
+    {"claim": "Share of prisoners who are immigrants (multi-country avg)", "perceived": 28, "actual": 15, "year": 2024, "source": "Ipsos Perils of Perception 2024"},
+    {"claim": "Britons who overestimated asylum-seeker numbers", "value": 59, "unit": "%", "year": 2024, "source": "British Red Cross"},
+    {"claim": "Britons who thought immigration ROSE in the past year (it more than halved)", "value": 56, "unit": "%", "year": 2025, "source": "Ipsos/British Future tracker"},
+    {"claim": "Public estimate of asylum as share of UK immigration", "perceived": 33, "actual": 14, "year": 2025, "source": "Ipsos/British Future; Home Office YE Jun 2025"}
+  ]
+}
