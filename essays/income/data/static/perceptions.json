@@ -1,0 +1,43 @@
+{
+  "source": "Reality figures: HBAI (as above). Perception framing: Ipsos Perils of Perception; academic studies of income self-placement; ONS ASHE 2024 for individual pay.",
+  "note": "The 'perception' side of this essay is mostly the reader's own live guess. External belief claims are kept qualitative where a precise, verified survey figure was not to hand.",
+  "self_placement": "Study after study finds the same thing: asked to place themselves on the income ladder, people cluster near the middle, whether they are near the top or near the bottom. The rich feel typical; the poor feel typical.",
+  "beliefs": [
+    {
+      "kind": "myth",
+      "big": "“average”",
+      "text": "Almost everyone, rich or poor, guesses they sit somewhere near the middle. It is one of the most reliable findings in the study of how people see money.",
+      "src": "Ipsos Perils of Perception; income self-placement studies"
+    },
+    {
+      "kind": "fact",
+      "big": "£29,250",
+      "text": "The real middle: median equivalised household income after housing costs is £562/week, about £29,250 a year for a couple with no children. Half of Britain lives on less.",
+      "src": "HBAI, FYE 2024 (AHC)"
+    },
+    {
+      "kind": "myth",
+      "big": "a payslip",
+      "text": "People picture income as an individual salary. Full-time median pay is around £37,000 gross. But living standards are measured on net household income, shared across a household and adjusted for its size.",
+      "src": "ONS ASHE 2024 (individual pay)"
+    },
+    {
+      "kind": "fact",
+      "big": "mean > median",
+      "text": "The average (mean) income is £694/week, but two in three households earn less than that. A long tail of high earners drags the average above the typical.",
+      "src": "HBAI, FYE 2024 (AHC)"
+    },
+    {
+      "kind": "myth",
+      "big": "the old",
+      "text": "Pensioners are pictured as the face of hardship. After housing costs they now have the lowest poverty rate of any age group, because so many own their home outright.",
+      "src": "HBAI, FYE 2024 (AHC)"
+    },
+    {
+      "kind": "fact",
+      "big": "31%",
+      "text": "Children have the highest poverty rate: roughly one in three lives below the line after housing costs, nearly double the pensioner rate.",
+      "src": "HBAI, FYE 2024 (AHC)"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Income: perception vs reality — where do you really sit?</title>
+<meta name="description" content="Almost everyone thinks they earn about average. Using the UK's official income statistics, this interactive essay shows where people actually sit, who is poor, and what housing costs really do.">
+<meta property="og:title" content="Income: perception vs reality">
+<meta property="og:description" content="Where do you really sit in the UK income distribution? An interactive data essay built on official HBAI figures.">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%B7%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+
+<nav class="site-back">
+  <a href="../../index.html">← Notes &amp; Tones</a>
+  <a href="../immigration/">Companion: Immigration, perception vs reality →</a>
+</nav>
+
+<header class="masthead">
+  <p class="kicker">A data essay</p>
+  <h1>Income:<br><em>perception</em> <span class="vs">vs</span> <em class="real">reality</em></h1>
+  <p class="standfirst">
+    Ask people where they sit on the income ladder and almost everyone, rich or poor,
+    reaches for the same word: average. This page is about the gap between where we
+    feel we are and where the official numbers actually put us.
+  </p>
+  <p class="byline">Built from the DWP's Households Below Average Income (HBAI) statistics,
+  the UK's official measure of the whole population, not just taxpayers.
+  Reworked from an interactive <a href="https://marimo.io">marimo</a> notebook.</p>
+  <div class="legend-key">
+    <span class="key key--p">what we assume</span>
+    <span class="key key--r">what is measured</span>
+  </div>
+  <p class="scroll-cue">scroll ↓</p>
+</header>
+
+<!-- 0 · HOOK -->
+<section class="scrolly" id="hook">
+  <div class="sticky"><div class="chart" id="chart-hook"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p class="step-kicker">The distribution</p>
+      <p>Here is the whole country, lined up by income. Each bar is a slice of the population
+      at a given weekly income, adjusted for household size and measured after housing costs.
+      Most people are bunched to the left, with a long tail of high earners trailing off to the right.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p>The <strong>average</strong> income is <strong>£694 a week</strong>. It sounds like a
+      reasonable middle. But it is not the middle: the long tail of high earners drags it upward,
+      and roughly <strong>two in three households earn less than the average</strong>.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p>The real middle is the <strong>median</strong>: <strong>£562 a week</strong>, about
+      <strong>£29,250 a year</strong> for a couple with no children. Half of Britain lives on
+      less than this, half on more. When people picture "average", this is closer to the truth.</p>
+    </div>
+    <div class="step" data-step="3">
+      <p>And the <strong>poverty line</strong> sits at 60% of that median: <strong>£338 a week</strong>.
+      Everyone in the shaded band lives below it. That is <strong>21%</strong> of the population,
+      around one in five, after housing costs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 1 · WHERE DO YOU SIT -->
+<section class="prose">
+  <h2><span class="myth-no">The instinct</span>“I’m somewhere in the middle”</h2>
+  <p>It is the most reliable finding in the study of how people see money. Asked to place
+  themselves on the income ladder, people cluster near the middle, whether they are near the top
+  or near the bottom. High earners feel typical. So do low earners. Almost nobody thinks they are
+  rich, and almost nobody thinks they are poor.</p>
+  <p>So before reading on, find out where you actually stand. Enter your household's total take-home
+  pay. The calculator adjusts it for your household size the same way the official statistics do,
+  then places you against everyone else.</p>
+  <div class="widget" id="calc"></div>
+  <p>Surprised? Most people are. The number that felt middling is often near the top, because the
+  yardstick in your head is your neighbours and your feed, not the country. The rest of this essay
+  is about the reality that yardstick hides.</p>
+</section>
+
+<!-- 2 · EXPLORE THE DISTRIBUTION -->
+<section class="prose">
+  <h2><span class="myth-no">The tool</span>Draw your own line</h2>
+  <p>Pick a group, choose whether to count income before or after housing, and drag the threshold.
+  The bar reads out how much of Britain lives below it. Notice how quickly the share climbs: a
+  threshold that feels modest already sits above most of the country.</p>
+</section>
+<section class="chart-solo">
+  <div class="chart" id="chart-explorer"></div>
+</section>
+
+<!-- 3 · BANDS -->
+<section class="prose">
+  <h2><span class="myth-no">Myth</span>“Most people are comfortable”</h2>
+  <p>A common way to name the rungs, borrowed from the OECD, splits everyone by their distance from
+  the median: in poverty below 60%, squeezed from 60 to 75%, middle or comfortable from 75 to 200%,
+  and well-off above that.</p>
+</section>
+<section class="scrolly" id="bands">
+  <div class="sticky"><div class="chart" id="chart-bands"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p>Split the whole population and a reassuring majority lands in "comfortable".</p>
+    </div>
+    <div class="step" data-step="1">
+      <p>But that band is enormous: it stretches from <strong>£422 to £1,125 a week</strong>. It holds
+      the household one payslip from trouble and the household with a second home alike. "Comfortable"
+      is a statistical category, not a feeling.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p>Split out <strong>children</strong> and the picture darkens. Nearly a third are below the
+      poverty line, the highest rate of any age group.</p>
+    </div>
+    <div class="step" data-step="3">
+      <p>Split out <strong>pensioners</strong> and, after housing, the poverty slice is the smallest
+      of all. Hold that thought.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · AGE -->
+<section class="prose">
+  <h2><span class="myth-no">Myth</span>“The old are the poor ones”</h2>
+  <p>Pensioners are the face people reach for when they picture hardship. The measured picture is
+  the reverse, and it turns on one thing: housing. Watch what happens when you take rent and mortgage
+  interest out of the sum.</p>
+</section>
+<section class="chart-solo">
+  <div class="chart" id="chart-age"></div>
+  <p class="calc-help">Before housing, pensioners look poorer than working-age adults. After housing,
+  they overtake nobody: so many own their home outright that their costs fall away, while children,
+  who mostly live in renting or mortgaged families, are pushed the other way. The same housing costs
+  flip the ranking.</p>
+</section>
+
+<!-- 5 · REGION -->
+<section class="prose">
+  <h2><span class="myth-no">Myth</span>“Poverty is a northern thing”</h2>
+  <p>In headline income, the North looks poorer and the South looks richer, and that is where the
+  mental map stops. But poverty is about what is left after the essentials, and the biggest essential
+  is rent. Once housing costs are counted, the map redraws.</p>
+</section>
+<section class="chart-solo">
+  <div class="chart" id="chart-region"></div>
+</section>
+
+<!-- 6 · THE GAP -->
+<section class="prose">
+  <h2><span class="myth-no">The gap</span>The rent does the work</h2>
+  <p>One number keeps flipping the story: housing. A payslip looks fine until the rent is paid, and
+  the official statistics measure both moments. Before housing costs, the country looks steadier;
+  after, the middle slides down and more people fall below the line.</p>
+</section>
+<section class="chart-solo">
+  <div class="chart" id="chart-housing"></div>
+</section>
+<section class="prose">
+  <p>This is why "after housing costs" is the number that tracks how life actually feels, and why two
+  people on the same salary can live in different worlds depending on what they pay to keep a roof up.</p>
+</section>
+
+<!-- 7 · BELIEFS -->
+<section class="prose">
+  <h2><span class="myth-no">In short</span>Six things the numbers say</h2>
+</section>
+<section class="cards" id="beliefs-cards"></section>
+
+<!-- 8 · CLOSE -->
+<section class="prose" id="close">
+  <h2>Why the gap matters</h2>
+  <p>Misplacing yourself is not a harmless quirk. It shapes what feels fair. If everyone believes they
+  are middling, then every tax rise sounds like it lands on "people like me", every benefit sounds like
+  it goes to someone else, and the actual shape of the country, a bunched low-and-middle with a long
+  rich tail, stays invisible.</p>
+  <ul class="close-list">
+    <li><strong>The average is not the middle.</strong> A long tail of high earners pulls the mean above
+    what most people make. When a number is called "average", ask whether it is the mean or the median.</li>
+    <li><strong>Housing is the hinge.</strong> Almost every surprising fact here, pensioners doing well,
+    London doing badly, comes from measuring income after the rent rather than before.</li>
+    <li><strong>Your yardstick is local.</strong> We compare ourselves to the people around us, not to the
+    country. That is what keeps almost everyone feeling average.</li>
+  </ul>
+  <p class="fin">Perception, unlike the economy, is something we can actually correct. The numbers are
+  public, and now you know where you stand in them.</p>
+</section>
+
+<footer class="methodology" id="methodology">
+  <h3>Sources &amp; methodology</h3>
+  <div id="sources-list"></div>
+  <p>Income is equivalised net household income, adjusted for household size to the couple-with-no-children
+  yardstick, exactly as HBAI reports it. The calculator applies the OECD-modified companion scale (which
+  differs before and after housing costs) and reads your percentile off the whole-population distribution;
+  treat it as a good estimate, not a precise ranking. Relative poverty means below 60% of the contemporary
+  median, so it moves with the median rather than being a fixed line. Head counts multiply your percentile by the UK
+  resident population (about 68.3 million, ONS mid-2023). The published distribution collapses
+  the very top into a single "£1,500+ a week" band, so shares are normalised per group; that is accurate at
+  low and middle incomes but understates the extreme top. Regional figures use JRF's after-housing rates
+  (a different period and measure from the distribution above), so read them as an indicative overlay.
+  Figures are the FYE 2024 vintage. Data snapshot: August 2026. Built with d3.js.</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

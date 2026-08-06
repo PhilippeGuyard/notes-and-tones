@@ -1,0 +1,16 @@
+{
+ "source": "DWP Households Below Average Income (HBAI), FYE 1995-2024 table pack; whole population, equivalised net household income.",
+ "url": "https://www.gov.uk/government/statistics/households-below-average-income-for-financial-years-ending-1995-to-2024",
+ "data": {
+  "BHC": {
+   "median": 649.54,
+   "poverty": 389.72,
+   "mean": 791.97
+  },
+  "AHC": {
+   "median": 562.5,
+   "poverty": 337.5,
+   "mean": 694.01
+  }
+ }
+}

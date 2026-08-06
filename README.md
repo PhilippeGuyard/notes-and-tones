@@ -18,9 +18,11 @@ essays/
   anova.html        Signal or Noise?                  + anova.js
   fourier.html      Drawn by Circles                  + fourier.js
   rudolph.html      Drawing Rudolph with Maths        + rudolph/ (assets, build script)
-  immigration/      Perception vs Reality — d3 scrollytelling data essay
+  income/           Income: Perception vs Reality — d3 scrollytelling data essay
+  immigration/      Immigration: Perception vs Reality — d3 scrollytelling data essay
   template.html     Skeleton to copy when adding a new essay
 tools/
+  income/           Builds the income essay's JSON from the marimo HBAI data (not served)
   immigration/      Data pipeline + research for the immigration essay (not served)
 ```
 

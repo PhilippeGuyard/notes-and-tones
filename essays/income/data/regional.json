@@ -1,0 +1,75 @@
+{
+ "source": "JRF Geography and poverty (from HBAI 2023/24), AHC, three-year average 2021-24.",
+ "data": [
+  {
+   "region": "North East",
+   "rate": 21.0,
+   "period": "2021-24 (3-year average)"
+  },
+  {
+   "region": "North West",
+   "rate": 23.0,
+   "period": "2021-24 (3-year average)"
+  },
+  {
+   "region": "Yorkshire and the Humber",
+   "rate": 23.0,
+   "period": "2021-24 (3-year average)"
+  },
+  {
+   "region": "East Midlands",
+   "rate": 20.0,
+   "period": "2021-24 (3-year average)"
+  },
+  {
+   "region": "West Midlands",
+   "rate": 24.0,
+   "period": "2021-24 (3-year average)"
+  },
+  {
+   "region": "East of England",
+   "rate": 18.0,
+   "period": "2021-24 (3-year average)"
+  },
+  {
+   "region": "London",
+   "rate": 26.0,
+   "period": "2021-24 (3-year average)"
+  },
+  {
+   "region": "South East",
+   "rate": 19.0,
+   "period": "2021-24 (3-year average)"
+  },
+  {
+   "region": "South West",
+   "rate": 19.0,
+   "period": "2021-24 (3-year average)"
+  },
+  {
+   "region": "England",
+   "rate": 22.0,
+   "period": "2021-24 (3-year average)"
+  },
+  {
+   "region": "Wales",
+   "rate": 22.0,
+   "period": "2021-24 (3-year average)"
+  },
+  {
+   "region": "Scotland",
+   "rate": 20.0,
+   "period": "2021-24 (3-year average)"
+  },
+  {
+   "region": "Northern Ireland",
+   "rate": 17.0,
+   "period": "2021-24 (3-year average)"
+  },
+  {
+   "region": "United Kingdom",
+   "rate": 21.0,
+   "period": "2021-24 (3-year average)"
+  }
+ ]
+}
