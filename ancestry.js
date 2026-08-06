@@ -317,7 +317,7 @@
   let lnFocal = 0;      // index into pop.universal0
   let lnShow = true;
 
-  const LN = { W: 680, H: 460, mx: 46, top: 62, bot: 52 };
+  const LN = { W: 680, H: 660, mx: 46, top: 66, bot: 58 };
   const lnX = (i) => LN.mx + (i * (LN.W - 2 * LN.mx)) / (POP - 1);
   const lnY = (g) => LN.top + (g * (LN.H - LN.top - LN.bot)) / (GENS - 1);
 
