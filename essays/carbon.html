@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>When Should I Run My Dishwasher? — timing appliances to the greenest grid</title>
+<meta name="description" content="UK electricity is not equally clean all day: its carbon intensity swings three- or four-fold by the hour and by region. Using the National Grid's free API, this page fetches the live 48-hour forecast and works out the greenest time to run your dishwasher, washing machine or EV." />
+<meta property="og:title" content="When Should I Run My Dishwasher?" />
+<meta property="og:description" content="A live code-along: fetch the National Grid carbon-intensity forecast in Python, map it, and find the greenest hours to run your appliances." />
+<meta property="og:type" content="article" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="sparkles" aria-hidden="true"></div>
+
+<nav class="topnav">
+  <a href="../index.html" class="topnav-home">← Notes &amp; Tones</a>
+  <a href="rudolph.html">Also: a Python code-along →</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Notes &amp; Tones · A live code-along</p>
+    <h1 class="title">When Should I<br /><span class="of">Run My</span><br />Dishwasher?</h1>
+    <p class="dek">The electricity in your walls is not equally clean all day. Depending on the wind and the hour, a kilowatt-hour can carry three or four times the carbon it did a few hours earlier. So let us ask the National Grid, in Python, and find the greenest moment to press start.</p>
+    <p class="scroll-cue">Scroll to begin ↓</p>
+  </div>
+</header>
+
+<main>
+  <section class="prose" id="intro">
+    <p class="lead"><span class="dropcap">R</span>unning the dishwasher feels like a fixed cost: a cycle is a cycle, whenever you do it. In pounds, roughly true. In carbon, not at all. Every unit of electricity you draw is made by whatever happens to be running on the grid at that instant, and that mix lurches around through the day. A blustery small hour might be more than half wind; a still evening leans on gas. The same wash can cost you 90 grams of CO₂ or 300, purely on timing.</p>
+    <p>The good news is that this is not a secret. The National Grid's Electricity System Operator publishes the <strong>carbon intensity</strong> of the grid, in grams of CO₂ per kilowatt-hour, updated every half hour and forecast two days ahead, region by region, through a free and open API. No key, no sign-up. This page fetches that forecast live and works out when to run things. Below, the same steps in Python, so you can run it yourself.</p>
+  </section>
+
+  <section class="prose" id="now">
+    <h2><span class="sec-no">01</span> Ask the grid what it is doing</h2>
+    <p>One HTTP request does it. We ask for the regional forecast from now to 48 hours ahead; back comes a half-hourly figure for every region of Great Britain, each tagged with an index from <em>very low</em> to <em>very high</em>.</p>
+
+    <pre class="codeblock" aria-label="Python: fetching the carbon-intensity forecast"><span class="code-tag">Python</span><code>import requests
+from datetime import datetime, timedelta
+
+now = datetime.utcnow()
+frm = now.strftime("%Y-%m-%dT%H:%MZ")
+to  = (now + timedelta(hours=48)).strftime("%Y-%m-%dT%H:%MZ")
+
+url  = f"https://api.carbonintensity.org.uk/regional/intensity/{frm}/{to}"
+data = requests.get(url, headers={"Accept": "application/json"}).json()</code></pre>
+
+    <figure class="widget" id="now-widget" aria-label="Live: current carbon intensity across Great Britain">
+      <p class="data-note" id="data-note">Loading the live forecast…</p>
+      <div class="now-box stat-box" id="now-box"></div>
+      <figcaption class="widget-cap">Lower is cleaner. The index bands (very low → very high) are the Grid's own labels, so a number that looks middling can still be a good or bad time to run things.</figcaption>
+    </figure>
+  </section>
+
+  <section class="prose" id="map">
+    <h2><span class="sec-no">02</span> Two days, every region, at a glance</h2>
+    <p>The response is a stack of half-hour intervals, each holding every region. Pivot it into a grid, regions down the side and time along the bottom, and colour each cell by its intensity, and the shape of the next two days jumps out: dark green troughs overnight and on windy afternoons, warmer bands at the evening peak. Scotland, awash with wind, sits green for days; gas-leaning corners of England flare amber.</p>
+
+    <pre class="codeblock" aria-label="Python: reshaping the data and drawing a heatmap"><span class="code-tag">Python</span><code>import numpy as np, matplotlib.pyplot as plt
+
+intensity = {}
+for interval in data["data"]:
+    for region in interval["regions"]:
+        name = region["shortname"]
+        intensity.setdefault(name, []).append(region["intensity"]["forecast"])
+
+regions = list(intensity)
+matrix  = np.array([intensity[r] for r in regions])   # region x time
+
+fig, ax = plt.subplots(figsize=(15, len(regions)))
+c = ax.pcolor(matrix, cmap="viridis")
+fig.colorbar(c, ax=ax, label="Carbon Intensity (gCO2/kWh)")</code></pre>
+  </section>
+
+  <section class="chart-wide">
+    <figure class="widget" id="heat-widget" aria-label="Heatmap of carbon intensity by region over the next 48 hours">
+      <svg id="heat-svg" class="stat-svg" role="img" aria-label="A grid of coloured cells: each row a GB region, each column a half hour, green where the grid is clean and rose where it is dirty"></svg>
+      <figcaption class="widget-cap">Green is clean, rose is dirty. Hover any cell for the exact figure. Bold ticks mark midnight. Our version swaps the notebook's viridis for a green-to-rose ramp, so &ldquo;greener&rdquo; is literally greener.</figcaption>
+    </figure>
+  </section>
+
+  <section class="prose" id="plan">
+    <h2><span class="sec-no">03</span> Find the greenest hours</h2>
+    <p>We do not just want the single lowest point; we want a handful of good <em>windows</em> spread across the two days, so there is a realistic option near you. That is a trough-finding problem, and <code>scipy</code> already solves it: flip the signal upside down and run a peak finder. The <code>prominence</code> setting asks how deep a dip must be to count, which filters out the little wobbles and keeps the real lulls.</p>
+
+    <pre class="codeblock" aria-label="Python: finding the troughs with scipy"><span class="code-tag">Python</span><code>from scipy.signal import find_peaks
+
+series = np.array(intensity["London"])
+troughs, _ = find_peaks(-series, prominence=25)   # dips of 25+ gCO2/kWh
+
+for i in troughs:
+    print(times[i], series[i], "gCO2/kWh")</code></pre>
+
+    <p>In practice a two-day regional forecast is smooth enough that a strict trough finder often returns just one dip, so the planner below takes the pragmatic cousin of the same idea: it grabs the cleanest half-hour, blocks out a few hours either side, and repeats, giving a handful of realistic, well-spread windows. Pick your region and what you want to run. It names the single greenest moment and totals the CO₂ you save by waiting for it instead of starting now.</p>
+
+    <figure class="widget" id="plan-widget" aria-label="Planner: the greenest time to run an appliance">
+      <div class="preset-row">
+        <label class="preset-lab" for="region-sel">Region</label>
+        <select id="region-sel" class="mini-sel"></select>
+        <label class="preset-lab" for="appliance-sel">Running</label>
+        <select id="appliance-sel" class="mini-sel"></select>
+      </div>
+
+      <div class="stat-readouts plan-readouts">
+        <div class="stat-box">
+          <span class="stat-lab">Greenest moment in the forecast</span>
+          <span class="stat-big" id="best-when">—</span>
+          <span class="stat-sub"><span id="best-int">—</span> · <span id="best-cut">—</span></span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-lab">CO₂ you save by waiting</span>
+          <span class="stat-big" id="best-save">—</span>
+          <span class="stat-sub" id="save-detail">—</span>
+        </div>
+      </div>
+
+      <svg id="plan-svg" class="stat-svg" viewBox="0 0 720 240" role="img" aria-label="A line of carbon intensity over the next 48 hours, with the greenest windows marked"></svg>
+      <p class="green-head">Good windows coming up</p>
+      <ul class="green-list" id="green-list"></ul>
+      <figcaption class="widget-cap">Dots mark the cleanest upcoming windows; the ringed one is the greenest. The dashed vertical line is now. Times are shown in UK local time.</figcaption>
+    </figure>
+  </section>
+
+  <section class="prose" id="close">
+    <h2><span class="sec-no">04</span> So, when?</h2>
+    <p>For most of Britain the honest answer is the small hours and the breezy middle of the day, and the honest saving is real but modest: shifting a dishwasher cycle from a dirty evening to a clean night spares a couple of hundred grams of CO₂, about the same as not driving a mile. Do it every day and it adds up; do it with the tumble dryer or an EV, which pull far more power, and a single well-timed session saves as much as a week of careful dishwashing.</p>
+    <p>Two caveats worth keeping. It is a <em>forecast</em>, so the further-out numbers drift, and it is <em>marginal</em>: you are timing your slice of demand against the grid's, not switching your own supplier. But the data is free, live, and public, and turning it into a decision took about thirty lines of Python. Not bad for a dishwasher.</p>
+    <p>If you enjoyed watching real code turn an API into a picture, its companion piece, <a href="rudolph.html">Drawing Rudolph with Maths</a>, runs the same spirit end to end: a photo, some numpy, and a Fast Fourier Transform.</p>
+    <p class="kicker">The grid keeps changing under your feet. Now you can see it, and press start at the right moment.</p>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p>An essay from Notes &amp; Tones.</p>
+  <p class="foot-meta">Data: <a href="https://carbonintensity.org.uk/">National Grid ESO Carbon Intensity API</a>, gCO₂/kWh, updated every half hour. <span aria-hidden="true">⚡</span></p>
+  <p class="foot-meta"><a href="rudolph.html">🎄 Read: Drawing Rudolph with Maths</a> &nbsp;·&nbsp; <a href="../index.html">← All essays</a></p>
+</footer>
+
+<script src="carbon.js"></script>
+</body>
+</html>

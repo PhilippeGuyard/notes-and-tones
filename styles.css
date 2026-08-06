@@ -1104,3 +1104,59 @@ circle.ci-miss { fill: var(--a); }
   .fourier-hero { width: 120px; height: 120px; }
   .codeblock { font-size: .74rem; }
 }
+
+/* ============================================================
+   When Should I Run My Dishwasher? — carbon-intensity page
+   ============================================================ */
+/* live/snapshot banner */
+.data-note { display: flex; align-items: center; gap: .55rem; margin: 0 0 1rem;
+  font-family: var(--mono); font-size: .78rem; color: var(--ink-soft); }
+.live-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ink-soft);
+  flex: none; box-shadow: 0 0 0 0 rgba(52,183,154,.5); }
+.live-dot.on { background: #34b79a; animation: live-pulse 2.4s ease-out infinite; }
+@keyframes live-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(52,183,154,.55); }
+  70% { box-shadow: 0 0 0 7px rgba(52,183,154,0); }
+  100% { box-shadow: 0 0 0 0 rgba(52,183,154,0); }
+}
+
+/* "right now" readout */
+.now-box { text-align: left; }
+.now-box .stat-big { margin: .1rem 0 .3rem; }
+
+/* heatmap — breaks out wider than the prose column */
+.chart-wide { max-width: 1060px; margin: 0 auto; padding: 1rem 1.5rem 0; }
+.chart-wide .widget { margin-top: 0; }
+.hm-region { font-family: var(--mono); font-size: 13px; fill: var(--ink); }
+.hm-tick { font-family: var(--mono); font-size: 11px; fill: var(--ink-soft); }
+.hm-tick-day { font-weight: 700; fill: var(--ink); }
+.hm-grid { stroke: rgba(44,27,61,.16); stroke-width: 1; }
+.hm-tip { position: absolute; z-index: 20; pointer-events: none; opacity: 0;
+  transition: opacity .12s; background: var(--ink); color: var(--paper);
+  font-family: var(--mono); font-size: .72rem; line-height: 1.4; padding: .45rem .6rem;
+  border-radius: 8px; max-width: 240px; box-shadow: var(--shadow); }
+.hm-tip strong { font-family: var(--display); font-size: .82rem; }
+
+/* planner */
+.mini-sel { font-family: var(--mono); font-size: .82rem; color: var(--ink);
+  background: var(--paper); border: 1.5px solid var(--line); border-radius: 8px;
+  padding: .35rem .5rem; margin-right: .4rem; }
+.mini-sel:focus { outline: none; border-color: var(--A); }
+.plan-readouts { grid-template-columns: 1fr 1fr; margin: 1.2rem 0 .6rem; }
+.plan-readouts .stat-big { font-size: clamp(1.35rem, 4.6vw, 2rem); }
+.plan-area { fill: rgba(52,183,154,.14); stroke: none; }
+.plan-line { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; }
+.plan-best-lab { font-family: var(--mono); font-size: 10px; font-weight: 700; fill: var(--ink); }
+.plan-now { stroke: var(--ink-soft); stroke-width: 1.5; stroke-dasharray: 3 3; }
+.green-head { font-family: var(--mono); font-size: .74rem; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--ink-soft); margin: 1rem 0 .5rem; }
+.green-list { list-style: none; padding: 0; margin: 0; font-family: var(--mono);
+  font-size: .82rem; display: grid; gap: .4rem; }
+.green-list li { display: flex; align-items: center; gap: .6rem; }
+.green-dot { width: 11px; height: 11px; border-radius: 50%; flex: none;
+  border: 1.5px solid #fff; box-shadow: 0 0 0 1px var(--line); }
+
+@media (max-width: 560px) {
+  .plan-readouts { grid-template-columns: 1fr; }
+  .hm-region { font-size: 9px; }
+}
