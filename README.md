@@ -1,4 +1,4 @@
-# Notes &amp; Tones
+# Notes & Tones
 
 Short, interactive essays on how science actually works — with sliders you can
 drag, tables you can break, and numbers you can poke.
@@ -11,8 +11,13 @@ Static site: hand-written HTML/CSS/JS, no build step. Deployed via GitHub Pages.
 index.html          Home page — lists the essays as cards
 styles.css          Shared, site-wide styles (all pages link to this)
 essays/
-  unicorns.html     The Genetics of Unicorns   + unicorns.js
-  ancestry.html     How Much Italian Are You?   + ancestry.js
+  unicorns.html     The Genetics of Unicorns          + unicorns.js
+  ancestry.html     How Much Italian Are You?         + ancestry.js
+  monty-hall.html   To Switch, or Not to Switch?      + monty-hall.js
+  confidence.html   Ninety-Five Per Cent Confident?   + confidence.js
+  anova.html        Signal or Noise?                  + anova.js
+  fourier.html      Drawn by Circles                  + fourier.js
+  rudolph.html      Drawing Rudolph with Maths        + rudolph/ (assets, build script)
   immigration/      Perception vs Reality — d3 scrollytelling data essay
   template.html     Skeleton to copy when adding a new essay
 tools/
@@ -43,4 +48,4 @@ python3 -m http.server 8000
 ## Deploy
 
 Pushing to `main` triggers the GitHub Pages build. Live at
-<https://philippeguyard.github.io/unicorn-genetics/>.
+<https://philippeguyard.github.io/notes-and-tones/>.
