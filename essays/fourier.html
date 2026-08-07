@@ -1,33 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Drawn by Circles — how a Fourier transform draws any shape with spinning vectors</title>
-<meta name="description" content="Any shape, however wonky, can be drawn by a stack of spinning circles. That is the Fourier transform: it breaks a signal into simple waves, and the same trick behind JPEG, MP3 and MRI can trace a heart or a star. Drag the sliders and watch it draw." />
-<meta property="og:title" content="Drawn by Circles" />
-<meta property="og:description" content="The Fourier transform, made visual: build a square wave from sines, then watch a stack of spinning circles draw any outline you like." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://philippeguyard.github.io/notes-and-tones/essays/fourier.html" />
-<meta property="og:site_name" content="Notes &amp; Tones" />
-<meta property="og:image" content="https://philippeguyard.github.io/notes-and-tones/assets/og-card.png" />
-<meta name="twitter:card" content="summary_large_image" />
-<link rel="canonical" href="https://philippeguyard.github.io/notes-and-tones/essays/fourier.html" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%80%3C/text%3E%3C/svg%3E" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../styles.css" />
-</head>
-<body>
-<div class="grain" aria-hidden="true"></div>
-<div class="sparkles" aria-hidden="true"></div>
-
-<nav class="topnav">
-  <a href="../index.html" class="topnav-home">← Notes &amp; Tones</a>
-  <a href="rudolph.html">Also: Drawing Rudolph with Maths →</a>
-</nav>
-
+---
+layout: layouts/essay.njk
+title: "Drawn by Circles — how a Fourier transform draws any shape with spinning vectors"
+og_title: "Drawn by Circles"
+description: "Any shape, however wonky, can be drawn by a stack of spinning circles. That is the Fourier transform: it breaks a signal into simple waves, and the same trick behind JPEG, MP3 and MRI can trace a heart or a star. Drag the sliders and watch it draw."
+og_description: "The Fourier transform, made visual: build a square wave from sines, then watch a stack of spinning circles draw any outline you like."
+emoji: "🌀"
+date: 2026-08-06
+updated: "2026-08-06T12:00:00Z"
+order: 8
+dek: "Any shape can be drawn by a stack of spinning circles. The Fourier transform, made visual: build a square wave from sines, then watch the machinery trace a heart, a star, a sound wave."
+nav: { href: "rudolph.html", text: "Also: Drawing Rudolph with Maths" }
+foot_tagline: "Stack the circles. Set them spinning. Watch the shape appear."
+foot_links:
+  - { href: "rudolph.html", emoji: "🎄", text: "Drawing Rudolph with Maths" }
+has_script: true
+---
 <header class="hero">
   <div class="hero-inner">
     <p class="eyebrow">Notes &amp; Tones · An interactive essay</p>
@@ -143,15 +130,3 @@ speed  = freqs                      # how fast it spins</code></pre>
     <p class="kicker">Every shape is a chord you can see, and every sound is a drawing you can hear. The Fourier transform is only the dictionary between them.</p>
   </section>
 </main>
-
-<footer class="site-foot">
-  <p>An essay from Notes &amp; Tones.</p>
-  <p class="foot-meta">Stack the circles. Set them spinning. Watch the shape appear. <span aria-hidden="true">🌀</span></p>
-  <p class="foot-meta"><a href="rudolph.html">🎄 Read: Drawing Rudolph with Maths</a> &nbsp;·&nbsp; <a href="../index.html">← All essays</a></p>
-  <p class="foot-meta">Published 6 August 2026</p>
-</footer>
-
-<script src="fourier.js"></script>
-<script data-goatcounter="https://notesandtones.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-</body>
-</html>
