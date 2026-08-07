@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>The Pull of the Equator — Notes &amp; Tones</title>
-<meta name="description" content="Earth spins, and spinning things fling outward — so why don't the oceans pile up at the equator? Chase the forces with your mouse and see." />
+<meta name="description" content="Earth spins, and spinning things fling outward. So why don't the oceans pile up at the equator? Chase the forces with your mouse and see." />
 <meta property="og:title" content="The Pull of the Equator" />
-<meta property="og:description" content="Earth spins, and spinning things fling outward — so why don't the oceans pile up at the equator? Chase the forces with your mouse and see." />
+<meta property="og:description" content="Earth spins, and spinning things fling outward. So why don't the oceans pile up at the equator? Chase the forces with your mouse and see." />
 <meta property="og:type" content="article" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%8D%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,14 +34,14 @@
 
 <main>
   <section class="prose" id="intro">
-    <p class="lead"><span class="dropcap">S</span>tand anywhere on Earth and you are on a carousel. The planet carries you around its axis once a day — about 1,300&nbsp;km/h at the latitude of Paris — and, like any carousel, it tries to fling you outward. Gravity, thankfully, wins by a landslide. But it doesn't win <em>cleanly</em>, and the small print of that victory is the subject of this essay.</p>
-    <p>The outward fling — the <strong>centrifugal force</strong> — doesn't point straight up. It points away from the <em>spin axis</em>, the pole-to-pole line, not away from the centre of the Earth. Except at the equator, those are different directions. And that little mismatch, as we're about to see, would be enough to drag every ocean and every parcel of air down to the equator&nbsp;— if the Earth were actually a sphere.</p>
+    <p class="lead"><span class="dropcap">S</span>tand anywhere on Earth and you are standing on a carousel. The planet carries you around its axis once a day (about 1,300&nbsp;km/h at the latitude of Paris) and, like any carousel, it tries to fling you outward. Gravity wins by a landslide, of course. But it doesn't win <em>cleanly</em>, and this essay is about the part it loses.</p>
+    <p>The outward fling, the <strong>centrifugal force</strong>, doesn't point straight up. It points away from the <em>spin axis</em>, the line running from pole to pole, not away from the centre of the Earth. Away from the axis and away from the centre are different directions everywhere except at the equator. That little mismatch would be enough to drag every ocean and every parcel of air down to the equator, if the Earth were actually a sphere.</p>
   </section>
 
   <section class="prose" id="sphere">
     <h2><span class="sec-no">01</span> The sphere that can't hold still</h2>
-    <p>Below is a perfectly spherical, spinning Earth, seen from the side. <strong>Move your mouse (or finger) over it.</strong> At the point you touch, two forces act: <strong>gravity</strong>, pulling straight at the centre, and the <strong>centrifugal force</strong>, pushing away from the axis. Watch the centrifugal arrow as you travel: strongest at the equator, gone at the poles — its strength depends on how far you are from the axis, the dashed line the planet spins around.</p>
-    <p>Now split that centrifugal push into two parts, following the thin dashed lines. The part pointing <em>straight off the ground</em> just makes you a whisker lighter; the ground pushes back, no drama. But the other part lies <em>flat along the ground</em>, aimed at the equator. On a sphere, gravity points exactly straight down, so it has no sideways part of its own to answer with. <strong>Nothing cancels the pink arrow.</strong></p>
+    <p>Below is a perfectly spherical, spinning Earth, seen from the side. <strong>Move your mouse (or finger) over it.</strong> At the point you touch, two forces act: <strong>gravity</strong>, pulling straight at the centre, and the <strong>centrifugal force</strong>, pushing away from the axis. Watch the centrifugal arrow as you travel: it is strongest at the equator and vanishes at the poles, because its strength depends on your distance from the axis, the dashed line the planet spins around.</p>
+    <p>Now split that centrifugal push into two parts, following the thin dashed lines. The part pointing <em>straight off the ground</em> just makes you slightly lighter, and the ground pushes back. But the other part lies <em>flat along the ground</em>, aimed at the equator. On a sphere, gravity points exactly straight down, so it has no sideways part of its own to answer with. <strong>Nothing cancels the pink arrow.</strong></p>
   </section>
   <div class="chart-wide">
     <figure class="widget" id="w-sphere">
@@ -59,25 +59,25 @@
           <span class="leg-item"><span class="leg-swatch sw-resid"></span>unbalanced pull</span>
         </span>
       </div>
-      <figcaption class="widget-cap">Forces are exaggerated ≈ 130× so you can see them — on the real Earth the centrifugal force peaks at 0.34% of gravity. The physics of the arrows is computed live, not drawn by hand.</figcaption>
+      <figcaption class="widget-cap">Forces are exaggerated about 130 times so you can see them; on the real Earth the centrifugal force peaks at 0.34% of gravity. The arrows are computed live from the physics, not drawn by hand.</figcaption>
     </figure>
   </div>
   <section class="prose">
-    <p>The sideways pull is tiny at the equator (no ground to slide along — the pull <em>is</em> straight up there), tiny at the poles (no spin radius), and strongest at 45°. In code, the split is one projection:</p>
+    <p>The sideways pull vanishes at the equator (there the push points straight up, with no ground to slide along) and at the poles (no spin radius), and is strongest at 45°. In code, the split is one projection:</p>
     <div class="codeblock"><span class="code-tag">javascript</span><code>// forces at latitude φ on a spinning sphere of radius R
 r = R * cos(φ)                 // your distance from the spin axis
 centrifugal = ω² * r           // points away from the AXIS, not the centre
 
 // project it onto the local vertical and the local ground
-straight_up = ω² * r * cos(φ)  // the ground pushes back — balanced
-along_ground = ω² * r * sin(φ) // toward the equator — nothing balances it</code></div>
-    <p>So press <em>release the rain</em> above. Every droplet obeys that little leftover force, slides downhill toward the equator, and pools there. On a spherical Earth, "downhill" and "toward the equator" are the same direction everywhere. The oceans would drain from the poles; the atmosphere would sag into a belt. Clearly that's not the planet we live on. Something must cancel the pink arrow.</p>
+straight_up = ω² * r * cos(φ)  // the ground pushes back: balanced
+along_ground = ω² * r * sin(φ) // toward the equator: nothing balances it</code></div>
+    <p>Press <em>release the rain</em> above. Every droplet obeys that leftover force, slides downhill toward the equator and pools there. On a spherical Earth, downhill and toward the equator are the same direction everywhere. The oceans would drain from the poles and the atmosphere would sag into a belt. That is not the planet we live on, so something must be cancelling the pink arrow.</p>
   </section>
 
   <section class="prose" id="ellipse">
     <h2><span class="sec-no">02</span> The planet fights back</h2>
-    <p>Here's the trick: the Earth isn't a sphere. That equator-ward pull acted on the young, molten Earth too — so the planet itself flowed toward the equator, exactly like the raindrops, until it puffed out into a <strong>bulge</strong>. And the bulge changes the geometry. On a squashed planet, the surface is <em>tilted</em> compared to the sphere: "straight down to the centre" and "straight into the ground" are no longer the same direction. Gravity now has a small sideways part of its own — and it points <em>toward the poles</em>.</p>
-    <p>Follow the thin dashed lines from the tips of both thick arrows down onto the ground line: gravity's sideways part (periwinkle) and the centrifugal sideways part (marigold) sit tail-to-tail, <strong>equal and opposite, at every single latitude</strong>. The bulge grew until they matched — and then the flowing stopped.</p>
+    <p>The Earth, of course, isn't a sphere. The pull toward the equator acted on the young, molten planet too, so the planet itself flowed toward the equator, exactly like the raindrops, until it had puffed out into a <strong>bulge</strong>. The bulge changes the geometry. On a squashed planet the surface is <em>tilted</em> compared to the sphere: straight down to the centre and straight into the ground are no longer the same direction. Gravity now has a small sideways part of its own, and it points <em>toward the poles</em>.</p>
+    <p>Follow the thin dashed lines from the tips of both thick arrows down onto the ground line: gravity's sideways part (periwinkle) and the centrifugal sideways part (marigold) sit tail-to-tail, <strong>equal and opposite, at every single latitude</strong>. The bulge grew until they matched, and then the flowing stopped.</p>
   </section>
   <div class="chart-wide">
     <figure class="widget" id="w-ellipse">
@@ -95,28 +95,28 @@ along_ground = ω² * r * sin(φ) // toward the equator — nothing balances it<
           <span class="leg-item"><span class="leg-swatch sw-eff"></span>effective gravity</span>
         </span>
       </div>
-      <figcaption class="widget-cap">The bulge is exaggerated to match the exaggerated spin — and with it, the two sideways pulls cancel exactly. The teal arrow (gravity + centrifugal combined) is what a plumb line actually shows: it points straight into the tilted ground.</figcaption>
+      <figcaption class="widget-cap">The bulge is exaggerated to match the exaggerated spin, and with it the two sideways pulls cancel exactly. The teal arrow, gravity and centrifugal force combined, is what a plumb line actually shows: it points straight into the tilted ground.</figcaption>
     </figure>
   </div>
   <section class="prose">
-    <p>Notice the teal arrow: gravity and centrifugal force added together. That sum — <strong>effective gravity</strong>, the "down" a plumb line or a spirit level actually measures — is perpendicular to the ground everywhere on the bulged Earth. There is no downhill left to slide along. The droplets just sit there. In code, the balance is two projections that agree:</p>
+    <p>The teal arrow is gravity and the centrifugal force added together. That sum, called <strong>effective gravity</strong>, is the "down" a plumb line or a spirit level actually measures, and on the bulged Earth it is perpendicular to the ground everywhere. There is no downhill left to slide along, so the droplets just sit there. In code, the balance is two projections that agree:</p>
     <div class="codeblock"><span class="code-tag">javascript</span><code>// on the bulged Earth (ellipse, equator radius a, pole radius b)
 tangent = (-a * sin(θ), b * cos(θ))          // the local ground direction
 
-gravity_along_ground     =  G * (a² - b²) * sin(θ)cos(θ)  // → poleward
-centrifugal_along_ground = -ω² * a² * sin(θ)cos(θ)        // → equatorward
+gravity_along_ground     =  G * (a² - b²) * sin(θ)cos(θ)  // poleward
+centrifugal_along_ground = -ω² * a² * sin(θ)cos(θ)        // equatorward
 
 // they cancel at EVERY latitude when   ω² / G = 1 - (b/a)²
 // ... which is exactly the bulge the flowing planet settled into</code></div>
-    <p class="kicker">The sea surface isn't fighting the spin. It's the shape the fight ended in.</p>
+    <p class="kicker">Sea level is simply the shape on which the two pulls agree.</p>
   </section>
 
   <section class="prose" id="numbers">
     <h2><span class="sec-no">03</span> The real numbers</h2>
-    <p>Everything above is exaggerated about a hundredfold so the arrows are visible. The real budget: at the equator the centrifugal effect is <strong>0.34% of gravity</strong> — you weigh about 300&nbsp;g less there than at the poles (some of that from the bulge itself putting you farther from the centre). The real bulge: Earth's equatorial radius beats its polar radius by <strong>21&nbsp;km</strong>, a flattening of about 1/298 — a circle squashed by a third of a percent, which is why the planet looks perfectly round from space.</p>
-    <p>Small, but not negligible. Because of the bulge, the summit of Ecuador's Chimborazo — not Everest — is the point on Earth farthest from the planet's centre, by more than 2&nbsp;km. "Sea level" itself is nothing more than the surface our second animation found: the shape on which effective gravity is everywhere perpendicular to the ground, so water has no downhill left anywhere.</p>
-    <div class="note"><p>One honest footnote: our toy model (gravity pulling toward the centre, growing with distance) predicts a bulge about <em>half</em> the real one. The missing half comes from the bulge's own gravity: all that extra rock around the equator pulls sideways too, tilting "down" a little further and letting the equilibrium bulge grow a little fatter. Getting that right was an 18th-century triumph — Clairaut's theorem — but the balancing act is exactly the one you just played with.</p></div>
-    <p>Newton reasoned his way to the bulge in the <em>Principia</em> without ever leaving his desk, by imagining two water-filled wells drilled to the centre, one from a pole and one from the equator, and asking when they'd balance. The French Academy then spent the 1730s sending expeditions to Lapland and Peru to measure it. The spin won the argument: the Earth is, ever so slightly, a flung-out planet — and that is precisely why nothing else has to be.</p>
+    <p>Everything above is exaggerated about a hundredfold so that the arrows are visible. In reality the centrifugal effect at the equator is <strong>0.34% of gravity</strong>: you weigh about 300&nbsp;g less there than at the poles (partly because the bulge itself puts you farther from the centre). The bulge amounts to <strong>21&nbsp;km</strong> of extra equatorial radius, a flattening of about 1/298. A circle squashed by a third of a percent still looks perfectly round, which is why photographs from space show a sphere.</p>
+    <p>Small, but not negligible. Because of the bulge, the summit of Ecuador's Chimborazo, not Everest, is the point on Earth farthest from the planet's centre, by more than 2&nbsp;km. And "sea level" is nothing more than the surface our second animation found: the shape on which effective gravity is perpendicular to the ground everywhere, so that water has no downhill left anywhere.</p>
+    <div class="note"><p>A footnote for the purists: our toy model, with gravity pulling toward the centre and growing with distance, predicts a bulge about <em>half</em> the real size. The missing half comes from the bulge's own gravity: the extra rock around the equator pulls sideways too, tilting "down" a little further and letting the bulge grow a little fatter. Working that out properly took until Clairaut in the eighteenth century, but the balancing act is the one you just played with.</p></div>
+    <p>Newton reasoned his way to the bulge in the <em>Principia</em> without leaving his desk, by imagining two water-filled wells drilled to the centre of the Earth, one from a pole and one from the equator, and asking what it would take for them to balance. The French Academy then spent the 1730s sending expeditions to Lapland and Peru to measure the shape. Newton was right: the Earth really is slightly flung outward, and that is why the oceans stay where they are.</p>
   </section>
 </main>
 
