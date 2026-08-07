@@ -1,33 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>You Tested Positive. Now What? — base rates, Bayes, and the cost of screening</title>
-<meta name="description" content="A screening test is 90% accurate and you test positive. The chance you're actually ill is about nine per cent, not ninety. Why base rates rule medical tests, how Bayes' theorem does the bookkeeping, and what that means for who should be screened." />
-<meta property="og:title" content="You Tested Positive. Now What?" />
-<meta property="og:description" content="A 90%-accurate test comes back positive. Why the chance you're ill is nearer nine per cent than ninety — base rates, Bayes' theorem, and the cost of screening, with widgets you can run." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://philippeguyard.github.io/notes-and-tones/essays/screening.html" />
-<meta property="og:site_name" content="Notes &amp; Tones" />
-<meta property="og:image" content="https://philippeguyard.github.io/notes-and-tones/assets/og-card.png" />
-<meta name="twitter:card" content="summary_large_image" />
-<link rel="canonical" href="https://philippeguyard.github.io/notes-and-tones/essays/screening.html" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A9%BA%3C/text%3E%3C/svg%3E" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../styles.css" />
-</head>
-<body>
-<div class="grain" aria-hidden="true"></div>
-<div class="sparkles" aria-hidden="true"></div>
-
-<nav class="topnav">
-  <a href="../index.html" class="topnav-home">← Notes &amp; Tones</a>
-  <a href="confidence.html">Also: Ninety-Five per cent confident? →</a>
-</nav>
-
+---
+layout: layouts/essay.njk
+title: "You Tested Positive. Now What? — base rates, Bayes, and the cost of screening"
+og_title: "You Tested Positive. Now What?"
+description: "A screening test is 90% accurate and you test positive. The chance you're actually ill is about nine per cent, not ninety. Why base rates rule medical tests, how Bayes' theorem does the bookkeeping, and what that means for who should be screened."
+og_description: "A 90%-accurate test comes back positive. Why the chance you're ill is nearer nine per cent than ninety — base rates, Bayes' theorem, and the cost of screening, with widgets you can run."
+emoji: "🩺"
+date: 2026-08-07
+updated: "2026-08-07T10:00:00Z"
+order: 5
+dek: "A 90%-accurate screening test comes back positive — so the chance you're ill is about nine per cent, not ninety. Base rates, Bayes' theorem, and the real cost of screening, counted out dot by dot."
+nav: { href: "confidence.html", text: "Also: Ninety-Five per cent confident?" }
+foot_tagline: "Count the dots. Test twice. Mind the base rate."
+foot_note: "Sources: Gigerenzer, <em>Calculated Risks</em>, and Gigerenzer et&nbsp;al. (2007) on helping doctors read health statistics; Hoffrage &amp; Gigerenzer (1998); the NHS Breast Screening Programme statistics; Lehman et&nbsp;al. (2017) on digital-mammography accuracy; the USPSTF 2024 recommendation; and the Marmot review (2012) on overdiagnosis. Teaching figures rounded from these; not clinical values."
+foot_links:
+  - { href: "confidence.html", emoji: "🎯", text: "Ninety-Five per cent confident?" }
+  - { href: "monty-hall.html", emoji: "🚪", text: "To Switch, or Not to Switch?" }
+has_script: true
+---
 <header class="hero">
   <div class="hero-inner">
     <p class="eyebrow">Notes &amp; Tones · An interactive essay</p>
@@ -177,16 +166,3 @@
     </div>
   </section>
 </main>
-
-<footer class="site-foot">
-  <p>An essay from Notes &amp; Tones.</p>
-  <p class="foot-meta">Count the dots. Test twice. Mind the base rate. <span aria-hidden="true">🩺</span></p>
-  <p class="foot-meta">Sources: Gigerenzer, <em>Calculated Risks</em>, and Gigerenzer et&nbsp;al. (2007) on helping doctors read health statistics; Hoffrage &amp; Gigerenzer (1998); the NHS Breast Screening Programme statistics; Lehman et&nbsp;al. (2017) on digital-mammography accuracy; the USPSTF 2024 recommendation; and the Marmot review (2012) on overdiagnosis. Teaching figures rounded from these; not clinical values.</p>
-  <p class="foot-meta"><a href="confidence.html">🎯 Read: Ninety-Five per cent confident?</a> &nbsp;·&nbsp; <a href="monty-hall.html">🚪 Read: To Switch, or Not to Switch?</a> &nbsp;·&nbsp; <a href="../index.html">← All essays</a></p>
-  <p class="foot-meta">Published 7 August 2026</p>
-</footer>
-
-<script src="screening.js"></script>
-<script data-goatcounter="https://notesandtones.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-</body>
-</html>
