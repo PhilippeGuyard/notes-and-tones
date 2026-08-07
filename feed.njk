@@ -1,0 +1,23 @@
+---
+permalink: "feed.xml"
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.name }}</title>
+  <subtitle>Short, interactive essays on ideas worth poking at.</subtitle>
+  <link href="{{ site.url }}/" />
+  <link rel="self" href="{{ site.url }}/feed.xml" />
+  <id>{{ site.url }}/</id>
+  <updated>{{ (collections.essay | sort(true, false, "data.updated") | first).data.updated }}</updated>
+  <author><name>{{ site.author }}</name></author>
+{% for essay in collections.essay | sort(true, false, "data.updated") %}
+  <entry>
+    <title>{{ essay.data.card_title or essay.data.og_title or essay.data.title }}</title>
+    <link href="{{ site.url }}/{{ essay.data.card_url or essay.url.slice(1) }}" />
+    <id>{{ site.url }}/{{ essay.data.card_url or essay.url.slice(1) }}</id>
+    <updated>{{ essay.data.updated }}</updated>
+    <summary>{{ (essay.data.feed_summary or essay.data.dek) | safe }}</summary>
+  </entry>
+{%- endfor %}
+</feed>
