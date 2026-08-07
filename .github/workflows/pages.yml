@@ -23,13 +23,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # publish only the site itself: no docs/, tools/, README or essay template
-      - name: Assemble site
-        run: |
-          mkdir _site
-          cp index.html 404.html styles.css robots.txt sitemap.xml feed.xml _site/
-          cp -R assets essays _site/
-          rm _site/essays/template.html
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # builds only the site itself: no docs/, tools/, README or essay template
+      - name: Build site
+        run: npm run build
 
       - uses: actions/upload-pages-artifact@v3
         with:
