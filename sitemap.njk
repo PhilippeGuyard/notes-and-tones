@@ -1,0 +1,11 @@
+---
+permalink: "sitemap.xml"
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{ site.url }}/</loc><lastmod>{{ (collections.essay | sort(true, false, "data.updated") | first).data.updated.slice(0, 10) }}</lastmod></url>
+{%- for essay in collections.essay | sort(false, false, "data.order") %}
+  <url><loc>{{ site.url }}/{{ essay.data.card_url or essay.url.slice(1) }}</loc><lastmod>{{ essay.data.updated.slice(0, 10) }}</lastmod></url>
+{%- endfor %}
+</urlset>
