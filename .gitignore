@@ -11,3 +11,8 @@ tools/immigration/data/raw/
 
 # secrets
 .env
+
+# eleventy
+node_modules/
+_site/
+_site_baseline/

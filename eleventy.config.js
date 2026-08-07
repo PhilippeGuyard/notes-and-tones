@@ -1,0 +1,35 @@
+module.exports = function (eleventyConfig) {
+  // Essay HTML must never be run through a template engine (inline JS, braces).
+  // Only .njk files and layouts are templated.
+  eleventyConfig.setTemplateFormats(["html", "njk"]);
+
+  for (const p of [
+    "styles.css",
+    "robots.txt",
+    "assets",
+    "essays/!(*.11tydata).js",
+    "essays/carbon-snapshot.json",
+    "essays/rudolph/assets",
+    "essays/rudolph/build_assets.py",
+    "essays/immigration/css",
+    "essays/immigration/js",
+    "essays/immigration/data",
+    "essays/income/css",
+    "essays/income/js",
+    "essays/income/data",
+  ]) {
+    eleventyConfig.addPassthroughCopy(p);
+  }
+
+  // "6 August 2026" — matches the hand-written dates exactly
+  eleventyConfig.addFilter("essayDate", (d) =>
+    new Date(d).toLocaleDateString("en-GB", {
+      day: "numeric", month: "long", year: "numeric", timeZone: "UTC",
+    })
+  );
+
+  return {
+    htmlTemplateEngine: false,
+    markdownTemplateEngine: false,
+  };
+};
