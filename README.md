@@ -45,7 +45,11 @@ Each single-file essay in `essays/` is a front matter block plus the hero and
 main body; `_includes/layouts/essay.njk` wraps it with the head, top nav and
 footer. If it has interactive widgets, its own `<slug>.js` sits next to it
 (`has_script: true`). The two folder essays (income, immigration) keep their
-bespoke HTML.
+bespoke HTML: only their front matter (permalink override, card/feed fields —
+see `essays/income/index.html`) is read by the build, and their `css/`, `js/`
+and `data/` subfolders are passthrough-copied. A new folder essay needs both:
+front matter modelled on income's, plus passthrough entries for its subfolders
+in `eleventy.config.js`.
 
 ## Adding a new essay
 

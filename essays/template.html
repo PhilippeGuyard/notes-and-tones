@@ -8,10 +8,12 @@ og_title: "Essay Title"                 # short title for social shares and the 
 description: "One-line summary of the essay for the meta description."
 og_description: "One-line summary for social shares (og:description)."
 emoji: "📝"                             # favicon + home-page card + footer sign-off
-date: 2026-01-01                        # publication date (home card, footer, feed)
-updated: "2026-01-01T10:00:00Z"         # last-updated timestamp for the feed
-order: 99                               # home-page position — 1 is the top card; also orders
-                                        #   the feed and sitemap. Pick the next free number.
+date: 2026-01-01                        # publication date (home card, footer)
+updated: "2026-01-01T10:00:00Z"         # feed timestamp + sitemap lastmod; keep the quotes —
+                                        #   the templates need a string, not a YAML date
+order: 99                               # home-page and sitemap position — 1 is the top card;
+                                        #   the feed orders itself by `updated`, newest first.
+                                        #   Pick the next free number.
 dek: "The hook shown under the title on the home-page card, and as the feed summary."
 # feed_summary: "Plain-text summary."   # optional — replaces the dek in the feed (use when
                                         #   the dek carries markup/entities the feed shouldn't)
