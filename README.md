@@ -24,14 +24,8 @@ _data/
 assets/
   og-card.png       Social-share card (source: tools/og-card.html)
 essays/
-  unicorns.html     The Genetics of Unicorns          + unicorns.js
-  ancestry.html     How Much Italian Are You?         + ancestry.js
-  monty-hall.html   To Switch, or Not to Switch?      + monty-hall.js
-  confidence.html   Ninety-Five Per Cent Confident?   + confidence.js
-  anova.html        Signal or Noise?                  + anova.js
-  fourier.html      Drawn by Circles                  + fourier.js
-  rudolph.html      Drawing Rudolph with Maths        + rudolph/ (assets, build script)
-  carbon.html       When Should I Run My Dishwasher?  + carbon.js (+ carbon-snapshot.json)
+  <slug>.html       One file per essay: front matter + body, plus <slug>.js if
+                    it has widgets (see the home page for the full list)
   income/           Income: Perception vs Reality — d3 scrollytelling data essay
   immigration/      Immigration: Perception vs Reality — d3 scrollytelling data essay
   template.html     Skeleton to copy when adding a new essay

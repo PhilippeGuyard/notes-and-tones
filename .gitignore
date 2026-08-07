@@ -15,4 +15,3 @@ tools/immigration/data/raw/
 # eleventy
 node_modules/
 _site/
-_site_baseline/
