@@ -20,7 +20,13 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* stop mobile Chrome/Safari from inflating font sizes (breaks the centered
+     masthead: the boosted title overflows and clips) */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
 body {
   margin: 0;
@@ -217,7 +223,7 @@ a { color: var(--reality); text-decoration-thickness: 1px; text-underline-offset
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 1.2rem;
   max-width: 62em;
   margin: 2.5rem auto 4rem;
@@ -264,7 +270,7 @@ a { color: var(--reality); text-decoration-thickness: 1px; text-underline-offset
   padding: 1.6rem 1.8rem;
   margin: 2rem 0 1rem;
 }
-#guess-widget .gw-row { display: flex; align-items: center; gap: 1.2rem; }
+#guess-widget .gw-row { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
 #guess-widget input[type=range] {
   flex: 1;
   accent-color: var(--perception);
@@ -381,11 +387,18 @@ svg .chart-title { font-family: var(--display); font-weight: 700; font-size: 1.0
 
 @media (max-width: 820px) {
   .scrolly { grid-template-columns: 1fr; }
-  .sticky { position: sticky; top: 0; height: 58vh; grid-column: 1; z-index: 1;
-            background: var(--paper); align-items: flex-start; padding-top: .5rem; }
+  .sticky { position: sticky; top: 0; height: auto; align-self: start; grid-column: 1;
+            z-index: 1; background: var(--paper); align-items: flex-start;
+            padding: .5rem 0 .75rem; }
   .steps { grid-column: 1; }
   .step { min-height: 70vh; }
   .step p { font-size: 1rem; }
+}
+
+/* very narrow screens (small phones, accessibility zoom): let the title shrink
+   below its desktop minimum so it never overflows the viewport */
+@media (max-width: 480px) {
+  .masthead h1 { font-size: clamp(1.6rem, 11.5vw, 2.5rem); }
 }
 
 /* back link to the Notes & Tones home (added when folded into the blog) */
@@ -395,6 +408,10 @@ svg .chart-title { font-family: var(--display); font-weight: 700; font-size: 1.0
   letter-spacing: .04em;
   padding: .9rem clamp(1.2rem, 5vw, 2.4rem);
   border-bottom: 1px solid #d8ccb4;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .3rem 1.5rem;
 }
 .site-back a { color: #14606a; text-decoration: none; }
 .site-back a:hover { text-decoration: underline; text-underline-offset: 3px; }
