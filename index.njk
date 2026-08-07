@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Notes &amp; Tones: short, playful essays on ideas worth poking at</title>
+<meta name="description" content="Short, interactive essays on ideas worth poking at, with things you can drag, break and poke." />
+<meta property="og:title" content="Notes &amp; Tones" />
+<meta property="og:description" content="Short, interactive essays on ideas worth poking at." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://philippeguyard.github.io/notes-and-tones/" />
+<meta property="og:site_name" content="Notes &amp; Tones" />
+<meta property="og:image" content="https://philippeguyard.github.io/notes-and-tones/assets/og-card.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://philippeguyard.github.io/notes-and-tones/" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A8%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="alternate" type="application/atom+xml" title="Notes &amp; Tones" href="feed.xml" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="sparkles" aria-hidden="true"></div>
+
+<header class="home-hero">
+  <h1 class="home-title">Notes &amp; Tones</h1>
+</header>
+
+<main class="home-main">
+  <ul class="essay-list">
+{%- for essay in collections.essay | sort(false, false, "data.order") %}
+    <li class="essay-card">
+      <a href="{{ essay.data.card_url or essay.url.slice(1) }}">
+        <span class="essay-emoji" aria-hidden="true">{{ essay.data.emoji }}</span>
+        <h2 class="essay-title">{{ essay.data.card_title or essay.data.og_title or essay.data.title }}</h2>
+        <p class="essay-dek">{{ essay.data.dek | safe }}</p>
+        <span class="essay-date">{{ essay.data.date | essayDate }}</span>
+        <span class="essay-go">Read →</span>
+      </a>
+    </li>
+{%- endfor %}
+  </ul>
+</main>
+
+<footer class="site-foot home-foot">
+  <p>Written by Philippe Guyard · <a href="https://github.com/PhilippeGuyard">GitHub</a> · <a href="https://www.linkedin.com/in/philippe-guyard-dev/">LinkedIn</a></p>
+  <p class="foot-meta">Text and figures <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> · code <a href="https://github.com/PhilippeGuyard/notes-and-tones">MIT</a> · <a href="feed.xml">Atom feed</a></p>
+</footer>
+<script data-goatcounter="https://notesandtones.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
