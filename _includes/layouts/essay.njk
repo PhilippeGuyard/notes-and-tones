@@ -34,12 +34,15 @@
 <footer class="site-foot">
   <p>An essay from Notes &amp; Tones.</p>
 {%- if foot_tagline %}
-  <p class="foot-meta">{{ foot_tagline }} <span aria-hidden="true">{{ emoji }}</span></p>
+  <p class="foot-meta">{{ foot_tagline | safe }} <span aria-hidden="true">{{ emoji }}</span></p>{# safe: some taglines contain markup (carbon) #}
 {%- endif %}
-  <p class="foot-meta">{% if foot_link %}<a href="{{ foot_link.href }}">{{ foot_link.emoji }} Read: {{ foot_link.text }}</a> &nbsp;·&nbsp; {% endif %}<a href="../index.html">← All essays</a></p>
+{%- if foot_note %}
+  <p class="foot-meta">{{ foot_note | safe }}</p>{# optional sources paragraph, may contain markup (screening) #}
+{%- endif %}
+  <p class="foot-meta">{% for link in foot_links %}<a href="{{ link.href }}">{{ link.emoji }} Read: {{ link.text }}</a> &nbsp;·&nbsp; {% endfor %}<a href="../index.html">← All essays</a></p>
   <p class="foot-meta">Published {{ date | essayDate }}</p>
 </footer>
-{% if has_script %}
+{% if has_script %}{# no "-" trim on this opener: it keeps the blank line after </footer> #}
 <script src="{{ page.fileSlug }}.js"></script>
 {%- endif %}
 <script data-goatcounter="{{ site.goatcounter }}" async src="https://gc.zgo.at/count.js"></script>
