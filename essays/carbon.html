@@ -1,33 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>When Should I Run My Dishwasher? — timing appliances to the greenest grid</title>
-<meta name="description" content="UK electricity is not equally clean all day: its carbon intensity swings three- or four-fold by the hour and by region. Using the National Grid's free API, this page fetches the live 48-hour forecast and works out the greenest time to run your dishwasher, washing machine or EV." />
-<meta property="og:title" content="When Should I Run My Dishwasher?" />
-<meta property="og:description" content="A live code-along: fetch the National Grid carbon-intensity forecast in Python, map it, and find the greenest hours to run your appliances." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://philippeguyard.github.io/notes-and-tones/essays/carbon.html" />
-<meta property="og:site_name" content="Notes &amp; Tones" />
-<meta property="og:image" content="https://philippeguyard.github.io/notes-and-tones/assets/og-card.png" />
-<meta name="twitter:card" content="summary_large_image" />
-<link rel="canonical" href="https://philippeguyard.github.io/notes-and-tones/essays/carbon.html" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../styles.css" />
-</head>
-<body>
-<div class="grain" aria-hidden="true"></div>
-<div class="sparkles" aria-hidden="true"></div>
-
-<nav class="topnav">
-  <a href="../index.html" class="topnav-home">← Notes &amp; Tones</a>
-  <a href="rudolph.html">Also: a Python code-along →</a>
-</nav>
-
+---
+layout: layouts/essay.njk
+title: "When Should I Run My Dishwasher? — timing appliances to the greenest grid"
+og_title: "When Should I Run My Dishwasher?"
+description: "UK electricity is not equally clean all day: its carbon intensity swings three- or four-fold by the hour and by region. Using the National Grid's free API, this page fetches the live 48-hour forecast and works out the greenest time to run your dishwasher, washing machine or EV."
+og_description: "A live code-along: fetch the National Grid carbon-intensity forecast in Python, map it, and find the greenest hours to run your appliances."
+emoji: "⚡"
+date: 2026-08-06
+updated: "2026-08-06T14:00:00Z"
+order: 10
+dek: "UK electricity is three or four times dirtier at some hours than others. A live code-along: fetch the National Grid's carbon forecast in Python, map it, and find the greenest moment to press start."
+nav: { href: "rudolph.html", text: "Also: a Python code-along" }
+foot_tagline: 'Data: <a href="https://carbonintensity.org.uk/">National Grid ESO Carbon Intensity API</a>, gCO₂/kWh, updated every half hour.'
+foot_links:
+  - { href: "rudolph.html", emoji: "🎄", text: "Drawing Rudolph with Maths" }
+has_script: true
+---
 <header class="hero">
   <div class="hero-inner">
     <p class="eyebrow">Notes &amp; Tones · A live code-along</p>
@@ -141,15 +128,3 @@ for i in troughs:
     <p class="kicker">The grid keeps changing under your feet. Now you can see it, and press start at the right moment.</p>
   </section>
 </main>
-
-<footer class="site-foot">
-  <p>An essay from Notes &amp; Tones.</p>
-  <p class="foot-meta">Data: <a href="https://carbonintensity.org.uk/">National Grid ESO Carbon Intensity API</a>, gCO₂/kWh, updated every half hour. <span aria-hidden="true">⚡</span></p>
-  <p class="foot-meta"><a href="rudolph.html">🎄 Read: Drawing Rudolph with Maths</a> &nbsp;·&nbsp; <a href="../index.html">← All essays</a></p>
-  <p class="foot-meta">Published 6 August 2026</p>
-</footer>
-
-<script src="carbon.js"></script>
-<script data-goatcounter="https://notesandtones.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-</body>
-</html>
