@@ -1,33 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Signal or Noise? The Analysis of Variance, made visual</title>
-<meta name="description" content="Three groups, three different averages. Real effect or just noise? How ANOVA answers it by splitting variation into between-group signal and within-group noise, why you can't just t-test every pair, and what the F-statistic really is. With widgets you can drag." />
-<meta property="og:title" content="Signal or Noise?" />
-<meta property="og:description" content="The analysis of variance, made visual: between-group signal against within-group noise, and the F-statistic that weighs them." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://philippeguyard.github.io/notes-and-tones/essays/anova.html" />
-<meta property="og:site_name" content="Notes &amp; Tones" />
-<meta property="og:image" content="https://philippeguyard.github.io/notes-and-tones/assets/og-card.png" />
-<meta name="twitter:card" content="summary_large_image" />
-<link rel="canonical" href="https://philippeguyard.github.io/notes-and-tones/essays/anova.html" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%96%EF%B8%8F%3C/text%3E%3C/svg%3E" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../styles.css" />
-</head>
-<body>
-<div class="grain" aria-hidden="true"></div>
-<div class="sparkles" aria-hidden="true"></div>
-
-<nav class="topnav">
-  <a href="../index.html" class="topnav-home">← Notes &amp; Tones</a>
-  <a href="confidence.html">Also: Ninety-Five Per Cent Confident? →</a>
-</nav>
-
+---
+layout: layouts/essay.njk
+title: "Signal or Noise? The Analysis of Variance, made visual"
+og_title: "Signal or Noise?"
+description: "Three groups, three different averages. Real effect or just noise? How ANOVA answers it by splitting variation into between-group signal and within-group noise, why you can't just t-test every pair, and what the F-statistic really is. With widgets you can drag."
+og_description: "The analysis of variance, made visual: between-group signal against within-group noise, and the F-statistic that weighs them."
+emoji: "⚖️"
+date: 2026-08-06
+updated: "2026-08-06T11:00:00Z"
+order: 7
+dek: "Three groups, three different averages. Real effect or just wobble? The analysis of variance, made visual: between-group signal weighed against within-group noise."
+nav: { href: "confidence.html", text: "Also: Ninety-Five Per Cent Confident?" }
+foot_tagline: "Weigh the signal against the noise."
+foot_link: { href: "confidence.html", emoji: "🎯", text: "Ninety-Five Per Cent Confident?" }
+has_script: true
+---
 <header class="hero">
   <div class="hero-inner">
     <p class="eyebrow">Notes &amp; Tones · An interactive essay</p>
@@ -155,15 +141,3 @@
     <p class="kicker">A difference in averages is a rumour. The analysis of variance asks the only question that settles it: loud enough to hear over the noise, or not?</p>
   </section>
 </main>
-
-<footer class="site-foot">
-  <p>An essay from Notes &amp; Tones.</p>
-  <p class="foot-meta">Weigh the signal against the noise. <span aria-hidden="true">⚖️</span></p>
-  <p class="foot-meta"><a href="confidence.html">🎯 Read: Ninety-Five Per Cent Confident?</a> &nbsp;·&nbsp; <a href="../index.html">← All essays</a></p>
-  <p class="foot-meta">Published 6 August 2026</p>
-</footer>
-
-<script src="anova.js"></script>
-<script data-goatcounter="https://notesandtones.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-</body>
-</html>
