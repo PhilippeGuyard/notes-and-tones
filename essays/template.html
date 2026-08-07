@@ -1,39 +1,46 @@
-<!DOCTYPE html>
+---
+# ESSAY FRONT MATTER — everything the layout, home page, feed and sitemap read.
+layout: layouts/essay.njk               # required — wraps the body in the shared essay chrome
+title: "Essay Title — a one-line subtitle"   # <title> tag; also the fallback title everywhere
+og_title: "Essay Title"                 # short title for social shares and the home card
+# card_title: "Essay Title?"            # optional — overrides og_title on the home card + feed
+                                        #   (use when the card wants different phrasing)
+description: "One-line summary of the essay for the meta description."
+og_description: "One-line summary for social shares (og:description)."
+emoji: "📝"                             # favicon + home-page card + footer sign-off
+date: 2026-01-01                        # publication date (home card, footer, feed)
+updated: "2026-01-01T10:00:00Z"         # last-updated timestamp for the feed
+order: 99                               # home-page position — 1 is the top card; also orders
+                                        #   the feed and sitemap. Pick the next free number.
+dek: "The hook shown under the title on the home-page card, and as the feed summary."
+# feed_summary: "Plain-text summary."   # optional — replaces the dek in the feed (use when
+                                        #   the dek carries markup/entities the feed shouldn't)
+nav: { href: "unicorns.html", text: "Also: The Genetics of Unicorns" }
+                                        # optional top-nav link; delete the line for none.
+                                        #   Use "Next: …" when the essay is part of a series.
+foot_tagline: "A short sign-off line for the footer."   # may contain HTML
+# foot_note: "Sources: … "              # optional — sources/notes paragraph in the footer,
+                                        #   below the tagline; may contain HTML
+foot_links:                             # "Read next" links in the footer
+  - { href: "unicorns.html", emoji: "🦄", text: "The Genetics of Unicorns" }
+has_script: false                       # true if the essay has widgets — the layout then
+                                        #   loads essays/<slug>.js automatically
+---
 <!--
   ESSAY TEMPLATE — copy this file to essays/<slug>.html and fill it in.
   Checklist when adding a new essay:
     1. Copy essays/template.html → essays/<slug>.html
-    2. Fill in <title>, meta, the hero, and the <section class="prose"> blocks
-    3. Pick a favicon emoji (replace the %F0%9F%93%9D below with your own)
-    4. If the essay has interactive widgets, add essays/<slug>.js and
-       uncomment the <script> tag at the bottom
-    5. Add a card for it on the home page (index.html, inside .essay-list)
+    2. Fill in the front matter above and the hero + body below
+    3. If the essay has interactive widgets, add essays/<slug>.js next to it
+       and set has_script: true
+  index.html, feed.xml and sitemap.xml are generated from the front matter —
+  no manual card/feed/sitemap edits.
+  The layout (_includes/layouts/essay.njk) supplies the <head>, top nav,
+  footer and analytics; this file is only the hero + main body.
   Shared styles live in ../styles.css — no per-essay CSS file needed unless
   a widget wants its own bespoke pieces (add them to styles.css).
+  This file is listed in .eleventyignore so it never builds. Keep it there.
 -->
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Essay title — Notes &amp; Tones</title>
-<meta name="description" content="One-line summary of the essay." />
-<meta property="og:title" content="Essay title" />
-<meta property="og:description" content="One-line summary of the essay." />
-<meta property="og:type" content="article" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9D%3C/text%3E%3C/svg%3E" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../styles.css" />
-</head>
-<body>
-<div class="grain" aria-hidden="true"></div>
-<div class="sparkles" aria-hidden="true"></div>
-
-<nav class="topnav">
-  <a href="../index.html" class="topnav-home">← Notes &amp; Tones</a>
-</nav>
-
 <header class="hero">
   <div class="hero-inner">
     <p class="eyebrow">Notes &amp; Tones · An interactive essay</p>
@@ -54,13 +61,3 @@
     <p>More prose. Drop interactive widgets in with a <code>&lt;figure class="widget"&gt;</code> and wire them up in the essay's JS file.</p>
   </section>
 </main>
-
-<footer class="site-foot">
-  <p>An essay from Notes &amp; Tones.</p>
-  <p class="foot-meta"><a href="../index.html">← All essays</a></p>
-</footer>
-
-<!-- If this essay has widgets, create essays/<slug>.js and uncomment: -->
-<!-- <script src="<slug>.js"></script> -->
-</body>
-</html>

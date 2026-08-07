@@ -3,17 +3,24 @@
 Short, interactive essays on ideas worth poking at — with sliders you can
 drag, tables you can break, and numbers you can poke.
 
-Static site: hand-written HTML/CSS/JS, no build step. Deployed via GitHub Pages.
+Static site built with [Eleventy](https://www.11ty.dev/): essays are HTML
+bodies with front matter, and the shared chrome, home page, feed and sitemap
+are generated at build time. Deployed via GitHub Pages.
 
 ## Structure
 
 ```text
-index.html          Home page — lists the essays as cards
+index.njk           Home page template — builds the essay cards from front matter
 styles.css          Shared, site-wide styles (all pages link to this)
 404.html            Custom not-found page (GitHub Pages picks it up)
 robots.txt          Crawler policy + sitemap pointer
-sitemap.xml         One entry per page (hand-maintained)
-feed.xml            Atom feed, newest first (hand-maintained)
+sitemap.njk         Sitemap template — one entry per page, generated
+feed.njk            Atom feed template, newest first, generated
+eleventy.config.js  Eleventy config (passthrough copies, filters)
+_includes/
+  layouts/essay.njk Shared essay chrome (head, top nav, footer, scripts)
+_data/
+  site.json         Site-wide data (base URL, analytics id)
 assets/
   og-card.png       Social-share card (source: tools/og-card.html)
 essays/
@@ -34,34 +41,37 @@ tools/
   carbon/           Refreshes carbon-snapshot.json (the live-API fallback) — not served
 ```
 
-Each essay is a self-contained page in `essays/` that links back to
-`../styles.css` and, if it has interactive widgets, its own `<slug>.js`
-sitting next to it.
+Each single-file essay in `essays/` is a front matter block plus the hero and
+main body; `_includes/layouts/essay.njk` wraps it with the head, top nav and
+footer. If it has interactive widgets, its own `<slug>.js` sits next to it
+(`has_script: true`). The two folder essays (income, immigration) keep their
+bespoke HTML.
 
 ## Adding a new essay
 
 1. Copy `essays/template.html` to `essays/<slug>.html`.
-2. Fill in the title, meta tags, hero, and prose sections. Set the
-   `canonical` / `og:url` links to the page's full URL.
-3. Pick a favicon emoji in the `<link rel="icon">` line.
-4. If it has widgets, add `essays/<slug>.js` and uncomment the `<script>` tag
-   at the bottom of the page. Put any bespoke widget styles in `styles.css`.
-5. Add a card for it on the home page (`index.html`, inside `.essay-list`),
-   with the publication date, and a matching date in the essay's footer.
-6. Add the page to `sitemap.xml` and a new top entry to `feed.xml`.
+2. Fill in the front matter (title, description, emoji, date, `order` for the
+   home-page position, dek, footer links) and the hero + prose sections.
+3. If it has widgets, add `essays/<slug>.js` and set `has_script: true`. Put
+   any bespoke widget styles in `styles.css`.
+
+The home page card, `feed.xml` and `sitemap.xml` are generated from the front
+matter — no manual edits.
 
 ## Run locally
 
 ```bash
-python3 -m http.server 8000
-# open http://localhost:8000
+npm install
+npm run serve    # dev server with live reload
+npm run build    # one-off build into _site/
 ```
 
 ## Deploy
 
-Pushing to `main` runs `.github/workflows/pages.yml`, which publishes only
-the site files (no `docs/`, `tools/`, README, or `essays/template.html`) to
-GitHub Pages. Live at <https://philippeguyard.github.io/notes-and-tones/>.
+Pushing to `main` runs `.github/workflows/pages.yml`, which runs
+`npm run build` and publishes `_site/` (so no `docs/`, `tools/`, README, or
+`essays/template.html`) to GitHub Pages. Live at
+<https://philippeguyard.github.io/notes-and-tones/>.
 
 ## Licence
 
