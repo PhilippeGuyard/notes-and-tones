@@ -2,6 +2,7 @@ import { loadAll, scroller } from "./lib.js";
 import { hookChart } from "./charts/hook.js";
 import { perceptionChart } from "./charts/perception.js";
 import { compositionChart } from "./charts/composition.js";
+import { originsChart } from "./charts/origins.js";
 import { ukSeriesChart } from "./charts/ukseries.js";
 import { frontexChart } from "./charts/frontex.js";
 import { perCapitaChart } from "./charts/percapita.js";
@@ -13,7 +14,7 @@ import { resettlementChart } from "./charts/resettlement.js";
 
 const D = await loadAll([
   "salience", "uk_net_migration", "frontex", "eu_asylum", "per_capita_asylum",
-  "refugee_hosts", "med_deaths", "resettlement",
+  "refugee_hosts", "med_deaths", "resettlement", "origins",
   "static/perceptions", "static/composition", "static/events", "static/facts",
   "static/small_boats",
 ]);
@@ -24,8 +25,9 @@ const $ = id => document.getElementById(id);
 scroller("hook", hookChart($("chart-hook"), D.salience, D.uk_net_migration));
 scroller("myth1", perceptionChart($("chart-perception"), D.perceptions));
 scroller("myth2", compositionChart($("chart-composition"), D.composition));
-scroller("myth3uk", ukSeriesChart($("chart-ukseries"), D.uk_net_migration));
-scroller("myth3eu", frontexChart($("chart-frontex"), D.frontex));
+scroller("myth3origins", originsChart($("chart-origins"), D.origins));
+scroller("myth4uk", ukSeriesChart($("chart-ukseries"), D.uk_net_migration));
+scroller("myth4eu", frontexChart($("chart-frontex"), D.frontex));
 scroller("gap", salienceChart($("chart-salience"), D.salience, D.events));
 
 /* solo charts */

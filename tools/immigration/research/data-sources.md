@@ -17,6 +17,11 @@
 - Latest: YE Mar 2026; going forward annual (August). OGL v3.0.
 - Fields: detected arrivals by method (small boat/lorry/air), quarter, nationality, age/sex. **Caveat:** asset URLs change every release — scrape the hub.
 
+### 2b. Home Office entry clearance visas by nationality
+
+- **Detailed XLSX (verified, ~31 MB):** `https://assets.publishing.service.gov.uk/media/6a1d5a9f916cd732dcdaad5c/entry-clearance-visa-outcomes-datasets-mar-2026.xlsx`
+- Same hub/cadence/license/URL-churn as #2. Sheet Data_Vis_D02: outcomes by year/quarter, nationality, visa type group/type/subgroup, applicant type. **Caveat:** applicant-type coverage differs by group — Work/Study publish Main Applicant + Dependant, Family only "All", "Other" mixes both (double-count risk).
+
 ### 3. Home Office asylum applications + backlog
 
 - **Asylum summary ODS (verified):** `https://assets.publishing.service.gov.uk/media/6a05e023da82768016cb3fa5/asylum-summary-mar-2026-tables.ods`

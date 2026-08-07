@@ -76,6 +76,15 @@
 - **Polarisation:** 42% rate immigration's impact negatively (0–4/10) vs 38% positively; "most negative" share (0/10) rose 7% (2021) → 16% (2025) — polarisation rising as numbers fall.
 - **Source:** [British Future / Ipsos Immigration Attitudes Tracker](https://www.britishfuture.org/immigration-falling-but-public-still-thinks-it-is-going-up-new-research/) (2025); [full report PDF](https://www.britishfuture.org/wp-content/uploads/2025/11/Noise-and-nuance.Immigration-Attitudes-Tracker-report-2025.pdf) (Nov 2025).
 
+## 10. Myth: "They're all young men from the Middle East and Africa" (origins)
+
+- **Perception:** Britons' average guess for the Muslim share of the population: **17%** (about 1 in 6) vs actual ~5% at survey time (Ipsos Perils of Perception 2016 wave); 2021 Census England & Wales: **6.5%** (~1 in 15). Best-attested proxy for misperceived origins; no direct "where do immigrants come from" polling found.
+- **Reality — small boats 2025 (41,472 total), top nationalities:** Eritrea 7,602; Afghanistan 4,755; Iran 4,489; Sudan 4,432; Somalia 3,783 (Home Office IER_D01, YE Mar 2026 dataset).
+- **Reality — work/study/family visas issued 2025 (756,976 total), top nationalities:** India 154,570; China 96,400; Pakistan 56,834; Nigeria 50,424; United States 31,799 (Home Office Vis_D02, YE Mar 2026 dataset). India alone ≈ 3.7× all small boat arrivals.
+- **Method note:** visa total = Work + Study (Main Applicant + Dependant) + Family ("All"). "Other" group (Ukraine schemes, BN(O), EUSS, ~43k) excluded — its applicant-type coverage mixes "All" with Main/Dependant and risks double counting. Visas issued ≠ arrivals.
+- **EU churn:** Syrian applications −72% within a year of Assad falling; Venezuelans #1 EU asylum origin by mid-2025 (see eu-myth-busting-stats.md §Syria).
+- **Sources:** [Ipsos Perils of Perception 2015/2016](https://www.ipsos.com/en-uk/perils-perception-2015); [Ipsos 2018](https://www.ipsos.com/en-uk/perils-perception-2018); Home Office immigration system statistics YE Mar 2026 (baked via `fetch_data.py origins`).
+
 ## Verification flags
 
 - 2019/2020 small boat figures: minor source discrepancy (1,835 vs 1,843; 8,461 vs 8,466) — Home Office official tables give 1,843 / 8,466.

@@ -1,0 +1,57 @@
+{
+ "source": "Home Office immigration statistics, YE Mar 2026: small boat arrivals and entry clearance visas (work, study, family) by nationality",
+ "retrieved": "2026-08-07",
+ "data": {
+  "year": 2025,
+  "boats": {
+   "total": 41472,
+   "top": [
+    {
+     "nationality": "Eritrea",
+     "value": 7602
+    },
+    {
+     "nationality": "Afghanistan",
+     "value": 4755
+    },
+    {
+     "nationality": "Iran",
+     "value": 4489
+    },
+    {
+     "nationality": "Sudan",
+     "value": 4432
+    },
+    {
+     "nationality": "Somalia",
+     "value": 3783
+    }
+   ]
+  },
+  "visas": {
+   "total": 756976,
+   "top": [
+    {
+     "nationality": "India",
+     "value": 154570
+    },
+    {
+     "nationality": "China",
+     "value": 96400
+    },
+    {
+     "nationality": "Pakistan",
+     "value": 56834
+    },
+    {
+     "nationality": "Nigeria",
+     "value": 50424
+    },
+    {
+     "nationality": "United States",
+     "value": 31799
+    }
+   ]
+  }
+ }
+}

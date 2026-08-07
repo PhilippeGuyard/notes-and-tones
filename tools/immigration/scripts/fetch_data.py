@@ -40,6 +40,14 @@ URLS = {
         "https://yougov.co.uk/_pubapis/v5/uk/trackers/"
         "the-most-important-issues-facing-the-country/download/"
     ),
+    "irregular.xlsx": (
+        "https://assets.publishing.service.gov.uk/media/6a05e3b7ee62840dba48a2c7/"
+        "illegal-entry-routes-to-the-uk-dataset-mar-2026.xlsx"
+    ),
+    "visas.xlsx": (
+        "https://assets.publishing.service.gov.uk/media/6a1d5a9f916cd732dcdaad5c/"
+        "entry-clearance-visa-outcomes-datasets-mar-2026.xlsx"
+    ),
 }
 
 
@@ -51,7 +59,7 @@ def write_json(name, source, data):
     }
     path = OUT / name
     path.write_text(json.dumps(payload, indent=1))
-    print(f"wrote {path.relative_to(ROOT)}")
+    print(f"wrote {path.relative_to(REPO)}")
 
 
 def download(refresh=False):
@@ -61,8 +69,13 @@ def download(refresh=False):
         if dest.exists() and not refresh:
             continue
         print(f"downloading {name} ...")
-        r = requests.get(url, headers=UA, timeout=120)
-        r.raise_for_status()
+        try:
+            r = requests.get(url, headers=UA, timeout=120)
+            r.raise_for_status()
+        except requests.RequestException as e:
+            # Missing raw files only break the steps that need them.
+            print(f"DOWNLOAD FAILED {name}: {e}", file=sys.stderr)
+            continue
         dest.write_bytes(r.content)
 
 
@@ -182,6 +195,50 @@ def unhcr_hosts():
                hosts[:25])
 
 
+NON_COUNTRY = {"Stateless", "Not currently recorded", "Unknown", "Other"}
+
+
+def top_nationalities(counts, n=5, exclude=NON_COUNTRY):
+    """{nationality: value} -> top-n [{'nationality', 'value'}], real countries only."""
+    ranked = sorted(((k, v) for k, v in counts.items() if k not in exclude),
+                    key=lambda kv: kv[1], reverse=True)
+    return [{"nationality": k, "value": int(v)} for k, v in ranked[:n]]
+
+
+def origins():
+    """Top origin nationalities, 2025: small boat arrivals vs long-term visas issued."""
+    year = 2025
+    irr = pd.read_excel(RAW / "irregular.xlsx", sheet_name="Data_IER_D01", header=1)
+    irr.columns = [str(c).strip() for c in irr.columns]
+    sb = irr[(irr["Method of entry"] == "Small boat arrivals") & (irr["Year"] == year)]
+    boats = pd.to_numeric(sb["Number of detections"], errors="coerce").groupby(
+        sb["Nationality"]).sum()
+
+    vis = pd.read_excel(RAW / "visas.xlsx", sheet_name="Data_Vis_D02", header=3)
+    vis.columns = [str(c).strip() for c in vis.columns]
+    v = vis[(vis["Year"] == year) & (vis["Case outcome"] == "Issued")]
+    # Applicant-type coverage differs by group: Work/Study publish Main+Dependant,
+    # Family publishes only "All". "Other" mixes both, so it is left out.
+    mask = (
+        (v["Visa type group"].isin(["Work", "Study"])
+         & v["Applicant type"].isin(["Main Applicant", "Dependant"]))
+        | ((v["Visa type group"] == "Family") & (v["Applicant type"] == "All"))
+    )
+    lt = v[mask]
+    visas = pd.to_numeric(lt["Decisions"], errors="coerce").groupby(
+        lt["Nationality"]).sum()
+
+    write_json("origins.json",
+               "Home Office immigration statistics, YE Mar 2026: small boat arrivals "
+               "and entry clearance visas (work, study, family) by nationality", {
+                   "year": year,
+                   "boats": {"total": int(boats.sum()),
+                             "top": top_nationalities(boats.to_dict())},
+                   "visas": {"total": int(visas.sum()),
+                             "top": top_nationalities(visas.to_dict())},
+               })
+
+
 EU_GEO = ("BE BG CZ DK DE EE IE EL ES FR HR IT CY LV LT LU HU MT NL AT PL PT RO"
           " SI SK FI SE").split()
 
@@ -271,6 +328,7 @@ STEPS = {
     "hosts": unhcr_hosts,
     "eu_asylum": eurostat_asylum,
     "per_capita": eurostat_percapita,
+    "origins": origins,
 }
 
 

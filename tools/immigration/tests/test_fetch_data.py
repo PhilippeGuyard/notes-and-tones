@@ -46,3 +46,16 @@ def test_jsonstat_unpack_sparse_values():
     }
     recs = jsonstat_unpack(d)
     assert recs == [{"geo": "C", "value": 99}]
+
+
+def test_top_nationalities_ranks_and_excludes_non_countries():
+    from fetch_data import top_nationalities
+    counts = {"Eritrea": 7602, "Stateless": 1238, "Not currently recorded": 1192,
+              "Iran": 4489, "Afghanistan": 4755, "Sudan": 4432, "Somalia": 3783,
+              "Yemen": 1337}
+    top = top_nationalities(counts, n=3)
+    assert top == [
+        {"nationality": "Eritrea", "value": 7602},
+        {"nationality": "Afghanistan", "value": 4755},
+        {"nationality": "Iran", "value": 4489},
+    ]
