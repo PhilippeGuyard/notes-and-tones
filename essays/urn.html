@@ -1,0 +1,142 @@
+---
+layout: layouts/essay.njk
+title: "How Many Draws Is Enough? — sampling a box of black and white balls until you can trust the count"
+og_title: "How Many Draws Is Enough?"
+card_title: "How Many Draws Is Enough?"
+description: "A box holds black and white balls in an unknown mix. How many must you draw before you can state the proportion with a straight face? The law of large numbers, the square-root law, and the price of precision, with widgets you can run."
+og_description: "A box of black and white balls, an unknown mix, and one question: how many draws until you know? Run the simulations yourself."
+emoji: "⚫"
+date: 2026-08-07
+updated: "2026-08-07T10:00:00Z"
+order: 14
+dek: "A box holds black and white balls in an unknown mix. How many draws before you can name the proportion with a straight face? Fewer than you fear — and more than you'd like."
+nav: { href: "confidence.html", text: "Also: Ninety-Five Per Cent Confident?" }
+foot_tagline: "Shake the box. Draw the balls. Price the certainty."
+foot_links:
+  - { href: "confidence.html", emoji: "🎯", text: "Ninety-Five Per Cent Confident?" }
+has_script: true
+---
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Notes &amp; Tones · An interactive essay</p>
+    <h1 class="title">How<br /><span class="of">many draws</span><br />is enough?</h1>
+    <p class="dek">A box holds black and white balls, in proportions nobody will tell you. You may draw one ball at a time. How many draws until you can name the mix with a straight face?</p>
+    <p class="scroll-cue">Scroll to begin ↓</p>
+  </div>
+</header>
+
+<main>
+  <section class="prose" id="intro">
+    <p class="author-note">During my PhD I sat at a microscope for hundreds of hours, <a href="https://eprints.soton.ac.uk/466954/1/731509.pdf">counting zooplankton</a> one animal at a time. It emerged at my viva that, had I understood the rules below, I could have counted far fewer. This essay is the one I needed then.</p>
+    <p class="lead"><span class="dropcap">H</span>ere is a box. Inside are black balls and white balls — plenty of both, mixed in some proportion that nobody will tell you. It might be half and half. It might be nine to one. You are not allowed to tip the box out and count. All you may do is shake it, draw one ball, note its colour, drop it back in, and repeat.</p>
+    <p>The question sounds like a puzzle for children and is secretly the question behind most of applied statistics: <strong>how many draws do you need before you can state the true proportion with confidence?</strong> A poll asking a thousand voters, a factory testing widgets off the line, an A/B test counting clicks — each is this box wearing a different costume. The balls are people, parts, or page-views; the colours are yes/no, pass/fail, clicked/didn't. So let's answer it properly, for the box, and everything else comes along for free.</p>
+  </section>
+
+  <section class="prose" id="draws">
+    <h2><span class="sec-no">01</span> One ball at a time</h2>
+    <p>The obvious strategy is the right one: keep drawing and keep a running tally. After <em>n</em> draws, your estimate of the proportion of black balls is simply the black count divided by <em>n</em>. The <strong>law of large numbers</strong> promises that this running estimate settles ever closer to the truth as the draws pile up. What it does not promise is a smooth ride: early on, the estimate lurches drunkenly with every ball.</p>
+    <p>Try it. The box below has a true mix I have hidden from you. Draw a ball, then a hundred, and watch your estimate wander, then steady. When you think you know the answer, reveal the truth and see how the whole path sits inside a narrowing funnel.</p>
+
+    <figure class="widget" id="urn-widget" aria-label="Interactive: draw balls from a hidden box and watch the running estimate converge">
+      <div class="urn-strip" id="urn-strip" aria-label="Most recent draws"></div>
+      <svg id="urn-svg" class="stat-svg" viewBox="0 0 680 260" role="img" aria-label="Running estimate of the proportion of black balls, wandering early and settling as draws accumulate"></svg>
+      <div class="stat-readouts">
+        <div class="stat-box box-cover">
+          <span class="stat-lab">Your estimate</span>
+          <div class="stat-big"><output id="urn-est">–</output></div>
+          <span class="stat-sub" id="urn-frac">0 black / 0 draws</span>
+        </div>
+        <div class="stat-box box-target">
+          <span class="stat-lab">The true mix</span>
+          <div class="stat-big"><output id="urn-truth">?</output></div>
+          <span class="stat-sub" id="urn-truth-sub">hidden — reveal when ready</span>
+        </div>
+      </div>
+      <div class="stat-controls">
+        <button class="btn-run" id="urn-draw1">Draw a ball</button>
+        <button class="btn-run" id="urn-draw100">Draw 100</button>
+        <button class="preset" id="urn-reveal">Reveal the truth</button>
+        <button class="preset" id="urn-new">🔀 New box</button>
+      </div>
+      <figcaption class="widget-cap" id="urn-cap">Each draw goes back in the box before the next, so every draw faces the same mix.</figcaption>
+    </figure>
+
+    <p>Two things are worth noticing. First, the estimate does settle — always, for any mix. Second, <em>how</em> it settles: violently at first, then grudgingly. Going from 10 draws to 100 transforms your estimate; going from 1,000 to 1,090 barely nudges it. That slowdown is not bad luck. It has an exact shape, and the shape is the answer to our question.</p>
+  </section>
+
+  <section class="prose" id="wobble">
+    <h2><span class="sec-no">02</span> The size of the wobble</h2>
+    <p>Suppose you fix a budget of <em>n</em> draws, take your estimate, and stop. How wrong should you expect to be? One run can't tell you — you'd need to run the whole experiment many times and watch where the estimates land. That spread has a name, the <strong>standard error</strong>, and for a proportion it has a formula: <strong>√(p(1−p)/n)</strong>, where <em>p</em> is the true fraction of black balls.</p>
+    <p>Below, the box's mix is now known and yours to set. Choose a budget of draws, run the experiment a thousand times, and watch the estimates pile up around the truth.</p>
+
+    <figure class="widget" id="wob-widget" aria-label="Interactive: the distribution of estimates across many repeated experiments">
+      <div class="preset-row" role="group" aria-label="True proportion of black balls">
+        <span class="preset-lab">True mix:</span>
+        <button class="preset pp" data-p="0.2" aria-pressed="false">20% black</button>
+        <button class="preset pp" data-p="0.5" aria-pressed="true">50% black</button>
+        <button class="preset pp" data-p="0.9" aria-pressed="false">90% black</button>
+      </div>
+      <div class="slider-block">
+        <label for="wob-n">Draws per experiment <em>n</em></label>
+        <input type="range" id="wob-n" min="10" max="400" step="10" value="50" />
+        <div class="slider-vals">
+          <span><output id="wob-n-val">50</output> draws</span>
+          <span>typical error = √(p(1−p)/n) = ±<output id="wob-se">7.1</output> pts</span>
+          <span><output id="wob-count">0</output> experiments</span>
+        </div>
+      </div>
+      <svg id="wob-svg" class="stat-svg" viewBox="0 0 680 240" role="img" aria-label="Histogram of estimates from repeated experiments, forming a bell around the true proportion"></svg>
+      <div class="stat-controls">
+        <button class="btn-run" id="wob-run1">Run one experiment</button>
+        <button class="btn-run" id="wob-run1k">Run 1,000</button>
+        <button class="preset" id="wob-reset">↺ Clear</button>
+      </div>
+      <figcaption class="widget-cap" id="wob-cap">The gold line is the true mix. The bars are where the estimates from each experiment land.</figcaption>
+    </figure>
+
+    <p>Play with it and the formula's two levers show themselves. The <strong>√n</strong> in the denominator is the slowdown from section one made precise: to halve your typical error you must <em>quadruple</em> your draws. And the <strong>p(1−p)</strong> on top says the box's own mix matters — it is largest at 50/50, where every draw is maximally uninformative, and shrinks as the mix gets lopsided. A 90/10 box gives up its secret with far fewer draws than an even one, which is why close elections are precisely the ones polls struggle with.</p>
+  </section>
+
+  <section class="prose" id="price">
+    <h2><span class="sec-no">03</span> The price of precision</h2>
+    <p>Now run the logic backwards. You don't want to know how wrong <em>n</em> draws leave you; you want to pick a tolerable error and ask what it costs. Say you want your estimate within ±3 points of the truth, with 95% confidence. Reach out about two standard errors (1.96, to be fussy), set that equal to your margin, and solve for <em>n</em>. Since you don't know the mix in advance, budget for the worst case, 50/50, and the formula collapses to something you can do on a napkin: <strong>n = (z / 2m)²</strong>, for margin <em>m</em> and confidence multiplier <em>z</em>.</p>
+
+    <figure class="widget" id="cost-widget" aria-label="Interactive: how many draws a given margin of error costs">
+      <div class="preset-row" role="group" aria-label="Confidence level">
+        <span class="preset-lab">Confidence:</span>
+        <button class="preset zc" data-z="1.6449" aria-pressed="false">90%</button>
+        <button class="preset zc" data-z="1.9600" aria-pressed="true">95%</button>
+        <button class="preset zc" data-z="2.5758" aria-pressed="false">99%</button>
+      </div>
+      <div class="slider-block">
+        <label for="cost-m">Margin of error (± points)</label>
+        <input type="range" id="cost-m" min="0.5" max="10" step="0.5" value="3" />
+        <div class="slider-vals"><span>±<output id="cost-m-val">3</output> points</span></div>
+      </div>
+      <svg id="cost-svg" class="stat-svg" viewBox="0 0 680 260" role="img" aria-label="Curve of draws required against margin of error, rising steeply as the margin shrinks"></svg>
+      <div class="stat-readouts">
+        <div class="stat-box box-cover">
+          <span class="stat-lab">Draws needed, worst case (50/50)</span>
+          <div class="stat-big"><output id="cost-n">1,068</output></div>
+          <span class="stat-sub" id="cost-n-sub">n = (z / 2m)²</span>
+        </div>
+        <div class="stat-box box-target">
+          <span class="stat-lab">If the mix is near 90/10</span>
+          <div class="stat-big"><output id="cost-n-lop">385</output></div>
+          <span class="stat-sub">n = z² · p(1−p) / m²</span>
+        </div>
+      </div>
+      <figcaption class="widget-cap" id="cost-cap">Note the vertical axis: each gridline is ten times the last. Precision is bought on a punishing tariff.</figcaption>
+    </figure>
+
+    <p>Two morals fall out of the arithmetic. First, the famous poll number: ±3 points at 95% confidence costs about <strong>1,100 draws</strong> — which is why serious national polls interview roughly a thousand people, whether the nation holds five million or five hundred million. The box's size never entered the formula; only the number of draws did. Second, the tariff on precision is brutal: ±3 costs a thousand draws, ±1 costs ten thousand, ±0.5 costs forty thousand. Every halving of the margin quadruples the bill, forever.</p>
+  </section>
+
+  <section class="prose" id="close">
+    <h2><span class="sec-no">04</span> So what?</h2>
+    <p>The box gives you a portable answer. A few dozen draws buys you a caricature of the truth; a few hundred buys a decent sketch, within five points or so; a thousand buys the ±3 that news polls call accurate; and past that you are paying quadratically for every extra digit. When someone quotes you a percentage, the first question is always the same: <em>how many draws?</em> A "73% success rate" from eleven trials and one from eleven hundred are different claims wearing the same number.</p>
+    <p>One loose end deserves its own essay — and already has one. Throughout, "95% confident" carried a precise, slippery meaning: a promise about the long run of the <em>procedure</em>, not about any single interval you happen to hold. What that promise does and does not entitle you to say is the subject of <a href="confidence.html">Ninety-Five Per Cent Confident?</a>, which builds the machinery — sampling distributions, the central limit theorem, the t-distribution — that this essay quietly leaned on.</p>
+    <p>And the box, of course, was on its best behaviour. Every ball went back before the next draw, the mix never changed mid-experiment, and each ball was drawn blind. Real sampling breaks each of those promises in turn — the box that changes while you sample it, the draws that are secretly not independent, the balls someone chooses to show you. Those are the next notes in this series.</p>
+    <p class="kicker">You never needed to empty the box. You needed to know how hard to shake it, how long to draw, and what the counting could and couldn't promise.</p>
+  </section>
+</main>
