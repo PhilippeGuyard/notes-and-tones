@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Notes &amp; Tones</title>
+  <subtitle>Short, interactive essays on ideas worth poking at.</subtitle>
+  <link href="https://philippeguyard.github.io/notes-and-tones/" />
+  <link rel="self" href="https://philippeguyard.github.io/notes-and-tones/feed.xml" />
+  <id>https://philippeguyard.github.io/notes-and-tones/</id>
+  <updated>2026-08-07T16:00:00Z</updated>
+  <author><name>Philippe Guyard</name></author>
+
+  <entry>
+    <title>The Pull of the Equator</title>
+    <link href="https://philippeguyard.github.io/notes-and-tones/essays/bulge.html" />
+    <id>https://philippeguyard.github.io/notes-and-tones/essays/bulge.html</id>
+    <updated>2026-08-07T16:00:00Z</updated>
+    <summary>Earth spins, and spinning things fling outward. So why don't the oceans pile up at the equator? Chase gravity and the centrifugal force with your mouse, make it rain, and watch the planet find its shape.</summary>
+  </entry>
+  <entry>
+    <title>Twenty-Three People, One Birthday</title>
+    <link href="https://philippeguyard.github.io/notes-and-tones/essays/birthday.html" />
+    <id>https://philippeguyard.github.io/notes-and-tones/essays/birthday.html</id>
+    <updated>2026-08-07T11:00:00Z</updated>
+    <summary>Twenty-three strangers are enough for two to almost certainly share a birthday. Count pairs, not people: the same square-root trick that decides whether your database's random IDs will ever collide.</summary>
+  </entry>
+  <entry>
+    <title>You Tested Positive. Now What?</title>
+    <link href="https://philippeguyard.github.io/notes-and-tones/essays/screening.html" />
+    <id>https://philippeguyard.github.io/notes-and-tones/essays/screening.html</id>
+    <updated>2026-08-07T10:00:00Z</updated>
+    <summary>A 90%-accurate screening test comes back positive, so the chance you're ill is about nine per cent, not ninety. Base rates, Bayes' theorem, and the real cost of screening, counted out dot by dot.</summary>
+  </entry>
+  <entry>
+    <title>Immigration: Perception vs Reality</title>
+    <link href="https://philippeguyard.github.io/notes-and-tones/essays/immigration/" />
+    <id>https://philippeguyard.github.io/notes-and-tones/essays/immigration/</id>
+    <updated>2026-08-06T16:00:00Z</updated>
+    <summary>What the public believes about immigration in the UK and Europe, versus what the numbers actually show. A scrollytelling data essay.</summary>
+  </entry>
+  <entry>
+    <title>Income: Perception vs Reality</title>
+    <link href="https://philippeguyard.github.io/notes-and-tones/essays/income/" />
+    <id>https://philippeguyard.github.io/notes-and-tones/essays/income/</id>
+    <updated>2026-08-06T15:00:00Z</updated>
+    <summary>Almost everyone thinks they earn about average. Enter your household income and find out where you actually sit, who is really poor, and what housing costs quietly do to the numbers.</summary>
+  </entry>
+  <entry>
+    <title>When Should I Run My Dishwasher?</title>
+    <link href="https://philippeguyard.github.io/notes-and-tones/essays/carbon.html" />
+    <id>https://philippeguyard.github.io/notes-and-tones/essays/carbon.html</id>
+    <updated>2026-08-06T14:00:00Z</updated>
+    <summary>UK electricity is three or four times dirtier at some hours than others. A live code-along: fetch the National Grid's carbon forecast in Python, map it, and find the greenest moment to press start.</summary>
+  </entry>
+  <entry>
+    <title>Drawing Rudolph with Maths</title>
+    <link href="https://philippeguyard.github.io/notes-and-tones/essays/rudolph.html" />
+    <id>https://philippeguyard.github.io/notes-and-tones/essays/rudolph.html</id>
+    <updated>2026-08-06T13:00:00Z</updated>
+    <summary>A festive codebar code-along: turn a photo into a line drawing with edge detection, then take it apart and rebuild it with the Fast Fourier Transform in Python. Real code, real reindeer.</summary>
+  </entry>
+  <entry>
+    <title>Drawn by Circles</title>
+    <link href="https://philippeguyard.github.io/notes-and-tones/essays/fourier.html" />
+    <id>https://philippeguyard.github.io/notes-and-tones/essays/fourier.html</id>
+    <updated>2026-08-06T12:00:00Z</updated>
+    <summary>Any shape can be drawn by a stack of spinning circles. The Fourier transform, made visual: build a square wave from sines, then watch the machinery trace a heart, a star, a sound wave.</summary>
+  </entry>
+  <entry>
+    <title>Signal or Noise?</title>
+    <link href="https://philippeguyard.github.io/notes-and-tones/essays/anova.html" />
+    <id>https://philippeguyard.github.io/notes-and-tones/essays/anova.html</id>
+    <updated>2026-08-06T11:00:00Z</updated>
+    <summary>Three groups, three different averages. Real effect or just wobble? The analysis of variance, made visual: between-group signal weighed against within-group noise.</summary>
+  </entry>
+  <entry>
+    <title>Ninety-Five Per Cent Confident?</title>
+    <link href="https://philippeguyard.github.io/notes-and-tones/essays/confidence.html" />
+    <id>https://philippeguyard.github.io/notes-and-tones/essays/confidence.html</id>
+    <updated>2026-08-06T10:00:00Z</updated>
+    <summary>A poll is "95% confident" the answer is in some range. Nearly everyone reads that wrong. What confidence intervals actually promise, with simulations you can run.</summary>
+  </entry>
+  <entry>
+    <title>To Switch, or Not to Switch?</title>
+    <link href="https://philippeguyard.github.io/notes-and-tones/essays/monty-hall.html" />
+    <id>https://philippeguyard.github.io/notes-and-tones/essays/monty-hall.html</id>
+    <updated>2026-08-06T09:00:00Z</updated>
+    <summary>The Monty Hall problem: three doors, one car, and a choice that feels fifty-fifty but isn't. Play it, simulate it, and watch your gut be wrong.</summary>
+  </entry>
+  <entry>
+    <title>How Much Italian Are You?</title>
+    <link href="https://philippeguyard.github.io/notes-and-tones/essays/ancestry.html" />
+    <id>https://philippeguyard.github.io/notes-and-tones/essays/ancestry.html</id>
+    <updated>2026-08-06T08:00:00Z</updated>
+    <summary>What an ancestry-test percentage actually means, why the same DNA gets scored three different ways, and why we're all recent cousins.</summary>
+  </entry>
+  <entry>
+    <title>The Genetics of Unicorns</title>
+    <link href="https://philippeguyard.github.io/notes-and-tones/essays/unicorns.html" />
+    <id>https://philippeguyard.github.io/notes-and-tones/essays/unicorns.html</id>
+    <updated>2026-08-06T07:00:00Z</updated>
+    <summary>Why even the simplest genetics can't cleanly separate nature from nurture. Breed some unicorns and watch the "answer" change with every population.</summary>
+  </entry>
+</feed>

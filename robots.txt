@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://philippeguyard.github.io/notes-and-tones/sitemap.xml

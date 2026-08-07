@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- Source for assets/og-card.png (1200x630). Regenerate with:
+     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless \
+       --screenshot=assets/og-card.png --window-size=1200,630 \
+       --virtual-time-budget=10000 file://$PWD/tools/og-card.html -->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #fbf3e9;
+    color: #2c1b3d;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 0 96px;
+    position: relative;
+    font-family: "Newsreader", Georgia, serif;
+  }
+  .rainbow {
+    position: absolute; left: 0; right: 0; top: 0; height: 14px;
+    background: linear-gradient(100deg,#e8629b 0%,#f0a63a 25%,#ffd84d 42%,#34b79a 62%,#6f7be6 82%,#a86ce0 100%);
+  }
+  .eyebrow {
+    font-family: "Space Mono", monospace;
+    font-size: 24px; letter-spacing: .18em; text-transform: uppercase;
+    color: #5b4a67; margin-bottom: 28px;
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 800; font-size: 130px; line-height: 1.02;
+    margin-bottom: 34px;
+  }
+  h1 .amp { color: #e8629b; font-style: italic; font-weight: 500; }
+  .dek { font-size: 40px; line-height: 1.35; color: #5b4a67; max-width: 900px; }
+  .spark { position: absolute; font-size: 54px; opacity: .9; }
+</style>
+</head>
+<body>
+  <div class="rainbow"></div>
+  <p class="eyebrow">Interactive essays</p>
+  <h1>Notes <span class="amp">&amp;</span> Tones</h1>
+  <p class="dek">Short, playful essays on ideas worth poking at, with things you can drag, break and poke.</p>
+  <span class="spark" style="top:92px;right:110px;">✨</span>
+  <span class="spark" style="bottom:70px;right:220px;font-size:38px;">✨</span>
+</body>
+</html>

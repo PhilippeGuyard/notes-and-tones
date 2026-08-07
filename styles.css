@@ -538,6 +538,18 @@ input[type="range"]::-moz-range-thumb {
 }
 .site-foot p { margin: .4rem 0; }
 .foot-meta { font-family: var(--mono); font-size: .84rem; }
+.home-foot { margin-top: 1rem; padding-top: 3rem; }
+.home-foot a { color: var(--A); }
+
+/* publication date on home-page essay cards */
+.essay-date {
+  display: block;
+  font-family: var(--mono);
+  font-size: .74rem;
+  color: var(--ink-soft);
+  opacity: .75;
+  margin-bottom: .55rem;
+}
 
 /* ============================== SCROLL REVEAL ============================== */
 .reveal {
