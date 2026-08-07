@@ -274,6 +274,8 @@ strong { font-weight: 600; }
   font-weight: 700;
   padding: 0 .08em;
   border-radius: 4px;
+  /* keep allele case meaningful inside uppercase-transformed labels */
+  text-transform: none;
 }
 .allele-a { color: var(--a); }
 .allele-A { color: var(--A); }
