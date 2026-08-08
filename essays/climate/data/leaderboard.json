@@ -1,10 +1,10 @@
 {
  "source": "Our World in Data, from the Global Carbon Budget (owid/co2-data)",
  "retrieved": "2026-08-08",
- "note": "Per-capita boards exclude countries under 1,000,000 people. Cumulative is fossil CO2 since 1750. Consumption-based adjusts for CO2 embedded in traded goods.",
+ "note": "Per-capita boards exclude countries under 1,000,000 people. Cumulative is fossil CO\u2082 since 1750. Consumption-based adjusts for CO\u2082 embedded in traded goods.",
  "data": {
   "annual": {
-   "unit": "Mt CO2",
+   "unit": "Mt CO\u2082",
    "year": 2024,
    "world": 38598.578,
    "n_ranked": 215,
@@ -78,7 +78,7 @@
    ]
   },
   "per_capita": {
-   "unit": "t CO2 per person",
+   "unit": "t CO\u2082 per person",
    "year": 2024,
    "world": 4.729,
    "n_ranked": 159,
@@ -152,7 +152,7 @@
    ]
   },
   "cumulative": {
-   "unit": "Mt CO2 since 1750",
+   "unit": "Mt CO\u2082 since 1750",
    "year": 2024,
    "world": 1849123.875,
    "n_ranked": 215,
@@ -220,7 +220,7 @@
    ]
   },
   "consumption": {
-   "unit": "t CO2 per person, consumption basis",
+   "unit": "t CO\u2082 per person, consumption basis",
    "year": 2023,
    "world": 4.708,
    "n_ranked": 117,

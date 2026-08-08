@@ -12,7 +12,7 @@ export function actionsChart(el, act) {
     .attr("x", 8).attr("y", 26);
   svg.append("text").attr("class", "anno").attr("x", 8).attr("y", 46)
     .attr("fill", C.inkSoft)
-    .text("t CO2e saved per person-year · Wynes & Nicholas (2017); public ranking: Ipsos");
+    .text("t CO₂e saved per person-year · Wynes & Nicholas (2017); public ranking: Ipsos");
 
   const x = d3.scaleLinear().domain([0, 2.6]).range([M.l, W - M.r]);
 

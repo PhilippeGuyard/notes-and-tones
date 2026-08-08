@@ -1,4 +1,4 @@
-"""Build the data files for essays/climate/ from the OWID CO2 dataset.
+"""Build the data files for essays/climate/ from the OWID CO₂ dataset.
 
 Downloads the Our World in Data / Global Carbon Budget country CSV
 (github.com/owid/co2-data, CC-BY, ~60MB), caches it under data/raw/, and
@@ -79,13 +79,13 @@ def build_leaderboard(df: pd.DataFrame) -> dict:
         "source": SOURCE,
         "retrieved": str(date.today()),
         "note": f"Per-capita boards exclude countries under {MIN_POP:,} people. "
-                "Cumulative is fossil CO2 since 1750. Consumption-based adjusts "
-                "for CO2 embedded in traded goods.",
+                "Cumulative is fossil CO₂ since 1750. Consumption-based adjusts "
+                "for CO₂ embedded in traded goods.",
         "data": {
-            "annual": {"unit": "Mt CO2", **leaderboard(df, "co2", False)},
-            "per_capita": {"unit": "t CO2 per person", **leaderboard(df, "co2_per_capita", True)},
-            "cumulative": {"unit": "Mt CO2 since 1750", **leaderboard(df, "cumulative_co2", False)},
-            "consumption": {"unit": "t CO2 per person, consumption basis",
+            "annual": {"unit": "Mt CO₂", **leaderboard(df, "co2", False)},
+            "per_capita": {"unit": "t CO₂ per person", **leaderboard(df, "co2_per_capita", True)},
+            "cumulative": {"unit": "Mt CO₂ since 1750", **leaderboard(df, "cumulative_co2", False)},
+            "consumption": {"unit": "t CO₂ per person, consumption basis",
                             **leaderboard(df, "consumption_co2_per_capita", True)},
         },
     }

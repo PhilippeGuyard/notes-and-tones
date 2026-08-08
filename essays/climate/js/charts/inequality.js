@@ -8,7 +8,7 @@ export function inequalityChart(el, ineq) {
   const G = ineq.data.groups;
 
   svg.append("text").attr("class", "chart-title").attr("x", 8).attr("y", 26)
-    .text("100 blocks of CO2e, by income group");
+    .text("100 blocks of CO₂e, by income group");
   svg.append("text").attr("class", "anno").attr("x", 8).attr("y", 46)
     .attr("fill", C.inkSoft)
     .text("Individual footprints incl. consumption & investments, 2019 · Chancel / World Inequality Lab");

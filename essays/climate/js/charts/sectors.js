@@ -8,7 +8,7 @@ export function sectorsChart(el, sec) {
   const rows = [...sec.data.sectors].sort((a, b) => b.share - a.share);
   const co = sec.data.callouts;
   const annos = [
-    { label: "Aviation (share of CO2)", share: co.aviation_co2_pct },
+    { label: "Aviation (share of CO₂)", share: co.aviation_co2_pct },
     { label: "All plastics, made & dumped (est.)", share: 3.5 },
   ];
 
@@ -16,7 +16,7 @@ export function sectorsChart(el, sec) {
     .text("Global greenhouse gas emissions, by sector");
   svg.append("text").attr("class", "anno").attr("x", 8).attr("y", 46)
     .attr("fill", C.inkSoft)
-    .text("% of global CO2e · Climate Watch via Our World in Data");
+    .text("% of global CO₂e · Climate Watch via Our World in Data");
 
   const x = d3.scaleLinear().domain([0, 26]).range([M.l, W - M.r]);
   const FILL = { "Energy": C.data, "Land & food": C.gold,

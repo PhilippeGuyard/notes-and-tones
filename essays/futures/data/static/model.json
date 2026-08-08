@@ -1,0 +1,22 @@
+{
+ "source": "IPCC AR6 WG1 ch.5 (TCRE); Indicators of Global Climate Change 2025 (warming to date); Global Carbon Budget 2025 (emissions); Climate Action Tracker Nov 2025 (benchmark futures); UNEP/CCAC Global Methane Assessment 2021 (methane); IEA via Our World in Data (sector sizes)",
+ "retrieved": "2026-08-08",
+ "note": "All warming in C above 1850-1900. TCRE converted from 1.65C (1.0-2.3) per 1000 PgC to per 1000 GtCO2. Sector wedge sizes are current emissions: coal power ~10 GtCO2 (IEA), road transport ~6 (75% of 8 Gt transport, IEA 2018 via OWID), deforestation 4.1 (GCB 2025 land-use change), everything_else = 42.2 total - coal - road - deforestation - ~2 aviation+shipping. Methane: 40-45% cut by 2030 avoids ~0.3C by the 2040s (GMA 2021), modelled as a warming offset. Baseline shape (flat to 2050, then mild decline) is a modelling choice calibrated to land on CAT's current-policies 2.6C.",
+ "data": {
+  "warming_2025": 1.37,
+  "tcre": 0.45,
+  "tcre_range": [0.27, 0.63],
+  "start_year": 2025,
+  "end_year": 2100,
+  "baseline": { "level": 42.2, "flat_until": 2050, "end_level": 35 },
+  "benchmarks": { "current_policies": 2.6, "pledges": 2.2, "optimistic": 1.9 },
+  "wedges": {
+   "coal":   { "size": 10.0, "ramp_from": 2028 },
+   "road":   { "size": 6.0,  "ramp_from": 2030, "fleet_years": 15 },
+   "forest": { "size": 4.1,  "ramp_from": 2026 },
+   "other":  { "size": 20.3, "ramp_from": 2028, "done_by": 2050 }
+  },
+  "methane": { "avoided_c": 0.3, "ramp_from": 2026, "full_by": 2045 },
+  "cdr": { "ramp_from": 2030, "full_by": 2100 }
+ }
+}

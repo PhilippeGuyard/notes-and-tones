@@ -1,0 +1,6 @@
+[project]
+name = "futures-data"
+version = "0.1.0"
+description = "Data pipeline for essays/futures (climate futures simulator)"
+requires-python = ">=3.11"
+dependencies = ["pandas"]

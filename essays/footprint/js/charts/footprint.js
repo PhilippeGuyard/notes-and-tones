@@ -18,7 +18,7 @@ export function footprintChart(el, F) {
   const y = d3.scaleLinear().domain([0, 12000]).range([BOT, TOP]);
 
   svg.append("text").attr("class", "chart-title").attr("x", 8).attr("y", 26)
-    .text("Your year, in tonnes of CO2e");
+    .text("Your year, in tonnes of CO₂e");
 
   /* tonne grid */
   const grid = svg.append("g").attr("class", "axis");

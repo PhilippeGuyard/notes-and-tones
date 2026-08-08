@@ -17,7 +17,7 @@ scroller("inequality", inequalityChart($("chart-inequality"), D.inequality));
 scroller("sectors", sectorsChart($("chart-sectors"), D.sectors));
 scroller("actions", actionsChart($("chart-actions"), D.actions));
 
-/* ---- guess widget: UK share of this year's global CO2 ---- */
+/* ---- guess widget: UK share of this year's global CO₂ ---- */
 {
   const w = $("guess-widget");
   const share = D.uk_share.data.uk_share_annual_pct;   // ~0.8
@@ -55,7 +55,7 @@ scroller("actions", actionsChart($("chart-actions"), D.actions));
     ["myth", "“It’s China”", "The most common closing move in any climate argument: China emits a third of this year's tonnes, so nothing anyone else does matters.", "the argument, everywhere"],
     ["fact", "1.5×", "Counted since 1750, the US has emitted half as much again as China. Per person and counting imports, a Briton (7.1 t) is not far behind a Chinese resident (8.6 t).", F.us_china_cumulative.source],
     ["myth", "0.2 t", "What a full year of diligent recycling saves, the action the public most often ranks as the most effective thing an individual can do.", "Wynes & Nicholas (2017); Ipsos"],
-    ["fact", "−48%", "UK territorial CO2 since 1990. Delivered not by bins or straws but by changing what the electricity grid burns.", F.uk_reduction.source],
+    ["fact", "−48%", "UK territorial CO₂ since 1990. Delivered not by bins or straws but by changing what the electricity grid burns.", F.uk_reduction.source],
   ];
   const wrap = $("beliefs-cards");
   for (const [kind, big, text, src] of cards) {

@@ -1,0 +1,235 @@
+---
+permalink: "essays/futures/index.html"
+title: "Your Hand on the Dial"
+emoji: "🎛️"
+date: 2026-08-08
+updated: "2026-08-08T18:00:00Z"
+order: 19
+dek: "The series finale: six dials that decide how hot the century gets. Set coal, cars, forests, methane and carbon removal, then see the summer you chose. Climate series, part four."
+card_url: "essays/futures/"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Hand on the Dial</title>
+<meta name="description" content="An interactive climate futures simulator: six policy dials, one emissions curve, and the warming they add up to, built on IPCC carbon budget arithmetic.">
+<meta property="og:title" content="Your Hand on the Dial">
+<meta property="og:description" content="Six dials that decide how hot the century gets. The climate series finale.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://philippeguyard.github.io/notes-and-tones/essays/futures/">
+<meta property="og:site_name" content="Notes &amp; Tones">
+<meta property="og:image" content="https://philippeguyard.github.io/notes-and-tones/assets/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://philippeguyard.github.io/notes-and-tones/essays/futures/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%9B%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0,1&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=1">
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+
+<nav class="site-back"><a href="../../index.html">← Notes &amp; Tones</a><a href="../summer/">Part three: Your summer in 2050 →</a></nav>
+
+<header class="masthead">
+  <p class="kicker">Climate series · finale</p>
+  <h1>Your hand <em>on the</em> <em class="real">dial</em></h1>
+  <p class="standfirst">
+    Three essays of diagnosis: who emits, what your share is, what your summer
+    becomes. This last one is the treatment room. Six dials control the world's
+    emissions, the physics does the rest, and the temperature the century
+    settles at is the one you choose. The machine is simple and honest about
+    being simple; every number in it has a source you can check at the bottom.
+  </p>
+  <p class="byline">Carbon budget arithmetic from IPCC AR6; emissions from the
+  Global Carbon Budget 2025; benchmarks from Climate Action Tracker</p>
+  <p class="scroll-cue">scroll ↓</p>
+</header>
+
+<section class="scrolly" id="build">
+  <div class="sticky"><div class="chart" id="chart-curve"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p class="step-kicker">The century so far</p>
+      <p>The green line is what has already happened: the world's CO₂ output,
+      fossil fuels plus deforestation, climbing from 32 billion tonnes a year in
+      2000 to about 42 today. Everything the first three essays counted flows
+      through this one line.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p class="step-kicker">Hands off</p>
+      <p>The dashed line is the century on autopilot: policies as they stand,
+      emissions flat for decades, then drifting down as old plants retire. Follow
+      it to 2100 and the readout lands near <strong>2.7°C</strong> above the
+      preindustrial world, which is where the Climate Action Tracker's
+      current-policies estimate has sat, give or take a tenth, for four years.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p class="step-kicker">The physics in one line</p>
+      <p>The engine under the readout is the same arithmetic the IPCC uses for
+      carbon budgets: every 1,000 billion tonnes of CO₂ warms the planet by about
+      <strong>0.45°C</strong>, likely between 0.27 and 0.63. That range is the
+      honest blur on every number this page shows you. The warming we already
+      have, <strong>1.37°C</strong>, is the starting point; on present course the
+      1.5 mark falls around 2030.</p>
+    </div>
+    <div class="step" data-step="3">
+      <p class="step-kicker">Dial one: coal</p>
+      <p>Coal-fired electricity is the single biggest block: about
+      <strong>10 billion tonnes</strong> of CO₂ a year. Phasing it out is the
+      one lever every credible pathway pulls first. When does the last unabated
+      coal plant close?</p>
+      <div class="ctl" id="ctl-coal"></div>
+    </div>
+    <div class="step" data-step="4">
+      <p class="step-kicker">Dial two: the roads</p>
+      <p>Road transport, cars and trucks together, is about
+      <strong>6 billion tonnes</strong>, three quarters of all transport. The
+      dial here is the year new petrol and diesel sales end; the fleet takes
+      another fifteen years to turn over. Aviation and shipping stay in the
+      baseline, this dial does not touch them.</p>
+      <div class="ctl" id="ctl-road"></div>
+    </div>
+    <div class="step" data-step="5">
+      <p class="step-kicker">Dial three: the forests</p>
+      <p>Deforestation still adds about <strong>4 billion tonnes</strong> a
+      year, mostly in the tropics. Unlike a power plant, stopping it requires no
+      new technology at all, only that standing forests stay standing.</p>
+      <div class="ctl" id="ctl-forest"></div>
+    </div>
+    <div class="step" data-step="6">
+      <p class="step-kicker">Dial four: methane</p>
+      <p>Methane is not CO₂, so it gets its own physics: cut it and the planet
+      cools within decades, not centuries. The UN's methane assessment prices a
+      45% cut by 2030, plugged leaks, flared wells, changed farming, at nearly
+      <strong>0.3°C avoided by the 2040s</strong>. This dial moves the readout
+      directly rather than bending the curve.</p>
+      <div class="ctl" id="ctl-methane"></div>
+    </div>
+    <div class="step" data-step="7">
+      <p class="step-kicker">Dial five: everything else</p>
+      <p>Gas and oil power stations, cement kilns, steel mills, boilers,
+      shipping, planes: roughly <strong>20 billion tonnes</strong> that no
+      single headline policy covers. This is the grind dial, a thousand
+      efficiency standards and electrifications, and it is worth more than coal
+      and cars combined.</p>
+      <div class="ctl" id="ctl-other"></div>
+    </div>
+    <div class="step" data-step="8">
+      <p class="step-kicker">Dial six: the vacuum</p>
+      <p>Carbon removal, machines and forests pulling CO₂ back out of the sky.
+      Pathways that hold 1.5°C lean on it heavily. Be aware of what you are
+      buying: today it operates at a tiny fraction of this scale, and nobody has
+      proven it works at billions of tonnes a year. This is the speculative
+      dial.</p>
+      <div class="ctl" id="ctl-cdr"></div>
+    </div>
+    <div class="step" data-step="9">
+      <p class="step-kicker">The reckoning</p>
+      <p><span id="verdict"></span></p>
+      <p><button id="share-btn" type="button">Copy a link to this future</button>
+      <span id="share-done"></span></p>
+    </div>
+  </div>
+</section>
+
+<section class="scrolly" id="strip">
+  <div class="sticky"><div class="chart" id="chart-strip"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p class="step-kicker">The scale</p>
+      <p>A scale of futures, from the 1.37°C we live at now to the mid-fours.
+      The two black posts are the Paris agreement: hold well below 2, aim
+      for 1.5. Every dial above moves a marker along this line.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p class="step-kicker">What each stop costs</p>
+      <p>The stops are not evenly priced. At 1.5°C, 70 to 90% of coral reefs
+      decline; at 2°C, over 99% are gone. Somewhere between 2 and 3 degrees,
+      held for long enough, Greenland and West Antarctica pass a point of no
+      return worth 9 to 11 metres of sea over the millennia that follow. By
+      2100 itself the likely sea rise runs from about 30 cm on the lowest
+      pathway to a metre on the highest.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p class="step-kicker">Whose future sits where</p>
+      <p>The world's three benchmark futures: current policies near 2.6°C,
+      every pledge and target delivered near 2.2, every net-zero promise kept
+      near 1.9. And in ember, the future you dialled in above. Scroll back up
+      and move it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="prose" id="callback">
+  <h2>The summer you just chose</h2>
+  <p class="city-picker-label">Part three showed your city's summer at 2°C and at 4°C.
+  Here is where your dials put it. Pick your city:</p>
+  <div class="city-picker" id="city-picker"></div>
+  <p>At your peak of <strong><span data-f="cb-peak"></span>°C</strong>,
+  <span data-f="cb-city"></span> holds about
+  <strong><span data-f="cb-h25"></span> days over 25°C</strong> a year,
+  <strong><span data-f="cb-h28"></span> over 28°C</strong>, and about
+  <strong><span data-f="cb-nights"></span> tropical nights</strong> when the
+  temperature never falls below 20°C. For comparison, part three's columns put
+  <span data-f="cb-city"></span> at <span data-f="cb-h25-2c"></span> hot days
+  in a 2°C world and <span data-f="cb-h25-4c"></span> in a 4°C one.</p>
+  <p class="small-note">These figures are straight-line interpolations between
+  the Met Office UKCP18 anchor columns from part three, not new projections.
+  They move as you move the dials above.</p>
+</section>
+
+<section class="prose" id="close">
+  <h2>What the dials are for</h2>
+  <ul class="close-list">
+    <li><strong>No single dial saves the century.</strong> Max out coal alone
+    and the readout barely clears the pledges line. The futures below 2°C all
+    require most dials turned most of the way, which is the honest answer to
+    "what actually works": everything, together, starting now.</li>
+    <li><strong>The dials are political, not personal.</strong> Part two ended
+    where personal maths runs out, at the 2-tonne line no lifestyle reaches.
+    These six levers are pulled in parliaments, boardrooms and trade deals, by
+    people who answer, eventually, to readers of pages like this one.</li>
+    <li><strong>Tenths are the unit of victory.</strong> Between 2.7°C and 1.9
+    there is no finish line to cross, only tenths of a degree, and part three
+    showed what a tenth is worth in hot days and sleepless nights. Every dial
+    position that shaves one off is a win that arrives whether or not the
+    headline target is met.</li>
+  </ul>
+  <p class="fin">The first essay asked who is heating the planet. Four essays
+  later the answer has not changed, but it has an instrument panel.</p>
+</section>
+
+<footer class="methodology" id="methodology">
+  <h3>Sources &amp; methodology</h3>
+  <div id="sources-list"></div>
+  <p>The model is deliberately minimal. Warming in any year is 1.37°C (the
+  human-induced level in 2025, per the Indicators of Global Climate Change
+  update) plus 0.45°C per 1,000 GtCO₂ of cumulative emissions from 2026 (the
+  IPCC AR6 transient climate response to cumulative emissions, likely range
+  0.27 to 0.63, shown wherever a headline number is shown), minus up to 0.3°C
+  for methane action (UNEP/CCAC Global Methane Assessment). The baseline holds
+  the Global Carbon Budget 2025 total of 42.2 GtCO₂ flat to 2050 then declines
+  gently, a shape calibrated so that hands-off lands on the Climate Action
+  Tracker current-policies estimate. Dials subtract each sector's present
+  emissions along a phase-out ramp: coal power about 10 GtCO₂ (IEA), road
+  transport about 6 (three quarters of 8 Gt transport, IEA via Our World in
+  Data), deforestation 4.1 (GCB 2025), the remainder about 20. Known limits:
+  the wedges subtract from an aggregate baseline, so where current policies
+  already assume some sector decline a dial's late-century effect is slightly
+  overstated; aerosol changes and carbon-cycle feedbacks are ignored, which
+  makes the strongest-mitigation futures read about a tenth optimistic against
+  IPCC pathway ensembles; carbon removal at 5 to 10 Gt a year is unproven.
+  With every dial maxed the model peaks near 1.4°C and turns net negative in
+  the 2080s, consistent with the IPCC's strongest-mitigation category. Your
+  settings live in the page address and go nowhere else. Built with d3.js.
+  Published 8 August 2026.</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+<script data-goatcounter="https://notesandtones.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
