@@ -1,0 +1,182 @@
+{
+ "source": "Bastin et al. (2019) PLOS ONE, S2 table (figshare); CMIP5 RCP4.5 ensemble, 2050 horizon",
+ "retrieved": "2026-08-08",
+ "data": {
+  "Belfast": {
+   "analogs": [
+    {
+     "city": "Cardiff",
+     "dissim": 0.22
+    },
+    {
+     "city": "Glasgow",
+     "dissim": 0.498
+    },
+    {
+     "city": "Birmingham",
+     "dissim": 0.559
+    }
+   ],
+   "annual_mean_t": 9.5,
+   "annual_mean_t_2050": 10.6,
+   "warmest_month_max_t": 17.6,
+   "warmest_month_max_t_2050": 21.1,
+   "annual_precip_mm": 835,
+   "annual_precip_mm_2050": 983
+  },
+  "Birmingham": {
+   "analogs": [
+    {
+     "city": "Paris",
+     "dissim": 0.555
+    },
+    {
+     "city": "London",
+     "dissim": 0.664
+    },
+    {
+     "city": "Lyon",
+     "dissim": 0.698
+    }
+   ],
+   "annual_mean_t": 9.8,
+   "annual_mean_t_2050": 11.2,
+   "warmest_month_max_t": 19.3,
+   "warmest_month_max_t_2050": 23.6,
+   "annual_precip_mm": 901,
+   "annual_precip_mm_2050": 701
+  },
+  "Cardiff": {
+   "analogs": [
+    {
+     "city": "Montevideo",
+     "dissim": 0.859
+    },
+    {
+     "city": "Seattle",
+     "dissim": 0.984
+    },
+    {
+     "city": "Melbourne",
+     "dissim": 0.994
+    }
+   ],
+   "annual_mean_t": 10.5,
+   "annual_mean_t_2050": 12.2,
+   "warmest_month_max_t": 19.8,
+   "warmest_month_max_t_2050": 24.2,
+   "annual_precip_mm": 1036,
+   "annual_precip_mm_2050": 996
+  },
+  "Edinburgh": {
+   "analogs": [
+    {
+     "city": "Paris",
+     "dissim": 0.289
+    },
+    {
+     "city": "London",
+     "dissim": 0.345
+    },
+    {
+     "city": "Lille",
+     "dissim": 0.476
+    }
+   ],
+   "annual_mean_t": 8.8,
+   "annual_mean_t_2050": 10.4,
+   "warmest_month_max_t": 17.7,
+   "warmest_month_max_t_2050": 22.0,
+   "annual_precip_mm": 659,
+   "annual_precip_mm_2050": 710
+  },
+  "Glasgow": {
+   "analogs": [
+    {
+     "city": "Cardiff",
+     "dissim": 0.533
+    },
+    {
+     "city": "Rotterdam",
+     "dissim": 0.844
+    },
+    {
+     "city": "Birmingham",
+     "dissim": 0.855
+    }
+   ],
+   "annual_mean_t": 8.8,
+   "annual_mean_t_2050": 10.2,
+   "warmest_month_max_t": 18.0,
+   "warmest_month_max_t_2050": 21.2,
+   "annual_precip_mm": 1219,
+   "annual_precip_mm_2050": 1210
+  },
+  "Leeds": {
+   "analogs": [
+    {
+     "city": "Melbourne",
+     "dissim": 0.745
+    },
+    {
+     "city": "Paris",
+     "dissim": 0.756
+    },
+    {
+     "city": "London",
+     "dissim": 0.818
+    }
+   ],
+   "annual_mean_t": 9.3,
+   "annual_mean_t_2050": 11.3,
+   "warmest_month_max_t": 18.8,
+   "warmest_month_max_t_2050": 23.4,
+   "annual_precip_mm": 752,
+   "annual_precip_mm_2050": 743
+  },
+  "London": {
+   "analogs": [
+    {
+     "city": "Melbourne",
+     "dissim": 0.714
+    },
+    {
+     "city": "Istanbul",
+     "dissim": 0.732
+    },
+    {
+     "city": "Barcelona",
+     "dissim": 0.792
+    }
+   ],
+   "annual_mean_t": 11.1,
+   "annual_mean_t_2050": 13.2,
+   "warmest_month_max_t": 21.0,
+   "warmest_month_max_t_2050": 26.9,
+   "annual_precip_mm": 638,
+   "annual_precip_mm_2050": 621
+  },
+  "Manchester": {
+   "analogs": [
+    {
+     "city": "Montevideo",
+     "dissim": 0.676
+    },
+    {
+     "city": "Lyon",
+     "dissim": 0.938
+    },
+    {
+     "city": "Cardiff",
+     "dissim": 1.004
+    }
+   ],
+   "annual_mean_t": 9.5,
+   "annual_mean_t_2050": 12.4,
+   "warmest_month_max_t": 18.9,
+   "warmest_month_max_t_2050": 25.1,
+   "annual_precip_mm": 887,
+   "annual_precip_mm_2050": 952
+  }
+ }
+}

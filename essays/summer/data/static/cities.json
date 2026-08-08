@@ -1,0 +1,64 @@
+{
+ "source": "Met Office Local Authority Climate Service v2 (UKCP18 Local, RCP8.5, LA-area medians; ranges are 2nd-lowest to 2nd-highest of 16 ensemble members); hottest-day records from Met Office July 2022 heatwave briefing and station records",
+ "retrieved": "2026-08-08",
+ "note": "Counts are days per year: hot25/hot28 = days with max above 25C/28C, nights = tropical nights (min above 20C). Columns: [1981-2000 baseline, observed 2001-2020, 2C warming level (indicative timing 2031-2056, shown as 'the 2050s'), 4C warming level]. range2c is the ensemble range at 2C. Record quality: primary = named in a Met Office briefing; secondary = station observation via press or archive; unverified = no citable all-time record found.",
+ "data": {
+  "London": {
+   "region": "england_south",
+   "hot25": [25, 37, 50, 85], "hot25_range2c": "36-57",
+   "hot28": [2, 5, 11, 30], "hot28_range2c": "5-15",
+   "nights": [0, 1, 3, 15], "nights_range2c": "1-5",
+   "record": { "t": 40.2, "date": "19 July 2022", "station": "Heathrow & St James's Park", "quality": "primary" }
+  },
+  "Birmingham": {
+   "region": "england_south",
+   "hot25": [13, 22, 31, 58], "hot25_range2c": "22-37",
+   "hot28": [1, 3, 5, 19], "hot28_range2c": "3-9",
+   "nights": [0, 0, 0, 3], "nights_range2c": "0-1",
+   "record": { "t": 38.8, "date": "19 July 2022", "station": "Coleshill (14 km east)", "quality": "secondary" }
+  },
+  "Manchester": {
+   "region": "england_north",
+   "hot25": [9, 17, 23, 44], "hot25_range2c": "17-31",
+   "hot28": [0, 2, 3, 13], "hot28_range2c": "2-6",
+   "nights": [0, 0, 1, 6], "nights_range2c": "0-1",
+   "record": { "t": 37.7, "date": "19 July 2022", "station": "Rostherne No 2 (16 km south-west)", "quality": "secondary" }
+  },
+  "Leeds": {
+   "region": "england_north",
+   "hot25": [8, 15, 22, 44], "hot25_range2c": "16-29",
+   "hot28": [0, 1, 2, 12], "hot28_range2c": "1-5",
+   "nights": [0, 0, 0, 1], "nights_range2c": "0",
+   "record": { "t": 39.8, "date": "19 July 2022", "station": "Bramham (17 km east)", "quality": "primary" }
+  },
+  "Glasgow": {
+   "region": "scotland",
+   "hot25": [5, 8, 11, 23], "hot25_range2c": "8-15",
+   "hot28": [0, 0, 1, 4], "hot28_range2c": "0-2",
+   "nights": [0, 0, 0, 1], "nights_range2c": "0",
+   "record": { "t": 31.9, "date": "28 June 2018", "station": "Glasgow", "quality": "secondary" }
+  },
+  "Edinburgh": {
+   "region": "scotland",
+   "hot25": [2, 4, 7, 21], "hot25_range2c": "4-11",
+   "hot28": [0, 0, 0, 2], "hot28_range2c": "0-1",
+   "nights": [0, 0, 0, 0], "nights_range2c": "0",
+   "record": { "t": 31.6, "date": "25 July 2019", "station": "Gogarbank", "quality": "secondary" }
+  },
+  "Cardiff": {
+   "region": "wales",
+   "hot25": [12, 21, 30, 59], "hot25_range2c": "21-39",
+   "hot28": [1, 3, 4, 19], "hot28_range2c": "2-9",
+   "nights": [0, 0, 0, 5], "nights_range2c": "0-1",
+   "record": { "t": 31.6, "date": "19 July 2022", "station": "Bute Park", "quality": "unverified",
+               "note": "No citable all-time Cardiff record found; this is the best verified 2022 reading. The Wales record, 37.1C at Hawarden on 18 July 2022, is 150 km north." }
+  },
+  "Belfast": {
+   "region": "northern_ireland",
+   "hot25": [2, 4, 6, 18], "hot25_range2c": "4-9",
+   "hot28": [0, 0, 0, 2], "hot28_range2c": "0",
+   "nights": [0, 0, 0, 1], "nights_range2c": "0-2",
+   "record": { "t": 30.8, "date": "12 July 1983", "station": "Shaw's Bridge", "quality": "primary" }
+  }
+ }
+}

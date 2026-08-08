@@ -1,0 +1,272 @@
+---
+permalink: "essays/summer/index.html"
+title: "Your Summer in 2050"
+emoji: "🌞"
+date: 2026-08-08
+updated: "2026-08-08T16:00:00Z"
+order: 18
+dek: "Pick your city and watch its summer move: the analog city it will feel like, the hot days arriving, the record that stops being a freak. Climate series, part three."
+card_url: "essays/summer/"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Summer in 2050</title>
+<meta name="description" content="Pick a UK city and see its 2050 summer: analog cities, hot days and tropical nights, records, seasons and rain. Interactive data essay.">
+<meta property="og:title" content="Your Summer in 2050">
+<meta property="og:description" content="Pick your city and watch its summer move. Climate series, part three.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://philippeguyard.github.io/notes-and-tones/essays/summer/">
+<meta property="og:site_name" content="Notes &amp; Tones">
+<meta property="og:image" content="https://philippeguyard.github.io/notes-and-tones/assets/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://philippeguyard.github.io/notes-and-tones/essays/summer/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%9E%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0,1&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=1">
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+
+<nav class="site-back"><a href="../../index.html">← Notes &amp; Tones</a><a href="../footprint/">Part two: Your seven tonnes →</a></nav>
+
+<header class="masthead">
+  <p class="kicker">Climate series · part three</p>
+  <h1>Your <em>summer</em><br>in <em class="real">2050</em></h1>
+  <p class="standfirst">
+    Parts one and two dealt in tonnes. This one deals in afternoons. Pick your
+    city and the rest of the page rewrites itself: the city your summer will
+    feel like, the hot days on their way, and the day your record heat stops
+    being a story your family tells.
+  </p>
+  <div class="city-picker" id="city-picker"></div>
+  <p class="byline">Projections from UKCP18 (Met Office) and Bastin et&nbsp;al. (2019);
+  records from Met Office station observations · scenarios stated per chart</p>
+  <p class="scroll-cue">scroll ↓</p>
+</header>
+
+<!-- 1 · ANALOG -->
+<section class="prose">
+  <h2><span class="myth-no">The postcard</span>Some other city already has your weather</h2>
+  <p>The cleanest way to feel a projection is to find the place that already
+  lives it. In 2019, researchers matched the 2050 climate of 520 world cities
+  to the present-day climate of others. Here is what they found for
+  <strong><span data-f="city">London</span></strong>.</p>
+</section>
+<section class="scrolly" id="analog">
+  <div class="sticky"><div class="chart" id="chart-analog"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p><strong><span data-f="city">London</span> today</strong>: an annual average of
+      <strong><span data-f="annual_t">11.1</span>°C</strong>, and a typical warmest-month
+      afternoon of <strong><span data-f="wmax">21.0</span>°C</strong>.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p>By <strong>2050</strong>, under a moderate emissions path (RCP4.5), the dot slides
+      to an annual average of <strong><span data-f="annual_t_2050">13.2</span>°C</strong>,
+      with warmest-month afternoons around
+      <strong><span data-f="wmax2050">26.9</span>°C</strong>.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p>And that spot on the line is not empty. The closest present-day match for
+      <span data-f="city">London</span>'s 2050 climate is
+      <strong><span data-f="analog1">Melbourne</span></strong>. Next closest:
+      <strong><span data-f="analog2">Istanbul</span></strong> and
+      <strong><span data-f="analog3">Barcelona</span></strong>.</p>
+    </div>
+    <div class="step" data-step="3">
+      <p>One caveat before you book the flight: an analog matches whole-year
+      averages. Extremes move further than means, so your 2050 summer will
+      throw days the analog city rarely sees. The next chart is about those.</p>
+    </div>
+  </div>
+</section>
+<section class="prose">
+  <p>A footnote worth keeping: the press release for that study told Londoners to
+  expect <em>Barcelona</em>, and the headline travelled the world. The paper's own
+  tables rank Melbourne first, Istanbul second, Barcelona third. Even good news
+  about bad news gets rounded to the nearest beach.</p>
+</section>
+
+<!-- 2 · HOT DAYS -->
+<section class="prose">
+  <h2><span class="myth-no">The calendar</span>The hot days are already arriving</h2>
+  <p>Each dot below is one day of a typical summer in
+  <strong><span data-f="city">London</span></strong>. Watch what the count of days over
+  25°C does as the calendar moves from your parents' summers to your children's.</p>
+</section>
+<section class="scrolly" id="dots">
+  <div class="sticky"><div class="chart" id="chart-dots"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p><strong>1981–2000</strong>: about <strong><span data-f="h25b">25</span> days</strong>
+      a year over 25°C in <span data-f="city">London</span>,
+      <strong><span data-f="h28b">2</span></strong> of them over 28°C.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p><strong>2001–2020, observed</strong>: already
+      <strong><span data-f="h25o">37</span> days</strong>. This is not a projection;
+      it has happened. Across the UK, days over 28°C have more than doubled since
+      the 1961–90 baseline.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p><strong>The 2050s</strong> (a 2°C world, indicative timing 2031–2056):
+      <strong><span data-f="h25g2">50</span> days</strong> over 25°C
+      (model range <span data-f="h25r2">36–57</span>), and
+      <strong><span data-f="h28g2">11</span></strong> over 28°C.</p>
+    </div>
+    <div class="step" data-step="3">
+      <p><span data-f="nights_sentence">Tropical nights, when the temperature never
+      drops below 20°C, go from almost unknown to a few every summer.</span>
+      Night heat is the dangerous kind: it is when bodies are supposed to recover.</p>
+    </div>
+    <div class="step" data-step="4">
+      <p>And if the world reaches <strong>4°C</strong>, late this century:
+      <strong><span data-f="h25g4">85</span> days</strong> over 25°C,
+      <strong><span data-f="h28g4">30</span></strong> over 28°C. That is not a hot
+      summer; that is a different calendar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · RECORD -->
+<section class="prose">
+  <h2><span class="myth-no">The record</span>The day the record becomes a Tuesday</h2>
+</section>
+<section class="scrolly" id="record">
+  <div class="sticky"><div class="chart" id="chart-record"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p><span data-f="city">London</span>'s hottest day on record:
+      <strong><span data-f="record_t">40.2</span>°C</strong>,
+      <span data-f="record_date">19 July 2022</span>, at
+      <span data-f="record_station">Heathrow &amp; St James's Park</span>.
+      <span data-f="record_note"></span></p>
+    </div>
+    <div class="step" data-step="1">
+      <p>Against it, today's <em>typical</em> warmest-month afternoon:
+      <strong><span data-f="wmax">21.0</span>°C</strong>. The record is an outlier,
+      the kind of day that gets its own name in the family.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p>By 2050 the typical warmest afternoon moves to about
+      <strong><span data-f="wmax2050">26.9</span>°C</strong> (RCP4.5). The gap between
+      "ordinary hot" and "all-time record" halves, which is exactly how records
+      stop being records.</p>
+    </div>
+    <div class="step" data-step="3">
+      <p>The UK's own all-time mark, <strong>40.3°C</strong> at Coningsby in July 2022,
+      was once considered impossible here. Met Office projections have UK hot
+      spells going from one every five years to about <strong>four a year</strong>
+      by the 2070s.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · SEASONS -->
+<section class="prose">
+  <h2><span class="myth-no">The year</span>The seasons are drifting</h2>
+  <p>This one is UK-wide rather than city-by-city, because that is how the Met
+  Office publishes it. It is the gentlest chart on this page, and in the long
+  run maybe the biggest.</p>
+</section>
+<section class="scrolly" id="seasons">
+  <div class="sticky"><div class="chart" id="chart-seasons"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p>The ring is a year. In the <strong>1961–1990</strong> climate, England's
+      growing season, the stretch warm enough for things to grow, ran about
+      <strong>251 days</strong>.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p>By <strong>2006–2015</strong> it averaged <strong>280 days</strong>: twenty-nine
+      days longer, a whole extra month of growth, taken from winter's end and
+      autumn's start.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p>The newer measure tells the same story: 21% more growing degree days in
+      2015–2024 than the 1961–90 baseline. Gardens notice before governments do:
+      earlier blossom, later frosts, lawns that never quite stop.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · RAIN -->
+<section class="prose">
+  <h2><span class="myth-no">The rain</span>Same rain, wrong times</h2>
+  <p>Warmer summers do not just mean sun. For
+  <strong><span data-f="region_label">southern England</span></strong>, the UKCP18
+  projections move the rain itself.</p>
+</section>
+<section class="scrolly" id="rain">
+  <div class="sticky"><div class="chart" id="chart-rain"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p><strong>Summers get drier</strong>: by the 2050s,
+      <span data-f="region_label">southern England</span>'s summer rainfall shifts by
+      <strong><span data-f="summer_range">−12% to −44%</span></strong> across the
+      scenario range.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p><strong>Winters get wetter</strong>: <strong><span data-f="winter_range">+9%
+      to +28%</span></strong>. The water arrives when reservoirs are full and
+      gardens are dormant, and goes missing when everything is thirsty.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p>Summer afternoons also warm by
+      <strong><span data-f="summer_t_range">+1.9 to +3.9°C</span></strong> on average.
+      Drier ground, hotter air: the same combination behind the fire-and-hosepipe
+      summers the UK has started to rehearse.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="prose" id="close">
+  <h2>Which 2050 you get</h2>
+  <ul class="close-list">
+    <li><strong>Half the journey has happened.</strong> The 2001–2020 column on the
+    calendar chart is observation, not projection. Your city's summer has already
+    left the twentieth century.</li>
+    <li><strong>The range is the choice.</strong> Every chart here carries a spread:
+    the 2°C figures and the 4°C figures are not forecasts of different luck, they
+    are outcomes of different decisions, the ones parts one and two priced up.</li>
+    <li><strong>Adaptation is local.</strong> Shade, water, ventilation, rails that
+    do not buckle: the analog city is not just a warning, it is a syllabus. Places
+    like <span data-f="analog1">Melbourne</span> already know how to live in your
+    2050 summer.</li>
+  </ul>
+  <p class="fin">The last essay in this series turns the dial the other way: the
+  levers that decide whether your city's calendar stops at the 2°C column or
+  keeps going.</p>
+</section>
+
+<footer class="methodology" id="methodology">
+  <h3>Sources &amp; methodology</h3>
+  <div id="sources-list"></div>
+  <p>Analog cities and typical temperatures: Bastin et&nbsp;al. (2019), PLOS ONE,
+  CMIP5 ensemble under RCP4.5, 2050 horizon; the analog is the paper's closest
+  match by whole-climate similarity, and the press-release anecdote is documented
+  in the paper's own S2 table. Hot days, hot summer days and tropical nights:
+  Met Office Local Authority Climate Service (UKCP18 Local, RCP8.5), local
+  authority area averages, ensemble medians; "the 2050s" is the 2.0°C global
+  warming level (Met Office indicative timing 2031–2056) and the 4°C column is
+  late-century under high emissions; ranges are model spread, not scenario
+  spread. Counts are annual, drawn on a summer calendar because almost all such
+  days fall in June–August. Records: Met Office station observations; the
+  Cardiff record could not be verified to an all-time series and is labelled
+  accordingly. Growing season and observed extremes: Met Office State of the UK
+  Climate reports. Rainfall and summer temperature ranges: Met Office City Pack
+  probabilistic tables, 2040–2059 vs 1981–2000, RCP4.5 50th to RCP8.5 90th
+  percentile. Chosen city is stored in the page address only. Built with d3.js.
+  Published 8 August 2026.</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+<script data-goatcounter="https://notesandtones.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

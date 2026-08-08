@@ -1,0 +1,9 @@
+[project]
+name = "summer"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "odfpy>=1.4.1",
+    "pandas>=3.0.5",
+    "requests>=2.34.2",
+]
