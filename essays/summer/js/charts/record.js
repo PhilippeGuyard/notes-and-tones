@@ -36,20 +36,33 @@ export function recordChart(el) {
   const mUK = marker(C.ink);
 
   function place(m, t, l1, l2, dur, dy) {
-    m.line.transition().duration(dur).attr("x1", x(t)).attr("x2", x(t));
+    m.line.transition().duration(dur)
+      .attr("x1", x(t)).attr("x2", x(t)).attr("y1", AXIS_Y - 26 - dy);
     m.lab.transition().duration(dur).attr("x", x(t)).attr("y", AXIS_Y - 34 - dy).text(l1);
     m.sub.transition().duration(dur).attr("x", x(t)).attr("y", AXIS_Y - 34 - dy + 15).text(l2);
   }
 
   let city = null, step = 0;
 
+  /* labels are ~130px wide; stack any that would collide on the axis */
+  function ladder(temps) {
+    const order = temps.map((t, i) => ({ t, i })).sort((a, b) => a.t - b.t);
+    const dys = new Array(temps.length).fill(0);
+    for (let k = 1; k < order.length; k++) {
+      if (x(order[k].t) - x(order[k - 1].t) < 150)
+        dys[order[k].i] = dys[order[k - 1].i] + 44;
+    }
+    return dys;
+  }
+
   function draw(dur) {
     if (!city) return;
     title.text(`${city.name}: ordinary heat vs the record`);
-    place(mRecord, city.record.t, `record · ${city.record.t}°`, city.record.date, dur, 40);
-    place(mNow, city.wmax, `typical now · ${city.wmax}°`, "warmest-month afternoon", dur, 0);
-    place(mFut, city.wmax2050, `typical 2050 · ${city.wmax2050}°`, "RCP4.5", dur, 0);
-    place(mUK, 40.3, "UK record · 40.3°", "Coningsby, 2022", dur, 80);
+    const dys = ladder([city.wmax, city.wmax2050, city.record.t]);
+    place(mNow, city.wmax, `typical now · ${city.wmax}°`, "warmest-month afternoon", dur, dys[0]);
+    place(mFut, city.wmax2050, `typical 2050 · ${city.wmax2050}°`, "RCP4.5", dur, dys[1]);
+    place(mRecord, city.record.t, `record · ${city.record.t}°`, city.record.date, dur, Math.max(dys[2], 40));
+    place(mUK, 40.3, "UK record · 40.3°", "Coningsby, 2022", dur, 88);
     mRecord.g.transition().duration(dur).attr("opacity", 1);
     mNow.g.transition().duration(dur).attr("opacity", step >= 1 ? 1 : 0);
     mFut.g.transition().duration(dur).attr("opacity", step >= 2 ? 1 : 0);
