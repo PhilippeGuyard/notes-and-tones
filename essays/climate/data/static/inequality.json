@@ -1,0 +1,15 @@
+{
+ "source": "Chancel (2022), Nature Sustainability; World Inequality Lab Climate Inequality Report 2023",
+ "retrieved": "2026-08-08",
+ "note": "Global CO2e emissions by income group, individual footprints incl. consumption and investments, 2019.",
+ "data": {
+  "groups": [
+   {"key": "top1", "label": "Top 1%", "pop_share": 1, "emission_share": 17, "avg_t": 110},
+   {"key": "next9", "label": "Next 9%", "pop_share": 9, "emission_share": 31, "avg_t": 22},
+   {"key": "mid40", "label": "Middle 40%", "pop_share": 40, "emission_share": 40, "avg_t": 6.6},
+   {"key": "bottom50", "label": "Bottom 50%", "pop_share": 50, "emission_share": 12, "avg_t": 1.6}
+  ],
+  "top10_share": 48,
+  "world_avg_t": 6.6
+ }
+}

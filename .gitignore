@@ -5,6 +5,8 @@ __pycache__/
 .pytest_cache/
 # regenerable download cache for the immigration data pipeline
 tools/immigration/data/raw/
+# regenerable download cache for the climate data pipeline
+tools/climate/data/raw/
 
 # os / editor
 .DS_Store

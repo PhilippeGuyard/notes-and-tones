@@ -1,0 +1,259 @@
+---
+permalink: "essays/climate/index.html"
+title: "Who Is Heating the Planet?"
+emoji: "🌡️"
+date: 2026-08-08
+updated: "2026-08-08T12:00:00Z"
+order: 15
+dek: "Blame China, blame the rich, blame the flights? Four ways of counting carbon give four different answers. Part one of a climate series."
+card_url: "essays/climate/"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who Is Heating the Planet?</title>
+<meta name="description" content="Who emits, counted four ways: by country, by head, by history and by consumption. Then by income, by sector, and by what your own choices are worth. Interactive data essay.">
+<meta property="og:title" content="Who Is Heating the Planet?">
+<meta property="og:description" content="Who emits, counted four ways: by country, by head, by history and by consumption. Interactive data essay.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://philippeguyard.github.io/notes-and-tones/essays/climate/">
+<meta property="og:site_name" content="Notes &amp; Tones">
+<meta property="og:image" content="https://philippeguyard.github.io/notes-and-tones/assets/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://philippeguyard.github.io/notes-and-tones/essays/climate/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%A1%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0,1&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=1">
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+
+<nav class="site-back"><a href="../../index.html">← Notes &amp; Tones</a><a href="../immigration/">Previously: Immigration, perception vs reality →</a></nav>
+
+<header class="masthead">
+  <p class="kicker">Climate series · part one</p>
+  <h1>Who is <em>heating</em><br><em class="real">the planet?</em></h1>
+  <p class="standfirst">
+    Ask who is to blame for climate change and the answers arrive before the question
+    finishes: China. Big companies. Frequent flyers. Somebody else. This page counts
+    the actual tonnes, four different ways, and each way of counting points at a
+    different culprit. The argument only starts to make sense once you can see all four.
+  </p>
+  <p class="byline">Charts drawn from the Global Carbon Budget (via Our World in Data),
+  the World Inequality Lab, Climate Watch, Ipsos &amp; Wynes and Nicholas (2017)</p>
+  <div class="legend-key">
+    <span class="key key--p">what we talk about</span>
+    <span class="key key--r">what warms the planet</span>
+  </div>
+  <p class="scroll-cue">scroll ↓</p>
+</header>
+
+<!-- 1 · FOUR COUNTS -->
+<section class="prose" id="counts-intro">
+  <h2><span class="myth-no">The counts</span>Four ways to count a tonne</h2>
+  <p>Start with your own intuition. The world will emit about <strong>38.6 billion
+  tonnes</strong> of CO2 this year. What share of it comes from the UK? Drag the
+  slider, then lock in your answer.</p>
+  <div id="guess-widget"></div>
+  <p>Whatever you guessed, hold that number. It is about to be counted four ways,
+  and it will look like an excuse on exactly one of them.</p>
+</section>
+<section class="scrolly" id="counts">
+  <div class="sticky"><div class="chart" id="chart-leaderboard"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p class="step-kicker">Count one · by country</p>
+      <p>Count each tonne where the chimney stands and the picture is the familiar one.
+      <strong>China</strong> emits 12.3 billion tonnes a year, nearly a third of the world
+      total and more than the US, India and Russia combined. The UK sits in
+      <strong>18th place</strong>, at 0.8%.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p class="step-kicker">Count two · by head</p>
+      <p>Divide by population and the leaderboard empties into the Gulf:
+      <strong>Qatar</strong>, 41 tonnes per person. Among big rich countries,
+      <strong>Australia and the US</strong> lead at around 14. China drops to 8.7.
+      And the UK? <strong>4.5 tonnes</strong>, 50th place, just below the world
+      average. Case closed?</p>
+    </div>
+    <div class="step" data-step="2">
+      <p class="step-kicker">Count three · by history</p>
+      <p>CO2 stays in the atmosphere for centuries, so count everything since 1750.
+      Now the <strong>United States</strong> leads with 435 billion tonnes, half as much
+      again as China. And the UK, where the coal-fired economy was invented, is
+      <strong>5th of all time</strong>: 0.8% of today's emissions, 0.9% of the world's
+      people, <strong>4.3%</strong> of everything ever emitted.</p>
+    </div>
+    <div class="step" data-step="3">
+      <p class="step-kicker">Count four · by consumption</p>
+      <p>One more correction. Britain no longer makes its steel, phones or clothes; it
+      imports them, chimneys included. Count each tonne where the product is
+      <em>used</em> and the UK's 4.5 tonnes per head becomes <strong>7.1</strong>,
+      a 58% markup, half above the world average. Over a third of the UK's real
+      footprint burns in somebody else's country; about a tenth of China's chimney
+      total burns on behalf of customers abroad.</p>
+    </div>
+  </div>
+</section>
+<section class="prose">
+  <p>Four defensible counts, four different offenders: China, Qatar, America, and
+  anyone with a rich-world shopping basket. Whenever someone says <em>our emissions
+  barely matter</em>, they have quietly chosen the one count that flatters them.
+  The UK's 0.8% is real; so is its 4.3% of history and its imported markup.</p>
+</section>
+
+<!-- 2 · RICH PEOPLE -->
+<section class="prose">
+  <h2><span class="myth-no">The people</span>Rich people, not rich countries</h2>
+  <p>Country totals hide as much as they show, because emissions track income more
+  tightly than nationality. Here are the world's emissions as 100 equal blocks,
+  divided not by country but by who spends the money.</p>
+</section>
+<section class="scrolly" id="inequality">
+  <div class="sticky"><div class="chart" id="chart-inequality"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p>One hundred blocks, 38.6 billion tonnes. Now sort humanity by income and
+      hand each group its share.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p>The richest <strong>1%</strong> of humanity, roughly 80 million people,
+      account for <strong>17 blocks</strong>, mostly through flights, investments
+      and second homes. Average footprint: about 110 tonnes each.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p>Widen to the richest tenth and it is <strong>48 of the 100 blocks</strong>.
+      Nearly half the problem belongs to one person in ten.</p>
+    </div>
+    <div class="step" data-step="3">
+      <p>The poorest <strong>half</strong> of humanity, four billion people, share
+      <strong>12 blocks</strong>. The average member of the top 1% emits about
+      <strong>70 times</strong> more than someone in the bottom half.</p>
+    </div>
+    <div class="step" data-step="4">
+      <p>Where does that put a Briton? At 7.1 consumption tonnes, above the global
+      middle 40% average of 6.6, and the global top 10% is populated overwhelmingly
+      by people in countries like this one. "Rich country" arguments and "rich people"
+      arguments are, for most readers of this page, the same argument.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · SECTORS -->
+<section class="prose">
+  <h2><span class="myth-no">The tonnes</span>What the tonnes are actually doing</h2>
+  <p>Blame settled, sort of. Next question: what activity produces the stuff? The
+  public debate has favourites, straws, flights, food miles. The inventory
+  disagrees about the order.</p>
+</section>
+<section class="scrolly" id="sectors">
+  <div class="sticky"><div class="chart" id="chart-sectors"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p><strong>Energy is almost three quarters of the problem.</strong> Not "energy"
+      as in light bulbs: energy for industry (24%), heating and powering buildings
+      (18%), transport (16%), plus the leaks and losses of the energy system itself.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p>The next slab is <strong>food and land</strong>: agriculture, deforestation
+      and land use, 18%. Livestock alone emit several times more than every
+      aeroplane on Earth.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p>Then the awkward industrial rump: <strong>cement and chemical processes</strong>
+      (5%), where CO2 comes out of the chemistry itself, and <strong>waste</strong> (3%).</p>
+    </div>
+    <div class="step" data-step="3">
+      <p>Now place the things the arguments are about. <strong>Aviation: about 2.5%</strong>
+      of global CO2. <strong>All plastics ever made and disposed of: 3 to 4%</strong>,
+      of which straws are a rounding error. Real tonnes, but the airtime and
+      the tonnage are two very different charts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · ACTIONS -->
+<section class="prose">
+  <h2><span class="myth-no">The actions</span>What actually cuts a tonne</h2>
+  <p>Down, finally, to one person: you. When Ipsos asks the public which personal
+  choices cut the most emissions, recycling tops the list, year after year. Here is
+  the public's ranking, followed by what the measurements say each action is worth.</p>
+</section>
+<section class="scrolly" id="actions">
+  <div class="sticky"><div class="chart" id="chart-actions"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p>Eight everyday actions, ordered by <strong>how effective the public believes
+      they are</strong>. Recycling first, light bulbs close behind. The bottom of the
+      perceived list: living without a car.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p>Add the measured savings, in tonnes of CO2 per year for one person in a rich
+      country. Recycling everything for a year: <strong>0.2 tonnes</strong>. Swapping
+      every bulb for LEDs: <strong>0.1</strong>.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p>Re-sort by what works and the list nearly inverts. <strong>Living car-free
+      saves 2.4 tonnes</strong> a year, a dozen recycling habits. Skipping one
+      transatlantic round trip: <strong>1.6</strong>. Renewable electricity:
+      <strong>1.5</strong>. A plant-based diet: <strong>0.8</strong>.</p>
+    </div>
+    <div class="step" data-step="3">
+      <p>The study behind these numbers found one action bigger than all of these
+      combined, <strong>having one fewer child</strong>, scored at 58.6 tonnes a year.
+      Treat that one with care: it books a descendant's whole lifetime to the parent,
+      and demographers have argued about it ever since. The pattern stands either way:
+      the actions we praise most are the smallest bars on the chart.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · BELIEFS -->
+<section class="prose">
+  <h2><span class="myth-no">The beliefs</span>Three gaps between story and measurement</h2>
+</section>
+<section class="cards" id="beliefs-cards"></section>
+
+<!-- 6 · CLOSE -->
+<section class="prose" id="close">
+  <h2>What to do with four answers</h2>
+  <ul class="close-list">
+    <li><strong>"We're only 1%" is a choice of count.</strong> It is true by chimney,
+    and false by history and by shopping basket. Countries that industrialised first
+    hold most of the carbon in the sky today.</li>
+    <li><strong>Grids beat gestures.</strong> UK territorial emissions have fallen
+    <strong>48% since 1990</strong>, and almost none of that came from straws. It came
+    from switching what the electricity grid burns. The biggest lever any individual
+    touches is political, not personal.</li>
+    <li><strong>The personal list is short and known.</strong> Cars, flights,
+    heating, diet. Four decisions carry most of a personal footprint; the rest is
+    mostly housekeeping.</li>
+  </ul>
+  <p class="fin">Every count in this essay is honest and every count blames someone
+  different. The useful question was never "who is guilty?", it is "which tonnes are
+  cheapest to remove next?", and that question, unlike the blame, has answers.</p>
+</section>
+
+<footer class="methodology" id="methodology">
+  <h3>Sources &amp; methodology</h3>
+  <div id="sources-list"></div>
+  <p>Emissions are fossil CO2 from the Global Carbon Budget via Our World in Data
+  (owid/co2-data, retrieved 8 August 2026); 2024 is the latest full year,
+  consumption-based figures run to 2023. Per-head leaderboards exclude countries
+  under one million people. Cumulative totals count from 1750. Sector shares are
+  greenhouse-gas CO2e (Climate Watch, 2016 reference year), so they are not directly
+  comparable with the CO2-only country figures. Income-group footprints (Chancel 2022)
+  include consumption and investments and are CO2e. Action savings are central
+  estimates from Wynes &amp; Nicholas (2017) for developed-country residents; the
+  one-fewer-child figure attributes descendants' emissions to the parent and is
+  disputed. Built with d3.js. Published 8 August 2026.</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+<script data-goatcounter="https://notesandtones.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

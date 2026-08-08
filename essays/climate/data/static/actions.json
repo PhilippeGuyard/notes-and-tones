@@ -1,0 +1,18 @@
+{
+ "source": "Wynes & Nicholas (2017), Environmental Research Letters; perceived effectiveness from Ipsos Perils of Perception: environment (2021)",
+ "retrieved": "2026-08-08",
+ "note": "impact_t = tonnes CO2e saved per year by one person in a developed country (study central estimates). perceived_rank = order in which the public places the action when asked which choices cut the most emissions (1 = seen as most effective). one-fewer-child figure is contested (it books descendants' lifetime emissions to the parent) and is shown only as an annotation, not a bar.",
+ "data": {
+  "actions": [
+   {"key": "recycle", "label": "Recycle everything", "impact_t": 0.21, "perceived_rank": 1},
+   {"key": "bulbs", "label": "Switch to LED bulbs", "impact_t": 0.10, "perceived_rank": 2},
+   {"key": "laundry", "label": "Hang-dry the laundry", "impact_t": 0.21, "perceived_rank": 3},
+   {"key": "ev", "label": "Switch to an electric car", "impact_t": 1.15, "perceived_rank": 4},
+   {"key": "diet", "label": "Eat a plant-based diet", "impact_t": 0.8, "perceived_rank": 5},
+   {"key": "green_energy", "label": "Buy renewable electricity", "impact_t": 1.5, "perceived_rank": 6},
+   {"key": "flight", "label": "Skip one transatlantic round trip", "impact_t": 1.6, "perceived_rank": 7},
+   {"key": "carfree", "label": "Live car-free", "impact_t": 2.4, "perceived_rank": 8}
+  ],
+  "child_note": {"label": "Have one fewer child", "impact_t": 58.6}
+ }
+}

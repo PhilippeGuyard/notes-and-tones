@@ -1,0 +1,297 @@
+{
+ "source": "Our World in Data, from the Global Carbon Budget (owid/co2-data)",
+ "retrieved": "2026-08-08",
+ "note": "Per-capita boards exclude countries under 1,000,000 people. Cumulative is fossil CO2 since 1750. Consumption-based adjusts for CO2 embedded in traded goods.",
+ "data": {
+  "annual": {
+   "unit": "Mt CO2",
+   "year": 2024,
+   "world": 38598.578,
+   "n_ranked": 215,
+   "top": [
+    {
+     "country": "China",
+     "iso": "CHN",
+     "value": 12289.04,
+     "rank": 1
+    },
+    {
+     "country": "United States",
+     "iso": "USA",
+     "value": 4904.12,
+     "rank": 2
+    },
+    {
+     "country": "India",
+     "iso": "IND",
+     "value": 3193.48,
+     "rank": 3
+    },
+    {
+     "country": "Russia",
+     "iso": "RUS",
+     "value": 1780.52,
+     "rank": 4
+    },
+    {
+     "country": "Japan",
+     "iso": "JPN",
+     "value": 961.87,
+     "rank": 5
+    },
+    {
+     "country": "Indonesia",
+     "iso": "IDN",
+     "value": 812.22,
+     "rank": 6
+    },
+    {
+     "country": "Iran",
+     "iso": "IRN",
+     "value": 792.63,
+     "rank": 7
+    },
+    {
+     "country": "Saudi Arabia",
+     "iso": "SAU",
+     "value": 692.13,
+     "rank": 8
+    },
+    {
+     "country": "South Korea",
+     "iso": "KOR",
+     "value": 583.68,
+     "rank": 9
+    },
+    {
+     "country": "Germany",
+     "iso": "DEU",
+     "value": 572.32,
+     "rank": 10
+    },
+    {
+     "country": "United Kingdom",
+     "iso": "GBR",
+     "value": 312.91,
+     "rank": 18
+    }
+   ]
+  },
+  "per_capita": {
+   "unit": "t CO2 per person",
+   "year": 2024,
+   "world": 4.729,
+   "n_ranked": 159,
+   "top": [
+    {
+     "country": "Qatar",
+     "iso": "QAT",
+     "value": 41.27,
+     "rank": 1
+    },
+    {
+     "country": "Kuwait",
+     "iso": "KWT",
+     "value": 26.25,
+     "rank": 2
+    },
+    {
+     "country": "Bahrain",
+     "iso": "BHR",
+     "value": 24.27,
+     "rank": 3
+    },
+    {
+     "country": "Trinidad and Tobago",
+     "iso": "TTO",
+     "value": 22.93,
+     "rank": 4
+    },
+    {
+     "country": "Saudi Arabia",
+     "iso": "SAU",
+     "value": 20.38,
+     "rank": 5
+    },
+    {
+     "country": "United Arab Emirates",
+     "iso": "ARE",
+     "value": 20.13,
+     "rank": 6
+    },
+    {
+     "country": "Oman",
+     "iso": "OMN",
+     "value": 15.65,
+     "rank": 7
+    },
+    {
+     "country": "Australia",
+     "iso": "AUS",
+     "value": 14.48,
+     "rank": 8
+    },
+    {
+     "country": "United States",
+     "iso": "USA",
+     "value": 14.2,
+     "rank": 9
+    },
+    {
+     "country": "Kazakhstan",
+     "iso": "KAZ",
+     "value": 13.94,
+     "rank": 10
+    },
+    {
+     "country": "United Kingdom",
+     "iso": "GBR",
+     "value": 4.53,
+     "rank": 50
+    }
+   ]
+  },
+  "cumulative": {
+   "unit": "Mt CO2 since 1750",
+   "year": 2024,
+   "world": 1849123.875,
+   "n_ranked": 215,
+   "top": [
+    {
+     "country": "United States",
+     "iso": "USA",
+     "value": 434866.56,
+     "rank": 1
+    },
+    {
+     "country": "China",
+     "iso": "CHN",
+     "value": 285087.03,
+     "rank": 2
+    },
+    {
+     "country": "Russia",
+     "iso": "RUS",
+     "value": 122808.23,
+     "rank": 3
+    },
+    {
+     "country": "Germany",
+     "iso": "DEU",
+     "value": 95135.68,
+     "rank": 4
+    },
+    {
+     "country": "United Kingdom",
+     "iso": "GBR",
+     "value": 80079.45,
+     "rank": 5
+    },
+    {
+     "country": "Japan",
+     "iso": "JPN",
+     "value": 69612.28,
+     "rank": 6
+    },
+    {
+     "country": "India",
+     "iso": "IND",
+     "value": 66072.53,
+     "rank": 7
+    },
+    {
+     "country": "France",
+     "iso": "FRA",
+     "value": 40047.57,
+     "rank": 8
+    },
+    {
+     "country": "Canada",
+     "iso": "CAN",
+     "value": 35644.13,
+     "rank": 9
+    },
+    {
+     "country": "Ukraine",
+     "iso": "UKR",
+     "value": 31236.5,
+     "rank": 10
+    }
+   ]
+  },
+  "consumption": {
+   "unit": "t CO2 per person, consumption basis",
+   "year": 2023,
+   "world": 4.708,
+   "n_ranked": 117,
+   "top": [
+    {
+     "country": "Singapore",
+     "iso": "SGP",
+     "value": 32.29,
+     "rank": 1
+    },
+    {
+     "country": "Qatar",
+     "iso": "QAT",
+     "value": 27.6,
+     "rank": 2
+    },
+    {
+     "country": "Kuwait",
+     "iso": "KWT",
+     "value": 25.28,
+     "rank": 3
+    },
+    {
+     "country": "United Arab Emirates",
+     "iso": "ARE",
+     "value": 23.31,
+     "rank": 4
+    },
+    {
+     "country": "Saudi Arabia",
+     "iso": "SAU",
+     "value": 19.66,
+     "rank": 5
+    },
+    {
+     "country": "Hong Kong",
+     "iso": "HKG",
+     "value": 19.37,
+     "rank": 6
+    },
+    {
+     "country": "Belgium",
+     "iso": "BEL",
+     "value": 16.79,
+     "rank": 7
+    },
+    {
+     "country": "Oman",
+     "iso": "OMN",
+     "value": 16.51,
+     "rank": 8
+    },
+    {
+     "country": "United States",
+     "iso": "USA",
+     "value": 15.81,
+     "rank": 9
+    },
+    {
+     "country": "Trinidad and Tobago",
+     "iso": "TTO",
+     "value": 14.87,
+     "rank": 10
+    },
+    {
+     "country": "United Kingdom",
+     "iso": "GBR",
+     "value": 7.09,
+     "rank": 38
+    }
+   ]
+  }
+ }
+}

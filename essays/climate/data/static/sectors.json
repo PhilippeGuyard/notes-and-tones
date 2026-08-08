@@ -1,0 +1,22 @@
+{
+ "source": "Climate Watch (2016 data) via Our World in Data: global greenhouse gas emissions by sector",
+ "retrieved": "2026-08-08",
+ "note": "Shares of global GHG (CO2e), not CO2 alone. Aviation share of CO2 from OWID aviation page.",
+ "data": {
+  "sectors": [
+   {"key": "energy_industry", "group": "Energy", "label": "Energy for industry", "share": 24.2},
+   {"key": "energy_buildings", "group": "Energy", "label": "Energy for buildings", "share": 17.5},
+   {"key": "transport", "group": "Energy", "label": "Transport", "share": 16.2},
+   {"key": "energy_other", "group": "Energy", "label": "Other energy (incl. leaks, unallocated)", "share": 15.3},
+   {"key": "agriculture", "group": "Land & food", "label": "Agriculture, forestry, land use", "share": 18.4},
+   {"key": "industry_process", "group": "Industry", "label": "Cement & chemical processes", "share": 5.2},
+   {"key": "waste", "group": "Waste", "label": "Waste", "share": 3.2}
+  ],
+  "callouts": {
+   "aviation_co2_pct": 2.5,
+   "road_transport_pct": 11.9,
+   "cement_pct": 3.0,
+   "plastics_note": "All plastics production and disposal combined is ~3-4% of global GHG (OECD); ocean-plastic items like straws are a rounding error within that."
+  }
+ }
+}

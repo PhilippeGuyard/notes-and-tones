@@ -1,0 +1,16 @@
+{
+ "source": "Our World in Data, from the Global Carbon Budget (owid/co2-data)",
+ "retrieved": "2026-08-08",
+ "data": {
+  "year": 2024,
+  "uk_annual_mt": 312.906,
+  "uk_share_annual_pct": 0.811,
+  "uk_share_cumulative_pct": 4.331,
+  "uk_per_capita_t": 4.526,
+  "world_per_capita_t": 4.729,
+  "consumption_year": 2023,
+  "uk_production_per_capita_t": 4.482,
+  "uk_consumption_per_capita_t": 7.092,
+  "world_annual_mt": 38598.578
+ }
+}

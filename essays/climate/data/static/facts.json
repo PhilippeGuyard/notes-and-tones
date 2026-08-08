@@ -1,0 +1,11 @@
+{
+ "source": "Lynas et al. (2021) ERL; Ipsos Perils of Perception (2020)",
+ "retrieved": "2026-08-08",
+ "data": {
+  "consensus_actual": {"value": ">99%", "source": "Lynas et al. (2021), ERL: >99% of peer-reviewed climate papers agree warming is human-caused"},
+  "consensus_perceived": {"value": "~65%", "source": "Ipsos Perils of Perception (2020): public's average guess of the share of climate scientists who agree"},
+  "us_china_cumulative": {"value": "1.5x", "source": "OWID/GCB: US cumulative CO2 (435 Gt) vs China (285 Gt), 1750-2024"},
+  "uk_reduction": {"value": "-48%", "source": "UK territorial CO2 2024 vs 1990, OWID/GCB (313 Mt vs 602 Mt)"},
+  "china_per_capita_vs_uk_consumption": {"value": "8.6 vs 7.1", "source": "OWID/GCB 2023: China production per capita (t) vs UK consumption per capita (t)"}
+ }
+}
