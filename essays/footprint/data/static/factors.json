@@ -1,0 +1,26 @@
+{
+ "source": "UK Government (DESNZ/DEFRA) GHG conversion factors 2025; Poore & Nemecek (2018); ICCT/Carbon Brief lifecycle estimates for embodied vehicle emissions; UK total from Global Carbon Budget consumption basis (part one)",
+ "retrieved": "2026-08-08",
+ "note": "All values kg CO2e per year unless stated. Flight factors include the radiative-forcing multiplier. The fixed baseline (public services, construction, goods) is computed at runtime as uk_total_kg minus the levers at average_settings, so an exactly-average reader reproduces part one's 7.1 t. average_settings is a modelling fiction (it includes fractional flights and averages over non-drivers) documented in the methodology.",
+ "data": {
+  "uk_total_kg": 7100,
+  "car_per_km": { "none": 0, "petrol": 0.17, "ev": 0.05 },
+  "car_embodied": { "kept": 100, "new_petrol": 470, "new_ev": 670 },
+  "flight_short_rt": 300,
+  "flight_long_rt": 1600,
+  "home_kg_per_household": { "gas": 2645, "heatpump": 1194, "electric": 2500 },
+  "diet": { "meat_heavy": 2500, "average": 2000, "vegetarian": 1400, "vegan": 1000 },
+  "average_settings": {
+   "carType": "petrol", "miles": 80, "carBuy": "kept",
+   "short": 1, "long": 0.15,
+   "heat": "gas", "household": 2.36,
+   "diet": "average"
+  },
+  "scale_markers": [
+   { "kg": 1600, "label": "world's poorest half, average" },
+   { "kg": 2000, "label": "2 t: the 2050 Paris budget", "paris": true },
+   { "kg": 6600, "label": "world's middle 40%, average" },
+   { "kg": 7100, "label": "UK average (part one)" }
+  ]
+ }
+}

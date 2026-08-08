@@ -1,0 +1,168 @@
+---
+permalink: "essays/footprint/index.html"
+title: "Your Seven Tonnes"
+emoji: "👣"
+date: 2026-08-08
+updated: "2026-08-08T14:00:00Z"
+order: 17
+dek: "Part one counted the planet's tonnes. This one counts yours: set your driving, flying, heating and eating, and watch your own bar land on the world scale."
+card_url: "essays/footprint/"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Seven Tonnes</title>
+<meta name="description" content="An interactive carbon footprint you build as you scroll: driving, flying, heating, eating, and the baseline no lifestyle choice touches.">
+<meta property="og:title" content="Your Seven Tonnes">
+<meta property="og:description" content="Build your own carbon footprint as you scroll, then see where it lands on the world scale. Climate series, part two.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://philippeguyard.github.io/notes-and-tones/essays/footprint/">
+<meta property="og:site_name" content="Notes &amp; Tones">
+<meta property="og:image" content="https://philippeguyard.github.io/notes-and-tones/assets/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://philippeguyard.github.io/notes-and-tones/essays/footprint/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%91%A3%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0,1&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=1">
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+
+<nav class="site-back"><a href="../../index.html">← Notes &amp; Tones</a><a href="../climate/">Part one: Who is heating the planet? →</a></nav>
+
+<header class="masthead">
+  <p class="kicker">Climate series · part two</p>
+  <h1>Your <em class="real">seven</em> <em>tonnes</em></h1>
+  <p class="standfirst">
+    Part one ended on a number: the average Briton is responsible for about
+    7.1 tonnes of CO2 a year once imports are counted. Averages are where
+    arguments go to hide. This page builds <em>your</em> number instead, one
+    decision at a time, and then shows you where it lands on the world scale.
+  </p>
+  <p class="byline">Factors from the UK Government's 2025 greenhouse gas conversion
+  tables, Poore &amp; Nemecek (2018) &amp; lifecycle estimates via ICCT; scale from part one</p>
+  <p class="scroll-cue">scroll ↓</p>
+</header>
+
+<section class="scrolly" id="build">
+  <div class="sticky"><div class="chart" id="chart-footprint"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p class="step-kicker">The scale</p>
+      <p>An empty scale, marked in tonnes of CO2e per year. By the bottom of this
+      page it will hold your footprint. Answer honestly; nobody is watching, and
+      the link this page makes at the end is yours to share or not.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p class="step-kicker">Before you woke up</p>
+      <p>Your bar does not start at zero. Roads, hospitals, schools, the army, the
+      construction and shipping baked into everything around you: about
+      <strong><span id="baseline-t">2.2</span> tonnes</strong> a year, before a single
+      personal choice. That grey block alone outweighs the <em>entire</em> footprint
+      of the average person in the world's poorest half. No lifestyle switches it
+      off; only politics does.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p class="step-kicker">Getting around</p>
+      <p>Now the levers. How do you get around, and how many miles a week do you
+      cover by car, across every car you use?</p>
+      <div class="ctl" id="ctl-car"></div>
+    </div>
+    <div class="step" data-step="3">
+      <p class="step-kicker">The car itself</p>
+      <p>The tailpipe is only part of the car. Building one emits roughly
+      <strong>7 tonnes</strong> for petrol, closer to <strong>10</strong> for an EV
+      and its battery. Spread over a fifteen-year life, that is a real slice of
+      every year. Was your car bought new?</p>
+      <div class="ctl" id="ctl-carbuy"></div>
+    </div>
+    <div class="step" data-step="4">
+      <p class="step-kicker">New EV, old banger</p>
+      <p>The comparison beside your bar: a <strong>brand-new EV</strong> against
+      <strong>keeping the old petrol car</strong>, both at your mileage. At high
+      mileage the EV wins quickly; at low mileage the greenest car can be the one
+      that already exists. <span id="car-verdict"></span></p>
+    </div>
+    <div class="step" data-step="5">
+      <p class="step-kicker">Flying</p>
+      <p>Round trips per year, short-haul (Europe) and long-haul (another
+      continent). One transatlantic round trip is about <strong>1.6 tonnes</strong>,
+      the same as the annual saving from going fully plant-based, twice over.</p>
+      <div class="ctl" id="ctl-fly"></div>
+    </div>
+    <div class="step" data-step="6">
+      <p class="step-kicker">At home</p>
+      <p>A typical UK home burns about 11,500 kWh of gas and 2,700 kWh of
+      electricity a year, shared between the people living in it. How is yours
+      heated, and how many share it?</p>
+      <div class="ctl" id="ctl-home"></div>
+    </div>
+    <div class="step" data-step="7">
+      <p class="step-kicker">Eating</p>
+      <p>Food is the lever people underrate the most. From a meat-heavy diet
+      (about 2.5 tonnes a year) to vegan (about 1), with every stop in between.</p>
+      <div class="ctl" id="ctl-diet"></div>
+    </div>
+    <div class="step" data-step="8">
+      <p class="step-kicker">The scale, again</p>
+      <p>Here is where your bar lands. The markers are the same ones part one ended
+      with: the world's poorest half average <strong>1.6 tonnes</strong>; the middle
+      40% about <strong>6.6</strong>; the UK, <strong>7.1</strong>.</p>
+    </div>
+    <div class="step" data-step="9">
+      <p class="step-kicker">The budget</p>
+      <p>And the dashed line is the uncomfortable one: roughly <strong>2 tonnes</strong>
+      per person per year by 2050 for a fair shot at the Paris targets. Notice that
+      the grey baseline alone overshoots it. Personal maths runs out exactly there,
+      which is what part three and four of this series are about.</p>
+    </div>
+    <div class="step" data-step="10">
+      <p class="step-kicker">Your number</p>
+      <p><span id="verdict">Your total appears here once you have set the levers.</span></p>
+      <p><button id="share-btn" type="button">Copy a link to this footprint</button>
+      <span id="share-done"></span></p>
+    </div>
+  </div>
+</section>
+
+<section class="prose" id="close">
+  <h2>What to do with one number</h2>
+  <ul class="close-list">
+    <li><strong>Cut the biggest slice, not the loudest one.</strong> For most
+    people that is driving, flying or heating, in that order of tractability;
+    the bin is not on the chart.</li>
+    <li><strong>The baseline is a ballot, not a bill.</strong> A third of your
+    footprint is shared infrastructure. It fell 48% since 1990 because the grid
+    changed, and it will only keep falling the same way.</li>
+    <li><strong>Averages hide the answer.</strong> If your bar sits under the UK
+    marker, the argument "people like me are the problem" is doing someone else's
+    accounting for them. Part one shows whose.</li>
+  </ul>
+  <p class="fin">Seven tonnes is not a verdict. It is an itemised receipt, and
+  receipts are the one kind of document you can argue with line by line.</p>
+</section>
+
+<footer class="methodology" id="methodology">
+  <h3>Sources &amp; methodology</h3>
+  <div id="sources-list"></div>
+  <p>Factors are kg CO2e per year: driving from the UK Government 2025 greenhouse
+  gas conversion tables (petrol ~0.17 kg/km; EV charged on the current grid ~0.05);
+  flights include the radiative-forcing multiplier; home energy assumes 11,500 kWh
+  gas and 2,700 kWh electricity per household, divided by occupants; diets follow
+  Poore &amp; Nemecek (2018); embodied car manufacturing (~7 t petrol, ~10 t EV)
+  is amortised over fifteen years. The fixed baseline is defined as part one's
+  7.1 t UK consumption footprint minus the levers at UK-average settings, so an
+  exactly-average reader reproduces part one's number; the average settings are a
+  modelling fiction (fractional flights, averaged over non-drivers). Footprints
+  here are CO2e while part one's country charts were CO2 only. Your choices stay
+  in the page address and go nowhere else. Built with d3.js. Published 8 August 2026.</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+<script data-goatcounter="https://notesandtones.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
