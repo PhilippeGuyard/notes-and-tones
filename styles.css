@@ -211,6 +211,39 @@ body {
 .essay-dek { color: var(--ink-soft); font-size: 1rem; line-height: 1.55; margin: 0 0 1.3rem; }
 .essay-go { font-family: var(--mono); font-size: .82rem; font-weight: 700; color: var(--A); }
 
+.topic-nav {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: .6rem;
+  max-width: 920px;
+  margin: 2.2rem auto 0;
+  animation: rise .9s .18s cubic-bezier(.2,.7,.2,1) both;
+}
+.topic-nav[hidden] { display: none; }
+.topic-pill {
+  font-family: var(--mono);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+  background: rgba(255,255,255,.62);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  padding: .45rem 1rem;
+  cursor: pointer;
+  transition: color .18s, border-color .18s, background .18s, transform .18s;
+}
+.topic-pill:hover { transform: translateY(-2px); border-color: var(--A); color: var(--A); }
+.topic-pill[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 /* ============================== PROSE ============================== */
 main { position: relative; z-index: 2; }
 

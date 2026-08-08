@@ -1,3 +1,5 @@
+const siteTopics = require("./_data/siteTopics.js");
+
 module.exports = function (eleventyConfig) {
   // Essay HTML must never be run through a template engine (inline JS, braces).
   // Only .njk files and layouts are templated.
@@ -39,6 +41,21 @@ module.exports = function (eleventyConfig) {
       day: "numeric", month: "long", year: "numeric", timeZone: "UTC",
     })
   );
+
+  // Renders a card's data-topics attribute; fails the build on an essay with
+  // no topics or a slug missing from _data/topics.js.
+  const knownSlugs = new Set(siteTopics.map((t) => t.slug));
+  eleventyConfig.addFilter("topicList", (essayTopics, inputPath) => {
+    if (!Array.isArray(essayTopics) || essayTopics.length === 0) {
+      throw new Error(`${inputPath}: front matter needs a non-empty \`topics\` list`);
+    }
+    for (const slug of essayTopics) {
+      if (!knownSlugs.has(slug)) {
+        throw new Error(`${inputPath}: unknown topic "${slug}" (see _data/siteTopics.js)`);
+      }
+    }
+    return essayTopics.join(" ");
+  });
 
   return {
     htmlTemplateEngine: false,
