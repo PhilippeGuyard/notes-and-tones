@@ -1,0 +1,235 @@
+---
+permalink: "essays/tax/index.html"
+title: "Tax: perception vs reality"
+card_title: "Where Your Tax Goes: Perception vs Reality"
+emoji: "🧾"
+date: 2026-08-07
+updated: "2026-08-07T12:00:00Z"
+order: 13
+dek: "Everyone pays it, almost nobody knows where it goes. Enter your salary, get your tax bill split pound by pound, and see how far the real budget sits from the one in your head."
+card_url: "essays/tax/"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tax: perception vs reality — where does your money actually go?</title>
+<meta name="description" content="The public thinks foreign aid and the unemployed swallow the budget. The official figures say pensions, health and debt interest do. An interactive essay with a personal tax-letter calculator.">
+<meta property="og:title" content="Tax: perception vs reality">
+<meta property="og:description" content="Enter your salary and see your tax bill split pound by pound across the real budget, next to the budget people imagine.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://philippeguyard.github.io/notes-and-tones/essays/tax/">
+<meta property="og:site_name" content="Notes &amp; Tones">
+<meta property="og:image" content="https://philippeguyard.github.io/notes-and-tones/assets/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://philippeguyard.github.io/notes-and-tones/essays/tax/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%BE%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=1">
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+
+<nav class="site-back">
+  <a href="../../index.html">← Notes &amp; Tones</a>
+  <a href="../immigration/">Companion: Immigration, perception vs reality →</a>
+</nav>
+
+<header class="masthead">
+  <p class="kicker">A data essay</p>
+  <h1>Tax:<br><em>perception</em> <span class="vs">vs</span> <em class="real">reality</em></h1>
+  <p class="standfirst">
+    Everyone pays it, and almost everyone has a theory about where it goes: foreign aid,
+    people who will not work, waste. This page puts the theory next to the ledger. The
+    ledger is public, it is audited, and it does not look like the budget in anyone's head.
+  </p>
+  <p class="byline">Built from HM Treasury's spending statistics, the OBR's public
+  finances databank and the DWP's benefit expenditure tables, the same figures behind
+  HMRC's Annual Tax Summary letter.</p>
+  <div class="legend-key">
+    <span class="key key--p">what we assume</span>
+    <span class="key key--r">what is measured</span>
+  </div>
+  <p class="scroll-cue">scroll ↓</p>
+</header>
+
+<!-- 0 · HOOK -->
+<section class="scrolly" id="hook">
+  <div class="sticky"><div class="chart" id="chart-hook"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p class="step-kicker">The public pound</p>
+      <p>Here is everything the state spends in a year, cut into a hundred pennies.
+      Every pound of income tax, National Insurance, VAT and duty ends up somewhere
+      on this grid. Hover over any cell to see what it buys.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p>Three blocks dominate: <strong>working-age benefits, state pensions and health</strong>.
+      Between them they take roughly half of every pound. None of the three features much in
+      arguments about waste, because none of them feels like "spending". They feel like rights.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p>Then comes a block most people forget exists: <strong>interest on the national debt</strong>.
+      It buys no hospital and employs no teacher, and it now costs more than the entire
+      defence budget beside it.</p>
+    </div>
+    <div class="step" data-step="3">
+      <p>And here is <strong>overseas aid</strong>, the item that dominates the argument:
+      less than <strong>a single penny</strong> in the pound, 0.7p to be exact. Hold that cell
+      in mind. The rest of this essay is about the distance between that penny and its
+      reputation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 1 · THE GUESS -->
+<section class="prose">
+  <h2><span class="myth-no">The instinct</span>Try it on yourself first</h2>
+  <p>Before any more charts, commit to a number. Out of every £100 the government spends,
+  how much do you think goes to overseas aid?</p>
+  <div class="widget" id="guess-widget"></div>
+  <p>Whatever you guessed, the interesting question is why the true figure feels so
+  implausible. Aid is argued about as if it were a main course. The accounts say garnish.</p>
+</section>
+
+<!-- 2 · THE GAP, CATEGORY BY CATEGORY -->
+<section class="prose">
+  <h2><span class="myth-no">Myth</span>“I know roughly where it goes”</h2>
+  <p>Survey after survey asks the public to estimate the budget, and the answers follow
+  the news agenda, not the accounts. The items we argue about are inflated several times
+  over; the items that actually dominate are shrunk to make room for them.</p>
+</section>
+<section class="scrolly" id="myth1">
+  <div class="sticky"><div class="chart" id="chart-perception"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p>Start with aid. The brass dot is the public's average guess; the green dot is the
+      audited figure. When YouGov asked people to divide their own income tax across the
+      budget, aid was given <strong>five times</strong> its real share.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p>The same brass-and-green gap runs down the whole list, and it points one way for
+      the villains and the other way for the giants. Fraud, Brussels, bureaucrats: guessed
+      far too large. <strong>Welfare and health</strong>, the categories that actually
+      dominate the pound: guessed far too small. The budget we argue about and the budget
+      we pay for are different documents.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · YOUR LETTER -->
+<section class="prose">
+  <h2><span class="myth-no">The tool</span>Your own tax letter</h2>
+  <p>HMRC used to post everyone an Annual Tax Summary: your bill, split across the budget.
+  Almost nobody read it, which is a shame, because it is the single best corrective to the
+  imagined budget. So here it is, rebuilt. Enter your salary and see where your money went,
+  down to the last penny.</p>
+  <div class="widget" id="calc"></div>
+  <p>Now press <strong>“the public's guess”</strong>. That second letter is the same bill
+  redistributed the way YouGov's respondents divided their own income tax when asked in
+  2014. Notice what happens to your aid and EU lines, and what quietly shrinks to make
+  room for them. The gap between the two letters is the subject of this essay, priced in
+  your own money.</p>
+</section>
+
+<!-- 4 · WELFARE -->
+<section class="prose">
+  <h2><span class="myth-no">Myth</span>“Benefits means the unemployed”</h2>
+  <p>Say "the benefits bill" and a specific picture forms: someone of working age, not
+  working. The DWP publishes exactly what the bill contains, line by line. The picture and
+  the lines have almost nothing in common.</p>
+</section>
+<section class="scrolly" id="myth2">
+  <div class="sticky"><div class="chart" id="chart-welfare"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p>Here is the whole bill, item by item. Before reading on, find the line that
+      matches the picture in your head.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p>The largest single item, by a distance, is the <strong>state pension</strong>,
+      with pensioner top-ups beside it. Most benefit money goes to people who have
+      retired, exactly as designed, and to disabled people and working families next.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p>And the benefit aimed squarely at the picture in your head, <strong>Jobseeker's
+      Allowance</strong>, is the smallest line on the chart: £0.3bn, a tenth of a penny in
+      every benefits pound. Part of Universal Credit also supports people looking for work,
+      and the tables do not split it, but every published estimate puts the unemployed's
+      share of the bill in low single digits. The word "benefits" and the arithmetic of
+      benefits have drifted a long way apart.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · DEBT INTEREST -->
+<section class="prose">
+  <h2><span class="myth-no">Myth</span>“Debt interest is a rounding error”</h2>
+  <p>The giant with no constituency deserves its own chart. For two decades, cheap
+  borrowing kept the interest bill flat and forgettable, hovering near £35bn a year
+  whatever else the economy did. Then inflation returned, rates followed, and the bill
+  tripled in three years.</p>
+</section>
+<section class="chart-solo">
+  <div class="chart" id="chart-debt"></div>
+  <p class="calc-help">Every pound spent on interest is a pound taxed but not turned into
+  any service. It is the price of past borrowing, paid at whatever rate the market sets,
+  and it now rivals whole departments that people would strike to defend.</p>
+</section>
+
+<!-- 6 · BELIEFS -->
+<section class="prose">
+  <h2><span class="myth-no">In short</span>Six things the ledger says</h2>
+</section>
+<section class="cards" id="beliefs-cards"></section>
+
+<!-- 7 · CLOSE -->
+<section class="prose" id="close">
+  <h2>Why the gap matters</h2>
+  <p>A country that misreads its own budget makes predictable mistakes. It fights over
+  pennies and waves through the pounds. Cutting the most overestimated line in the accounts
+  feels like serious money and saves almost none; the categories that actually move the
+  total, pensions, health, debt interest, are the ones no argument ever touches.</p>
+  <ul class="close-list">
+    <li><strong>The argued-about budget is not the actual budget.</strong> Benefit fraud
+    is guessed at thirty times the audited estimate, the unemployed's share of welfare at
+    fourteen times, aid at five. The guess tracks coverage, not cost.</li>
+    <li><strong>The big money is quiet money.</strong> Pensions, health and debt interest
+    take half the pound between them, and none of the three behaves like a choice.</li>
+    <li><strong>Your own letter is the corrective.</strong> Abstract billions invite
+    abstract opinions. The same budget, priced in your own tax bill, is much harder
+    to argue with.</li>
+  </ul>
+  <p class="fin">The ledger is public and always has been. The only thing this page adds
+  is your name on it.</p>
+</section>
+
+<footer class="methodology" id="methodology">
+  <h3>Sources &amp; methodology</h3>
+  <div id="sources-list"></div>
+  <p>The calculator uses 2025-26 income tax and employee Class 1 National Insurance rates for
+  England, Wales and Northern Ireland; Scotland sets different income tax bands. Salary means
+  gross employment income, with no pension contributions, student loan or other deductions,
+  so treat the bill as a clean-slate estimate. The category split uses HMRC's Annual Tax
+  Summary percentages for 2024-25, which are shares of public sector expenditure on services
+  (£1,166.5bn), a slightly narrower base than total managed expenditure (£1,290bn); VAT,
+  duties and the other taxes you pay are outside the letter. The "public's guess" letter
+  redistributes the same bill using YouGov's November 2014 mean allocations, the last survey
+  to ask the question in the letter's own format, against that year's categories; treat the
+  exact gaps as of their year and the direction as robust, which later surveys confirm. The
+  debt interest chart plots the OBR's central government debt interest net of Asset Purchase
+  Facility flows; the letter's 10.8% reflects the gross measure (£126.5bn in 2024-25), which
+  runs higher. Benefit components are Great Britain figures from the DWP's outturn tables;
+  Universal Credit cannot be split into its housing, children, incapacity and job-search
+  elements, so unemployment-specific spending beyond Jobseeker's Allowance is not separable.
+  Pennies are apportioned by largest remainder so every letter sums exactly to the bill.
+  Data snapshot: August 2026. Built with d3.js. Published 7 August 2026.</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+<script data-goatcounter="https://notesandtones.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "source": "YouGov, 'Perceptions of how tax is spent differ widely from reality' (Nov 2014); Ipsos MORI / Royal Statistical Society / King's College London, 'Perceptions are not reality' (2013); TUC / YouGov welfare poll (2012)",
+  "retrieved": "2026-08-07",
+  "note": "The letter_guess allocations are YouGov's Nov 2014 mean responses when people were asked to divide their own income tax and NI across the Treasury's 15 tax-statement categories; actuals that year were the 2013-14 letter shares. The fraud and unemployment rows in guesses are measured against the benefits bill, not total spending. YouGov's Nov 2025 ranking study finds the public now over-rank debt interest and aid and under-rank pensions and education.",
+  "aid": {
+    "actual": 0.7,
+    "source": "HMRC Annual Tax Summary",
+    "year": "2024-25",
+    "avg_guess": 5,
+    "factoid": "The average guess in the last survey to ask for a number (YouGov, 2014) was £5 of every £100 of income tax. And when Ipsos asked in 2013, more people picked overseas aid as a top item of government spending than picked pensions, which cost nine times as much."
+  },
+  "guesses": [
+    { "key": "overseas_aid", "label": "Overseas aid", "perceived": 5, "actual": 1, "source": "YouGov, share of income tax and NI", "year": 2014 },
+    { "key": "eu", "label": "Sent to the EU", "perceived": 7, "actual": 1, "source": "YouGov, share of income tax and NI", "year": 2014 },
+    { "key": "admin", "label": "Running government", "perceived": 8, "actual": 2, "source": "YouGov, share of income tax and NI", "year": 2014 },
+    { "key": "fraud", "label": "Benefits fraud", "perceived": 24, "actual": 0.7, "source": "Ipsos MORI / RSS / KCL, share of the benefits bill", "year": 2013 },
+    { "key": "u_share", "label": "Welfare to the unemployed", "perceived": 41, "actual": 3, "source": "TUC / YouGov, share of the welfare budget", "year": 2012 },
+    { "key": "health", "label": "Spent on health", "perceived": 12, "actual": 19, "source": "YouGov, share of income tax and NI", "year": 2014 },
+    { "key": "welfare_pensions", "label": "Welfare, minus pensions", "perceived": 12, "actual": 25, "source": "YouGov, share of income tax and NI", "year": 2014 }
+  ],
+  "letter_guess": [
+    { "key": "welfare", "perceived": 12 },
+    { "key": "health", "perceived": 12 },
+    { "key": "education", "perceived": 9 },
+    { "key": "pensions", "perceived": 9 },
+    { "key": "debt_interest", "perceived": 7 },
+    { "key": "defence", "perceived": 7 },
+    { "key": "public_order", "perceived": 5 },
+    { "key": "transport", "perceived": 5 },
+    { "key": "business", "perceived": 4 },
+    { "key": "admin", "perceived": 8 },
+    { "key": "housing_utilities", "perceived": 4 },
+    { "key": "environment", "perceived": 3 },
+    { "key": "culture", "perceived": 3 },
+    { "key": "overseas_aid", "perceived": 5 },
+    { "key": "eu", "perceived": 7 }
+  ],
+  "beliefs": [
+    { "kind": "myth", "big": "41p", "text": "Asked how much of every welfare pound goes to the unemployed, the average guess was 41p. The audited figure at the time was 3p.", "src": "TUC / YouGov, 2012" },
+    { "kind": "fact", "big": "£0.3bn", "text": "Jobseeker's Allowance costs £0.3bn a year. The state pension costs £136.6bn, over four hundred times as much.", "src": "DWP, 2024-25" },
+    { "kind": "myth", "big": "24p", "text": "The public's average guess for benefit money claimed fraudulently: 24p in the pound. The official estimate: 0.7p.", "src": "Ipsos MORI / RSS / KCL, 2013" },
+    { "kind": "fact", "big": "£1 in £12", "text": "Interest on the national debt takes £1 of every £12 the state spends: £106bn a year, up from £25bn as recently as 2020-21.", "src": "OBR, 2024-25" },
+    { "kind": "myth", "big": "7%", "text": "The average guess for spending sent to the EU was 7% while Britain was a member. The audited figure was about 1%. It is now 0.1%, residual withdrawal payments.", "src": "YouGov, 2014; HMRC, 2024-25" },
+    { "kind": "fact", "big": "0.7p", "text": "Overseas aid takes 0.7p of every pound the government spends: less than a penny, and less than a tenth of the interest on the national debt.", "src": "HMRC Annual Tax Summary, 2024-25" }
+  ]
+}

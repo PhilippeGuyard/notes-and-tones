@@ -28,10 +28,12 @@ essays/
                     it has widgets (see the home page for the full list)
   income/           Income: Perception vs Reality — d3 scrollytelling data essay
   immigration/      Immigration: Perception vs Reality — d3 scrollytelling data essay
+  tax/              Where Your Tax Goes: Perception vs Reality — d3 scrollytelling data essay
   template.html     Skeleton to copy when adding a new essay
 tools/
   income/           Builds the income essay's JSON from the marimo HBAI data (not served)
   immigration/      Data pipeline + research for the immigration essay (not served)
+  tax/              Sources and notes behind the tax essay's JSON (not served)
   carbon/           Refreshes carbon-snapshot.json (the live-API fallback) — not served
 ```
 

@@ -1,0 +1,19 @@
+{
+  "source": "DWP benefit expenditure and caseload tables, Spring 2026 (2024-25 outturn, GB); child benefit is UK-wide, paid by HMRC",
+  "url": "https://www.gov.uk/government/publications/benefit-expenditure-and-caseload-tables-2026",
+  "retrieved": "2026-08-07",
+  "year": "2024-25",
+  "total_bn": 314.9,
+  "note": "Total is UK welfare including state pension. Universal Credit bundles housing, children, incapacity and searching-for-work support in one payment; the published tables do not split it, so unemployment-specific spending beyond JSA cannot be quoted precisely.",
+  "categories": [
+    { "key": "state_pension", "label": "State pension", "bn": 136.6, "share": 43.4 },
+    { "key": "universal_credit", "label": "Universal Credit, all parts", "bn": 66.7, "share": 21.2 },
+    { "key": "disability", "label": "Disability and carers", "bn": 58.7, "share": 18.6 },
+    { "key": "housing", "label": "Housing benefit", "bn": 15.5, "share": 4.9 },
+    { "key": "child_benefit", "label": "Child benefit", "bn": 13.3, "share": 4.2 },
+    { "key": "pension_credit", "label": "Pension credit", "bn": 6.0, "share": 1.9 },
+    { "key": "maternity", "label": "Maternity pay", "bn": 3.5, "share": 1.1 },
+    { "key": "winter_fuel", "label": "Winter fuel payments", "bn": 0.3, "share": 0.1 },
+    { "key": "unemployment", "label": "Jobseeker's Allowance", "bn": 0.3, "share": 0.1 }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "source": "HMRC Annual Tax Summary methodology, 2024-25 shares; HM Treasury Public Spending Statistics July 2026, Table 4.2 (2024-25 outturn) for £bn",
+  "url": "https://www.gov.uk/government/publications/how-public-spending-was-calculated-in-your-tax-summary/how-public-spending-was-calculated-in-your-tax-summary",
+  "retrieved": "2026-08-07",
+  "year": "2024-25",
+  "total_bn": 1166.5,
+  "note": "Shares are HMRC's Annual Tax Summary percentages, which apportion public sector expenditure on services (£1,166.5bn), not total managed expenditure (£1,290bn, which adds accounting adjustments). £bn = share x 1,166.5.",
+  "categories": [
+    { "key": "welfare", "label": "Welfare (excluding state pensions)", "share": 21.3, "bn": 248.5 },
+    { "key": "health", "label": "Health", "share": 20.9, "bn": 243.8 },
+    { "key": "pensions", "label": "State pensions", "share": 11.9, "bn": 138.8 },
+    { "key": "debt_interest", "label": "National debt interest", "share": 10.8, "bn": 126.0 },
+    { "key": "education", "label": "Education", "share": 10.3, "bn": 120.2 },
+    { "key": "defence", "label": "Defence", "share": 5.5, "bn": 64.2 },
+    { "key": "public_order", "label": "Public order and safety", "share": 4.4, "bn": 51.3 },
+    { "key": "transport", "label": "Transport", "share": 4.0, "bn": 46.7 },
+    { "key": "business", "label": "Business and industry", "share": 3.5, "bn": 40.8 },
+    { "key": "admin", "label": "Government administration", "share": 2.0, "bn": 23.3 },
+    { "key": "housing_utilities", "label": "Housing and utilities", "share": 1.9, "bn": 22.2 },
+    { "key": "environment", "label": "Environment", "share": 1.5, "bn": 17.5 },
+    { "key": "culture", "label": "Culture, sport and libraries", "share": 1.3, "bn": 15.2 },
+    { "key": "overseas_aid", "label": "Overseas aid", "share": 0.7, "bn": 8.2 },
+    { "key": "eu", "label": "Outstanding payments to the EU", "share": 0.1, "bn": 1.2 }
+  ]
+}
