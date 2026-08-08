@@ -1,0 +1,106 @@
+{
+  "source": "NHSBSA, Medicines Used in Mental Health 2015/16 to 2022/23, BNF 4.4 CNS stimulants and drugs used for ADHD, identified patients",
+  "retrieved": "2026-08-08",
+  "note": "Patients identified by NHS number on at least one prescription for a BNF 4.4 medicine dispensed in the community in England, by financial year. Growth compares 2019/20 with 2022/23.",
+  "data": {
+    "period_from": "2019/20",
+    "period_to": "2022/23",
+    "overall": {
+      "from": 158412,
+      "to": 237009,
+      "growth_pct": 49.6
+    },
+    "bands": [
+      {
+        "band": "05 to 09",
+        "from": 20178,
+        "to": 20306,
+        "growth_pct": 0.6
+      },
+      {
+        "band": "10 to 14",
+        "from": 47144,
+        "to": 60184,
+        "growth_pct": 27.7
+      },
+      {
+        "band": "15 to 19",
+        "from": 31389,
+        "to": 45133,
+        "growth_pct": 43.8
+      },
+      {
+        "band": "20 to 24",
+        "from": 13555,
+        "to": 24562,
+        "growth_pct": 81.2
+      },
+      {
+        "band": "25 to 29",
+        "from": 9976,
+        "to": 21363,
+        "growth_pct": 114.1
+      },
+      {
+        "band": "30 to 34",
+        "from": 7047,
+        "to": 17332,
+        "growth_pct": 145.9
+      },
+      {
+        "band": "35 to 39",
+        "from": 5265,
+        "to": 12187,
+        "growth_pct": 131.5
+      },
+      {
+        "band": "40 to 44",
+        "from": 4629,
+        "to": 9632,
+        "growth_pct": 108.1
+      },
+      {
+        "band": "45 to 49",
+        "from": 4302,
+        "to": 7346,
+        "growth_pct": 70.8
+      },
+      {
+        "band": "50 to 54",
+        "from": 3171,
+        "to": 5678,
+        "growth_pct": 79.1
+      },
+      {
+        "band": "55 to 59",
+        "from": 2140,
+        "to": 3551,
+        "growth_pct": 65.9
+      },
+      {
+        "band": "60 to 64",
+        "from": 1357,
+        "to": 1952,
+        "growth_pct": 43.8
+      },
+      {
+        "band": "65+",
+        "from": 2821,
+        "to": 2888,
+        "growth_pct": 2.4
+      }
+    ],
+    "gender_30_34": {
+      "female": {
+        "from": 2602,
+        "to": 7713,
+        "growth_pct": 196.4
+      },
+      "male": {
+        "from": 4444,
+        "to": 9620,
+        "growth_pct": 116.5
+      }
+    }
+  }
+}

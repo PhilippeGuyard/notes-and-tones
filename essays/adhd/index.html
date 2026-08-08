@@ -1,0 +1,271 @@
+---
+permalink: "essays/adhd/index.html"
+title: "The Great ADHD Backlog"
+emoji: "⏳"
+date: 2026-08-08
+updated: "2026-08-08T12:00:00Z"
+order: 20
+topics: ["society"]
+dek: "A documentary asks whether too many people are being labelled with ADHD. The NHS's own data shows a queue of 800,000 that the system cannot clear."
+card_url: "essays/adhd/"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Great ADHD Backlog</title>
+<meta name="description" content="How ADHD is talked about in the UK versus what NHS data shows: who is actually being diagnosed, an 800,000-person assessment queue, the gender gap, and the autism waiting list next door. Interactive data essay.">
+<meta property="og:title" content="The Great ADHD Backlog">
+<meta property="og:description" content="A documentary asks whether too many people are being labelled with ADHD. The NHS's own data shows a queue of 800,000 that the system cannot clear.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://philippeguyard.github.io/notes-and-tones/essays/adhd/">
+<meta property="og:site_name" content="Notes &amp; Tones">
+<meta property="og:image" content="https://philippeguyard.github.io/notes-and-tones/assets/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://philippeguyard.github.io/notes-and-tones/essays/adhd/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%8F%B3%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0,1&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=1">
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+
+<nav class="site-back"><a href="../../index.html">← Notes &amp; Tones</a></nav>
+
+<header class="masthead">
+  <p class="kicker">NHS data essay</p>
+  <h1>Too many <em>labels</em>,<br>or too few <em class="real">appointments</em>?</h1>
+  <p class="standfirst">
+    A Channel 4 documentary, The Great ADHD Myth?, asks whether ADHD is a real
+    condition or a fashionable explanation, and whether Britain is handing out
+    the diagnosis too freely. Fair questions. But the NHS publishes its own
+    numbers on who is asking for an assessment, who gets one, and who is left
+    waiting, and those numbers describe a different problem from the one on
+    television.
+  </p>
+  <p class="byline">Charts drawn from NHS England's ADHD management information
+  and autism statistics, the Independent ADHD Taskforce, and NHSBSA
+  prescribing data</p>
+  <div class="legend-key">
+    <span class="key key--p">the debate</span>
+    <span class="key key--r">the queue</span>
+  </div>
+  <p class="scroll-cue">scroll ↓</p>
+</header>
+
+<!-- 1 · THE SURGE -->
+<section class="prose" id="surge-intro">
+  <h2><span class="myth-no">The surge</span>Who is actually arriving</h2>
+  <p>Everyone agrees on one fact: ADHD diagnoses and prescriptions have risen
+  sharply. The documentary reads the rise as an epidemic of labelling, phones,
+  processed food and inflexible schools. Before choosing an explanation, it is
+  worth asking a narrower question. Who, exactly, is arriving?</p>
+</section>
+<section class="scrolly" id="surge">
+  <div class="sticky"><div class="chart" id="chart-surge"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p>Between 2019/20 and 2022/23, the number of people in England prescribed
+      ADHD medication rose from about <strong>158,000 to 237,000</strong>, an
+      increase of <strong>50%</strong> in three years.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p>Split that growth by age and the "medicated generation of children"
+      story gets awkward. Prescriptions for ages 5 to 9 barely moved
+      (<strong>+0.6%</strong>). The under-15 bands grew slowest of all. The
+      growth lives with adults, and it peaks at ages <strong>30 to 34</strong>:
+      up <strong>146%</strong>.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p>Now split that peak group by sex. Men aged 30 to 34:
+      <strong>+117%</strong>. Women aged 30 to 34: from 2,602 patients to 7,713,
+      <strong>+196%</strong>. The fastest-growing ADHD patients in England are
+      women in their early thirties, the group the diagnostic checklists of the
+      1990s were never written for.</p>
+    </div>
+  </div>
+</section>
+<section class="prose">
+  <p>A contagion spread by phones and TikTok should show up first in the people
+  who use them most: teenagers. Instead the sharpest growth is among adults old
+  enough to have been overlooked at school, and among women more than men.
+  That pattern looks less like fashion and more like a backlog of missed cases
+  being worked through, two decades late.</p>
+</section>
+
+<!-- 2 · THE QUEUE -->
+<section class="prose">
+  <h2><span class="myth-no">The queue</span>The funnel the debate skips</h2>
+  <p>The documentary's central worry is that too many people end up with the
+  label. The NHS's management information lets us follow the journey from
+  "probably has ADHD" to "actually being treated", stage by stage. At every
+  stage, the numbers shrink.</p>
+</section>
+<section class="scrolly" id="funnel">
+  <div class="sticky"><div class="chart" id="chart-funnel"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p>Start at the top. Applying prevalence rates to GP registers, NHS
+      England estimates <strong>2,492,000</strong> people in England have ADHD,
+      diagnosed or not: roughly 741,000 children and young people, the rest
+      adults.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p>Of those 2.5 million, <strong>803,659</strong> had an open referral
+      that may be for an ADHD assessment in March 2026: 626,415 in mental
+      health services plus an estimated 177,244 children in community
+      paediatrics. Note the wording: these are "up to" figures, and some
+      referrals will turn out to be for something else. Even so, at most
+      <strong>1 in 3</strong> of the estimated total is in the queue at all.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p>The queue barely moves. Of the mental health service referrals,
+      <strong>88%</strong> had been open longer than the 13 weeks NICE
+      considers a reasonable wait for a first assessment appointment, and
+      <strong>231,455</strong> had been open for more than two years. Two
+      thirds, 408,690 people, had not yet had any first contact.
+      Add the children's list and over <strong>260,000</strong> people have
+      been waiting more than two years.</p>
+    </div>
+    <div class="step" data-step="3">
+      <p>Now the bottom of the funnel. The Independent ADHD Taskforce estimates
+      that only <strong>15 to 25%</strong> of people with ADHD in England
+      obtain medication, against trial evidence that <strong>70 to 90%</strong>
+      would benefit from it. Whatever one thinks of pills, the system is not
+      dispensing them freely; it is not even managing to see the queue.</p>
+    </div>
+    <div class="step" data-step="4">
+      <p>The gap has a price. The taskforce puts the cost of untreated ADHD in
+      the UK, in lost work, extra NHS use, education failure and criminal
+      justice, at around <strong>£17 billion a year</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · THE GAP -->
+<section class="prose">
+  <h2><span class="myth-no">The gap</span>Who the system used to miss</h2>
+  <p>If the adult surge is a backlog of missed cases, someone must have been
+  doing the missing. The taskforce's own figures show who: compare the share of
+  each group with an ADHD diagnosis in their health records against the share
+  research suggests actually has the condition.</p>
+</section>
+<section class="scrolly" id="gender">
+  <div class="sticky"><div class="chart" id="chart-gender"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p>The shaded band is what research prevalence studies find:
+      <strong>3 to 5%</strong> of children and <strong>2 to 3%</strong> of
+      adults, and the condition is not dramatically rarer in one sex than the
+      other.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p>Now the diagnoses on the books. Among children: <strong>2.55%</strong>
+      of boys have a recorded ADHD diagnosis, and <strong>0.67%</strong> of
+      girls. A nearly <strong>four-fold</strong> gap, built on checklists that
+      described fidgeting boys rather than daydreaming girls.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p>Among adults the records thin out for everyone: <strong>0.74%</strong>
+      of men, <strong>0.20%</strong> of women. Both sit far below the 2 to 3%
+      the research expects. Undiagnosed adults are the rule, and undiagnosed
+      women especially.</p>
+    </div>
+    <div class="step" data-step="3">
+      <p>Which is exactly who is knocking now. In the current referral queue,
+      women (<strong>315,245</strong>) outnumber men
+      (<strong>292,010</strong>). The women driving the prescription surge in
+      their thirties are this missing group arriving late, not a new condition
+      spreading.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · NEXT DOOR -->
+<section class="prose">
+  <h2><span class="myth-no">Next door</span>The other queue</h2>
+  <p>ADHD rarely queues alone. Autism and ADHD co-occur so often that the
+  overlap has its own shorthand, AuDHD, and many late-diagnosed women are
+  assessed for both. The autism waiting list is measured separately, and it is
+  in worse shape.</p>
+</section>
+<section class="scrolly" id="autism">
+  <div class="sticky"><div class="chart" id="chart-autism"></div></div>
+  <div class="steps">
+    <div class="step" data-step="0">
+      <p>In March 2026 there were <strong>270,701</strong> open referrals for
+      suspected autism in England. Each square here is one hundredth of that
+      queue.</p>
+    </div>
+    <div class="step" data-step="1">
+      <p><strong>89.7%</strong> of those referrals had been open for more than
+      13 weeks, the point by which NICE says a first assessment appointment
+      should have happened.</p>
+    </div>
+    <div class="step" data-step="2">
+      <p>And of the people past that mark, the share who had actually had a
+      first appointment in time was <strong>3.7%</strong>. On this chart, that
+      is the small blue corner.</p>
+    </div>
+    <div class="step" data-step="3">
+      <p>For an AuDHD adult, these are two separate multi-year queues, run by
+      different services, and being in one does not advance you in the other.
+      The person the system missed as a child gets to wait twice.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · BELIEFS -->
+<section class="prose">
+  <h2><span class="myth-no">The beliefs</span>Three gaps between the debate and the data</h2>
+</section>
+<section class="cards" id="beliefs-cards"></section>
+
+<!-- 6 · CLOSE -->
+<section class="prose" id="close">
+  <h2>What the queue says that the myth cannot</h2>
+  <ul class="close-list">
+    <li><strong>The documentary's question and the data's question are
+    different.</strong> Whether or not the ADHD label is drawn too widely,
+    800,000 people are in a queue the system cannot clear, and a quarter of a
+    million of them have waited more than two years.</li>
+    <li><strong>Some of the growth is measurement.</strong> The referral
+    figures are "up to" counts, and February 2025 brought independent providers
+    into the collection, which inflates comparisons across that date. The
+    two-year waits, however, are not artefacts.</li>
+    <li><strong>The binding constraint is assessment capacity, not diagnostic
+    enthusiasm.</strong> Adults, women above all, are arriving to be counted
+    for the first time, and the services meant to receive them were sized for
+    the fidgeting schoolboys of the old checklists.</li>
+  </ul>
+  <p class="fin">The Great ADHD Myth? asks whether Britain hands out the
+  diagnosis too easily. The NHS's own ledger answers a plainer question:
+  easy is not a word anyone in this queue would recognise.</p>
+</section>
+
+<footer class="methodology" id="methodology">
+  <h3>Sources &amp; methodology</h3>
+  <div id="sources-list"></div>
+  <p>Referral figures are NHS England ADHD management information for March
+  2026 (May 2026 release). They are "up to" counts: mental health service
+  referrals are flagged as possible ADHD assessments and may include other
+  assessments, and the community paediatrics figure is an estimate from CHS
+  SitRep data with waiting bands that start at 12 weeks rather than 13.
+  Independent providers joined the collection in February 2025, so growth
+  measured across that point partly reflects widened coverage. The prevalence
+  estimate applies NICE prevalence rates to GP registers and includes people
+  without a diagnosis. Prescribing counts are NHSBSA identified patients
+  dispensed BNF 4.4 medicines in the community in England; growth compares
+  2019/20 with 2022/23. Diagnosed-prevalence and treatment shares are from
+  part 1 of the Independent ADHD Taskforce report and are ranges. Autism
+  waiting figures are NHS England experimental statistics for March 2026.
+  Built with d3.js. Published 8 August 2026.</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+<script data-goatcounter="https://notesandtones.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

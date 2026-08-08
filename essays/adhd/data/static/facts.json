@@ -1,0 +1,23 @@
+{
+  "source": "Channel 4 press release for The Great ADHD Myth? (channel4.com/press, 2026)",
+  "retrieved": "2026-08-08",
+  "note": "Claims and counter-figures for the belief cards. Each entry carries its own source string; the shared ones match the other data files so the footer dedupes.",
+  "data": {
+    "c4_referral_growth": {
+      "value": "+200%",
+      "source": "Channel 4 press release for The Great ADHD Myth? (channel4.com/press, 2026)"
+    },
+    "queue_share": {
+      "value": "1 in 3",
+      "source": "NHS England, ADHD Management Information, May 2026 release (digital.nhs.uk/data-and-information/publications/statistical/mi-adhd)"
+    },
+    "treated_share": {
+      "value": "15-25%",
+      "source": "NHS England, Independent ADHD Taskforce report, part 1 (england.nhs.uk/long-read/report-of-the-independent-adhd-taskforce-part-1)"
+    },
+    "coverage_change": {
+      "value": "Feb 2025",
+      "source": "NHS England, ADHD Management Information, May 2026 release (digital.nhs.uk/data-and-information/publications/statistical/mi-adhd)"
+    }
+  }
+}

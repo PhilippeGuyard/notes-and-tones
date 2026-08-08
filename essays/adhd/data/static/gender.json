@@ -1,0 +1,15 @@
+{
+  "source": "NHS England, Independent ADHD Taskforce report, part 1 (england.nhs.uk/long-read/report-of-the-independent-adhd-taskforce-part-1)",
+  "retrieved": "2026-08-08",
+  "note": "Administrative prevalence means the share of the population with a recorded ADHD diagnosis in health records, as reported by the taskforce. Research prevalence estimates (3-5% of children, 2-3% of adults) apply far more evenly across the sexes.",
+  "data": {
+    "research_prevalence_pct": { "children": [3, 5], "adults": [2, 3] },
+    "administrative_pct": {
+      "children": { "male": 2.55, "female": 0.67 },
+      "adults": { "male": 0.74, "female": 0.2 }
+    },
+    "treated_share_pct": [15, 25],
+    "benefit_share_pct": [70, 90],
+    "untreated_cost_bn": 17
+  }
+}

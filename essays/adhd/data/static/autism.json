@@ -1,0 +1,13 @@
+{
+  "source": "NHS England, Autism Statistics, April 2025 to March 2026 (digital.nhs.uk/data-and-information/publications/statistical/autism-statistics)",
+  "retrieved": "2026-08-08",
+  "note": "Open referrals for suspected autism, England, March 2026. NICE quality standard: a first assessment appointment within 13 weeks of referral. The 3.7% figure covers referrals open more than 13 weeks that had a first appointment inside the standard.",
+  "data": {
+    "asof": "2026-03-01",
+    "open_referrals": 270701,
+    "open_13plus_weeks": 242708,
+    "open_13plus_weeks_pct": 89.7,
+    "first_appt_within_13w_pct": 3.7,
+    "nice_standard_weeks": 13
+  }
+}

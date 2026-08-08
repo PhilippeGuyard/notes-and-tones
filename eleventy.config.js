@@ -34,6 +34,9 @@ module.exports = function (eleventyConfig) {
     "essays/tax/css",
     "essays/tax/js",
     "essays/tax/data",
+    "essays/adhd/css",
+    "essays/adhd/js",
+    "essays/adhd/data",
   ]) {
     eleventyConfig.addPassthroughCopy(p);
   }

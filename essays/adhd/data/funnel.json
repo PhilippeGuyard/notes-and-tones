@@ -1,0 +1,37 @@
+{
+  "source": "NHS England, ADHD Management Information, May 2026 release (digital.nhs.uk/data-and-information/publications/statistical/mi-adhd)",
+  "retrieved": "2026-08-08",
+  "note": "England, March 2026. Referral counts are 'up to' figures: MHSDS referrals may include non-ADHD assessments, and the CHS community paediatrics figure is an estimate. Independent providers were added to the collection in February 2025, so comparisons across that point partly reflect the change in coverage. CHS waiting bands start at 12 weeks, MHSDS bands at 13.",
+  "data": {
+    "asof": "2026-03-01",
+    "estimated_prevalence": 2492000,
+    "open_referrals_total": 803659,
+    "mhsds": {
+      "open": 626415,
+      "waited": {
+        "lt13w": 74910,
+        "w13to52": 167710,
+        "w52to104": 152325,
+        "over104w": 231455
+      },
+      "no_contact_yet": 408690,
+      "had_first_contact": 217720
+    },
+    "chs_estimated": {
+      "open": 177244,
+      "waited": {
+        "lt12w": 38657,
+        "w12to52": 63436,
+        "w52to104": 44969,
+        "over104w": 30181
+      }
+    },
+    "over_2y_total": 261636,
+    "new_referrals_month": 32375,
+    "new_referrals_yoy_pct": 29.5,
+    "open_gender": {
+      "male": 292010,
+      "female": 315245
+    }
+  }
+}

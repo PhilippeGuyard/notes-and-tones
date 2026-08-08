@@ -9,6 +9,8 @@ tools/immigration/data/raw/
 tools/climate/data/raw/
 # regenerable download cache for the summer data pipeline
 tools/summer/data/raw/
+# regenerable download cache for the adhd data pipeline
+tools/adhd/data/raw/
 
 # os / editor
 .DS_Store
