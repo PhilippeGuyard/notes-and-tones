@@ -15,3 +15,6 @@ tools/immigration/data/raw/
 # eleventy
 node_modules/
 _site/
+
+# git worktrees
+.worktrees/
