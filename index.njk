@@ -27,12 +27,19 @@
 
 <header class="home-hero">
   <h1 class="home-title">Notes &amp; Tones</h1>
+  <nav class="topic-nav" hidden aria-label="Filter essays by topic">
+    <button type="button" class="topic-pill" data-topic="all" aria-pressed="true">All</button>
+{%- for topic in siteTopics %}
+    <button type="button" class="topic-pill" data-topic="{{ topic.slug }}" aria-pressed="false">{{ topic.label }}</button>
+{%- endfor %}
+  </nav>
 </header>
 
 <main class="home-main">
+  <p class="topic-status visually-hidden" aria-live="polite"></p>
   <ul class="essay-list">
 {%- for essay in collections.essay | sort(false, false, "data.order") %}
-    <li class="essay-card">
+    <li class="essay-card" data-topics="{{ essay.data.topics | topicList(essay.inputPath) }}">
       <a href="{{ essay.data.card_url or essay.url.slice(1) }}">
         <span class="essay-emoji" aria-hidden="true">{{ essay.data.emoji }}</span>
         <h2 class="essay-title">{{ essay.data.card_title or essay.data.og_title or essay.data.title }}</h2>
@@ -49,6 +56,46 @@
   <p>Written by Philippe Guyard · <a href="https://github.com/PhilippeGuyard">GitHub</a> · <a href="https://www.linkedin.com/in/philippe-guyard-dev/">LinkedIn</a></p>
   <p class="foot-meta">Text and figures <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> · code <a href="https://github.com/PhilippeGuyard/notes-and-tones">MIT</a> · <a href="feed.xml">Atom feed</a></p>
 </footer>
+<script>
+(function () {
+  var nav = document.querySelector(".topic-nav");
+  var pills = nav.querySelectorAll(".topic-pill");
+  var cards = document.querySelectorAll(".essay-card");
+  var status = document.querySelector(".topic-status");
+  var known = Array.prototype.map.call(pills, function (p) { return p.dataset.topic; });
+  nav.hidden = false;
+
+  function apply(slug) {
+    if (known.indexOf(slug) === -1) slug = "all";
+    var shown = 0;
+    cards.forEach(function (card) {
+      var match = slug === "all" || card.dataset.topics.split(" ").indexOf(slug) !== -1;
+      card.hidden = !match;
+      if (match) shown++;
+    });
+    pills.forEach(function (p) {
+      p.setAttribute("aria-pressed", String(p.dataset.topic === slug));
+    });
+    status.textContent = shown + (shown === 1 ? " essay" : " essays") + " shown";
+    return slug;
+  }
+
+  nav.addEventListener("click", function (e) {
+    var pill = e.target.closest(".topic-pill");
+    if (!pill) return;
+    var slug = apply(pill.dataset.topic);
+    history.replaceState(null, "",
+      slug === "all" ? location.pathname + location.search : "#topic=" + slug);
+  });
+
+  function fromHash() {
+    var m = location.hash.match(/^#topic=(.+)$/);
+    apply(m ? m[1] : "all");
+  }
+  window.addEventListener("hashchange", fromHash);
+  fromHash();
+})();
+</script>
 <script data-goatcounter="https://notesandtones.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

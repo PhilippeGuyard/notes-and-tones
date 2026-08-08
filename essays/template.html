@@ -14,6 +14,9 @@ updated: "2026-01-01T10:00:00Z"         # feed timestamp + sitemap lastmod; keep
 order: 99                               # home-page and sitemap position — 1 is the top card;
                                         #   the feed orders itself by `updated`, newest first.
                                         #   Pick the next free number.
+topics: ["probability"]                 # required — home-page filter pills; one or more slugs
+                                        #   from _data/siteTopics.js. The build fails on a
+                                        #   missing or unknown slug.
 dek: "The hook shown under the title on the home-page card, and as the feed summary."
 # feed_summary: "Plain-text summary."   # optional — replaces the dek in the feed (use when
                                         #   the dek carries markup/entities the feed shouldn't)
